@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<measure>
+  <measureDetails>
+    <uuid>40280381-446b-b8c2-0144-9dfa522927ed</uuid>
+    <title>Aspirin Prescribed at Discharge</title>
+    <shortTitle>AMI-2</shortTitle>
+    <emeasureid>100</emeasureid>
+    <guid>bb481284-30dd-4383-928c-82385bbf1b17</guid>
+    <version>3</version>
+    <status>In Progress</status>
+    <nqfid extension="0142" root="2.16.840.1.113883.3.560.1"/>
+    <period uuid="40280381-3d27-5493-013d-4bfbd2ae5f6f">
+      <startDate uuid="146ff597-542d-44e6-a041-fd1916e1714b">00000101</startDate>
+      <stopDate uuid="1acafa95-7da9-4bc6-a95a-0aab535968f6">00001231</stopDate>
+    </period>
+    <steward id="2.16.840.1.113883">Oklahoma Foundation for Medical Quality</steward>
+    <developers>
+      <developer id="2.16.840.1.113883">Oklahoma Foundation for Medical Quality</developer>
+    </developers>
+    <endorsement id="2.16.840.1.113883.3.560">National Quality Forum</endorsement>
+    <description>Acute myocardial infarction (AMI) patients who are prescribed aspirin at hospital discharge</description>
+    <copyright>Measure specifications are in the Public Domain.
+
+LOINC (R) is a registered trademark of the Regenstrief Institute.
+
+This material contains SNOMED Clinical Terms (R) (SNOMED CT(c)) copyright 2004-2010 International Health Terminology Standards Development Organization. All rights reserved.</copyright>
+    <disclaimer>None</disclaimer>
+    <scoring id="PROPOR">Proportion</scoring>
+    <types>
+      <type id="PROCESS">Process</type>
+    </types>
+    <stratification>None</stratification>
+    <riskAdjustment>None</riskAdjustment>
+    <aggregation>None</aggregation>
+    <rationale>Aspirin therapy in patients who have suffered an acute myocardial infarction reduces the risk of adverse events and mortality. Studies have demonstrated that aspirin can reduce this risk by 20% (Antiplatelet Trialists' Collaboration, 1994). National guidelines strongly recommend long-term aspirin for the secondary prevention of subsequent cardiovascular events in eligible older patients discharged after AMI (O'Gara, 2013; Jneid, 2012; and Smith, 2011).</rationale>
+    <recommendations>National guidelines strongly recommend long-term aspirin for the secondary prevention of subsequent cardiovascular events in eligible older patients discharged after AMI</recommendations>
+    <improvementNotations>Higher score indicates better quality</improvementNotations>
+    <references>
+      <reference>Anderson JL, Adams CD, Antman EM, Bridges CR, Califf RM, Casey DE Jr, et al. ACC/AHA 2007 guidelines for the management of patients with unstable angina/non–ST-elevation myocardial infarction: a report of the American College of Cardiology/American Heart Association Task Force on Practice Guidelines (Writing Committee to Revise the 2002 Guidelines for the Management of Patients With Unstable Angina/Non–ST-Elevation Myocardial Infarction): developed in collaboration with the American College of Emergency Physicians, American College of Physicians, Society for Academic Emergency Medicine, Society for Cardiovascular Angiography and Interventions, and Society of Thoracic Surgeons. J Am Coll Cardiol. 2007;50:e1–157.
+</reference>
+      <reference>Antiplatelet Trialists' Collaboration. Collaborative overview of randomized trials of antiplatelet therapy - I: prevention of death, myocardial infarction, and stroke by prolonged antiplatelet therapy in various categories of patients. BMJ. 1994;308:81-106.
+</reference>
+      <reference>Jneid H, Anderson JL, Wright RS, Adams CD, Bridges CR, Casey DE Jr, et al. 2012 ACCF/AHA focused update of the guideline for the management of patients with unstable angina/non–ST-elevation myocardial infarction (updating the 2007 guideline and replacing the 2011 focused update): a report of the
+American College of Cardiology Foundation/American Heart Association Task Force on Practice Guidelines. J Am Coll Cardiol 2012;60:645–81.
+</reference>
+      <reference>Krumholz HM, Anderson JL, Bachelder BL, Fesmire FM, Fihn SD, Foody JM, et al. ACC/AHA 2008 performance measures for adults with ST-elevation and non–ST-elevation myocardial infarction: a report of the American College of Cardiology/American Heart Association Task Force on Performance Measures (Writing Committee to Develop Performance Measures for ST-Elevation and Non–ST-Elevation Myocardial Infarction). J Am Coll Cardiol. 2008;52:2046 –99.
+</reference>
+      <reference>O’Gara PT, Kushner FG, Ascheim DD, Casey DE, Jr, Chung MK, de Lemos JA, et al. 2013 ACCF/AHA guideline for the management of ST-elevation myocardial infarction: a report of the American College of Cardiology Foundation/American Heart Association Task Force on Practice Guidelines. J Am Coll Cardiol 2013;61:485–510.</reference>
+      <reference>Smith SC Jr, Benjamin EJ, Bonow RO, Braun LT, Creager MA, et al. AHA/ACCF secondary prevention and risk reduction therapy for patients with coronary and other atherosclerotic vascular disease: 2011 update: a guideline from the American Heart Association and American College of Cardiology Foundation. Circulation. 2011;124:2458–2473.</reference>
+    </references>
+    <definitions>None</definitions>
+    <guidance>Exclusion element guidance: 
+The intent for the exclusion for patients who are clinical trial participants was to be limited to patients participating in a clinical trial for acute myocardial infarction (AMI), ST elevation myocardial infarction (STEMI), non-ST elevation myocardial infarction (non-STEMI), heart attack, or acute coronary syndrome (ACS), the same conditions as covered by the measure. However, the value set specifying clinical trial participation is not limited to a specific type of trial.
+
+Medical or patient reasons for not performing a test or giving a medication are categories for valid medical or patient reasons that are not specifically listed in the exclusion section of the measure. Each is expected to be captured and made available for measurement or clinical decision support within the EHR workflow but the exact method or location of capture is a local or vendor decision.</guidance>
+    <transmissionFormat>None</transmissionFormat>
+    <initialPatientPopDescription>All hospital discharges for acute myocardial infarction (AMI) with hospital stays &lt;= 120 days during the measurement year for patients age 18 and older at the time of hospital admission.</initialPatientPopDescription>
+    <denominatorDescription>Patients age 18 and older with an ICD-9-CM Principal Diagnosis Code for Acute Myocardial Infarction (AMI).</denominatorDescription>
+    <denominatorExclusionsDescription>Patients with Comfort Measures Only documented. 
+Patients enrolled in clinical trials.
+Patients discharged to another hospital. 
+Patients who left against medical advice. 
+Patients who expired.
+Patients discharged to home for hospice care.
+Patients discharged to a health care facility for hospice care.</denominatorExclusionsDescription>
+    <numeratorDescription>Acute Myocardial Infarction patients who are prescribed aspirin at hospital discharge.</numeratorDescription>
+    <numeratorExclusionsDescription>None</numeratorExclusionsDescription>
+    <denominatorExceptionsDescription>Patients with a documented Reason for No Aspirin at Discharge. This includes patients with an Aspirin allergy, patients discharged on Warfarin or other specific anticoagulant medications, patients with a hold on the administration of Aspirin medications, and patients with a medical or patient reason for not prescribing this medication.</denominatorExceptionsDescription>
+    <measurePopulationDescription>Not applicable</measurePopulationDescription>
+    <measureObservationsDescription>Not applicable</measureObservationsDescription>
+    <supplementalData>For every patient evaluated by this measure also identify payer, race, ethnicity, and sex.</supplementalData>
+    <qualityMeasureSet uuid="0e1ee7f8-a962-427e-827e-c8e4ecd90a17">Acute Myocardial Infarction (AMI)</qualityMeasureSet>
+  </measureDetails>
+  <supplementalDataElements>
+    <elementRef id="40280381-3d27-5493-013d-4bfbd2ae5f69" name="Ethnicity"/>
+    <elementRef id="40280381-3d27-5493-013d-4bfbd2ad5f67" name="ONC Administrative Sex"/>
+    <elementRef id="40280381-3d27-5493-013d-4bfbd2ae5f6a" name="Payer"/>
+    <elementRef id="40280381-3d27-5493-013d-4bfbd2ae5f68" name="Race"/>
+  </supplementalDataElements>
+  <measureGrouping>
+    <group sequence="1">
+      <clause displayName="Initial Patient Population 1" type="initialPatientPopulation" uuid="7EC271D1-371A-49C4-85F6-430165B95D0D">
+        <logicalOp displayName="AND" type="and">
+          <relationalOp displayName="Starts During" type="SDU">
+            <elementRef displayName="Hospital Measures - AMI : Diagnosis, Active" id="40280381-3d27-5493-013d-4bfbd2ae5f6b" type="qdm">
+              <attribute mode="Value Set" name="ordinality" qdmUUID="3c046dd8-f7a3-41ec-a08a-9d67c148fcb7"/>
+            </elementRef>
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="5988ee3d-0e21-498e-8147-7e440286e1b8" type="qdm"/>
+          </relationalOp>
+          <relationalOp displayName="&gt;= 18 years Starts Before Start Of" operatorType="Greater Than or Equal To" quantity="18" type="SBS" unit="years">
+            <elementRef displayName="birth date : Patient Characteristic Birthdate" id="40280381-3d27-5493-013d-4bfbd2ae5f6d" type="qdm"/>
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="5988ee3d-0e21-498e-8147-7e440286e1b8" type="qdm"/>
+          </relationalOp>
+          <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="5988ee3d-0e21-498e-8147-7e440286e1b8" type="qdm">
+            <attribute comparisonValue="120" mode="Less Than Or Equal To" name="length of stay" unit="days"/>
+          </elementRef>
+          <relationalOp displayName="    Ends During" quantity="" type="EDU">
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="5988ee3d-0e21-498e-8147-7e440286e1b8" type="qdm"/>
+            <elementRef displayName="Measurement Period : Timing Element" id="40280381-3d27-5493-013d-4bfbd2ae5f6f" type="qdm"/>
+          </relationalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Denominator 1" type="denominator" uuid="7FCA2A80-B75F-4088-983A-416D3F38446F">
+        <logicalOp displayName="AND" type="and"/>
+      </clause>
+      <clause displayName="Denominator Exclusions 1" type="denominatorExclusions" uuid="39757B06-B3C6-4F45-8732-126F68DE5141">
+        <logicalOp displayName="AND" type="and">
+          <logicalOp displayName="OR" type="or">
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="&lt;= 1 hours Ends Before Start Of" operatorType="Less Than or Equal To" quantity="1" type="EBS" unit="hours">
+                <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="9bd2955c-a744-4b07-9f7d-e258537c9f76" type="qdm"/>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="5988ee3d-0e21-498e-8147-7e440286e1b8" type="qdm"/>
+              </relationalOp>
+              <relationalOp displayName="Starts After Start Of" type="SAS">
+                <elementRef displayName="Occurrence A of Comfort Measures  : Intervention, Performed" id="ff633a67-d3fd-402d-958c-2f1ddac4ea9e" type="qdm"/>
+                <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="9bd2955c-a744-4b07-9f7d-e258537c9f76" type="qdm"/>
+              </relationalOp>
+            </logicalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="Starts During" type="SDU">
+                <elementRef displayName="Occurrence A of Comfort Measures  : Intervention, Performed" id="ff633a67-d3fd-402d-958c-2f1ddac4ea9e" type="qdm"/>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="5988ee3d-0e21-498e-8147-7e440286e1b8" type="qdm"/>
+              </relationalOp>
+              <functionalOp displayName="NOT" type="NOT" uuid="98755a9c-9c7a-464c-a635-effd546cfc29">
+                <relationalOp displayName="&lt;= 1 hours Ends Before Start Of" operatorType="Less Than or Equal To" quantity="1" type="EBS" unit="hours">
+                  <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="9bd2955c-a744-4b07-9f7d-e258537c9f76" type="qdm"/>
+                  <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="5988ee3d-0e21-498e-8147-7e440286e1b8" type="qdm"/>
+                </relationalOp>
+              </functionalOp>
+            </logicalOp>
+            <logicalOp displayName="AND" type="and">
+              <functionalOp displayName="NOT" type="NOT" uuid="1eca6b6e-70d4-4e3d-8abf-7944a4317528">
+                <relationalOp displayName="Ends Before Start Of" type="EBS">
+                  <elementRef displayName="Occurrence A of Clinical Trial Participant : Patient Characteristic Clinical Trial Participant" id="67eb86ab-a0a8-4087-8af3-07cdad37df3c" type="qdm"/>
+                  <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="5988ee3d-0e21-498e-8147-7e440286e1b8" type="qdm"/>
+                </relationalOp>
+              </functionalOp>
+              <relationalOp displayName="Starts Before Or During" type="SBOD">
+                <elementRef displayName="Occurrence A of Clinical Trial Participant : Patient Characteristic Clinical Trial Participant" id="67eb86ab-a0a8-4087-8af3-07cdad37df3c" type="qdm"/>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="5988ee3d-0e21-498e-8147-7e440286e1b8" type="qdm"/>
+              </relationalOp>
+            </logicalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="&lt;= 1 hours Ends Before Start Of" operatorType="Less Than or Equal To" quantity="1" type="EBS" unit="hours">
+                <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="9bd2955c-a744-4b07-9f7d-e258537c9f76" type="qdm"/>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="5988ee3d-0e21-498e-8147-7e440286e1b8" type="qdm"/>
+              </relationalOp>
+              <functionalOp displayName="NOT" type="NOT" uuid="074d2e3f-899e-44ee-a658-637a3359b9bf">
+                <relationalOp displayName="Ends Before Start Of" type="EBS">
+                  <elementRef displayName="Occurrence A of Clinical Trial Participant : Patient Characteristic Clinical Trial Participant" id="67eb86ab-a0a8-4087-8af3-07cdad37df3c" type="qdm"/>
+                  <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="9bd2955c-a744-4b07-9f7d-e258537c9f76" type="qdm"/>
+                </relationalOp>
+              </functionalOp>
+              <relationalOp displayName="Starts Before Or During" type="SBOD">
+                <elementRef displayName="Occurrence A of Clinical Trial Participant : Patient Characteristic Clinical Trial Participant" id="67eb86ab-a0a8-4087-8af3-07cdad37df3c" type="qdm"/>
+                <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="9bd2955c-a744-4b07-9f7d-e258537c9f76" type="qdm"/>
+              </relationalOp>
+            </logicalOp>
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="5988ee3d-0e21-498e-8147-7e440286e1b8" type="qdm">
+              <attribute mode="Value Set" name="discharge status" qdmUUID="40280381-3d27-5493-013d-4bfbd2ae5f87"/>
+            </elementRef>
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="5988ee3d-0e21-498e-8147-7e440286e1b8" type="qdm">
+              <attribute mode="Value Set" name="discharge status" qdmUUID="4ddc5834-5d59-4003-bac3-31cae691bcba"/>
+            </elementRef>
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="5988ee3d-0e21-498e-8147-7e440286e1b8" type="qdm">
+              <attribute mode="Value Set" name="discharge status" qdmUUID="3cd5330d-dfca-4c47-923b-a85d0b75e7a1"/>
+            </elementRef>
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="5988ee3d-0e21-498e-8147-7e440286e1b8" type="qdm">
+              <attribute mode="Value Set" name="discharge status" qdmUUID="73e96e36-6176-4a3a-a63a-a14cd3ab698e"/>
+            </elementRef>
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="5988ee3d-0e21-498e-8147-7e440286e1b8" type="qdm">
+              <attribute mode="Value Set" name="discharge status" qdmUUID="25e25ff0-a10c-4bc8-b830-dd92cb68ec9a"/>
+            </elementRef>
+          </logicalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Denominator Exceptions 1" type="denominatorExceptions" uuid="46566EB0-A139-4A7E-8E97-DE389A44F587">
+        <logicalOp displayName="AND" type="and">
+          <logicalOp displayName="OR" type="or">
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="Starts During" type="SDU">
+                <elementRef displayName="Hospital Measures-Aspirin : Medication, Administered" id="40280381-3d61-56a7-013d-69bfec15461a" type="qdm">
+                  <attribute mode="Value Set" name="negation rationale" qdmUUID="40280381-3d27-5493-013d-4bfbd2ae5f80"/>
+                </elementRef>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="5988ee3d-0e21-498e-8147-7e440286e1b8" type="qdm"/>
+              </relationalOp>
+              <functionalOp displayName="NOT" type="NOT" uuid="75cc562b-f77a-4d00-a953-15d2a6bd5355">
+                <relationalOp displayName="&lt;= 1 hours Ends Before Start Of" operatorType="Less Than or Equal To" quantity="1" type="EBS" unit="hours">
+                  <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="9bd2955c-a744-4b07-9f7d-e258537c9f76" type="qdm"/>
+                  <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="5988ee3d-0e21-498e-8147-7e440286e1b8" type="qdm"/>
+                </relationalOp>
+              </functionalOp>
+            </logicalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="&lt;= 1 hours Ends Before Start Of" operatorType="Less Than or Equal To" quantity="1" type="EBS" unit="hours">
+                <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="9bd2955c-a744-4b07-9f7d-e258537c9f76" type="qdm"/>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="5988ee3d-0e21-498e-8147-7e440286e1b8" type="qdm"/>
+              </relationalOp>
+              <relationalOp displayName="Starts After Start Of" type="SAS">
+                <elementRef displayName="Hospital Measures-Aspirin : Medication, Administered" id="40280381-3d61-56a7-013d-69bfec15461a" type="qdm">
+                  <attribute mode="Value Set" name="negation rationale" qdmUUID="40280381-3d27-5493-013d-4bfbd2ae5f80"/>
+                </elementRef>
+                <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="9bd2955c-a744-4b07-9f7d-e258537c9f76" type="qdm"/>
+              </relationalOp>
+            </logicalOp>
+            <relationalOp displayName="Starts Before Or During" type="SBOD">
+              <logicalOp displayName="OR" type="or">
+                <elementRef displayName="Aspirin Allergen : Medication, Allergy" id="40280381-3d61-56a7-013d-65fa6ac20d85" type="qdm"/>
+                <elementRef displayName="Aspirin ingredient specific : Medication, Order" id="0bf895fd-11d0-421e-b080-40ffa368157c" type="qdm">
+                  <attribute mode="Value Set" name="negation rationale" qdmUUID="40280381-3d27-5493-013d-4bfbd2ae5f78"/>
+                </elementRef>
+                <elementRef displayName="Aspirin ingredient specific : Medication, Discharge" id="61b757f2-c798-4681-91c1-b01ceb28f47e" type="qdm">
+                  <attribute mode="Value Set" name="negation rationale" qdmUUID="40280381-3d27-5493-013d-4bfbd2ae5f78"/>
+                </elementRef>
+                <elementRef displayName="Aspirin ingredient specific : Medication, Order" id="0bf895fd-11d0-421e-b080-40ffa368157c" type="qdm">
+                  <attribute mode="Value Set" name="negation rationale" qdmUUID="7536935d-c582-4374-be62-b3a273fe7cb7"/>
+                </elementRef>
+                <elementRef displayName="Aspirin ingredient specific : Medication, Discharge" id="61b757f2-c798-4681-91c1-b01ceb28f47e" type="qdm">
+                  <attribute mode="Value Set" name="negation rationale" qdmUUID="7536935d-c582-4374-be62-b3a273fe7cb7"/>
+                </elementRef>
+              </logicalOp>
+              <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="5988ee3d-0e21-498e-8147-7e440286e1b8" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="Starts During" type="SDU">
+              <logicalOp displayName="OR" type="or">
+                <elementRef displayName="Warfarin : Medication, Discharge" id="4332e4b2-1db5-46b2-b722-ba946eea7973" type="qdm"/>
+                <elementRef displayName="Other Anticoagulants for AMI : Medication, Discharge" id="fc03dbe0-f9b8-4360-9e88-8e75911af746" type="qdm"/>
+              </logicalOp>
+              <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="5988ee3d-0e21-498e-8147-7e440286e1b8" type="qdm"/>
+            </relationalOp>
+          </logicalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Numerator 1" type="numerator" uuid="C93EDD90-AA9B-4548-8F0A-81E2EE1421E1">
+        <logicalOp displayName="AND" type="and">
+          <relationalOp displayName="Starts During" type="SDU">
+            <elementRef displayName="Hospital Measures-Aspirin : Medication, Discharge" id="40280381-3d27-5493-013d-4bfbd2ae5f8a" type="qdm"/>
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="5988ee3d-0e21-498e-8147-7e440286e1b8" type="qdm"/>
+          </relationalOp>
+        </logicalOp>
+      </clause>
+    </group>
+  </measureGrouping>
+  <elementLookUp>
+    <qdm codeSystemName="National Library of Medicine" datatype="Patient Characteristic Sex" id="40280381-3d27-5493-013d-4bfbd2ad5f67" name="ONC Administrative Sex" oid="2.16.840.1.113762.1.4.1" suppDataElement="true" taxonomy="AdministrativeSex" uuid="40280381-3d27-5493-013d-4bfbd2ad5f67" version="1"/>
+    <qdm codeSystemName="CDC NCHS" datatype="Patient Characteristic Race" id="40280381-3d27-5493-013d-4bfbd2ae5f68" name="Race" oid="2.16.840.1.114222.4.11.836" suppDataElement="true" taxonomy="CDCREC" uuid="40280381-3d27-5493-013d-4bfbd2ae5f68" version="1"/>
+    <qdm codeSystemName="CDC NCHS" datatype="Patient Characteristic Ethnicity" id="40280381-3d27-5493-013d-4bfbd2ae5f69" name="Ethnicity" oid="2.16.840.1.114222.4.11.837" suppDataElement="true" taxonomy="CDCREC" uuid="40280381-3d27-5493-013d-4bfbd2ae5f69" version="1"/>
+    <qdm codeSystemName="PHDSC" datatype="Patient Characteristic Payer" id="40280381-3d27-5493-013d-4bfbd2ae5f6a" name="Payer" oid="2.16.840.1.114222.4.11.3591" suppDataElement="true" taxonomy="SOP" uuid="40280381-3d27-5493-013d-4bfbd2ae5f6a" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Diagnosis, Active" id="40280381-3d27-5493-013d-4bfbd2ae5f6b" name="Hospital Measures - AMI" oid="2.16.840.1.113883.3.666.5.3011" suppDataElement="false" taxonomy="Grouping" uuid="40280381-3d27-5493-013d-4bfbd2ae5f6b" version="1"/>
+    <qdm codeSystemName="National Quality Forum" datatype="Patient Characteristic Birthdate" id="40280381-3d27-5493-013d-4bfbd2ae5f6d" name="birth date" oid="2.16.840.1.113883.3.560.100.4" suppDataElement="false" taxonomy="LOINC" uuid="40280381-3d27-5493-013d-4bfbd2ae5f6d" version="1"/>
+    <qdm codeSystemName="National Quality Forum" datatype="Timing Element" id="40280381-3d27-5493-013d-4bfbd2ae5f6f" name="Measurement Period" oid="2.16.840.1.113883.3.67.1.101.1.53" suppDataElement="false" taxonomy="NQF" uuid="40280381-3d27-5493-013d-4bfbd2ae5f6f" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="attribute" id="40280381-3d27-5493-013d-4bfbd2ae5f78" name="Medical Reason" oid="2.16.840.1.113883.3.117.1.7.1.473" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3d27-5493-013d-4bfbd2ae5f78" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="attribute" id="40280381-3d27-5493-013d-4bfbd2ae5f80" name="Hospital Measures - Hold" oid="2.16.840.1.113883.3.666.5.1145" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3d27-5493-013d-4bfbd2ae5f80" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="attribute" id="40280381-3d27-5493-013d-4bfbd2ae5f87" name="Discharge To Another Hospital" oid="2.16.840.1.113883.3.117.1.7.1.87" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3d27-5493-013d-4bfbd2ae5f87" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Medication, Discharge" id="40280381-3d27-5493-013d-4bfbd2ae5f8a" name="Hospital Measures-Aspirin" oid="2.16.840.1.113883.3.666.5.626" suppDataElement="false" taxonomy="RXNORM" uuid="40280381-3d27-5493-013d-4bfbd2ae5f8a" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Medication, Allergy" id="40280381-3d61-56a7-013d-65fa6ac20d85" name="Aspirin Allergen" oid="2.16.840.1.113883.3.117.1.7.1.139" suppDataElement="false" taxonomy="RXNORM" uuid="40280381-3d61-56a7-013d-65fa6ac20d85" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Medication, Administered" id="40280381-3d61-56a7-013d-69bfec15461a" name="Hospital Measures-Aspirin" oid="2.16.840.1.113883.3.666.5.626" suppDataElement="false" taxonomy="RXNORM" uuid="40280381-3d61-56a7-013d-69bfec15461a" version="1"/>
+    <qdm datatype="Encounter, Performed" id="5988ee3d-0e21-498e-8147-7e440286e1b8" instance="Occurrence A" name="Encounter Inpatient" oid="2.16.840.1.113883.3.666.5.307" suppDataElement="false" taxonomy="SNOMEDCT" uuid="5988ee3d-0e21-498e-8147-7e440286e1b8" version="1.0"/>
+    <qdm datatype="Encounter, Performed" id="9bd2955c-a744-4b07-9f7d-e258537c9f76" instance="Occurrence A" name="Emergency Department Visit" oid="2.16.840.1.113883.3.117.1.7.1.292" suppDataElement="false" taxonomy="SNOMEDCT" uuid="9bd2955c-a744-4b07-9f7d-e258537c9f76" version="1.0"/>
+    <qdm datatype="attribute" id="73e96e36-6176-4a3a-a63a-a14cd3ab698e" name="Discharged to Health Care Facility for Hospice Care" oid="2.16.840.1.113883.3.117.1.7.1.207" suppDataElement="false" taxonomy="SNOMEDCT" uuid="73e96e36-6176-4a3a-a63a-a14cd3ab698e" version="1.0"/>
+    <qdm datatype="attribute" id="3cd5330d-dfca-4c47-923b-a85d0b75e7a1" name="Discharged to Home for Hospice Care" oid="2.16.840.1.113883.3.117.1.7.1.209" suppDataElement="false" taxonomy="SNOMEDCT" uuid="3cd5330d-dfca-4c47-923b-a85d0b75e7a1" version="1.0"/>
+    <qdm datatype="attribute" id="3c046dd8-f7a3-41ec-a08a-9d67c148fcb7" name="Principal" oid="2.16.840.1.113883.3.117.1.7.1.14" suppDataElement="false" taxonomy="SNOMEDCT" uuid="3c046dd8-f7a3-41ec-a08a-9d67c148fcb7" version="1.0"/>
+    <qdm datatype="Intervention, Performed" id="ff633a67-d3fd-402d-958c-2f1ddac4ea9e" instance="Occurrence A" name="Comfort Measures " oid="1.3.6.1.4.1.33895.1.3.0.45" suppDataElement="false" taxonomy="SNOMEDCT" uuid="ff633a67-d3fd-402d-958c-2f1ddac4ea9e" version="1.0"/>
+    <qdm datatype="Medication, Discharge" id="4332e4b2-1db5-46b2-b722-ba946eea7973" name="Warfarin" oid="2.16.840.1.113883.3.117.1.7.1.232" suppDataElement="false" taxonomy="RXNORM" uuid="4332e4b2-1db5-46b2-b722-ba946eea7973" version="1.0"/>
+    <qdm datatype="Medication, Discharge" id="fc03dbe0-f9b8-4360-9e88-8e75911af746" name="Other Anticoagulants for AMI" oid="2.16.840.1.113762.1.4.1045.31" suppDataElement="false" taxonomy="RXNORM" uuid="fc03dbe0-f9b8-4360-9e88-8e75911af746" version="1.0"/>
+    <qdm datatype="Medication, Discharge" id="61b757f2-c798-4681-91c1-b01ceb28f47e" name="Aspirin ingredient specific" oid="2.16.840.1.113762.1.4.1021.3" suppDataElement="false" taxonomy="RXNORM" uuid="61b757f2-c798-4681-91c1-b01ceb28f47e" version="1.0"/>
+    <qdm datatype="Medication, Order" id="0bf895fd-11d0-421e-b080-40ffa368157c" name="Aspirin ingredient specific" oid="2.16.840.1.113762.1.4.1021.3" suppDataElement="false" taxonomy="RXNORM" uuid="0bf895fd-11d0-421e-b080-40ffa368157c" version="1.0"/>
+    <qdm datatype="attribute" id="25e25ff0-a10c-4bc8-b830-dd92cb68ec9a" name="Patient Expired" oid="2.16.840.1.113883.3.117.1.7.1.309" suppDataElement="false" taxonomy="SNOMEDCT" uuid="25e25ff0-a10c-4bc8-b830-dd92cb68ec9a" version="1.0"/>
+    <qdm datatype="attribute" id="7536935d-c582-4374-be62-b3a273fe7cb7" name="Patient Refusal" oid="2.16.840.1.113883.3.117.1.7.1.93" suppDataElement="false" taxonomy="SNOMEDCT" uuid="7536935d-c582-4374-be62-b3a273fe7cb7" version="1.0"/>
+    <qdm datatype="attribute" id="4ddc5834-5d59-4003-bac3-31cae691bcba" name="Left Against Medical Advice" oid="2.16.840.1.113883.3.117.1.7.1.308" suppDataElement="false" taxonomy="SNOMEDCT" uuid="4ddc5834-5d59-4003-bac3-31cae691bcba" version="1.0"/>
+    <qdm datatype="Patient Characteristic Clinical Trial Participant" id="67eb86ab-a0a8-4087-8af3-07cdad37df3c" instance="Occurrence A" name="Clinical Trial Participant" oid="2.16.840.1.113883.3.526.2.643" suppDataElement="false" taxonomy="SNOMEDCT" uuid="67eb86ab-a0a8-4087-8af3-07cdad37df3c" version="1.0"/>
+    <qdm datatype="Encounter, Performed" id="63227d30-af2a-492e-b3e7-5dbfea20a8cb" name="Encounter Inpatient" oid="2.16.840.1.113883.3.666.5.307" suppDataElement="false" taxonomy="SNOMEDCT" uuid="63227d30-af2a-492e-b3e7-5dbfea20a8cb" version="1.0"/>
+    <qdm datatype="Encounter, Performed" id="eb6ea216-be1a-4931-a1e1-cfcd8ff06f50" name="Emergency Department Visit" oid="2.16.840.1.113883.3.117.1.7.1.292" suppDataElement="false" taxonomy="SNOMEDCT" uuid="eb6ea216-be1a-4931-a1e1-cfcd8ff06f50" version="1.0"/>
+    <qdm datatype="Intervention, Performed" id="acb0c240-f4b4-4b34-8d3d-ae2ebef9672c" name="Comfort Measures " oid="1.3.6.1.4.1.33895.1.3.0.45" suppDataElement="false" taxonomy="SNOMEDCT" uuid="acb0c240-f4b4-4b34-8d3d-ae2ebef9672c" version="1.0"/>
+    <qdm datatype="Patient Characteristic Clinical Trial Participant" id="e4eee13f-e0d9-4998-b880-94d8260219de" name="Clinical Trial Participant" oid="2.16.840.1.113883.3.526.2.643" suppDataElement="false" taxonomy="SNOMEDCT" uuid="e4eee13f-e0d9-4998-b880-94d8260219de" version="1.0"/>
+  </elementLookUp>
+  <strata displayName="Stratification">
+    <clause displayName="Stratum 1" type="stratum" uuid="40280381-3d27-5493-013d-4bfbef245ff4">
+      <logicalOp displayName="AND" type="and"/>
+    </clause>
+  </strata>
+</measure>

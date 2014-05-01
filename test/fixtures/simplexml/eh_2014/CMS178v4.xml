@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<measure>
+  <measureDetails>
+    <uuid>40280381-446b-b8c2-0144-9f5f1ff92d7a</uuid>
+    <title>Urinary catheter removed on Postoperative Day 1 (POD 1) or Postoperative Day 2 (POD 2) with day of surgery being day zero</title>
+    <shortTitle>Urinary catheter removed postop</shortTitle>
+    <emeasureid>178</emeasureid>
+    <guid>d78ce034-8288-4012-a31e-7f485a74f2a9</guid>
+    <version>4</version>
+    <status>In Progress</status>
+    <nqfid extension="0453" root="2.16.840.1.113883.3.560.1"/>
+    <period uuid="40280381-3d27-5493-013d-4b6c7d334576">
+      <startDate uuid="d48ea4b8-e328-4910-b381-f1462383a1a9">00000101</startDate>
+      <stopDate uuid="75fe3068-108a-4fe9-a8e2-c51ccc854761">00001231</stopDate>
+    </period>
+    <steward id="2.16.840.1.113883.3.560.3.31">Centers for Medicare &amp; Medicaid Services</steward>
+    <developers>
+      <developer id="2.16.840.1.113883">Oklahoma Foundation for Medical Quality</developer>
+    </developers>
+    <endorsement id="2.16.840.1.113883.3.560">National Quality Forum</endorsement>
+    <description>Surgical patients with urinary catheter removed on Postoperative Day 1 or Postoperative Day 2 with day of surgery being day zero.</description>
+    <copyright>Measure specifications are in the Public Domain
+
+LOINC(R) is a registered trademark of the Regenstrief Institute.
+
+This material contains SNOMED Clinical Terms (R) (SNOMED CT(c)) copyright 2004-2010 International Health Terminology Standards Development Organization. All rights reserved.</copyright>
+    <disclaimer>None</disclaimer>
+    <scoring id="PROPOR">Proportion</scoring>
+    <types>
+      <type id="PROCESS">Process</type>
+    </types>
+    <stratification>None</stratification>
+    <riskAdjustment>None</riskAdjustment>
+    <aggregation>None</aggregation>
+    <rationale>It is well-established that the risk of catheter-associated urinary tract infection (UTI) increases with increasing duration of indwelling urinary catheterization. In 2000, Saint reported the results of a pooled analysis of 10 prospective trials dating from 1983 to 1995 which estimated that bacteriuria will develop in 26% of patients after 2 to 10 days of catheterization (95% CI 23-25%). Additional pooled analyses demonstrated that 24% (95% CI 16% to 32%) of those patients will develop symptomatic UTI and bacteremia will develop in 3.6%. Among surgical patients, two studies of postoperative patients discharged to subacute care with urinary catheters were more likely to be readmitted to the hospital with a UTI compared with those who had catheters removed prior to hospital discharges (Wald, 2005 and Wald, 2008). Among selected major surgical patients in the Surgical Infection Project (SIP) cohort, Wald demonstrated (in press) that 85% had perioperative indwelling catheters placed and half of those patients had catheters for greater than 2 days postoperatively. These patients were twice as likely to develop UTIs prior to hospital discharge. On multivariate analysis, those who had indwelling bladder catheters for more than 2 days postoperatively were 21% more likely to develop UTI, significantly less likely to be discharged to home, and had a significant increase in mortality at 30 days. Additional analyses suggest that there is sizeable variation in the duration of postoperative catheterization among hospitals and that hospital factors may account for this variation. In 2006, Stephan reported the results of a multifaceted intervention study in orthopedic surgery patients in which protocols limiting the use and duration of postoperative catheterization played a large role. They reported a resultant 60% reduction in UTI incidence-density.</rationale>
+    <recommendations>Minimizing the duration of indwelling urinary catheterization can reduce the risk of catheter-associated urinary tract infection.</recommendations>
+    <improvementNotations>Higher score indicates better quality.</improvementNotations>
+    <references>
+      <reference>Saint S. Clinical and economic consequences of nosocomial catheter-related bacteremia. Am J Infect Control 2000; 28: 68-75.</reference>
+      <reference>Stephan F, Sax H, Wachsmuth M, et al. Reduction of urinary tract infection and antibiotic use after surgery: a controlled, prospective before-after study. Clin Infect Dis. 2006; 42; 1544.</reference>
+      <reference>Wald HL, Ma A, Bratzler DW, Kramer AM. Indwelling Urinary Catheter Use in the Postoperative Period: Analysis of The National Surgical Infection Prevention Project Data. Arch Surg. In press.</reference>
+      <reference>Wald H, Epstein A, Kramer A. Extended Urinary Catheterization Among Hip Fracture Patients Discharged to Skilled Nursing Facilities. Med Care 2005; 43:1009-1017.</reference>
+      <reference>Wald HL, Epstein AM, Radcliff TA, Kramer AM. Extended Use of Urinary Catheters in Older Surgical Patients: A Patient Safety Problem? Infect Cont Hosp Epidemiol 2008; 29:116-124.</reference>
+    </references>
+    <definitions>Initial Patient Population(s): All hospital discharges for selective surgery with hospital stays &lt;= 120 days during the measurement year for patients age 18 and older at the time of hospital admission with a catheter in place postoperatively.</definitions>
+    <guidance>The measurement period is one calendar year but the reporting period is 3 months as a calendar quarter; Q1 = Jan – Mar, Q2 = Apr – Jun, Q3 = Jul – Sep, Q4 is Oct – Dec.
+
+General guidance:
+
+In this measure the code lists that describe types of surgical procedures remain only in ICD-9 or ICD-10 because the concepts that apply are limited to a very specific subset of all surgical procedures.
+
+Denominator element guidance:
+
+The denominator in this measure specifically excludes surgical procedures that may be associated with post-operative indwelling urinary catheter usage and that occur in close time proximity to the index major surgical procedure.
+
+Exclusion element guidance:
+
+The exclusion for patients who are clinical trial participants is limited to patients participating in a clinical trial for the same conditions as covered by the measure. Other clinical trials are not valid reasons for exclusions. 
+
+By convention, discharge date post "Encounter inpatient" is used to describe the hospital discharge date.  Where logic needs to indicate discharge (or transfer) from one inpatient location to another, the logic uses "Transfer From" or "Transfer To" as the QDS data type.</guidance>
+    <transmissionFormat>None</transmissionFormat>
+    <initialPatientPopDescription>All hospital discharges for selective surgery with hospital stays &lt;= 120 days during the measurement year for patients age 18 and older at the time of hospital admission with a catheter in place postoperatively.</initialPatientPopDescription>
+    <denominatorDescription>All selected surgical patients 18 years of age and older with a catheter in place postoperatively with An ICD-9-CM Principal Procedure Code of selected surgeries.</denominatorDescription>
+    <denominatorExclusionsDescription>Patients enrolled in clinical trials. 
+Patients who had a urological, gynecological or perineal procedure performed. 
+Patients who expired perioperatively. 
+Patients whose length of stay was less than two days postoperatively. 
+Patients who had a urinary diversion or a urethral catheter or were being intermittently catheterized prior to hospital arrival.
+Patients who did not have a catheter in place postoperatively. 
+Patients who had physician/APN/PA documentation of a reason for not removing the urinary catheter postoperatively.</denominatorExclusionsDescription>
+    <numeratorDescription>Number of surgical patients whose urinary catheter is removed on postoperative day (POD) 1 or postoperative day (POD) 2 with day of surgery being day zero.</numeratorDescription>
+    <numeratorExclusionsDescription>Not applicable</numeratorExclusionsDescription>
+    <denominatorExceptionsDescription>None</denominatorExceptionsDescription>
+    <measurePopulationDescription>Not applicable</measurePopulationDescription>
+    <measureObservationsDescription>Not applicable</measureObservationsDescription>
+    <supplementalData>Report "Patient Characteristic: Gender" using "Gender HL7 Value Set (2.16.840.1.113883.1.11.1)"; Report "Patient Characteristic: Race" using "Race CDC Value Set (2.16.840.1.114222.4.11.836)"; Report "Patient Characteristic: Ethnicity" using "Ethnicity CDC Value Set (2.16.840.1.114222.4.11.837)"; Report "Patient Characteristic: Payer" using "Payer Source of Payment Typology Value Set (2.16.840.1.113883.3.221.5)".</supplementalData>
+    <qualityMeasureSet uuid="dc8a5ad8-5be1-4827-97d3-2a7bb48ceb9d">Surgical Care Improvement Project (SCIP)</qualityMeasureSet>
+  </measureDetails>
+  <supplementalDataElements>
+    <elementRef id="40280381-3d27-5493-013d-4b6c7d324562" name="Ethnicity"/>
+    <elementRef id="40280381-3d27-5493-013d-4b6c7d324560" name="ONC Administrative Sex"/>
+    <elementRef id="40280381-3d27-5493-013d-4b6c7d324563" name="Payer"/>
+    <elementRef id="40280381-3d27-5493-013d-4b6c7d324561" name="Race"/>
+  </supplementalDataElements>
+  <measureGrouping>
+    <group sequence="1">
+      <clause displayName="Initial Patient Population 1" type="initialPatientPopulation" uuid="4765C8D5-A6C1-4D16-A323-DC0D118C3692">
+        <logicalOp displayName="AND" type="and">
+          <relationalOp displayName="    Ends During" quantity="" type="EDU">
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b6c7d334586" type="qdm"/>
+            <elementRef displayName="Measurement Period : Timing Element" id="40280381-3d27-5493-013d-4b6c7d334576" type="qdm"/>
+          </relationalOp>
+          <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b6c7d334586" type="qdm">
+            <attribute comparisonValue="120" mode="Less Than or Equal To" name="length of stay" unit="days"/>
+          </elementRef>
+          <relationalOp displayName="&gt;= 18 years Starts Before Start Of" operatorType="Greater Than or Equal To" quantity="18" type="SBS" unit="years">
+            <elementRef displayName="birth date : Patient Characteristic Birthdate" id="40280381-3d27-5493-013d-4b6c7d334577" type="qdm"/>
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b6c7d334586" type="qdm"/>
+          </relationalOp>
+          <relationalOp displayName="    During" quantity="" type="DURING">
+            <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d27-5493-013d-4b6c7d34458b" type="qdm"/>
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b6c7d334586" type="qdm"/>
+          </relationalOp>
+          <relationalOp displayName="During" type="DURING">
+            <elementRef displayName="Occurrence A of SCIP Major Surgical Procedure : Procedure, Performed" id="40280381-3d27-5493-013d-4b6c7d334584" type="qdm">
+              <attribute mode="Value Set" name="ordinality" qdmUUID="5ac12212-cee3-4d8b-b4b8-30cc6f6b65cb"/>
+            </elementRef>
+            <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d27-5493-013d-4b6c7d34458b" type="qdm"/>
+          </relationalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Denominator 1" type="denominator" uuid="418DC596-B35D-49BC-ABB3-CF9845BBEC2A">
+        <logicalOp displayName="AND" type="and">
+          <relationalOp displayName="During" type="DURING">
+            <elementRef displayName="Occurrence A of Indwelling urinary catheter : Procedure, Performed" id="cfb95541-18e5-455b-8bb1-b84521bc6cea" type="qdm"/>
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b6c7d334586" type="qdm"/>
+          </relationalOp>
+          <logicalOp displayName="OR" type="or">
+            <relationalOp displayName="Ends After Start Of" type="EAS">
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d27-5493-013d-4b6c7d34458b" type="qdm">
+                <attribute mode="Check if Present" name="stop datetime"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of Indwelling urinary catheter : Procedure, Performed" id="cfb95541-18e5-455b-8bb1-b84521bc6cea" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 6 hours Ends Before Start Of" operatorType="Less Than or Equal To" quantity="6" type="EBS" unit="hours">
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d27-5493-013d-4b6c7d34458b" type="qdm">
+                <attribute mode="Check if Present" name="stop datetime"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of Indwelling urinary catheter : Procedure, Performed" id="cfb95541-18e5-455b-8bb1-b84521bc6cea" type="qdm"/>
+            </relationalOp>
+          </logicalOp>
+          <logicalOp displayName="OR" type="or">
+            <relationalOp displayName="Ends After End Of" type="EAE">
+              <elementRef displayName="Occurrence A of Indwelling urinary catheter : Procedure, Performed" id="cfb95541-18e5-455b-8bb1-b84521bc6cea" type="qdm"/>
+              <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b6c7d334586" type="qdm">
+                <attribute mode="Value Set" name="facility location" qdmUUID="3b7d36b2-315d-4fdf-8785-9c47b7329e4e"/>
+              </elementRef>
+            </relationalOp>
+            <relationalOp displayName="Ends After End Of" type="EAE">
+              <elementRef displayName="Occurrence A of Indwelling urinary catheter : Procedure, Performed" id="cfb95541-18e5-455b-8bb1-b84521bc6cea" type="qdm"/>
+              <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b6c7d334586" type="qdm">
+                <attribute mode="Value Set" name="facility location" qdmUUID="ee4dff10-af99-4c36-aeae-e35c19b7abca"/>
+              </elementRef>
+            </relationalOp>
+          </logicalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Denominator Exclusions 1" type="denominatorExclusions" uuid="5C404AEA-32EA-481A-B626-795BD22275BF">
+        <logicalOp displayName="AND" type="and">
+          <logicalOp displayName="OR" type="or">
+            <relationalOp displayName="Starts During" type="SDU">
+              <elementRef displayName="Hospital Measures-SCIP urinary diversion : Physical Exam, Finding" id="40280381-3d27-5493-013d-4b6c7d324567" type="qdm"/>
+              <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b6c7d334586" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="Starts During" type="SDU">
+              <elementRef displayName="Hospital Measures-SCIP Urological/Perineal procedures with potential need of indwelling catheters : Procedure, Performed" id="40280381-3d27-5493-013d-4b6c7d34458a" type="qdm">
+                <attribute mode="Value Set" name="ordinality" qdmUUID="5ac12212-cee3-4d8b-b4b8-30cc6f6b65cb"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b6c7d334586" type="qdm"/>
+            </relationalOp>
+            <logicalOp displayName="AND" type="and">
+              <functionalOp displayName="NOT" type="NOT" uuid="a716e2e7-7f16-4146-b9a9-4db0f1d8a35c">
+                <relationalOp displayName="Ends Before Start Of" type="EBS">
+                  <elementRef displayName="Occurrence A of Indwelling urinary catheter : Procedure, Performed" id="cfb95541-18e5-455b-8bb1-b84521bc6cea" type="qdm"/>
+                  <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b6c7d334586" type="qdm"/>
+                </relationalOp>
+              </functionalOp>
+              <relationalOp displayName="Starts Before Start Of" type="SBS">
+                <elementRef displayName="Occurrence A of Indwelling urinary catheter : Procedure, Performed" id="cfb95541-18e5-455b-8bb1-b84521bc6cea" type="qdm"/>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b6c7d334586" type="qdm"/>
+              </relationalOp>
+            </logicalOp>
+            <relationalOp displayName="&gt;= 1 minutes Starts Before Start Of" operatorType="Greater Than or Equal To" quantity="1" type="SBS" unit="minutes">
+              <logicalOp displayName="OR" type="or">
+                <elementRef displayName="Hospital Measures-SCIP urinary diversion procedures : Procedure, Performed" id="40280381-3d27-5493-013d-4b6c7d34458c" type="qdm"/>
+                <elementRef displayName="Hospital Measures-Intermittent Catheterization : Intervention, Performed" id="40280381-3d27-5493-013d-4b6c7d324566" type="qdm"/>
+                <elementRef displayName="Hospital Measures-Suprapubic catheter : Device, Applied" id="40280381-3d27-5493-013d-4b6c7d32456a" type="qdm"/>
+              </logicalOp>
+              <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b6c7d334586" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="&lt; 2 days Ends After End Of" operatorType="Less Than" quantity="2" type="EAE" unit="days">
+              <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b6c7d334586" type="qdm"/>
+              <elementRef displayName="Occurrence A of SCIP Major Surgical Procedure : Procedure, Performed" id="40280381-3d27-5493-013d-4b6c7d334584" type="qdm"/>
+            </relationalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="Starts After Start Of" type="SAS">
+                <elementRef displayName="Expired : Patient Characteristic Expired" id="40280381-3d61-56a7-013d-8e5ca74a03ec" type="qdm"/>
+                <elementRef displayName="Occurrence A of SCIP Major Surgical Procedure : Procedure, Performed" id="40280381-3d27-5493-013d-4b6c7d334584" type="qdm">
+                  <attribute mode="Check if Present" name="incision datetime"/>
+                </elementRef>
+              </relationalOp>
+              <functionalOp displayName="NOT" type="NOT" uuid="932a2d62-7b07-4ab4-8b5f-811725946f6d">
+                <relationalOp displayName="&gt;= 6 hours Starts After End Of" operatorType="Greater Than or Equal To" quantity="6" type="SAE" unit="hours">
+                  <elementRef displayName="Expired : Patient Characteristic Expired" id="40280381-3d61-56a7-013d-8e5ca74a03ec" type="qdm"/>
+                  <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d27-5493-013d-4b6c7d34458b" type="qdm"/>
+                </relationalOp>
+              </functionalOp>
+            </logicalOp>
+            <logicalOp displayName="AND" type="and">
+              <functionalOp displayName="NOT" type="NOT" uuid="23bb55ba-cfa0-449d-a82e-9fb2bef9815c">
+                <relationalOp displayName="&lt;= 2 days Ends After End Of" operatorType="Less Than or Equal To" quantity="2" type="EAE" unit="days">
+                  <elementRef displayName="Occurrence A of Indwelling urinary catheter : Procedure, Performed" id="cfb95541-18e5-455b-8bb1-b84521bc6cea" type="qdm"/>
+                  <elementRef displayName="Occurrence A of SCIP Major Surgical Procedure : Procedure, Performed" id="40280381-3d27-5493-013d-4b6c7d334584" type="qdm"/>
+                </relationalOp>
+              </functionalOp>
+              <relationalOp displayName="&lt;= 2 days Starts After End Of" operatorType="Less Than or Equal To" quantity="2" type="SAE" unit="days">
+                <elementRef displayName="Indwelling urinary catheter : Procedure, Performed" id="9d2f7b55-5499-44de-b6b4-9e0f5f5c22dd" type="qdm">
+                  <attribute mode="Value Set" name="negation rationale" qdmUUID="2efad75b-0396-40e8-9d15-4adcc89a1c2f"/>
+                </elementRef>
+                <elementRef displayName="Occurrence A of SCIP Major Surgical Procedure : Procedure, Performed" id="40280381-3d27-5493-013d-4b6c7d334584" type="qdm"/>
+              </relationalOp>
+            </logicalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="&lt;= 2 days Starts After End Of" operatorType="Less Than or Equal To" quantity="2" type="SAE" unit="days">
+                <elementRef displayName="Hospital Measures-Diuretics RxNorm : Medication, Administered" id="40280381-3d27-5493-013d-4b6c7d324564" type="qdm"/>
+                <elementRef displayName="Occurrence A of SCIP Major Surgical Procedure : Procedure, Performed" id="40280381-3d27-5493-013d-4b6c7d334584" type="qdm"/>
+              </relationalOp>
+              <relationalOp displayName="&lt;= 2 days Starts After End Of" operatorType="Less Than or Equal To" quantity="2" type="SAE" unit="days">
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b6c7d334586" type="qdm">
+                  <attribute mode="Value Set" name="facility location" qdmUUID="3b7d36b2-315d-4fdf-8785-9c47b7329e4e"/>
+                </elementRef>
+                <elementRef displayName="Occurrence A of SCIP Major Surgical Procedure : Procedure, Performed" id="40280381-3d27-5493-013d-4b6c7d334584" type="qdm"/>
+              </relationalOp>
+            </logicalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="&lt;= 2 days Starts After End Of" operatorType="Less Than or Equal To" quantity="2" type="SAE" unit="days">
+                <elementRef displayName="IV Positive Inotropic and Vasopressor Agents : Medication, Administered" id="40280381-3d27-5493-013d-4b6c7d32455e" type="qdm"/>
+                <elementRef displayName="Occurrence A of SCIP Major Surgical Procedure : Procedure, Performed" id="40280381-3d27-5493-013d-4b6c7d334584" type="qdm"/>
+              </relationalOp>
+              <relationalOp displayName="&lt;= 2 days Starts After End Of" operatorType="Less Than or Equal To" quantity="2" type="SAE" unit="days">
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b6c7d334586" type="qdm">
+                  <attribute mode="Value Set" name="facility location" qdmUUID="3b7d36b2-315d-4fdf-8785-9c47b7329e4e"/>
+                </elementRef>
+                <elementRef displayName="Occurrence A of SCIP Major Surgical Procedure : Procedure, Performed" id="40280381-3d27-5493-013d-4b6c7d334584" type="qdm"/>
+              </relationalOp>
+            </logicalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="&lt;= 2 days Starts After End Of" operatorType="Less Than or Equal To" quantity="2" type="SAE" unit="days">
+                <elementRef displayName="Paralytic Agents : Medication, Administered" id="40280381-3d27-5493-013d-4b6c7d32455f" type="qdm"/>
+                <elementRef displayName="Occurrence A of SCIP Major Surgical Procedure : Procedure, Performed" id="40280381-3d27-5493-013d-4b6c7d334584" type="qdm"/>
+              </relationalOp>
+              <relationalOp displayName="&lt;= 2 days Starts After End Of" operatorType="Less Than or Equal To" quantity="2" type="SAE" unit="days">
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b6c7d334586" type="qdm">
+                  <attribute mode="Value Set" name="facility location" qdmUUID="3b7d36b2-315d-4fdf-8785-9c47b7329e4e"/>
+                </elementRef>
+                <elementRef displayName="Occurrence A of SCIP Major Surgical Procedure : Procedure, Performed" id="40280381-3d27-5493-013d-4b6c7d334584" type="qdm"/>
+              </relationalOp>
+            </logicalOp>
+            <logicalOp displayName="AND" type="and">
+              <functionalOp displayName="NOT" type="NOT" uuid="b3947c64-e3a8-4451-89f9-faefa0cbdb30">
+                <relationalOp displayName="Ends Before Start Of" type="EBS">
+                  <elementRef displayName="Occurrence A of Clinical Trial Participant : Patient Characteristic Clinical Trial Participant" id="0b702fea-39b2-4c07-910c-17b586cbe47a" type="qdm"/>
+                  <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b6c7d334586" type="qdm"/>
+                </relationalOp>
+              </functionalOp>
+              <relationalOp displayName="Starts Before Or During" type="SBOD">
+                <elementRef displayName="Occurrence A of Clinical Trial Participant : Patient Characteristic Clinical Trial Participant" id="0b702fea-39b2-4c07-910c-17b586cbe47a" type="qdm"/>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b6c7d334586" type="qdm"/>
+              </relationalOp>
+            </logicalOp>
+          </logicalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Numerator 1" type="numerator" uuid="2206A249-0355-41C4-9D47-F8434A83FB79">
+        <logicalOp displayName="AND" type="and">
+          <relationalOp displayName="&lt;= 2 days Ends After End Of" operatorType="Less Than or Equal To" quantity="2" type="EAE" unit="days">
+            <elementRef displayName="Occurrence A of Indwelling urinary catheter : Procedure, Performed" id="cfb95541-18e5-455b-8bb1-b84521bc6cea" type="qdm"/>
+            <elementRef displayName="Occurrence A of SCIP Major Surgical Procedure : Procedure, Performed" id="40280381-3d27-5493-013d-4b6c7d334584" type="qdm"/>
+          </relationalOp>
+        </logicalOp>
+      </clause>
+    </group>
+  </measureGrouping>
+  <elementLookUp>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Medication, Administered" id="40280381-3d27-5493-013d-4b6c7d32455e" name="IV Positive Inotropic and Vasopressor Agents" oid="2.16.840.1.113883.3.666.5.2128" suppDataElement="false" taxonomy="RXNORM" uuid="40280381-3d27-5493-013d-4b6c7d32455e" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Medication, Administered" id="40280381-3d27-5493-013d-4b6c7d32455f" name="Paralytic Agents" oid="2.16.840.1.113883.3.666.5.2129" suppDataElement="false" taxonomy="RXNORM" uuid="40280381-3d27-5493-013d-4b6c7d32455f" version="1"/>
+    <qdm codeSystemName="National Library of Medicine" datatype="Patient Characteristic Sex" id="40280381-3d27-5493-013d-4b6c7d324560" name="ONC Administrative Sex" oid="2.16.840.1.113762.1.4.1" suppDataElement="true" taxonomy="AdministrativeSex" uuid="40280381-3d27-5493-013d-4b6c7d324560" version="1"/>
+    <qdm codeSystemName="CDC NCHS" datatype="Patient Characteristic Race" id="40280381-3d27-5493-013d-4b6c7d324561" name="Race" oid="2.16.840.1.114222.4.11.836" suppDataElement="true" taxonomy="CDCREC" uuid="40280381-3d27-5493-013d-4b6c7d324561" version="1"/>
+    <qdm codeSystemName="CDC NCHS" datatype="Patient Characteristic Ethnicity" id="40280381-3d27-5493-013d-4b6c7d324562" name="Ethnicity" oid="2.16.840.1.114222.4.11.837" suppDataElement="true" taxonomy="CDCREC" uuid="40280381-3d27-5493-013d-4b6c7d324562" version="1"/>
+    <qdm codeSystemName="PHDSC" datatype="Patient Characteristic Payer" id="40280381-3d27-5493-013d-4b6c7d324563" name="Payer" oid="2.16.840.1.114222.4.11.3591" suppDataElement="true" taxonomy="SOP" uuid="40280381-3d27-5493-013d-4b6c7d324563" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Medication, Administered" id="40280381-3d27-5493-013d-4b6c7d324564" name="Hospital Measures-Diuretics RxNorm" oid="2.16.840.1.113883.3.666.5.829" suppDataElement="false" taxonomy="RXNORM" uuid="40280381-3d27-5493-013d-4b6c7d324564" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Intervention, Performed" id="40280381-3d27-5493-013d-4b6c7d324566" name="Hospital Measures-Intermittent Catheterization" oid="2.16.840.1.113883.3.666.5.825" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3d27-5493-013d-4b6c7d324566" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Physical Exam, Finding" id="40280381-3d27-5493-013d-4b6c7d324567" name="Hospital Measures-SCIP urinary diversion" oid="2.16.840.1.113883.3.666.5.822" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3d27-5493-013d-4b6c7d324567" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Device, Applied" id="40280381-3d27-5493-013d-4b6c7d32456a" name="Hospital Measures-Suprapubic catheter" oid="2.16.840.1.113883.3.666.5.827" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3d27-5493-013d-4b6c7d32456a" version="1"/>
+    <qdm codeSystemName="National Quality Forum" datatype="Timing Element" id="40280381-3d27-5493-013d-4b6c7d334576" name="Measurement Period" oid="2.16.840.1.113883.3.67.1.101.1.53" suppDataElement="false" taxonomy="NQF" uuid="40280381-3d27-5493-013d-4b6c7d334576" version="1"/>
+    <qdm codeSystemName="National Quality Forum" datatype="Patient Characteristic Birthdate" id="40280381-3d27-5493-013d-4b6c7d334577" name="birth date" oid="2.16.840.1.113883.3.560.100.4" suppDataElement="false" taxonomy="LOINC" uuid="40280381-3d27-5493-013d-4b6c7d334577" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Procedure, Performed" id="40280381-3d27-5493-013d-4b6c7d334584" instance="Occurrence A" name="SCIP Major Surgical Procedure" oid="2.16.840.1.113883.3.117.1.7.1.2" suppDataElement="false" taxonomy="Grouping" uuid="40280381-3d27-5493-013d-4b6c7d334584" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Encounter, Performed" id="40280381-3d27-5493-013d-4b6c7d334586" instance="Occurrence A" name="Encounter Inpatient" oid="2.16.840.1.113883.3.666.5.307" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3d27-5493-013d-4b6c7d334586" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Procedure, Performed" id="40280381-3d27-5493-013d-4b6c7d34458a" name="Hospital Measures-SCIP Urological/Perineal procedures with potential need of indwelling catheters" oid="2.16.840.1.113883.3.666.5.2310" suppDataElement="false" taxonomy="Grouping" uuid="40280381-3d27-5493-013d-4b6c7d34458a" version="1"/>
+    <qdm codeSystemName="Centers for Medicare &amp; Medicaid Services" datatype="Procedure, Performed" id="40280381-3d27-5493-013d-4b6c7d34458b" instance="Occurrence A" name="General or Neuraxial Anesthesia" oid="2.16.840.1.113883.3.666.5.1743" suppDataElement="false" taxonomy="Grouping" uuid="40280381-3d27-5493-013d-4b6c7d34458b" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Procedure, Performed" id="40280381-3d27-5493-013d-4b6c7d34458c" name="Hospital Measures-SCIP urinary diversion procedures" oid="2.16.840.1.113883.3.666.5.2313" suppDataElement="false" taxonomy="Grouping" uuid="40280381-3d27-5493-013d-4b6c7d34458c" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Patient Characteristic Expired" id="40280381-3d61-56a7-013d-8e5ca74a03ec" name="Expired" oid="2.16.840.1.113883.3.666.5.730" suppDataElement="false" taxonomy="Grouping" uuid="40280381-3d61-56a7-013d-8e5ca74a03ec" version="1"/>
+    <qdm datatype="attribute" id="5ac12212-cee3-4d8b-b4b8-30cc6f6b65cb" name="Principal" oid="2.16.840.1.113883.3.117.1.7.1.14" suppDataElement="false" taxonomy="SNOMEDCT" uuid="5ac12212-cee3-4d8b-b4b8-30cc6f6b65cb" version="1.0"/>
+    <qdm datatype="Patient Characteristic Clinical Trial Participant" id="0b702fea-39b2-4c07-910c-17b586cbe47a" instance="Occurrence A" name="Clinical Trial Participant" oid="2.16.840.1.113883.3.526.2.643" suppDataElement="false" taxonomy="SNOMEDCT" uuid="0b702fea-39b2-4c07-910c-17b586cbe47a" version="1.0"/>
+    <qdm datatype="attribute" id="ee4dff10-af99-4c36-aeae-e35c19b7abca" name="Hospital Measures-PACU" oid="2.16.840.1.113762.1.4.1045.32" suppDataElement="false" taxonomy="SNOMEDCT" uuid="ee4dff10-af99-4c36-aeae-e35c19b7abca" version="1.0"/>
+    <qdm datatype="attribute" id="3b7d36b2-315d-4fdf-8785-9c47b7329e4e" name="ICU Locations" oid="2.16.840.1.113883.3.666.5.2486" suppDataElement="false" taxonomy="SNOMEDCT" uuid="3b7d36b2-315d-4fdf-8785-9c47b7329e4e" version="1.0"/>
+    <qdm datatype="attribute" id="2efad75b-0396-40e8-9d15-4adcc89a1c2f" name="Medical Reason" oid="2.16.840.1.113883.3.117.1.7.1.473" suppDataElement="false" taxonomy="SNOMEDCT" uuid="2efad75b-0396-40e8-9d15-4adcc89a1c2f" version="1.0"/>
+    <qdm datatype="Procedure, Performed" id="cfb95541-18e5-455b-8bb1-b84521bc6cea" instance="Occurrence A" name="Indwelling urinary catheter" oid="2.16.840.1.113762.1.4.1045.74" suppDataElement="false" taxonomy="Grouping" uuid="cfb95541-18e5-455b-8bb1-b84521bc6cea" version="1.0"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Procedure, Performed" id="a2014358-dac6-42cb-855f-5e9c30ce6fa0" name="SCIP Major Surgical Procedure" oid="2.16.840.1.113883.3.117.1.7.1.2" suppDataElement="false" taxonomy="Grouping" uuid="a2014358-dac6-42cb-855f-5e9c30ce6fa0" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Encounter, Performed" id="44fd5585-0bfb-43e5-a654-4b5238c32531" name="Encounter Inpatient" oid="2.16.840.1.113883.3.666.5.307" suppDataElement="false" taxonomy="SNOMEDCT" uuid="44fd5585-0bfb-43e5-a654-4b5238c32531" version="1"/>
+    <qdm codeSystemName="Centers for Medicare &amp; Medicaid Services" datatype="Procedure, Performed" id="0eb07053-bb2b-4e05-b46e-bc4cda21d8c3" name="General or Neuraxial Anesthesia" oid="2.16.840.1.113883.3.666.5.1743" suppDataElement="false" taxonomy="Grouping" uuid="0eb07053-bb2b-4e05-b46e-bc4cda21d8c3" version="1"/>
+    <qdm datatype="Patient Characteristic Clinical Trial Participant" id="8bf7a0a9-63b4-41d8-aa37-d0be3ec6f83c" name="Clinical Trial Participant" oid="2.16.840.1.113883.3.526.2.643" suppDataElement="false" taxonomy="SNOMEDCT" uuid="8bf7a0a9-63b4-41d8-aa37-d0be3ec6f83c" version="1.0"/>
+    <qdm datatype="Procedure, Performed" id="9d2f7b55-5499-44de-b6b4-9e0f5f5c22dd" name="Indwelling urinary catheter" oid="2.16.840.1.113762.1.4.1045.74" suppDataElement="false" taxonomy="Grouping" uuid="9d2f7b55-5499-44de-b6b4-9e0f5f5c22dd" version="1.0"/>
+  </elementLookUp>
+  <strata displayName="Stratification">
+    <clause displayName="Stratum 1" type="stratum" uuid="40280381-3d27-5493-013d-4b6ca96d466b">
+      <logicalOp displayName="AND" type="and"/>
+    </clause>
+  </strata>
+</measure>

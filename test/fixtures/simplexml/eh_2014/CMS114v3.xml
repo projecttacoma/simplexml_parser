@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<measure>
+  <measureDetails>
+    <uuid>40280381-43db-d64c-0144-6678b7972f10</uuid>
+    <title>Incidence of Potentially-Preventable Venous Thromboembolism</title>
+    <shortTitle>VTE-6</shortTitle>
+    <emeasureid>114</emeasureid>
+    <guid>32cfc834-843a-4f45-b359-8e158eac4396</guid>
+    <version>3</version>
+    <status>In Progress</status>
+    <nqfid extension="0376" root="2.16.840.1.113883.3.560.1"/>
+    <period uuid="40280381-3d27-5493-013d-477b9d1113b6">
+      <startDate uuid="d31ce842-6153-4e0d-b080-0f2570c2fe56">00000101</startDate>
+      <stopDate uuid="1425e386-63f3-4bc5-a907-f3e3508bcac5">00001231</stopDate>
+    </period>
+    <steward id="1.3.6.1.4.1.33895">Joint Commission</steward>
+    <developers>
+      <developer id="1.3.6.1.4.1.33895">Joint Commission</developer>
+    </developers>
+    <endorsement id="2.16.840.1.113883.3.560">National Quality Forum</endorsement>
+    <description>This measure assesses the number of patients diagnosed with confirmed VTE during hospitalization (not present at admission) who did not receive VTE prophylaxis between hospital admission and the day before the VTE diagnostic testing order date.</description>
+    <copyright>Measure specifications are in the Public Domain.
+
+LOINC(R) is a registered trademark of the Regenstrief Institute.
+
+This material contains SNOMED Clinical Terms (R) (SNOMED CT(C)) copyright 2004-–2010 International Health Terminology Standards Development Organization. All rights reserved.</copyright>
+    <disclaimer>These performance measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications. The measures and specifications are provided without warranty.</disclaimer>
+    <scoring id="PROPOR">Proportion</scoring>
+    <types>
+      <type id="OUTCOME">Outcome</type>
+    </types>
+    <stratification>None</stratification>
+    <riskAdjustment>None</riskAdjustment>
+    <aggregation>None</aggregation>
+    <rationale>The concept of “failure to prevent” has generated interest in national health policy organizations to identify evidence-based practice that will improve patient safety in the hospital setting (Wachter et al 2008). The incidence of preventable venous thromboembolism (VTE) among hospitalized patients is overwhelming, and contributes to extended hospital stays, and the rising cost of health care. Zhan 2003, states that “VTE was the second most common medical complication of postoperative patients, the second most common cause of excess length of stay, and the third most common cause of excess mortality and excess charges”. According to Arnold, D.M. (2001), preventable VTE is defined as “objectively diagnosed Deep Vein Thrombosis (DVT) or Pulmonary Emboli (PE) that occurred in a setting in which thromboprophylaxis was indicated but was either administered inadequately or not administered at all.” In spite of formal guidelines, and recommendations for preventative care, pulmonary embolism is still the most common preventable cause of death among hospitalized patients (Wachter et al, 2008).</rationale>
+    <recommendations>Failure to prevent VTE can result in delayed hospital discharge or readmission, increased risk for long-term mobidity from post-thrombotic syndrome, and recurrent thrombosis in the future.</recommendations>
+    <improvementNotations>A decrease in the rate</improvementNotations>
+    <references>
+      <reference>Arnold DM, Kahn SR, Shrier I. Missed opportunities for prevention of venous thromboembolism: an evaluation of the use of thromboprophylaxis guidelines. Chest. 2001 Dec;120(6):1964-71.</reference>
+      <reference>Guyatt, G.H., Akl, E.A., Crowther, M., Gutterman, D., Schunemann, H. Antithromboitic Therapy and Prevention of Thrombosis, 9th edition: American College of Chest Physicians Evidence-Based Clinical Practice Guidelines. CHEST 2012; 141(2)(Supp):7S-47S.</reference>
+      <reference>Wachter, R., Shojania KG, Duncan, B.W., McDonald, K.W., et al. Making health care safer: a critical analysis of patient safety practices; evidence report/ technology assessment No 43. Agency for Healthcare Research and Quality. Publication 01-E0582001.2001. Retrieved October 11, 2011 from http://archive.ahrq.gov/clinic/tp/ptsaftp.htm.</reference>
+      <reference>Zhan, C., Miller M.R. Excessive length of stay, charges and mortality attributable to medical injures during hospitalization. JAMA 2003; 290:1868-1874.
+</reference>
+    </references>
+    <definitions>None</definitions>
+    <guidance>The unit of measurement for this measure is an inpatient episode of care. Each distinct hospitalization should be reported, regardless of whether the same patient is admitted for inpatient care more than once during the measurement period. In addition, the eMeasure logic intends to represent events within or surrounding a single occurrence of an inpatient hospitalization.
+
+When low dose unfractionated heparin is not administered due to medical reasons, the intended administration route is subcutaneous.
+
+The construct of Unfractionated Heparin (route: 'Intravenous route') intends to capture continually infused heparin rather than heparin flushes or pushes.</guidance>
+    <transmissionFormat>None</transmissionFormat>
+    <initialPatientPopDescription>Patients age 18 and older discharged from hospital inpatient acute care with a diagnosis of venous thromboembolism (VTE)and a length of stay less than or equal to 120 days.</initialPatientPopDescription>
+    <denominatorDescription>Patients who developed VTE confirmed by a diagnostic test during hospitalization.</denominatorDescription>
+    <denominatorExclusionsDescription>Patients with comfort measures documented
+Patients with a principal diagnosis of VTE
+Patients with VTE present at admission
+Patients with reasons for not administering mechanical and pharmacologic prophylaxis</denominatorExclusionsDescription>
+    <numeratorDescription>Patients who received no VTE prophylaxis prior to the VTE diagnostic test order date.</numeratorDescription>
+    <numeratorExclusionsDescription>Not Applicable</numeratorExclusionsDescription>
+    <denominatorExceptionsDescription>None</denominatorExceptionsDescription>
+    <measurePopulationDescription>Not Applicable</measurePopulationDescription>
+    <measureObservationsDescription>Not Applicable</measureObservationsDescription>
+    <supplementalData>For every patient evaluated by this measure also identify payer, race, ethnicity and sex.</supplementalData>
+    <qualityMeasureSet uuid="049ef448-e7d2-4d9c-a64a-204d3fa5ded1">eMeasure Venous Thromboembolism (eVTE)</qualityMeasureSet>
+  </measureDetails>
+  <supplementalDataElements>
+    <elementRef id="40280381-3d27-5493-013d-477b9d1013b0" name="ONC Administrative Sex"/>
+    <elementRef id="40280381-3d27-5493-013d-477b9d1013b1" name="Race"/>
+    <elementRef id="40280381-3d27-5493-013d-477b9d1113b2" name="Ethnicity"/>
+    <elementRef id="40280381-3d27-5493-013d-477b9d1113b3" name="Payer"/>
+  </supplementalDataElements>
+  <measureGrouping>
+    <group sequence="1">
+      <clause displayName="Initial Patient Population 2" type="initialPatientPopulation" uuid="D79096F3-D90E-4F14-90D9-CB419CD83715">
+        <logicalOp displayName="AND" type="and">
+          <relationalOp displayName="&gt;= 18 years Starts Before Start Of" operatorType="Greater Than or Equal To" quantity="18" type="SBS" unit="years">
+            <elementRef displayName="birth date : Patient Characteristic Birthdate" id="40280381-3d27-5493-013d-477b9d1113b7" type="qdm"/>
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="93427cce-39d9-4777-8a55-076ad7f307a6" type="qdm"/>
+          </relationalOp>
+          <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="93427cce-39d9-4777-8a55-076ad7f307a6" type="qdm">
+            <attribute comparisonValue="120" mode="Less Than Or Equal To" name="length of stay" unit="days"/>
+          </elementRef>
+          <relationalOp displayName="    Ends During" quantity="" type="EDU">
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="93427cce-39d9-4777-8a55-076ad7f307a6" type="qdm"/>
+            <elementRef displayName="Measurement Period : Timing Element" id="40280381-3d27-5493-013d-477b9d1113b6" type="qdm"/>
+          </relationalOp>
+          <relationalOp displayName="Starts During" type="SDU">
+            <logicalOp displayName="AND" type="and">
+              <functionalOp displayName="NOT" type="NOT" uuid="fd6de136-53cc-4c10-b42b-faa9a5470628">
+                <logicalOp displayName="OR" type="or">
+                  <elementRef displayName="Venous Thromboembolism : Diagnosis, Active" id="40280381-3d27-5493-013d-477b9d1113ba" type="qdm">
+                    <attribute mode="Value Set" name="ordinality" qdmUUID="6bae20a8-0612-40ba-8990-4a2c5702c6ef"/>
+                  </elementRef>
+                  <elementRef displayName="Obstetrics VTE : Diagnosis, Active" id="40280381-3d27-5493-013d-477b9d1113b9" type="qdm">
+                    <attribute mode="Value Set" name="ordinality" qdmUUID="6bae20a8-0612-40ba-8990-4a2c5702c6ef"/>
+                  </elementRef>
+                </logicalOp>
+              </functionalOp>
+              <logicalOp displayName="OR" type="or">
+                <elementRef displayName="Venous Thromboembolism : Diagnosis, Active" id="40280381-3d27-5493-013d-477b9d1113ba" type="qdm"/>
+                <elementRef displayName="Obstetrics VTE : Diagnosis, Active" id="40280381-3d27-5493-013d-477b9d1113b9" type="qdm"/>
+              </logicalOp>
+            </logicalOp>
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="93427cce-39d9-4777-8a55-076ad7f307a6" type="qdm"/>
+          </relationalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Denominator 1" type="denominator" uuid="825B1192-8734-4221-B7A2-B51EB5B4C3B3">
+        <logicalOp displayName="AND" type="and">
+          <relationalOp displayName="Starts During" type="SDU">
+            <elementRef displayName="Occurrence A of VTE Diagnostic Test : Diagnostic Study, Order" id="40280381-3d27-5493-013d-4b56311f41ef" type="qdm"/>
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="93427cce-39d9-4777-8a55-076ad7f307a6" type="qdm"/>
+          </relationalOp>
+          <functionalOp displayName="FIRST" type="FIRST" uuid="c7e52def-d826-4378-92c9-6f3e48a555bc">
+            <relationalOp displayName="Starts During" type="SDU">
+              <elementRef displayName="Occurrence A of VTE Diagnostic Test : Diagnostic Study, Result" id="f7f41007-992a-4ff0-b1c9-f9bbb8b7757e" type="qdm">
+                <attribute mode="Value Set" name="result" qdmUUID="40280381-3d27-5493-013d-477b9d1213da"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="93427cce-39d9-4777-8a55-076ad7f307a6" type="qdm"/>
+            </relationalOp>
+          </functionalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Denominator Exclusions 2" type="denominatorExclusions" uuid="0002C6A5-209A-427D-95A0-A96A7D57C4B8">
+        <logicalOp displayName="AND" type="and">
+          <logicalOp displayName="OR" type="or">
+            <relationalOp displayName="Starts Before Start Of" type="SBS">
+              <elementRef displayName="Unfractionated Heparin : Medication, Administered" id="40280381-3d27-5493-013d-477b9d1213ce" type="qdm">
+                <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-477b9d1213c9"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of VTE Diagnostic Test : Diagnostic Study, Order" id="40280381-3d27-5493-013d-4b56311f41ef" type="qdm"/>
+            </relationalOp>
+            <logicalOp displayName="AND" type="and">
+              <logicalOp displayName="OR" type="or">
+                <logicalOp displayName="AND" type="and">
+                  <relationalOp displayName="&lt;= 1 hours Ends Before Start Of" operatorType="Less Than or Equal To" quantity="1" type="EBS" unit="hours">
+                    <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="e025e1fb-5fa4-41be-9644-54f8c2d8cd36" type="qdm"/>
+                    <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="93427cce-39d9-4777-8a55-076ad7f307a6" type="qdm"/>
+                  </relationalOp>
+                  <relationalOp displayName="Starts During" type="SDU">
+                    <logicalOp displayName="OR" type="or">
+                      <elementRef displayName="Low Dose Unfractionated Heparin for VTE Prophylaxis : Medication, Administered" id="088c24da-703f-464e-b5fc-420b55e8028e" type="qdm">
+                        <attribute mode="Value Set" name="negation rationale" qdmUUID="40280381-3d27-5493-013d-477b9d1213db"/>
+                      </elementRef>
+                      <elementRef displayName="Low Molecular Weight Heparin for VTE Prophylaxis : Medication, Administered" id="40280381-3d27-5493-013d-477b9d1213cf" type="qdm">
+                        <attribute mode="Value Set" name="negation rationale" qdmUUID="40280381-3d27-5493-013d-477b9d1213db"/>
+                      </elementRef>
+                      <elementRef displayName="Injectable Factor Xa Inhibitor for VTE Prophylaxis : Medication, Administered" id="40280381-3d27-5493-013d-477b9d1213d0" type="qdm">
+                        <attribute mode="Value Set" name="negation rationale" qdmUUID="40280381-3d27-5493-013d-477b9d1213db"/>
+                      </elementRef>
+                      <elementRef displayName="Warfarin : Medication, Administered" id="40280381-3d27-5493-013d-477b9d1213d1" type="qdm">
+                        <attribute mode="Value Set" name="negation rationale" qdmUUID="40280381-3d27-5493-013d-477b9d1213db"/>
+                      </elementRef>
+                    </logicalOp>
+                    <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="e025e1fb-5fa4-41be-9644-54f8c2d8cd36" type="qdm"/>
+                  </relationalOp>
+                </logicalOp>
+                <relationalOp displayName="Starts During" type="SDU">
+                  <logicalOp displayName="OR" type="or">
+                    <relationalOp displayName="    Starts Before Start Of" quantity="" type="SBS">
+                      <logicalOp displayName="OR" type="or">
+                        <elementRef displayName="Low Dose Unfractionated Heparin for VTE Prophylaxis : Medication, Administered" id="088c24da-703f-464e-b5fc-420b55e8028e" type="qdm">
+                          <attribute mode="Value Set" name="negation rationale" qdmUUID="40280381-3d27-5493-013d-477b9d1213db"/>
+                        </elementRef>
+                        <elementRef displayName="Low Molecular Weight Heparin for VTE Prophylaxis : Medication, Administered" id="40280381-3d27-5493-013d-477b9d1213cf" type="qdm">
+                          <attribute mode="Value Set" name="negation rationale" qdmUUID="40280381-3d27-5493-013d-477b9d1213db"/>
+                        </elementRef>
+                        <elementRef displayName="Injectable Factor Xa Inhibitor for VTE Prophylaxis : Medication, Administered" id="40280381-3d27-5493-013d-477b9d1213d0" type="qdm">
+                          <attribute mode="Value Set" name="negation rationale" qdmUUID="40280381-3d27-5493-013d-477b9d1213db"/>
+                        </elementRef>
+                        <elementRef displayName="Warfarin : Medication, Administered" id="40280381-3d27-5493-013d-477b9d1213d1" type="qdm">
+                          <attribute mode="Value Set" name="negation rationale" qdmUUID="40280381-3d27-5493-013d-477b9d1213db"/>
+                        </elementRef>
+                      </logicalOp>
+                      <elementRef displayName="Occurrence A of VTE Diagnostic Test : Diagnostic Study, Order" id="40280381-3d27-5493-013d-4b56311f41ef" type="qdm"/>
+                    </relationalOp>
+                  </logicalOp>
+                  <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="93427cce-39d9-4777-8a55-076ad7f307a6" type="qdm"/>
+                </relationalOp>
+              </logicalOp>
+              <logicalOp displayName="OR" type="or">
+                <logicalOp displayName="AND" type="and">
+                  <relationalOp displayName="&lt;= 1 hours Ends Before Start Of" operatorType="Less Than or Equal To" quantity="1" type="EBS" unit="hours">
+                    <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="e025e1fb-5fa4-41be-9644-54f8c2d8cd36" type="qdm"/>
+                    <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="93427cce-39d9-4777-8a55-076ad7f307a6" type="qdm"/>
+                  </relationalOp>
+                  <relationalOp displayName="Starts During" type="SDU">
+                    <logicalOp displayName="OR" type="or">
+                      <elementRef displayName="Intermittent pneumatic compression devices (IPC) : Device, Applied" id="40280381-3d27-5493-013d-477b9d1113c8" type="qdm">
+                        <attribute mode="Value Set" name="negation rationale" qdmUUID="40280381-3d27-5493-013d-477b9d1213db"/>
+                      </elementRef>
+                      <elementRef displayName="Venous foot pumps (VFP) : Device, Applied" id="40280381-3d27-5493-013d-477b9d1113c7" type="qdm">
+                        <attribute mode="Value Set" name="negation rationale" qdmUUID="40280381-3d27-5493-013d-477b9d1213db"/>
+                      </elementRef>
+                      <elementRef displayName="Graduated compression stockings (GCS) : Device, Applied" id="40280381-3d27-5493-013d-477b9d1113c6" type="qdm">
+                        <attribute mode="Value Set" name="negation rationale" qdmUUID="40280381-3d27-5493-013d-477b9d1213db"/>
+                      </elementRef>
+                    </logicalOp>
+                    <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="e025e1fb-5fa4-41be-9644-54f8c2d8cd36" type="qdm"/>
+                  </relationalOp>
+                </logicalOp>
+                <relationalOp displayName="Starts During" type="SDU">
+                  <logicalOp displayName="OR" type="or">
+                    <relationalOp displayName="    Starts Before Start Of" quantity="" type="SBS">
+                      <logicalOp displayName="OR" type="or">
+                        <elementRef displayName="Intermittent pneumatic compression devices (IPC) : Device, Applied" id="40280381-3d27-5493-013d-477b9d1113c8" type="qdm">
+                          <attribute mode="Value Set" name="negation rationale" qdmUUID="40280381-3d27-5493-013d-477b9d1213db"/>
+                        </elementRef>
+                        <elementRef displayName="Venous foot pumps (VFP) : Device, Applied" id="40280381-3d27-5493-013d-477b9d1113c7" type="qdm">
+                          <attribute mode="Value Set" name="negation rationale" qdmUUID="40280381-3d27-5493-013d-477b9d1213db"/>
+                        </elementRef>
+                        <elementRef displayName="Graduated compression stockings (GCS) : Device, Applied" id="40280381-3d27-5493-013d-477b9d1113c6" type="qdm">
+                          <attribute mode="Value Set" name="negation rationale" qdmUUID="40280381-3d27-5493-013d-477b9d1213db"/>
+                        </elementRef>
+                      </logicalOp>
+                      <elementRef displayName="Occurrence A of VTE Diagnostic Test : Diagnostic Study, Order" id="40280381-3d27-5493-013d-4b56311f41ef" type="qdm"/>
+                    </relationalOp>
+                  </logicalOp>
+                  <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="93427cce-39d9-4777-8a55-076ad7f307a6" type="qdm"/>
+                </relationalOp>
+              </logicalOp>
+            </logicalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="&lt;= 1 hours Ends Before Start Of" operatorType="Less Than or Equal To" quantity="1" type="EBS" unit="hours">
+                <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="e025e1fb-5fa4-41be-9644-54f8c2d8cd36" type="qdm"/>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="93427cce-39d9-4777-8a55-076ad7f307a6" type="qdm"/>
+              </relationalOp>
+              <relationalOp displayName="Starts During" type="SDU">
+                <logicalOp displayName="OR" type="or">
+                  <elementRef displayName="Low Molecular Weight Heparin for VTE Prophylaxis : Medication, Administered" id="40280381-3d27-5493-013d-477b9d1213cf" type="qdm">
+                    <attribute mode="Value Set" name="negation rationale" qdmUUID="40280381-3d27-5493-013d-477b9d1213d3"/>
+                  </elementRef>
+                  <elementRef displayName="Low Dose Unfractionated Heparin for VTE Prophylaxis : Medication, Administered" id="088c24da-703f-464e-b5fc-420b55e8028e" type="qdm">
+                    <attribute mode="Value Set" name="negation rationale" qdmUUID="40280381-3d27-5493-013d-477b9d1213d3"/>
+                  </elementRef>
+                  <elementRef displayName="Injectable Factor Xa Inhibitor for VTE Prophylaxis : Medication, Administered" id="40280381-3d27-5493-013d-477b9d1213d0" type="qdm">
+                    <attribute mode="Value Set" name="negation rationale" qdmUUID="40280381-3d27-5493-013d-477b9d1213d3"/>
+                  </elementRef>
+                  <elementRef displayName="Warfarin : Medication, Administered" id="40280381-3d27-5493-013d-477b9d1213d1" type="qdm">
+                    <attribute mode="Value Set" name="negation rationale" qdmUUID="40280381-3d27-5493-013d-477b9d1213d3"/>
+                  </elementRef>
+                  <elementRef displayName="Venous foot pumps (VFP) : Device, Applied" id="40280381-3d27-5493-013d-477b9d1113c7" type="qdm">
+                    <attribute mode="Value Set" name="negation rationale" qdmUUID="40280381-3d27-5493-013d-477b9d1213d3"/>
+                  </elementRef>
+                  <elementRef displayName="Graduated compression stockings (GCS) : Device, Applied" id="40280381-3d27-5493-013d-477b9d1113c6" type="qdm">
+                    <attribute mode="Value Set" name="negation rationale" qdmUUID="40280381-3d27-5493-013d-477b9d1213d3"/>
+                  </elementRef>
+                  <elementRef displayName="Intermittent pneumatic compression devices (IPC) : Device, Applied" id="40280381-3d27-5493-013d-477b9d1113c8" type="qdm">
+                    <attribute mode="Value Set" name="negation rationale" qdmUUID="40280381-3d27-5493-013d-477b9d1213d3"/>
+                  </elementRef>
+                </logicalOp>
+                <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="e025e1fb-5fa4-41be-9644-54f8c2d8cd36" type="qdm"/>
+              </relationalOp>
+            </logicalOp>
+            <relationalOp displayName="    Starts During" quantity="" type="SDU">
+              <logicalOp displayName="OR" type="or">
+                <relationalOp displayName="Starts Before Start Of" type="SBS">
+                  <logicalOp displayName="OR" type="or">
+                    <elementRef displayName="Low Molecular Weight Heparin for VTE Prophylaxis : Medication, Administered" id="40280381-3d27-5493-013d-477b9d1213cf" type="qdm">
+                      <attribute mode="Value Set" name="negation rationale" qdmUUID="40280381-3d27-5493-013d-477b9d1213d3"/>
+                    </elementRef>
+                    <elementRef displayName="Low Dose Unfractionated Heparin for VTE Prophylaxis : Medication, Administered" id="088c24da-703f-464e-b5fc-420b55e8028e" type="qdm">
+                      <attribute mode="Value Set" name="negation rationale" qdmUUID="40280381-3d27-5493-013d-477b9d1213d3"/>
+                    </elementRef>
+                    <elementRef displayName="Injectable Factor Xa Inhibitor for VTE Prophylaxis : Medication, Administered" id="40280381-3d27-5493-013d-477b9d1213d0" type="qdm">
+                      <attribute mode="Value Set" name="negation rationale" qdmUUID="40280381-3d27-5493-013d-477b9d1213d3"/>
+                    </elementRef>
+                    <elementRef displayName="Warfarin : Medication, Administered" id="40280381-3d27-5493-013d-477b9d1213d1" type="qdm">
+                      <attribute mode="Value Set" name="negation rationale" qdmUUID="40280381-3d27-5493-013d-477b9d1213d3"/>
+                    </elementRef>
+                    <elementRef displayName="Venous foot pumps (VFP) : Device, Applied" id="40280381-3d27-5493-013d-477b9d1113c7" type="qdm">
+                      <attribute mode="Value Set" name="negation rationale" qdmUUID="40280381-3d27-5493-013d-477b9d1213d3"/>
+                    </elementRef>
+                    <elementRef displayName="Graduated compression stockings (GCS) : Device, Applied" id="40280381-3d27-5493-013d-477b9d1113c6" type="qdm">
+                      <attribute mode="Value Set" name="negation rationale" qdmUUID="40280381-3d27-5493-013d-477b9d1213d3"/>
+                    </elementRef>
+                    <elementRef displayName="Intermittent pneumatic compression devices (IPC) : Device, Applied" id="40280381-3d27-5493-013d-477b9d1113c8" type="qdm">
+                      <attribute mode="Value Set" name="negation rationale" qdmUUID="40280381-3d27-5493-013d-477b9d1213d3"/>
+                    </elementRef>
+                  </logicalOp>
+                  <elementRef displayName="Occurrence A of VTE Diagnostic Test : Diagnostic Study, Order" id="40280381-3d27-5493-013d-4b56311f41ef" type="qdm"/>
+                </relationalOp>
+              </logicalOp>
+              <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="93427cce-39d9-4777-8a55-076ad7f307a6" type="qdm"/>
+            </relationalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="&lt;= 1 hours Ends Before Start Of" operatorType="Less Than or Equal To" quantity="1" type="EBS" unit="hours">
+                <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="e025e1fb-5fa4-41be-9644-54f8c2d8cd36" type="qdm"/>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="93427cce-39d9-4777-8a55-076ad7f307a6" type="qdm"/>
+              </relationalOp>
+              <relationalOp displayName="Starts During" type="SDU">
+                <logicalOp displayName="OR" type="or">
+                  <elementRef displayName="VTE Suspected : Diagnosis, Active" id="40280381-3d27-5493-013d-477b9d1213d4" type="qdm"/>
+                  <elementRef displayName="Obstetrics VTE : Diagnosis, Active" id="40280381-3d27-5493-013d-477b9d1113b9" type="qdm"/>
+                  <elementRef displayName="Venous Thromboembolism : Diagnosis, Active" id="40280381-3d27-5493-013d-477b9d1113ba" type="qdm"/>
+                  <elementRef displayName="Occurrence A of VTE Diagnostic Test : Diagnostic Study, Order" id="40280381-3d27-5493-013d-4b56311f41ef" type="qdm"/>
+                </logicalOp>
+                <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="e025e1fb-5fa4-41be-9644-54f8c2d8cd36" type="qdm"/>
+              </relationalOp>
+            </logicalOp>
+            <relationalOp displayName="&lt;= 1 days Starts After Start Of" operatorType="Less Than or Equal To" quantity="1" type="SAS" unit="days">
+              <logicalOp displayName="OR" type="or">
+                <elementRef displayName="VTE Suspected : Diagnosis, Active" id="40280381-3d27-5493-013d-477b9d1213d4" type="qdm"/>
+                <elementRef displayName="Obstetrics VTE : Diagnosis, Active" id="40280381-3d27-5493-013d-477b9d1113b9" type="qdm"/>
+                <elementRef displayName="Venous Thromboembolism : Diagnosis, Active" id="40280381-3d27-5493-013d-477b9d1113ba" type="qdm"/>
+                <elementRef displayName="Occurrence A of VTE Diagnostic Test : Diagnostic Study, Order" id="40280381-3d27-5493-013d-4b56311f41ef" type="qdm"/>
+              </logicalOp>
+              <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="93427cce-39d9-4777-8a55-076ad7f307a6" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="Starts During" type="SDU">
+              <logicalOp displayName="OR" type="or">
+                <elementRef displayName="Comfort Measures  : Intervention, Order" id="a38a0b35-9b33-4c3d-9005-53a3104b5323" type="qdm"/>
+                <elementRef displayName="Comfort Measures  : Intervention, Performed" id="0d34c7ed-0456-4249-ab8a-f0e096c24ade" type="qdm"/>
+              </logicalOp>
+              <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="93427cce-39d9-4777-8a55-076ad7f307a6" type="qdm"/>
+            </relationalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="&lt;= 1 hours Ends Before Start Of" operatorType="Less Than or Equal To" quantity="1" type="EBS" unit="hours">
+                <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="e025e1fb-5fa4-41be-9644-54f8c2d8cd36" type="qdm"/>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="93427cce-39d9-4777-8a55-076ad7f307a6" type="qdm"/>
+              </relationalOp>
+              <relationalOp displayName="Starts During" type="SDU">
+                <logicalOp displayName="OR" type="or">
+                  <elementRef displayName="Comfort Measures  : Intervention, Order" id="a38a0b35-9b33-4c3d-9005-53a3104b5323" type="qdm"/>
+                  <elementRef displayName="Comfort Measures  : Intervention, Performed" id="0d34c7ed-0456-4249-ab8a-f0e096c24ade" type="qdm"/>
+                </logicalOp>
+                <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="e025e1fb-5fa4-41be-9644-54f8c2d8cd36" type="qdm"/>
+              </relationalOp>
+            </logicalOp>
+          </logicalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Numerator 1" type="numerator" uuid="D941E211-4CA4-4992-8076-92029120CCF9">
+        <logicalOp displayName="AND" type="and">
+          <functionalOp displayName="NOT" type="NOT" uuid="5a19370a-8758-4f5a-8dd9-15ea20c22977">
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="&gt;= 1 days Starts Before Start Of" operatorType="Greater Than or Equal To" quantity="1" type="SBS" unit="days">
+                <elementRef displayName="Occurrence A of Low Dose Unfractionated Heparin for VTE Prophylaxis : Medication, Administered" id="fa013735-65a6-4f09-a71e-f943d762fb4e" type="qdm">
+                  <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-477b9d1213ca"/>
+                </elementRef>
+                <elementRef displayName="Occurrence A of VTE Diagnostic Test : Diagnostic Study, Order" id="40280381-3d27-5493-013d-4b56311f41ef" type="qdm"/>
+              </relationalOp>
+              <relationalOp displayName="Starts During" type="SDU">
+                <elementRef displayName="Occurrence A of Low Dose Unfractionated Heparin for VTE Prophylaxis : Medication, Administered" id="fa013735-65a6-4f09-a71e-f943d762fb4e" type="qdm">
+                  <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-477b9d1213ca"/>
+                </elementRef>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="93427cce-39d9-4777-8a55-076ad7f307a6" type="qdm"/>
+              </relationalOp>
+            </logicalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="&gt;= 1 days Starts Before Start Of" operatorType="Greater Than or Equal To" quantity="1" type="SBS" unit="days">
+                <elementRef displayName="Occurrence A of Low Molecular Weight Heparin for VTE Prophylaxis : Medication, Administered" id="80c8a048-9b78-492d-843a-be1be63f335e" type="qdm">
+                  <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-477b9d1213ca"/>
+                </elementRef>
+                <elementRef displayName="Occurrence A of VTE Diagnostic Test : Diagnostic Study, Order" id="40280381-3d27-5493-013d-4b56311f41ef" type="qdm"/>
+              </relationalOp>
+              <relationalOp displayName="Starts During" type="SDU">
+                <elementRef displayName="Occurrence A of Low Molecular Weight Heparin for VTE Prophylaxis : Medication, Administered" id="80c8a048-9b78-492d-843a-be1be63f335e" type="qdm">
+                  <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-477b9d1213ca"/>
+                </elementRef>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="93427cce-39d9-4777-8a55-076ad7f307a6" type="qdm"/>
+              </relationalOp>
+            </logicalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="&gt;= 1 days Starts Before Start Of" operatorType="Greater Than or Equal To" quantity="1" type="SBS" unit="days">
+                <elementRef displayName="Occurrence A of Injectable Factor Xa Inhibitor for VTE Prophylaxis : Medication, Administered" id="bcfcfd03-3106-4df6-9575-60c13da51343" type="qdm"/>
+                <elementRef displayName="Occurrence A of VTE Diagnostic Test : Diagnostic Study, Order" id="40280381-3d27-5493-013d-4b56311f41ef" type="qdm"/>
+              </relationalOp>
+              <relationalOp displayName="Starts During" type="SDU">
+                <elementRef displayName="Occurrence A of Injectable Factor Xa Inhibitor for VTE Prophylaxis : Medication, Administered" id="bcfcfd03-3106-4df6-9575-60c13da51343" type="qdm"/>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="93427cce-39d9-4777-8a55-076ad7f307a6" type="qdm"/>
+              </relationalOp>
+            </logicalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="&gt;= 1 days Starts Before Start Of" operatorType="Greater Than or Equal To" quantity="1" type="SBS" unit="days">
+                <elementRef displayName="Occurrence A of Warfarin : Medication, Administered" id="09f58630-a962-47d3-af5e-95f301ee64f7" type="qdm"/>
+                <elementRef displayName="Occurrence A of VTE Diagnostic Test : Diagnostic Study, Order" id="40280381-3d27-5493-013d-4b56311f41ef" type="qdm"/>
+              </relationalOp>
+              <relationalOp displayName="Starts During" type="SDU">
+                <elementRef displayName="Occurrence A of Warfarin : Medication, Administered" id="09f58630-a962-47d3-af5e-95f301ee64f7" type="qdm"/>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="93427cce-39d9-4777-8a55-076ad7f307a6" type="qdm"/>
+              </relationalOp>
+            </logicalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="&gt;= 1 days Starts Before Start Of" operatorType="Greater Than or Equal To" quantity="1" type="SBS" unit="days">
+                <elementRef displayName="Occurrence A of Oral Factor Xa Inhibitor for VTE Prophylaxis : Medication, Administered" id="8a0ac0d2-1c70-483c-bff9-1f06e82b0402" type="qdm"/>
+                <elementRef displayName="Occurrence A of VTE Diagnostic Test : Diagnostic Study, Order" id="40280381-3d27-5493-013d-4b56311f41ef" type="qdm"/>
+              </relationalOp>
+              <relationalOp displayName="Starts During" type="SDU">
+                <elementRef displayName="Occurrence A of Oral Factor Xa Inhibitor for VTE Prophylaxis : Medication, Administered" id="8a0ac0d2-1c70-483c-bff9-1f06e82b0402" type="qdm"/>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="93427cce-39d9-4777-8a55-076ad7f307a6" type="qdm"/>
+              </relationalOp>
+            </logicalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="&gt;= 1 days Starts Before Start Of" operatorType="Greater Than or Equal To" quantity="1" type="SBS" unit="days">
+                <elementRef displayName="Occurrence A of Venous foot pumps (VFP) : Device, Applied" id="30173177-81ad-4b34-a492-4ae3ae3edd94" type="qdm"/>
+                <elementRef displayName="Occurrence A of VTE Diagnostic Test : Diagnostic Study, Order" id="40280381-3d27-5493-013d-4b56311f41ef" type="qdm"/>
+              </relationalOp>
+              <relationalOp displayName="Starts During" type="SDU">
+                <elementRef displayName="Occurrence A of Venous foot pumps (VFP) : Device, Applied" id="30173177-81ad-4b34-a492-4ae3ae3edd94" type="qdm"/>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="93427cce-39d9-4777-8a55-076ad7f307a6" type="qdm"/>
+              </relationalOp>
+            </logicalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="&gt;= 1 days Starts Before Start Of" operatorType="Greater Than or Equal To" quantity="1" type="SBS" unit="days">
+                <elementRef displayName="Occurrence A of Intermittent pneumatic compression devices (IPC) : Device, Applied" id="376c6b0e-acaf-48b6-af0e-e6ffc3a5e1b6" type="qdm"/>
+                <elementRef displayName="Occurrence A of VTE Diagnostic Test : Diagnostic Study, Order" id="40280381-3d27-5493-013d-4b56311f41ef" type="qdm"/>
+              </relationalOp>
+              <relationalOp displayName="Starts During" type="SDU">
+                <elementRef displayName="Occurrence A of Intermittent pneumatic compression devices (IPC) : Device, Applied" id="376c6b0e-acaf-48b6-af0e-e6ffc3a5e1b6" type="qdm"/>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="93427cce-39d9-4777-8a55-076ad7f307a6" type="qdm"/>
+              </relationalOp>
+            </logicalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="&gt;= 1 days Starts Before Start Of" operatorType="Greater Than or Equal To" quantity="1" type="SBS" unit="days">
+                <elementRef displayName="Occurrence A of Graduated compression stockings (GCS) : Device, Applied" id="77576d11-d563-4cea-b98b-d7b1900d968f" type="qdm"/>
+                <elementRef displayName="Occurrence A of VTE Diagnostic Test : Diagnostic Study, Order" id="40280381-3d27-5493-013d-4b56311f41ef" type="qdm"/>
+              </relationalOp>
+              <relationalOp displayName="Starts During" type="SDU">
+                <elementRef displayName="Occurrence A of Graduated compression stockings (GCS) : Device, Applied" id="77576d11-d563-4cea-b98b-d7b1900d968f" type="qdm"/>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="93427cce-39d9-4777-8a55-076ad7f307a6" type="qdm"/>
+              </relationalOp>
+            </logicalOp>
+          </functionalOp>
+        </logicalOp>
+      </clause>
+    </group>
+  </measureGrouping>
+  <elementLookUp>
+    <qdm codeSystemName="National Quality Forum" datatype="Patient Characteristic Birthdate" id="40280381-3d27-5493-013d-477b9d1113b7" name="birth date" oid="2.16.840.1.113883.3.560.100.4" suppDataElement="false" taxonomy="LOINC" uuid="40280381-3d27-5493-013d-477b9d1113b7" version="1"/>
+    <qdm datatype="Encounter, Performed" id="93427cce-39d9-4777-8a55-076ad7f307a6" instance="Occurrence A" name="Encounter Inpatient" oid="2.16.840.1.113883.3.666.5.307" suppDataElement="false" taxonomy="SNOMEDCT" uuid="93427cce-39d9-4777-8a55-076ad7f307a6" version="1.0"/>
+    <qdm codeSystemName="CDC NCHS" datatype="Patient Characteristic Ethnicity" id="40280381-3d27-5493-013d-477b9d1113b2" name="Ethnicity" oid="2.16.840.1.114222.4.11.837" suppDataElement="true" taxonomy="CDCREC" uuid="40280381-3d27-5493-013d-477b9d1113b2" version="1"/>
+    <qdm datatype="Device, Applied" id="77576d11-d563-4cea-b98b-d7b1900d968f" instance="Occurrence A" name="Graduated compression stockings (GCS)" oid="2.16.840.1.113883.3.117.1.7.1.256" suppDataElement="false" taxonomy="SNOMEDCT" uuid="77576d11-d563-4cea-b98b-d7b1900d968f" version="1.0"/>
+    <qdm datatype="Medication, Administered" id="bcfcfd03-3106-4df6-9575-60c13da51343" instance="Occurrence A" name="Injectable Factor Xa Inhibitor for VTE Prophylaxis" oid="2.16.840.1.113883.3.117.1.7.1.211" suppDataElement="false" taxonomy="RXNORM" uuid="bcfcfd03-3106-4df6-9575-60c13da51343" version="1.0"/>
+    <qdm datatype="Device, Applied" id="376c6b0e-acaf-48b6-af0e-e6ffc3a5e1b6" instance="Occurrence A" name="Intermittent pneumatic compression devices (IPC)" oid="2.16.840.1.113883.3.117.1.7.1.214" suppDataElement="false" taxonomy="SNOMEDCT" uuid="376c6b0e-acaf-48b6-af0e-e6ffc3a5e1b6" version="1.0"/>
+    <qdm codeSystemName="Joint Commission" datatype="attribute" id="40280381-3d27-5493-013d-477b9d1213c9" name="Intravenous route" oid="2.16.840.1.113883.3.117.1.7.1.222" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3d27-5493-013d-477b9d1213c9" version="1"/>
+    <qdm datatype="Medication, Administered" id="80c8a048-9b78-492d-843a-be1be63f335e" instance="Occurrence A" name="Low Molecular Weight Heparin for VTE Prophylaxis" oid="2.16.840.1.113883.3.117.1.7.1.219" suppDataElement="false" taxonomy="RXNORM" uuid="80c8a048-9b78-492d-843a-be1be63f335e" version="1.0"/>
+    <qdm codeSystemName="National Quality Forum" datatype="Timing Element" id="40280381-3d27-5493-013d-477b9d1113b6" name="Measurement Period" oid="2.16.840.1.113883.3.67.1.101.1.53" suppDataElement="false" taxonomy="NQF" uuid="40280381-3d27-5493-013d-477b9d1113b6" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="attribute" id="40280381-3d27-5493-013d-477b9d1213db" name="Medical Contraindication" oid="2.16.840.1.113883.3.117.1.7.1.412" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3d27-5493-013d-477b9d1213db" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="Diagnosis, Active" id="40280381-3d27-5493-013d-477b9d1113b9" name="Obstetrics VTE" oid="2.16.840.1.113883.3.117.1.7.1.264" suppDataElement="false" taxonomy="Grouping" uuid="40280381-3d27-5493-013d-477b9d1113b9" version="1"/>
+    <qdm codeSystemName="National Library of Medicine" datatype="Patient Characteristic Sex" id="40280381-3d27-5493-013d-477b9d1013b0" name="ONC Administrative Sex" oid="2.16.840.1.113762.1.4.1" suppDataElement="true" taxonomy="AdministrativeSex" uuid="40280381-3d27-5493-013d-477b9d1013b0" version="1"/>
+    <qdm datatype="Medication, Administered" id="8a0ac0d2-1c70-483c-bff9-1f06e82b0402" instance="Occurrence A" name="Oral Factor Xa Inhibitor for VTE Prophylaxis" oid="2.16.840.1.113883.3.117.1.7.1.134" suppDataElement="false" taxonomy="RXNORM" uuid="8a0ac0d2-1c70-483c-bff9-1f06e82b0402" version="1.0"/>
+    <qdm codeSystemName="Joint Commission" datatype="attribute" id="40280381-3d27-5493-013d-477b9d1213d3" name="Patient Refusal" oid="2.16.840.1.113883.3.117.1.7.1.93" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3d27-5493-013d-477b9d1213d3" version="1"/>
+    <qdm codeSystemName="PHDSC" datatype="Patient Characteristic Payer" id="40280381-3d27-5493-013d-477b9d1113b3" name="Payer" oid="2.16.840.1.114222.4.11.3591" suppDataElement="true" taxonomy="SOP" uuid="40280381-3d27-5493-013d-477b9d1113b3" version="1"/>
+    <qdm codeSystemName="CDC NCHS" datatype="Patient Characteristic Race" id="40280381-3d27-5493-013d-477b9d1013b1" name="Race" oid="2.16.840.1.114222.4.11.836" suppDataElement="true" taxonomy="CDCREC" uuid="40280381-3d27-5493-013d-477b9d1013b1" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="attribute" id="40280381-3d27-5493-013d-477b9d1213ca" name="Subcutaneous route" oid="2.16.840.1.113883.3.117.1.7.1.223" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3d27-5493-013d-477b9d1213ca" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="Medication, Administered" id="40280381-3d27-5493-013d-477b9d1213ce" name="Unfractionated Heparin" oid="2.16.840.1.113883.3.117.1.7.1.218" suppDataElement="false" taxonomy="RXNORM" uuid="40280381-3d27-5493-013d-477b9d1213ce" version="1"/>
+    <qdm datatype="Device, Applied" id="30173177-81ad-4b34-a492-4ae3ae3edd94" instance="Occurrence A" name="Venous foot pumps (VFP)" oid="2.16.840.1.113883.3.117.1.7.1.230" suppDataElement="false" taxonomy="SNOMEDCT" uuid="30173177-81ad-4b34-a492-4ae3ae3edd94" version="1.0"/>
+    <qdm codeSystemName="Joint Commission" datatype="Diagnosis, Active" id="40280381-3d27-5493-013d-477b9d1113ba" name="Venous Thromboembolism" oid="2.16.840.1.113883.3.117.1.7.1.279" suppDataElement="false" taxonomy="Grouping" uuid="40280381-3d27-5493-013d-477b9d1113ba" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="attribute" id="40280381-3d27-5493-013d-477b9d1213da" name="VTE Confirmed" oid="2.16.840.1.113883.3.117.1.7.1.407" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3d27-5493-013d-477b9d1213da" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="Diagnostic Study, Order" id="40280381-3d27-5493-013d-4b56311f41ef" instance="Occurrence A" name="VTE Diagnostic Test" oid="2.16.840.1.113883.3.117.1.7.1.276" suppDataElement="false" taxonomy="Grouping" uuid="40280381-3d27-5493-013d-4b56311f41ef" version="1"/>
+    <qdm datatype="Diagnostic Study, Result" id="f7f41007-992a-4ff0-b1c9-f9bbb8b7757e" instance="Occurrence A" name="VTE Diagnostic Test" oid="2.16.840.1.113883.3.117.1.7.1.276" suppDataElement="false" taxonomy="Grouping" uuid="f7f41007-992a-4ff0-b1c9-f9bbb8b7757e" version="1.0"/>
+    <qdm codeSystemName="Joint Commission" datatype="Diagnosis, Active" id="40280381-3d27-5493-013d-477b9d1213d4" name="VTE Suspected" oid="2.16.840.1.113883.3.117.1.7.1.277" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3d27-5493-013d-477b9d1213d4" version="1"/>
+    <qdm datatype="Medication, Administered" id="09f58630-a962-47d3-af5e-95f301ee64f7" instance="Occurrence A" name="Warfarin" oid="2.16.840.1.113883.3.117.1.7.1.232" suppDataElement="false" taxonomy="RXNORM" uuid="09f58630-a962-47d3-af5e-95f301ee64f7" version="1.0"/>
+    <qdm datatype="attribute" id="6bae20a8-0612-40ba-8990-4a2c5702c6ef" name="Principal" oid="2.16.840.1.113883.3.117.1.7.1.14" suppDataElement="false" taxonomy="SNOMEDCT" uuid="6bae20a8-0612-40ba-8990-4a2c5702c6ef" version="1.0"/>
+    <qdm datatype="Encounter, Performed" id="e025e1fb-5fa4-41be-9644-54f8c2d8cd36" instance="Occurrence A" name="Emergency Department Visit" oid="2.16.840.1.113883.3.117.1.7.1.292" suppDataElement="false" taxonomy="SNOMEDCT" uuid="e025e1fb-5fa4-41be-9644-54f8c2d8cd36" version="1.0"/>
+    <qdm datatype="Intervention, Order" id="a38a0b35-9b33-4c3d-9005-53a3104b5323" name="Comfort Measures " oid="1.3.6.1.4.1.33895.1.3.0.45" suppDataElement="false" taxonomy="SNOMEDCT" uuid="a38a0b35-9b33-4c3d-9005-53a3104b5323" version="1.0"/>
+    <qdm datatype="Intervention, Performed" id="0d34c7ed-0456-4249-ab8a-f0e096c24ade" name="Comfort Measures " oid="1.3.6.1.4.1.33895.1.3.0.45" suppDataElement="false" taxonomy="SNOMEDCT" uuid="0d34c7ed-0456-4249-ab8a-f0e096c24ade" version="1.0"/>
+    <qdm datatype="Medication, Administered" id="fa013735-65a6-4f09-a71e-f943d762fb4e" instance="Occurrence A" name="Low Dose Unfractionated Heparin for VTE Prophylaxis" oid="2.16.840.1.113762.1.4.1045.39" suppDataElement="false" taxonomy="RXNORM" uuid="fa013735-65a6-4f09-a71e-f943d762fb4e" version="1.0"/>
+    <qdm datatype="Encounter, Performed" id="a8414564-9151-48f2-8bc4-f2de9bb24e9e" name="Encounter Inpatient" oid="2.16.840.1.113883.3.666.5.307" suppDataElement="false" taxonomy="SNOMEDCT" uuid="a8414564-9151-48f2-8bc4-f2de9bb24e9e" version="1.0"/>
+    <qdm codeSystemName="Joint Commission" datatype="Device, Applied" id="40280381-3d27-5493-013d-477b9d1113c6" name="Graduated compression stockings (GCS)" oid="2.16.840.1.113883.3.117.1.7.1.256" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3d27-5493-013d-477b9d1113c6" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="Medication, Administered" id="40280381-3d27-5493-013d-477b9d1213d0" name="Injectable Factor Xa Inhibitor for VTE Prophylaxis" oid="2.16.840.1.113883.3.117.1.7.1.211" suppDataElement="false" taxonomy="RXNORM" uuid="40280381-3d27-5493-013d-477b9d1213d0" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="Device, Applied" id="40280381-3d27-5493-013d-477b9d1113c8" name="Intermittent pneumatic compression devices (IPC)" oid="2.16.840.1.113883.3.117.1.7.1.214" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3d27-5493-013d-477b9d1113c8" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="Medication, Administered" id="40280381-3d27-5493-013d-477b9d1213cf" name="Low Molecular Weight Heparin for VTE Prophylaxis" oid="2.16.840.1.113883.3.117.1.7.1.219" suppDataElement="false" taxonomy="RXNORM" uuid="40280381-3d27-5493-013d-477b9d1213cf" version="1"/>
+    <qdm datatype="Medication, Administered" id="4f4b6d3c-0551-4cc7-9566-2200af73cd5f" name="Oral Factor Xa Inhibitor for VTE Prophylaxis" oid="2.16.840.1.113883.3.117.1.7.1.134" suppDataElement="false" taxonomy="RXNORM" uuid="4f4b6d3c-0551-4cc7-9566-2200af73cd5f" version="1.0"/>
+    <qdm codeSystemName="Joint Commission" datatype="Device, Applied" id="40280381-3d27-5493-013d-477b9d1113c7" name="Venous foot pumps (VFP)" oid="2.16.840.1.113883.3.117.1.7.1.230" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3d27-5493-013d-477b9d1113c7" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="Diagnostic Study, Order" id="6087855f-5437-4e85-a3d1-e4af6d8c1a56" name="VTE Diagnostic Test" oid="2.16.840.1.113883.3.117.1.7.1.276" suppDataElement="false" taxonomy="Grouping" uuid="6087855f-5437-4e85-a3d1-e4af6d8c1a56" version="1"/>
+    <qdm datatype="Diagnostic Study, Result" id="07fe0976-2d99-4239-aa14-9d9c15932d6e" name="VTE Diagnostic Test" oid="2.16.840.1.113883.3.117.1.7.1.276" suppDataElement="false" taxonomy="Grouping" uuid="07fe0976-2d99-4239-aa14-9d9c15932d6e" version="1.0"/>
+    <qdm codeSystemName="Joint Commission" datatype="Medication, Administered" id="40280381-3d27-5493-013d-477b9d1213d1" name="Warfarin" oid="2.16.840.1.113883.3.117.1.7.1.232" suppDataElement="false" taxonomy="RXNORM" uuid="40280381-3d27-5493-013d-477b9d1213d1" version="1"/>
+    <qdm datatype="Encounter, Performed" id="d480213d-fde1-457e-8518-713921093784" name="Emergency Department Visit" oid="2.16.840.1.113883.3.117.1.7.1.292" suppDataElement="false" taxonomy="SNOMEDCT" uuid="d480213d-fde1-457e-8518-713921093784" version="1.0"/>
+    <qdm datatype="Medication, Administered" id="088c24da-703f-464e-b5fc-420b55e8028e" name="Low Dose Unfractionated Heparin for VTE Prophylaxis" oid="2.16.840.1.113762.1.4.1045.39" suppDataElement="false" taxonomy="RXNORM" uuid="088c24da-703f-464e-b5fc-420b55e8028e" version="1.0"/>
+  </elementLookUp>
+  <strata displayName="Stratification">
+    <clause displayName="Stratum 1" type="stratum" uuid="40280381-3d27-5493-013d-477c0ad814f5">
+      <logicalOp displayName="AND" type="and"/>
+    </clause>
+  </strata>
+</measure>

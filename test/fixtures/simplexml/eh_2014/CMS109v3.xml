@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<measure>
+  <measureDetails>
+    <uuid>40280381-43db-d64c-0144-65df36c22e97</uuid>
+    <title>Venous Thromboembolism Patients Receiving Unfractionated Heparin with Dosages/Platelet Count Monitoring by Protocol or Nomogram</title>
+    <shortTitle>Venous Thromboembolism Patients</shortTitle>
+    <emeasureid>109</emeasureid>
+    <guid>bcce43dd-08e3-46c3-bfdd-0b1b472690f0</guid>
+    <version>3</version>
+    <status>In Progress</status>
+    <nqfid extension="0374" root="2.16.840.1.113883.3.560.1"/>
+    <period uuid="40280381-3cd1-4954-013d-12b735d01c2f">
+      <startDate uuid="aa50c515-9e2e-4b78-9471-98e6e7781667">00000101</startDate>
+      <stopDate uuid="7e9eae1b-562b-45fc-aa89-730aab3f1d73">00001231</stopDate>
+    </period>
+    <steward id="1.3.6.1.4.1.33895">Joint Commission</steward>
+    <developers>
+      <developer id="1.3.6.1.4.1.33895">Joint Commission</developer>
+    </developers>
+    <endorsement id="2.16.840.1.113883.3.560">National Quality Forum</endorsement>
+    <description>This measure assesses the number of patients diagnosed with confirmed VTE who received intravenous (IV) UFH therapy dosages AND had their platelet counts monitored using defined parameters such as a nomogram or protocol.</description>
+    <copyright>Measure specifications are in the Public Domain.
+
+LOINC(R) is a registered trademark of the Regenstrief Institute.
+
+This material contains SNOMED Clinical Terms(R) (SNOMED CT(c)) copyright 2004-–2010 International Health Terminology Standards Development Organization. All rights reserved.</copyright>
+    <disclaimer>These performance measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications. The measures and specifications are provided without warranty.</disclaimer>
+    <scoring id="PROPOR">Proportion</scoring>
+    <types>
+      <type id="PROCESS">Process</type>
+    </types>
+    <stratification>None</stratification>
+    <riskAdjustment>None</riskAdjustment>
+    <aggregation>None</aggregation>
+    <rationale>Heparin is commonly involved in adverse drug events (Geerts et al., 2008). Sub-therapeutic and supratherapeutic levels can lead to thromboembolic or bleeding complications that may increase the patient’s length of stay. The use of weight-based nomograms has increased the likelihood that a therapeutic partial prothromboplastin time (aPTT) will be achieved within the first 24 to 48 hours of therapy. The risk of recurrent thromboembolism is reduced when a therapeutic level of heparin is reached quickly. Unfractionated heparin (UFH) management by weight-based aPTT adjusted protocols have demonstrated their ability through clinical trials to achieve a therapeutic aPTT more rapidly than with standard UFH dosing without increasing major bleeding (Rashke et al, 1993).
+
+Heparin nomograms are superior compared to routine care in the timely achievement of therapeutic anticoagulation despite the trend toward patients having aPTTs above the target range (ahrq.gov/clinic/ptsafety/chap9.htm, retrieved October 6, 2011). Heparin-induced thrombocytopenia (HIT) occurs more commonly in patients who receive UFH than in those who receive low molecular weight heparin (Martin et. al., 2005). HIT is defined as an unexplained fall in platelet count (specifically, a 50% fall in platelet count from baseline, even if the platelet count remains above 150 x 109/L) (Warkentin et. al., 2008). Platelet counts generally begin to fall 5-10 days after the initiation of heparin therapy. Prompt recognition of HIT is important so that heparin can be discontinued and the risk of venous and arterial thrombosis minimized. To detect HIT, platelet count monitoring is recommended for all patients treated with UFH (Warkentin et. al., 2008).</rationale>
+    <recommendations>NoneHeparin-induced thrombocytopenia (HIT) may occur in patients who receive unfractionated heparin (UHF) for treatment of thromboembolism. Prompt recognition of HIT by evaluation of platelet counts can allow for detection of HIT, and the subsequent discontinuation of UFH.  Management of UFH by nomogram/protocol is recommended to decrease the time outside of the therapeutic range.</recommendations>
+    <improvementNotations>An increase in rate</improvementNotations>
+    <references>
+      <reference>Gandi TK, Shojania KG, Bates DW. Chapter 9. Protocols for High-Risk Drugs: Reducing Adverse Drugs Events Related to Anticoagulants. Retrieved from the World Wide Web at http://www.ahrq.gov/clinic/ptsafety/chap9.htm accessed on October 6, 2011.</reference>
+      <reference>Geerts WH, Bergquist D., Pineo,GF., Heit, J.A., Samama, CM., Lassen, MR., Colwell, CW. Prevention of venous thromboembolism: American College of Chest Physicians Evidence-Based Clinical Practice Guidelines (8th Edition). CHEST. 2008:133; 381-453.</reference>
+      <reference>Guyatt, G.H., Akl, E.A., Crowther, M., Gutterman, D., Schunemann, H. Antithromboitic Therapy and Prevention of Thrombosis, 9th edition: American College of Chest Physicians Evidence-Based Clinical Practice Guidelines. CHEST 2012; 141(2) (Supp):7S-47S.</reference>
+      <reference>Martel, N., Lee, J., and Wells, P.S. Risk for heparin induced thrombocytopenia with unfractionated and low-molecular-weight heparin thromboprophylaxis: a meta-analysis. Blood 2005 June; 106:2710-2715.</reference>
+      <reference>Raschke RA, Reilly BM, Guidry JR et al. The weight-based heparin dosing nomogram compared with ‘standard care’ nomogram. Ann Intern Med. 1993 Nov 1; 119(9):874-81.</reference>
+      <reference>Warkentin TE, Roberts RS, Hirsh J, et al. An improved definition of immune heparin-induced thrombocytopenia in postoperative orthopedic patients. Arch Intern Med 2003; 163:2518-24.</reference>
+    </references>
+    <definitions>None</definitions>
+    <guidance>The unit of measurement for this measure is an inpatient episode of care. Each distinct hospitalization should be reported, regardless of whether the same patient is admitted for inpatient care more than once during the measurement period. In addition, the eMeasure logic intends to represent events within or surrounding a single occurrence of an inpatient hospitalization.
+
+Treatment adjustment by protocol and/or use of a clinical pathway must be specific to unfractionated heparin therapy. Heparin protocols and clinical pathways may include use of a nomogram.
+
+The construct of Unfractionated Heparin (route: 'Intravenous route') intends to capture continually infused heparin rather than heparin flushes or pushes.</guidance>
+    <transmissionFormat>None</transmissionFormat>
+    <initialPatientPopDescription>Patients age 18 and older discharged from hospital inpatient acute care with a diagnosis of venous thromboembolism (VTE)and a length of stay less than or equal to 120 days.</initialPatientPopDescription>
+    <denominatorDescription>Patients with VTE confirmed through a diagnostic test and receiving IV UFH therapy</denominatorDescription>
+    <denominatorExclusionsDescription>Patients with comfort measures documented
+Patients discharged to another hospital
+Patients who left against medical advice
+Patients who expired
+Patients discharged to home for hospice care
+Patients discharged to a health care facility for hospice care</denominatorExclusionsDescription>
+    <numeratorDescription>Patients who have their IV UFH therapy dosages and platelet counts monitored according to defined parameters such as a nomogram or protocol.
+Patients who are on UFH therapy for less than 24 hours and have their UFH therapy dosages monitored according to defined parameters such as a nomogram or protocol.</numeratorDescription>
+    <numeratorExclusionsDescription>Not Applicable</numeratorExclusionsDescription>
+    <denominatorExceptionsDescription>None</denominatorExceptionsDescription>
+    <measurePopulationDescription>Not Applicable</measurePopulationDescription>
+    <measureObservationsDescription>Not Applicable</measureObservationsDescription>
+    <supplementalData>For every patient evaluated by this measure also identify payer, race, ethnicity and sex.</supplementalData>
+    <qualityMeasureSet uuid="8cd4a8b6-a1c3-49ca-9770-e00687407379">eMeasure Venous Thromboembolism (eVTE)</qualityMeasureSet>
+  </measureDetails>
+  <supplementalDataElements>
+    <elementRef id="40280381-3cd1-4954-013d-12b735cf1c27" name="ONC Administrative Sex"/>
+    <elementRef id="40280381-3cd1-4954-013d-12b735cf1c28" name="Race"/>
+    <elementRef id="40280381-3cd1-4954-013d-12b735d01c29" name="Ethnicity"/>
+    <elementRef id="40280381-3cd1-4954-013d-12b735d01c2a" name="Payer"/>
+  </supplementalDataElements>
+  <measureGrouping>
+    <group sequence="1">
+      <clause displayName="Initial Patient Population 1" type="initialPatientPopulation" uuid="15D65E1C-2A1C-44C1-84F9-5332E925BCAD">
+        <logicalOp displayName="AND" type="and">
+          <relationalOp displayName="&gt;= 18 years Starts Before Start Of" operatorType="Greater Than or Equal To" quantity="18" type="SBS" unit="years">
+            <elementRef displayName="birth date : Patient Characteristic Birthdate" id="40280381-3cd1-4954-013d-12b735d01c2b" type="qdm"/>
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="408da333-0870-4e16-bbeb-979bc48e851e" type="qdm"/>
+          </relationalOp>
+          <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="408da333-0870-4e16-bbeb-979bc48e851e" type="qdm">
+            <attribute comparisonValue="120" mode="Less Than Or Equal To" name="length of stay" unit="days"/>
+          </elementRef>
+          <relationalOp displayName="    Ends During" quantity="" type="EDU">
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="408da333-0870-4e16-bbeb-979bc48e851e" type="qdm"/>
+            <elementRef displayName="Measurement Period : Timing Element" id="40280381-3cd1-4954-013d-12b735d01c2f" type="qdm"/>
+          </relationalOp>
+          <logicalOp displayName="OR" type="or">
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="&lt;= 1 hours Ends Before Start Of" operatorType="Less Than or Equal To" quantity="1" type="EBS" unit="hours">
+                <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="8dec149a-0a7c-40d8-8d18-85b64bdb7bf3" type="qdm"/>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="408da333-0870-4e16-bbeb-979bc48e851e" type="qdm"/>
+              </relationalOp>
+              <relationalOp displayName="Starts During" type="SDU">
+                <logicalOp displayName="OR" type="or">
+                  <elementRef displayName="Venous Thromboembolism : Diagnosis, Active" id="40280381-3cd1-4954-013d-12b735d21c4c" type="qdm"/>
+                  <elementRef displayName="Obstetrics VTE : Diagnosis, Active" id="40280381-3cd1-4954-013d-12b735d01c2c" type="qdm"/>
+                </logicalOp>
+                <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="8dec149a-0a7c-40d8-8d18-85b64bdb7bf3" type="qdm"/>
+              </relationalOp>
+            </logicalOp>
+            <relationalOp displayName="Starts During" type="SDU">
+              <logicalOp displayName="OR" type="or">
+                <elementRef displayName="Venous Thromboembolism : Diagnosis, Active" id="40280381-3cd1-4954-013d-12b735d21c4c" type="qdm"/>
+                <elementRef displayName="Obstetrics VTE : Diagnosis, Active" id="40280381-3cd1-4954-013d-12b735d01c2c" type="qdm"/>
+              </logicalOp>
+              <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="408da333-0870-4e16-bbeb-979bc48e851e" type="qdm"/>
+            </relationalOp>
+          </logicalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Denominator 1" type="denominator" uuid="300E1F2F-F296-4CAE-8968-1749E958F7BB">
+        <logicalOp displayName="AND" type="and">
+          <logicalOp displayName="OR" type="or">
+            <relationalOp displayName="&lt;= 4 days Starts Before Start Of" operatorType="Less Than or Equal To" quantity="4" type="SBS" unit="days">
+              <elementRef displayName="VTE Diagnostic Test : Diagnostic Study, Result" id="40280381-3cd1-4954-013d-12b735d21c55" type="qdm">
+                <attribute mode="Value Set" name="result" qdmUUID="40280381-3cd1-4954-013d-12b735d21c54"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="408da333-0870-4e16-bbeb-979bc48e851e" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="During" type="DURING">
+              <elementRef displayName="VTE Diagnostic Test : Diagnostic Study, Result" id="40280381-3cd1-4954-013d-12b735d21c55" type="qdm">
+                <attribute mode="Value Set" name="result" qdmUUID="40280381-3cd1-4954-013d-12b735d21c54"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="408da333-0870-4e16-bbeb-979bc48e851e" type="qdm"/>
+            </relationalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="&lt;= 1 hours Ends Before Start Of" operatorType="Less Than or Equal To" quantity="1" type="EBS" unit="hours">
+                <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="8dec149a-0a7c-40d8-8d18-85b64bdb7bf3" type="qdm"/>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="408da333-0870-4e16-bbeb-979bc48e851e" type="qdm"/>
+              </relationalOp>
+              <logicalOp displayName="OR" type="or">
+                <relationalOp displayName="&lt;= 4 days Starts Before Start Of" operatorType="Less Than or Equal To" quantity="4" type="SBS" unit="days">
+                  <elementRef displayName="VTE Diagnostic Test : Diagnostic Study, Result" id="40280381-3cd1-4954-013d-12b735d21c55" type="qdm">
+                    <attribute mode="Value Set" name="result" qdmUUID="40280381-3cd1-4954-013d-12b735d21c54"/>
+                  </elementRef>
+                  <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="8dec149a-0a7c-40d8-8d18-85b64bdb7bf3" type="qdm"/>
+                </relationalOp>
+                <relationalOp displayName="During" type="DURING">
+                  <elementRef displayName="VTE Diagnostic Test : Diagnostic Study, Result" id="40280381-3cd1-4954-013d-12b735d21c55" type="qdm">
+                    <attribute mode="Value Set" name="result" qdmUUID="40280381-3cd1-4954-013d-12b735d21c54"/>
+                  </elementRef>
+                  <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="8dec149a-0a7c-40d8-8d18-85b64bdb7bf3" type="qdm"/>
+                </relationalOp>
+              </logicalOp>
+            </logicalOp>
+          </logicalOp>
+          <logicalOp displayName="OR" type="or">
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="&lt;= 1 hours Ends Before Start Of" operatorType="Less Than or Equal To" quantity="1" type="EBS" unit="hours">
+                <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="8dec149a-0a7c-40d8-8d18-85b64bdb7bf3" type="qdm"/>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="408da333-0870-4e16-bbeb-979bc48e851e" type="qdm"/>
+              </relationalOp>
+              <relationalOp displayName="Starts During" type="SDU">
+                <elementRef displayName="Unfractionated Heparin : Medication, Administered" id="40280381-3cd1-4954-013d-12b735d01c32" type="qdm">
+                  <attribute mode="Value Set" name="route" qdmUUID="40280381-3cd1-4954-013d-12b735d11c40"/>
+                </elementRef>
+                <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="8dec149a-0a7c-40d8-8d18-85b64bdb7bf3" type="qdm"/>
+              </relationalOp>
+            </logicalOp>
+            <relationalOp displayName="    Starts During" quantity="" type="SDU">
+              <elementRef displayName="Unfractionated Heparin : Medication, Administered" id="40280381-3cd1-4954-013d-12b735d01c32" type="qdm">
+                <attribute mode="Value Set" name="route" qdmUUID="40280381-3cd1-4954-013d-12b735d11c40"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="408da333-0870-4e16-bbeb-979bc48e851e" type="qdm"/>
+            </relationalOp>
+          </logicalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Denominator Exclusions 2" type="denominatorExclusions" uuid="2703D3D7-83F8-4DA0-B899-E706AF280FA1">
+        <logicalOp displayName="AND" type="and">
+          <logicalOp displayName="OR" type="or">
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="&lt;= 1 hours Ends Before Start Of" operatorType="Less Than or Equal To" quantity="1" type="EBS" unit="hours">
+                <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="8dec149a-0a7c-40d8-8d18-85b64bdb7bf3" type="qdm"/>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="408da333-0870-4e16-bbeb-979bc48e851e" type="qdm"/>
+              </relationalOp>
+              <relationalOp displayName="Starts During" type="SDU">
+                <logicalOp displayName="OR" type="or">
+                  <elementRef displayName="Comfort Measures  : Intervention, Order" id="f868f926-3174-47bd-b8bd-49a879e012b4" type="qdm"/>
+                  <elementRef displayName="Comfort Measures  : Intervention, Performed" id="beb49e3a-8d18-4c43-abd7-f98a8d88bb10" type="qdm"/>
+                </logicalOp>
+                <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="8dec149a-0a7c-40d8-8d18-85b64bdb7bf3" type="qdm"/>
+              </relationalOp>
+            </logicalOp>
+            <relationalOp displayName="Starts During" type="SDU">
+              <logicalOp displayName="OR" type="or">
+                <elementRef displayName="Comfort Measures  : Intervention, Order" id="f868f926-3174-47bd-b8bd-49a879e012b4" type="qdm"/>
+                <elementRef displayName="Comfort Measures  : Intervention, Performed" id="beb49e3a-8d18-4c43-abd7-f98a8d88bb10" type="qdm"/>
+              </logicalOp>
+              <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="408da333-0870-4e16-bbeb-979bc48e851e" type="qdm"/>
+            </relationalOp>
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="408da333-0870-4e16-bbeb-979bc48e851e" type="qdm">
+              <attribute mode="Value Set" name="discharge status" qdmUUID="40280381-3cd1-4954-013d-12b735d11c47"/>
+            </elementRef>
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="408da333-0870-4e16-bbeb-979bc48e851e" type="qdm">
+              <attribute mode="Value Set" name="discharge status" qdmUUID="40280381-3cd1-4954-013d-12b735d11c3e"/>
+            </elementRef>
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="408da333-0870-4e16-bbeb-979bc48e851e" type="qdm">
+              <attribute mode="Value Set" name="discharge status" qdmUUID="40280381-3cd1-4954-013d-12b735d11c45"/>
+            </elementRef>
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="408da333-0870-4e16-bbeb-979bc48e851e" type="qdm">
+              <attribute mode="Value Set" name="discharge status" qdmUUID="40280381-3cd1-4954-013d-12b735d11c3d"/>
+            </elementRef>
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="408da333-0870-4e16-bbeb-979bc48e851e" type="qdm">
+              <attribute mode="Value Set" name="discharge status" qdmUUID="40280381-3cd1-4954-013d-12b735d11c3c"/>
+            </elementRef>
+          </logicalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Numerator 1" type="numerator" uuid="5DC87DC8-F08E-49F9-8BDD-BBAF8F5A966B">
+        <logicalOp displayName="AND" type="and">
+          <logicalOp displayName="OR" type="or">
+            <relationalOp displayName="    Starts During" quantity="" type="SDU">
+              <elementRef displayName="Occurrence A of Unfractionated Heparin : Medication, Order" id="1fe271c0-d629-443d-88ce-0b4bfc79ff43" type="qdm"/>
+              <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="408da333-0870-4e16-bbeb-979bc48e851e" type="qdm"/>
+            </relationalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="&lt;= 1 hours Ends Before Start Of" operatorType="Less Than or Equal To" quantity="1" type="EBS" unit="hours">
+                <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="8dec149a-0a7c-40d8-8d18-85b64bdb7bf3" type="qdm"/>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="408da333-0870-4e16-bbeb-979bc48e851e" type="qdm"/>
+              </relationalOp>
+              <relationalOp displayName="Starts During" type="SDU">
+                <elementRef displayName="Occurrence A of Unfractionated Heparin : Medication, Order" id="1fe271c0-d629-443d-88ce-0b4bfc79ff43" type="qdm"/>
+                <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="8dec149a-0a7c-40d8-8d18-85b64bdb7bf3" type="qdm"/>
+              </relationalOp>
+            </logicalOp>
+          </logicalOp>
+          <relationalOp displayName="During" type="DURING">
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="    Starts After Start Of" quantity="" type="SAS">
+                <logicalOp displayName="AND" type="and">
+                  <logicalOp displayName="OR" type="or">
+                    <elementRef displayName="Treatment Adjusted by Protocol : Procedure, Performed" id="40280381-3cd1-4954-013d-12b735d21c57" type="qdm"/>
+                    <elementRef displayName="Clinical Pathway Protocol : Procedure, Performed" id="40280381-3cd1-4954-013d-12b735d21c58" type="qdm"/>
+                  </logicalOp>
+                  <elementRef displayName="Platelet Count : Laboratory Test, Performed" id="40280381-3cd1-4954-013d-12b735d21c59" type="qdm"/>
+                </logicalOp>
+                <elementRef displayName="Occurrence A of Unfractionated Heparin : Medication, Order" id="1fe271c0-d629-443d-88ce-0b4bfc79ff43" type="qdm">
+                  <attribute mode="Value Set" name="route" qdmUUID="40280381-3cd1-4954-013d-12b735d11c40"/>
+                </elementRef>
+              </relationalOp>
+            </logicalOp>
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="408da333-0870-4e16-bbeb-979bc48e851e" type="qdm"/>
+          </relationalOp>
+        </logicalOp>
+      </clause>
+    </group>
+  </measureGrouping>
+  <elementLookUp>
+    <qdm codeSystemName="National Quality Forum" datatype="Patient Characteristic Birthdate" id="40280381-3cd1-4954-013d-12b735d01c2b" name="birth date" oid="2.16.840.1.113883.3.560.100.4" suppDataElement="false" taxonomy="LOINC" uuid="40280381-3cd1-4954-013d-12b735d01c2b" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="Procedure, Performed" id="40280381-3cd1-4954-013d-12b735d21c58" name="Clinical Pathway Protocol" oid="2.16.840.1.113883.3.117.1.7.1.253" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3cd1-4954-013d-12b735d21c58" version="1"/>
+    <qdm datatype="Intervention, Order" id="f868f926-3174-47bd-b8bd-49a879e012b4" name="Comfort Measures " oid="1.3.6.1.4.1.33895.1.3.0.45" suppDataElement="false" taxonomy="SNOMEDCT" uuid="f868f926-3174-47bd-b8bd-49a879e012b4" version="1.0"/>
+    <qdm datatype="Intervention, Performed" id="beb49e3a-8d18-4c43-abd7-f98a8d88bb10" name="Comfort Measures " oid="1.3.6.1.4.1.33895.1.3.0.45" suppDataElement="false" taxonomy="SNOMEDCT" uuid="beb49e3a-8d18-4c43-abd7-f98a8d88bb10" version="1.0"/>
+    <qdm codeSystemName="Joint Commission" datatype="attribute" id="40280381-3cd1-4954-013d-12b735d11c47" name="Discharge To Another Hospital" oid="2.16.840.1.113883.3.117.1.7.1.87" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3cd1-4954-013d-12b735d11c47" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="attribute" id="40280381-3cd1-4954-013d-12b735d11c3c" name="Discharged to Health Care Facility for Hospice Care" oid="2.16.840.1.113883.3.117.1.7.1.207" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3cd1-4954-013d-12b735d11c3c" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="attribute" id="40280381-3cd1-4954-013d-12b735d11c3d" name="Discharged to Home for Hospice Care" oid="2.16.840.1.113883.3.117.1.7.1.209" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3cd1-4954-013d-12b735d11c3d" version="1"/>
+    <qdm datatype="Encounter, Performed" id="8dec149a-0a7c-40d8-8d18-85b64bdb7bf3" instance="Occurrence A" name="Emergency Department Visit" oid="2.16.840.1.113883.3.117.1.7.1.292" suppDataElement="false" taxonomy="SNOMEDCT" uuid="8dec149a-0a7c-40d8-8d18-85b64bdb7bf3" version="1.0"/>
+    <qdm datatype="Encounter, Performed" id="408da333-0870-4e16-bbeb-979bc48e851e" instance="Occurrence A" name="Encounter Inpatient" oid="2.16.840.1.113883.3.666.5.307" suppDataElement="false" taxonomy="SNOMEDCT" uuid="408da333-0870-4e16-bbeb-979bc48e851e" version="1.0"/>
+    <qdm codeSystemName="CDC NCHS" datatype="Patient Characteristic Ethnicity" id="40280381-3cd1-4954-013d-12b735d01c29" name="Ethnicity" oid="2.16.840.1.114222.4.11.837" suppDataElement="true" taxonomy="CDCREC" uuid="40280381-3cd1-4954-013d-12b735d01c29" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="attribute" id="40280381-3cd1-4954-013d-12b735d11c40" name="Intravenous route" oid="2.16.840.1.113883.3.117.1.7.1.222" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3cd1-4954-013d-12b735d11c40" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="attribute" id="40280381-3cd1-4954-013d-12b735d11c3e" name="Left Against Medical Advice" oid="2.16.840.1.113883.3.117.1.7.1.308" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3cd1-4954-013d-12b735d11c3e" version="1"/>
+    <qdm codeSystemName="National Quality Forum" datatype="Timing Element" id="40280381-3cd1-4954-013d-12b735d01c2f" name="Measurement Period" oid="2.16.840.1.113883.3.67.1.101.1.53" suppDataElement="false" taxonomy="NQF" uuid="40280381-3cd1-4954-013d-12b735d01c2f" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="Diagnosis, Active" id="40280381-3cd1-4954-013d-12b735d01c2c" name="Obstetrics VTE" oid="2.16.840.1.113883.3.117.1.7.1.264" suppDataElement="false" taxonomy="Grouping" uuid="40280381-3cd1-4954-013d-12b735d01c2c" version="1"/>
+    <qdm codeSystemName="National Library of Medicine" datatype="Patient Characteristic Sex" id="40280381-3cd1-4954-013d-12b735cf1c27" name="ONC Administrative Sex" oid="2.16.840.1.113762.1.4.1" suppDataElement="true" taxonomy="AdministrativeSex" uuid="40280381-3cd1-4954-013d-12b735cf1c27" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="attribute" id="40280381-3cd1-4954-013d-12b735d11c45" name="Patient Expired" oid="2.16.840.1.113883.3.117.1.7.1.309" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3cd1-4954-013d-12b735d11c45" version="1"/>
+    <qdm codeSystemName="PHDSC" datatype="Patient Characteristic Payer" id="40280381-3cd1-4954-013d-12b735d01c2a" name="Payer" oid="2.16.840.1.114222.4.11.3591" suppDataElement="true" taxonomy="SOP" uuid="40280381-3cd1-4954-013d-12b735d01c2a" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="Laboratory Test, Performed" id="40280381-3cd1-4954-013d-12b735d21c59" name="Platelet Count" oid="2.16.840.1.113883.3.117.1.7.1.267" suppDataElement="false" taxonomy="LOINC" uuid="40280381-3cd1-4954-013d-12b735d21c59" version="1"/>
+    <qdm codeSystemName="CDC NCHS" datatype="Patient Characteristic Race" id="40280381-3cd1-4954-013d-12b735cf1c28" name="Race" oid="2.16.840.1.114222.4.11.836" suppDataElement="true" taxonomy="CDCREC" uuid="40280381-3cd1-4954-013d-12b735cf1c28" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="Procedure, Performed" id="40280381-3cd1-4954-013d-12b735d21c57" name="Treatment Adjusted by Protocol" oid="2.16.840.1.113883.3.117.1.7.1.278" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3cd1-4954-013d-12b735d21c57" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="Medication, Administered" id="40280381-3cd1-4954-013d-12b735d01c32" name="Unfractionated Heparin" oid="2.16.840.1.113883.3.117.1.7.1.218" suppDataElement="false" taxonomy="RXNORM" uuid="40280381-3cd1-4954-013d-12b735d01c32" version="1"/>
+    <qdm datatype="Medication, Order" id="1fe271c0-d629-443d-88ce-0b4bfc79ff43" instance="Occurrence A" name="Unfractionated Heparin" oid="2.16.840.1.113883.3.117.1.7.1.218" suppDataElement="false" taxonomy="RXNORM" uuid="1fe271c0-d629-443d-88ce-0b4bfc79ff43" version="1.0"/>
+    <qdm codeSystemName="Joint Commission" datatype="Diagnosis, Active" id="40280381-3cd1-4954-013d-12b735d21c4c" name="Venous Thromboembolism" oid="2.16.840.1.113883.3.117.1.7.1.279" suppDataElement="false" taxonomy="Grouping" uuid="40280381-3cd1-4954-013d-12b735d21c4c" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="attribute" id="40280381-3cd1-4954-013d-12b735d21c54" name="VTE Confirmed" oid="2.16.840.1.113883.3.117.1.7.1.407" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3cd1-4954-013d-12b735d21c54" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="Diagnostic Study, Result" id="40280381-3cd1-4954-013d-12b735d21c55" name="VTE Diagnostic Test" oid="2.16.840.1.113883.3.117.1.7.1.276" suppDataElement="false" taxonomy="Grouping" uuid="40280381-3cd1-4954-013d-12b735d21c55" version="1"/>
+    <qdm datatype="Encounter, Performed" id="7b36d97d-eee3-45d6-b994-e886a98eee2d" name="Emergency Department Visit" oid="2.16.840.1.113883.3.117.1.7.1.292" suppDataElement="false" taxonomy="SNOMEDCT" uuid="7b36d97d-eee3-45d6-b994-e886a98eee2d" version="1.0"/>
+    <qdm datatype="Encounter, Performed" id="af92522b-f95d-4e3f-8c7f-48124131bf1e" name="Encounter Inpatient" oid="2.16.840.1.113883.3.666.5.307" suppDataElement="false" taxonomy="SNOMEDCT" uuid="af92522b-f95d-4e3f-8c7f-48124131bf1e" version="1.0"/>
+    <qdm datatype="Medication, Order" id="0862140c-9097-4b80-9eb7-51ace5c72de4" name="Unfractionated Heparin" oid="2.16.840.1.113883.3.117.1.7.1.218" suppDataElement="false" taxonomy="RXNORM" uuid="0862140c-9097-4b80-9eb7-51ace5c72de4" version="1.0"/>
+  </elementLookUp>
+  <strata displayName="Stratification">
+    <clause displayName="Stratum 1" type="stratum" uuid="40280381-3cd1-4954-013d-12b767cf1d0c">
+      <logicalOp displayName="AND" type="and"/>
+    </clause>
+  </strata>
+</measure>

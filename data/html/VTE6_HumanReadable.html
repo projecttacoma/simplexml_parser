@@ -1,0 +1,816 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:n1="urn:hl7-org:v3">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <title>Incidence of Potentially-Preventable Venous Thromboembolism</title><style type="text/css">
+body {
+	color: rgb(26, 26, 26);
+	background-color: rgb(255,255,255);
+	font-family: Verdana, Tahoma, sans-serif;
+	font-size: 11px;
+}
+
+a {
+	color: rgb(0, 0, 255);
+	background-color: rgb(255,255,255);
+}
+
+h1 {
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 11pt;
+	font-weight: bold;
+}
+
+h3 {
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+h4 {
+	font-size: 8pt;
+	font-weight: bold;
+}
+
+div {
+	width: 80%;
+}
+
+table {
+	line-height: 10pt;
+	width: 80%;
+}
+
+tr {
+	background-color: rgb(224,224,224);
+}
+
+td {
+	padding: 0.1cm 0.2cm;
+	vertical-align: top;
+}
+
+.h1center {
+	font-size: 12pt;
+	font-weight: bold;
+	text-align: center;
+	width: 80%;
+}
+
+.header_table{
+	border: 1pt inset rgb(0,0,0);
+}
+
+.narr_table {
+	width: 100%;
+}
+
+.narr_tr {
+	background-color: rgb(225,225,225);
+}
+pre {
+ overflow: auto; /* Use horizontal scroller if needed; for Firefox 2, not needed in Firefox 3 */
+ white-space: pre-wrap; /* css-3 */
+ white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+ white-space: -pre-wrap; /* Opera 4-6 */
+ white-space: -o-pre-wrap; /* Opera 7 */
+ word-wrap: break-word; /* Internet Explorer 5.5+ */
+ font-family: Verdana, Tahoma, sans-serif;
+ font-size: 11px;
+ text-align:left;
+ margin: 0px 0px 0px 0px;
+ padding:0px 0px 0px 0px;
+}
+.narr_th {
+	background-color: rgb(201,201,201);
+}
+
+.td_label{
+	font-weight: bold;
+	color: white;
+}
+	</style></head>
+   <body>
+      <table class="header_table">
+         <tbody>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Title</span></td>
+               <td width="80%" colspan="3">Incidence of Potentially-Preventable Venous Thromboembolism</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Identifier<br>(Measure Authoring Tool)</span></td>
+               <td width="30%">114</td>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Version number</span></td>
+               <td width="30%">3</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">NQF Number</span></td>
+               <td width="30%">0376</td>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">GUID</span></td>
+               <td> 32cfc834-843a-4f45-b359-8e158eac4396</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measurement Period</span></td>
+               <td width="80%" colspan="3">January 1, 20xx  through December 31, 20xx </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Steward</span></td>
+               <td width="80%" colspan="3">Joint Commission</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Developer</span></td>
+               <td width="80%" colspan="3">Joint Commission</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Endorsed By</span></td>
+               <td width="80%" colspan="3">National Quality Forum</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Description</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>This measure assesses the number of patients diagnosed with confirmed VTE during hospitalization (not present at admission) who did not receive VTE prophylaxis between hospital admission and the day before the VTE diagnostic testing order date.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Copyright</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Measure specifications are in the Public Domain.
+
+LOINC(R) is a registered trademark of the Regenstrief Institute.
+
+This material contains SNOMED Clinical Terms (R) (SNOMED CT(C)) copyright 2004-&#8211;2010 International Health Terminology Standards Development Organization. All rights reserved.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Disclaimer</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>These performance measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications. The measures and specifications are provided without warranty.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Scoring</span></td>
+               <td width="80%" colspan="3">Proportion</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Type</span></td>
+               <td width="80%" colspan="3">Outcome</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Stratification</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Risk Adjustment</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Rate Aggregation</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Rationale</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>The concept of &#8220;failure to prevent&#8221; has generated interest in national health policy organizations to identify evidence-based practice that will improve patient safety in the hospital setting (Wachter et al 2008). The incidence of preventable venous thromboembolism (VTE) among hospitalized patients is overwhelming, and contributes to extended hospital stays, and the rising cost of health care. Zhan 2003, states that &#8220;VTE was the second most common medical complication of postoperative patients, the second most common cause of excess length of stay, and the third most common cause of excess mortality and excess charges&#8221;. According to Arnold, D.M. (2001), preventable VTE is defined as &#8220;objectively diagnosed Deep Vein Thrombosis (DVT) or Pulmonary Emboli (PE) that occurred in a setting in which thromboprophylaxis was indicated but was either administered inadequately or not administered at all.&#8221; In spite of formal guidelines, and recommendations for preventative care, pulmonary embolism is still the most common preventable cause of death among hospitalized patients (Wachter et al, 2008).</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Clinical Recommendation Statement</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Failure to prevent VTE can result in delayed hospital discharge or readmission, increased risk for long-term mobidity from post-thrombotic syndrome, and recurrent thrombosis in the future.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Improvement Notation</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>A decrease in the rate</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Arnold DM, Kahn SR, Shrier I. Missed opportunities for prevention of venous thromboembolism: an evaluation of the use of thromboprophylaxis guidelines. Chest. 2001 Dec;120(6):1964-71.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Guyatt, G.H., Akl, E.A., Crowther, M., Gutterman, D., Schunemann, H. Antithromboitic Therapy and Prevention of Thrombosis, 9th edition: American College of Chest Physicians Evidence-Based Clinical Practice Guidelines. CHEST 2012; 141(2)(Supp):7S-47S.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Wachter, R., Shojania KG, Duncan, B.W., McDonald, K.W., et al. Making health care safer: a critical analysis of patient safety practices; evidence report/ technology assessment No 43. Agency for Healthcare Research and Quality. Publication 01-E0582001.2001. Retrieved October 11, 2011 from http://archive.ahrq.gov/clinic/tp/ptsaftp.htm.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Zhan, C., Miller M.R. Excessive length of stay, charges and mortality attributable to medical injures during hospitalization. JAMA 2003; 290:1868-1874.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Definition</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Guidance</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>The unit of measurement for this measure is an inpatient episode of care. Each distinct hospitalization should be reported, regardless of whether the same patient is admitted for inpatient care more than once during the measurement period. In addition, the eMeasure logic intends to represent events within or surrounding a single occurrence of an inpatient hospitalization.
+
+When low dose unfractionated heparin is not administered due to medical reasons, the intended administration route is subcutaneous.
+
+The construct of Unfractionated Heparin (route: 'Intravenous route') intends to capture continually infused heparin rather than heparin flushes or pushes.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Transmission Format</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Initial Patient Population</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Patients age 18 and older discharged from hospital inpatient acute care with a diagnosis of venous thromboembolism (VTE)and a length of stay less than or equal to 120 days.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Patients who developed VTE confirmed by a diagnostic test during hospitalization.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator Exclusions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Patients with comfort measures documented
+Patients with a principal diagnosis of VTE
+Patients with VTE present at admission
+Patients with reasons for not administering mechanical and pharmacologic prophylaxis</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Numerator</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Patients who received no VTE prophylaxis prior to the VTE diagnostic test order date.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Numerator Exclusions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator Exceptions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Population</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Observations</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Supplemental Data Elements</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>For every patient evaluated by this measure also identify payer, race, ethnicity and sex.</pre></div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <h2><a name="toc">Table of Contents</a></h2>
+      <ul>
+         <li><a href="#d1e521">Population criteria</a></li>
+         <li><a href="#d1e4870">Data criteria (QDM Data Elements)</a></li>
+         <li><a href="#d1e6546">Reporting Stratification</a></li>
+         <li><a href="#d1e6567">Supplemental Data Elements</a></li>
+      </ul>
+      <hr align="left" color="teal" size="2" width="80%">
+      <h3><a name="d1e521" href="#toc">Population criteria</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               <b>Initial Patient Population =</b>
+               
+               <ul>
+                  <li>AND: "Patient Characteristic Birthdate: birth date"  &gt;= 18 year(s) starts before start of "Occurrence A of Encounter, Performed:
+                     Encounter Inpatient"
+                  </li>
+                  <li>AND: "Occurrence A of Encounter, Performed: Encounter Inpatient (length of stay &lt;= 120 day(s))"</li>
+                  <li>AND: "Occurrence A of Encounter, Performed: Encounter Inpatient" ends during "Measurement Period"</li>
+                  <li>AND: 
+                     <ul>
+                        <li>AND NOT: 
+                           <ul>
+                              <li>OR: "Diagnosis, Active: Venous Thromboembolism (ordinality: 'Principal')"</li>
+                              <li>OR: "Diagnosis, Active: Obstetrics VTE (ordinality: 'Principal')"</li>
+                           </ul>
+                           
+                        </li>
+                        <li>AND: 
+                           <ul>
+                              <li>OR: "Diagnosis, Active: Venous Thromboembolism"</li>
+                              <li>OR: "Diagnosis, Active: Obstetrics VTE"</li>
+                           </ul>
+                           
+                        </li>
+                        <li> starts during "Occurrence A of Encounter, Performed: Encounter Inpatient"</li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator =</b>
+               
+               <ul>
+                  <li>AND: "Initial Patient Population"</li>
+                  <li>AND: "Occurrence A of Diagnostic Study, Order: VTE Diagnostic Test" starts during "Occurrence A of Encounter, Performed: Encounter
+                     Inpatient"
+                  </li>
+                  <li>AND:  FIRST: "Occurrence A of Diagnostic Study, Result: VTE Diagnostic Test (result: 'VTE Confirmed')" starts during "Occurrence
+                     A of Encounter, Performed: Encounter Inpatient"
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator Exclusions =</b>
+               
+               <ul>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: "Medication, Administered: Unfractionated Heparin (route: 'Intravenous route')" starts before start of "Occurrence A of
+                           Diagnostic Study, Order: VTE Diagnostic Test"
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: 
+                                 <ul>
+                                    <li>OR: 
+                                       <ul>
+                                          <li>AND: "Occurrence A of Encounter, Performed: Emergency Department Visit"  &lt;= 1 hour(s) ends before start of "Occurrence A of
+                                             Encounter, Performed: Encounter Inpatient"
+                                          </li>
+                                          <li>AND: 
+                                             <ul>
+                                                <li>OR: "Medication, Administered not done: Medical Contraindication" for "Low Dose Unfractionated Heparin for VTE Prophylaxis
+                                                   "
+                                                </li>
+                                                <li>OR: "Medication, Administered not done: Medical Contraindication" for "Low Molecular Weight Heparin for VTE Prophylaxis "</li>
+                                                <li>OR: "Medication, Administered not done: Medical Contraindication" for "Injectable Factor Xa Inhibitor for VTE Prophylaxis
+                                                   "
+                                                </li>
+                                                <li>OR: "Medication, Administered not done: Medical Contraindication" for "Warfarin "</li>
+                                                <li> starts during "Occurrence A of Encounter, Performed: Emergency Department Visit"</li>
+                                             </ul>
+                                             
+                                          </li>
+                                       </ul>
+                                       
+                                    </li>
+                                    <li>OR: 
+                                       <ul>
+                                          <li>OR: 
+                                             <ul>
+                                                <li>OR: "Medication, Administered not done: Medical Contraindication" for "Low Dose Unfractionated Heparin for VTE Prophylaxis
+                                                   "
+                                                </li>
+                                                <li>OR: "Medication, Administered not done: Medical Contraindication" for "Low Molecular Weight Heparin for VTE Prophylaxis "</li>
+                                                <li>OR: "Medication, Administered not done: Medical Contraindication" for "Injectable Factor Xa Inhibitor for VTE Prophylaxis
+                                                   "
+                                                </li>
+                                                <li>OR: "Medication, Administered not done: Medical Contraindication" for "Warfarin "</li>
+                                                <li> starts before start of "Occurrence A of Diagnostic Study, Order: VTE Diagnostic Test"</li>
+                                             </ul>
+                                             
+                                          </li>
+                                          <li> starts during "Occurrence A of Encounter, Performed: Encounter Inpatient"</li>
+                                       </ul>
+                                       
+                                    </li>
+                                 </ul>
+                                 
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>OR: 
+                                       <ul>
+                                          <li>AND: "Occurrence A of Encounter, Performed: Emergency Department Visit"  &lt;= 1 hour(s) ends before start of "Occurrence A of
+                                             Encounter, Performed: Encounter Inpatient"
+                                          </li>
+                                          <li>AND: 
+                                             <ul>
+                                                <li>OR: "Device, Applied not done: Medical Contraindication" for "Intermittent pneumatic compression devices (IPC) "</li>
+                                                <li>OR: "Device, Applied not done: Medical Contraindication" for "Venous foot pumps (VFP) "</li>
+                                                <li>OR: "Device, Applied not done: Medical Contraindication" for "Graduated compression stockings (GCS) "</li>
+                                                <li> starts during "Occurrence A of Encounter, Performed: Emergency Department Visit"</li>
+                                             </ul>
+                                             
+                                          </li>
+                                       </ul>
+                                       
+                                    </li>
+                                    <li>OR: 
+                                       <ul>
+                                          <li>OR: 
+                                             <ul>
+                                                <li>OR: "Device, Applied not done: Medical Contraindication" for "Intermittent pneumatic compression devices (IPC) "</li>
+                                                <li>OR: "Device, Applied not done: Medical Contraindication" for "Venous foot pumps (VFP) "</li>
+                                                <li>OR: "Device, Applied not done: Medical Contraindication" for "Graduated compression stockings (GCS) "</li>
+                                                <li> starts before start of "Occurrence A of Diagnostic Study, Order: VTE Diagnostic Test"</li>
+                                             </ul>
+                                             
+                                          </li>
+                                          <li> starts during "Occurrence A of Encounter, Performed: Encounter Inpatient"</li>
+                                       </ul>
+                                       
+                                    </li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Occurrence A of Encounter, Performed: Emergency Department Visit"  &lt;= 1 hour(s) ends before start of "Occurrence A of
+                                 Encounter, Performed: Encounter Inpatient"
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>OR: "Medication, Administered not done: Patient Refusal" for "Low Molecular Weight Heparin for VTE Prophylaxis "</li>
+                                    <li>OR: "Medication, Administered not done: Patient Refusal" for "Low Dose Unfractionated Heparin for VTE Prophylaxis "</li>
+                                    <li>OR: "Medication, Administered not done: Patient Refusal" for "Injectable Factor Xa Inhibitor for VTE Prophylaxis "</li>
+                                    <li>OR: "Medication, Administered not done: Patient Refusal" for "Warfarin "</li>
+                                    <li>OR: "Device, Applied not done: Patient Refusal" for "Venous foot pumps (VFP) "</li>
+                                    <li>OR: "Device, Applied not done: Patient Refusal" for "Graduated compression stockings (GCS) "</li>
+                                    <li>OR: "Device, Applied not done: Patient Refusal" for "Intermittent pneumatic compression devices (IPC) "</li>
+                                    <li> starts during "Occurrence A of Encounter, Performed: Emergency Department Visit"</li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>OR: 
+                                 <ul>
+                                    <li>OR: "Medication, Administered not done: Patient Refusal" for "Low Molecular Weight Heparin for VTE Prophylaxis "</li>
+                                    <li>OR: "Medication, Administered not done: Patient Refusal" for "Low Dose Unfractionated Heparin for VTE Prophylaxis "</li>
+                                    <li>OR: "Medication, Administered not done: Patient Refusal" for "Injectable Factor Xa Inhibitor for VTE Prophylaxis "</li>
+                                    <li>OR: "Medication, Administered not done: Patient Refusal" for "Warfarin "</li>
+                                    <li>OR: "Device, Applied not done: Patient Refusal" for "Venous foot pumps (VFP) "</li>
+                                    <li>OR: "Device, Applied not done: Patient Refusal" for "Graduated compression stockings (GCS) "</li>
+                                    <li>OR: "Device, Applied not done: Patient Refusal" for "Intermittent pneumatic compression devices (IPC) "</li>
+                                    <li> starts before start of "Occurrence A of Diagnostic Study, Order: VTE Diagnostic Test"</li>
+                                 </ul>
+                                 
+                              </li>
+                              <li> starts during "Occurrence A of Encounter, Performed: Encounter Inpatient"</li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Occurrence A of Encounter, Performed: Emergency Department Visit"  &lt;= 1 hour(s) ends before start of "Occurrence A of
+                                 Encounter, Performed: Encounter Inpatient"
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>OR: "Diagnosis, Active: VTE Suspected"</li>
+                                    <li>OR: "Diagnosis, Active: Obstetrics VTE"</li>
+                                    <li>OR: "Diagnosis, Active: Venous Thromboembolism"</li>
+                                    <li>OR: "Occurrence A of Diagnostic Study, Order: VTE Diagnostic Test"</li>
+                                    <li> starts during "Occurrence A of Encounter, Performed: Emergency Department Visit"</li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>OR: "Diagnosis, Active: VTE Suspected"</li>
+                              <li>OR: "Diagnosis, Active: Obstetrics VTE"</li>
+                              <li>OR: "Diagnosis, Active: Venous Thromboembolism"</li>
+                              <li>OR: "Occurrence A of Diagnostic Study, Order: VTE Diagnostic Test"</li>
+                              <li>  &lt;= 1 day(s) starts after start of "Occurrence A of Encounter, Performed: Encounter Inpatient"</li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>OR: "Intervention, Order: Comfort Measures"</li>
+                              <li>OR: "Intervention, Performed: Comfort Measures"</li>
+                              <li> starts during "Occurrence A of Encounter, Performed: Encounter Inpatient"</li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Occurrence A of Encounter, Performed: Emergency Department Visit"  &lt;= 1 hour(s) ends before start of "Occurrence A of
+                                 Encounter, Performed: Encounter Inpatient"
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>OR: "Intervention, Order: Comfort Measures"</li>
+                                    <li>OR: "Intervention, Performed: Comfort Measures"</li>
+                                    <li> starts during "Occurrence A of Encounter, Performed: Emergency Department Visit"</li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Numerator =</b>
+               
+               <ul>
+                  <li>AND NOT: 
+                     <ul>
+                        <li>AND: "Occurrence A of Medication, Administered: Low Dose Unfractionated Heparin for VTE Prophylaxis (route: 'Subcutaneous
+                           route')"  &gt;= 1 day(s) starts before start of "Occurrence A of Diagnostic Study, Order: VTE Diagnostic Test"
+                        </li>
+                        <li>AND: "Occurrence A of Medication, Administered: Low Dose Unfractionated Heparin for VTE Prophylaxis (route: 'Subcutaneous
+                           route')" starts during "Occurrence A of Encounter, Performed: Encounter Inpatient"
+                        </li>
+                     </ul>
+                     
+                  </li>
+                  <li>AND NOT: 
+                     <ul>
+                        <li>AND: "Occurrence A of Medication, Administered: Low Molecular Weight Heparin for VTE Prophylaxis (route: 'Subcutaneous route')"
+                           &gt;= 1 day(s) starts before start of "Occurrence A of Diagnostic Study, Order: VTE Diagnostic Test"
+                        </li>
+                        <li>AND: "Occurrence A of Medication, Administered: Low Molecular Weight Heparin for VTE Prophylaxis (route: 'Subcutaneous route')"
+                           starts during "Occurrence A of Encounter, Performed: Encounter Inpatient"
+                        </li>
+                     </ul>
+                     
+                  </li>
+                  <li>AND NOT: 
+                     <ul>
+                        <li>AND: "Occurrence A of Medication, Administered: Injectable Factor Xa Inhibitor for VTE Prophylaxis"  &gt;= 1 day(s) starts before
+                           start of "Occurrence A of Diagnostic Study, Order: VTE Diagnostic Test"
+                        </li>
+                        <li>AND: "Occurrence A of Medication, Administered: Injectable Factor Xa Inhibitor for VTE Prophylaxis" starts during "Occurrence
+                           A of Encounter, Performed: Encounter Inpatient"
+                        </li>
+                     </ul>
+                     
+                  </li>
+                  <li>AND NOT: 
+                     <ul>
+                        <li>AND: "Occurrence A of Medication, Administered: Warfarin"  &gt;= 1 day(s) starts before start of "Occurrence A of Diagnostic
+                           Study, Order: VTE Diagnostic Test"
+                        </li>
+                        <li>AND: "Occurrence A of Medication, Administered: Warfarin" starts during "Occurrence A of Encounter, Performed: Encounter Inpatient"</li>
+                     </ul>
+                     
+                  </li>
+                  <li>AND NOT: 
+                     <ul>
+                        <li>AND: "Occurrence A of Medication, Administered: Oral Factor Xa Inhibitor for VTE Prophylaxis"  &gt;= 1 day(s) starts before start
+                           of "Occurrence A of Diagnostic Study, Order: VTE Diagnostic Test"
+                        </li>
+                        <li>AND: "Occurrence A of Medication, Administered: Oral Factor Xa Inhibitor for VTE Prophylaxis" starts during "Occurrence A
+                           of Encounter, Performed: Encounter Inpatient"
+                        </li>
+                     </ul>
+                     
+                  </li>
+                  <li>AND NOT: 
+                     <ul>
+                        <li>AND: "Occurrence A of Device, Applied: Venous foot pumps (VFP)"  &gt;= 1 day(s) starts before start of "Occurrence A of Diagnostic
+                           Study, Order: VTE Diagnostic Test"
+                        </li>
+                        <li>AND: "Occurrence A of Device, Applied: Venous foot pumps (VFP)" starts during "Occurrence A of Encounter, Performed: Encounter
+                           Inpatient"
+                        </li>
+                     </ul>
+                     
+                  </li>
+                  <li>AND NOT: 
+                     <ul>
+                        <li>AND: "Occurrence A of Device, Applied: Intermittent pneumatic compression devices (IPC)"  &gt;= 1 day(s) starts before start
+                           of "Occurrence A of Diagnostic Study, Order: VTE Diagnostic Test"
+                        </li>
+                        <li>AND: "Occurrence A of Device, Applied: Intermittent pneumatic compression devices (IPC)" starts during "Occurrence A of Encounter,
+                           Performed: Encounter Inpatient"
+                        </li>
+                     </ul>
+                     
+                  </li>
+                  <li>AND NOT: 
+                     <ul>
+                        <li>AND: "Occurrence A of Device, Applied: Graduated compression stockings (GCS)"  &gt;= 1 day(s) starts before start of "Occurrence
+                           A of Diagnostic Study, Order: VTE Diagnostic Test"
+                        </li>
+                        <li>AND: "Occurrence A of Device, Applied: Graduated compression stockings (GCS)" starts during "Occurrence A of Encounter, Performed:
+                           Encounter Inpatient"
+                        </li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator Exceptions =</b>
+               
+               <ul>
+                  <li>None</li>
+               </ul>
+               
+            </li>
+         </ul>
+         
+      </div>
+      <h3><a name="d1e4870" href="#toc">Data criteria (QDM Data Elements)</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               "Device, Applied not done: Medical Contraindication" using "Medical Contraindication SNOMEDCT Value Set (2.16.840.1.113883.3.117.1.7.1.412)"
+            </li>
+            <li>
+               "Device, Applied not done: Medical Contraindication" using "Medical Contraindication SNOMEDCT Value Set (2.16.840.1.113883.3.117.1.7.1.412)"
+            </li>
+            <li>
+               "Device, Applied not done: Medical Contraindication" using "Medical Contraindication SNOMEDCT Value Set (2.16.840.1.113883.3.117.1.7.1.412)"
+            </li>
+            <li>
+               "Device, Applied not done: Patient Refusal" using "Patient Refusal SNOMEDCT Value Set (2.16.840.1.113883.3.117.1.7.1.93)"
+            </li>
+            <li>
+               "Device, Applied not done: Patient Refusal" using "Patient Refusal SNOMEDCT Value Set (2.16.840.1.113883.3.117.1.7.1.93)"
+            </li>
+            <li>
+               "Device, Applied not done: Patient Refusal" using "Patient Refusal SNOMEDCT Value Set (2.16.840.1.113883.3.117.1.7.1.93)"
+            </li>
+            <li>
+               "Device, Applied: Graduated compression stockings (GCS)" using "Graduated compression stockings (GCS) SNOMEDCT Value Set (2.16.840.1.113883.3.117.1.7.1.256)"
+            </li>
+            <li>
+               "Device, Applied: Intermittent pneumatic compression devices (IPC)" using "Intermittent pneumatic compression devices (IPC) SNOMEDCT Value Set (2.16.840.1.113883.3.117.1.7.1.214)"
+            </li>
+            <li>
+               "Device, Applied: Venous foot pumps (VFP)" using "Venous foot pumps (VFP) SNOMEDCT Value Set (2.16.840.1.113883.3.117.1.7.1.230)"
+            </li>
+            <li>
+               "Diagnosis, Active: Obstetrics VTE" using "Obstetrics VTE Grouping Value Set (2.16.840.1.113883.3.117.1.7.1.264)"
+            </li>
+            <li>
+               "Diagnosis, Active: VTE Suspected" using "VTE Suspected SNOMEDCT Value Set (2.16.840.1.113883.3.117.1.7.1.277)"
+            </li>
+            <li>
+               "Diagnosis, Active: Venous Thromboembolism" using "Venous Thromboembolism Grouping Value Set (2.16.840.1.113883.3.117.1.7.1.279)"
+            </li>
+            <li>
+               "Diagnostic Study, Order: VTE Diagnostic Test" using "VTE Diagnostic Test Grouping Value Set (2.16.840.1.113883.3.117.1.7.1.276)"
+            </li>
+            <li>
+               "Diagnostic Study, Result: VTE Diagnostic Test" using "VTE Diagnostic Test Grouping Value Set (2.16.840.1.113883.3.117.1.7.1.276)"
+            </li>
+            <li>
+               "Encounter, Performed: Emergency Department Visit" using "Emergency Department Visit SNOMEDCT Value Set (2.16.840.1.113883.3.117.1.7.1.292)"
+            </li>
+            <li>
+               "Encounter, Performed: Encounter Inpatient" using "Encounter Inpatient SNOMEDCT Value Set (2.16.840.1.113883.3.666.5.307)"
+            </li>
+            <li>
+               "Intervention, Order: Comfort Measures " using "Comfort Measures SNOMEDCT Value Set (1.3.6.1.4.1.33895.1.3.0.45)"
+            </li>
+            <li>
+               "Intervention, Performed: Comfort Measures " using "Comfort Measures SNOMEDCT Value Set (1.3.6.1.4.1.33895.1.3.0.45)"
+            </li>
+            <li>
+               "Medication, Administered not done: Medical Contraindication" using "Medical Contraindication SNOMEDCT Value Set (2.16.840.1.113883.3.117.1.7.1.412)"
+            </li>
+            <li>
+               "Medication, Administered not done: Medical Contraindication" using "Medical Contraindication SNOMEDCT Value Set (2.16.840.1.113883.3.117.1.7.1.412)"
+            </li>
+            <li>
+               "Medication, Administered not done: Medical Contraindication" using "Medical Contraindication SNOMEDCT Value Set (2.16.840.1.113883.3.117.1.7.1.412)"
+            </li>
+            <li>
+               "Medication, Administered not done: Medical Contraindication" using "Medical Contraindication SNOMEDCT Value Set (2.16.840.1.113883.3.117.1.7.1.412)"
+            </li>
+            <li>
+               "Medication, Administered not done: Patient Refusal" using "Patient Refusal SNOMEDCT Value Set (2.16.840.1.113883.3.117.1.7.1.93)"
+            </li>
+            <li>
+               "Medication, Administered not done: Patient Refusal" using "Patient Refusal SNOMEDCT Value Set (2.16.840.1.113883.3.117.1.7.1.93)"
+            </li>
+            <li>
+               "Medication, Administered not done: Patient Refusal" using "Patient Refusal SNOMEDCT Value Set (2.16.840.1.113883.3.117.1.7.1.93)"
+            </li>
+            <li>
+               "Medication, Administered not done: Patient Refusal" using "Patient Refusal SNOMEDCT Value Set (2.16.840.1.113883.3.117.1.7.1.93)"
+            </li>
+            <li>
+               "Medication, Administered: Injectable Factor Xa Inhibitor for VTE Prophylaxis" using "Injectable Factor Xa Inhibitor for VTE Prophylaxis RXNORM Value Set (2.16.840.1.113883.3.117.1.7.1.211)"
+            </li>
+            <li>
+               "Medication, Administered: Low Dose Unfractionated Heparin for VTE Prophylaxis" using "Low Dose Unfractionated Heparin for VTE Prophylaxis RXNORM Value Set (2.16.840.1.113762.1.4.1045.39)"
+            </li>
+            <li>
+               "Medication, Administered: Low Molecular Weight Heparin for VTE Prophylaxis" using "Low Molecular Weight Heparin for VTE Prophylaxis RXNORM Value Set (2.16.840.1.113883.3.117.1.7.1.219)"
+            </li>
+            <li>
+               "Medication, Administered: Oral Factor Xa Inhibitor for VTE Prophylaxis" using "Oral Factor Xa Inhibitor for VTE Prophylaxis RXNORM Value Set (2.16.840.1.113883.3.117.1.7.1.134)"
+            </li>
+            <li>
+               "Medication, Administered: Unfractionated Heparin" using "Unfractionated Heparin RXNORM Value Set (2.16.840.1.113883.3.117.1.7.1.218)"
+            </li>
+            <li>
+               "Medication, Administered: Warfarin" using "Warfarin RXNORM Value Set (2.16.840.1.113883.3.117.1.7.1.232)"
+            </li>
+            <li>
+               "Patient Characteristic Birthdate: birth date" using "birth date LOINC Value Set (2.16.840.1.113883.3.560.100.4)"
+            </li>
+            <li>
+               Attribute: "Route: Intravenous route" using "Intravenous route SNOMEDCT Value Set  (2.16.840.1.113883.3.117.1.7.1.222)"
+            </li>
+            <li>
+               Attribute: "Route: Subcutaneous route" using "Subcutaneous route SNOMEDCT Value Set  (2.16.840.1.113883.3.117.1.7.1.223)"
+            </li>
+            <li>
+               Attribute: "Result: VTE Confirmed" using "VTE Confirmed SNOMEDCT Value Set  (2.16.840.1.113883.3.117.1.7.1.407)"
+            </li>
+            <li>
+               Attribute: "Ordinality: Principal" using "Principal SNOMEDCT Value Set  (2.16.840.1.113883.3.117.1.7.1.14)"
+            </li>
+         </ul>
+         
+      </div>
+      <h3><a name="d1e6546" href="#toc">Reporting Stratification</a></h3>
+      <div>
+         
+         <ul>
+            <li>None</li>
+         </ul>
+         
+      </div>
+      <h3><a name="d1e6567" href="#toc">Supplemental Data Elements</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               "Patient Characteristic Ethnicity: Ethnicity" using "Ethnicity CDCREC Value Set (2.16.840.1.114222.4.11.837)"
+            </li>
+            <li>
+               "Patient Characteristic Payer: Payer" using "Payer SOP Value Set (2.16.840.1.114222.4.11.3591)"
+            </li>
+            <li>
+               "Patient Characteristic Race: Race" using "Race CDCREC Value Set (2.16.840.1.114222.4.11.836)"
+            </li>
+            <li>
+               "Patient Characteristic Sex: ONC Administrative Sex" using "ONC Administrative Sex AdministrativeSex Value Set (2.16.840.1.113762.1.4.1)"
+            </li>
+         </ul>
+         
+      </div><br><hr align="left" color="teal" size="2" width="80%"><br><table class="header_table">
+         <tbody>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Set</span></td>
+               <td colspan="3" width="80%">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto;word-wrap:break-word">eMeasure Venous Thromboembolism (eVTE)</div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

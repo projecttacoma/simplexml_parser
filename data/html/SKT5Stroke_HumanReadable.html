@@ -1,0 +1,636 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:n1="urn:hl7-org:v3">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <title>Antithrombotic Therapy By End of Hospital Day 2</title><style type="text/css">
+body {
+	color: rgb(26, 26, 26);
+	background-color: rgb(255,255,255);
+	font-family: Verdana, Tahoma, sans-serif;
+	font-size: 11px;
+}
+
+a {
+	color: rgb(0, 0, 255);
+	background-color: rgb(255,255,255);
+}
+
+h1 {
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 11pt;
+	font-weight: bold;
+}
+
+h3 {
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+h4 {
+	font-size: 8pt;
+	font-weight: bold;
+}
+
+div {
+	width: 80%;
+}
+
+table {
+	line-height: 10pt;
+	width: 80%;
+}
+
+tr {
+	background-color: rgb(224,224,224);
+}
+
+td {
+	padding: 0.1cm 0.2cm;
+	vertical-align: top;
+}
+
+.h1center {
+	font-size: 12pt;
+	font-weight: bold;
+	text-align: center;
+	width: 80%;
+}
+
+.header_table{
+	border: 1pt inset rgb(0,0,0);
+}
+
+.narr_table {
+	width: 100%;
+}
+
+.narr_tr {
+	background-color: rgb(225,225,225);
+}
+pre {
+ overflow: auto; /* Use horizontal scroller if needed; for Firefox 2, not needed in Firefox 3 */
+ white-space: pre-wrap; /* css-3 */
+ white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+ white-space: -pre-wrap; /* Opera 4-6 */
+ white-space: -o-pre-wrap; /* Opera 7 */
+ word-wrap: break-word; /* Internet Explorer 5.5+ */
+ font-family: Verdana, Tahoma, sans-serif;
+ font-size: 11px;
+ text-align:left;
+ margin: 0px 0px 0px 0px;
+ padding:0px 0px 0px 0px;
+}
+.narr_th {
+	background-color: rgb(201,201,201);
+}
+
+.td_label{
+	font-weight: bold;
+	color: white;
+}
+	</style></head>
+   <body>
+      <table class="header_table">
+         <tbody>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Title</span></td>
+               <td width="80%" colspan="3">Antithrombotic Therapy By End of Hospital Day 2</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Identifier<br>(Measure Authoring Tool)</span></td>
+               <td width="30%">72</td>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Version number</span></td>
+               <td width="30%">3</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">NQF Number</span></td>
+               <td width="30%">0438</td>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">GUID</span></td>
+               <td> 93f3479f-75d8-4731-9a3f-b7749d8bcd37</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measurement Period</span></td>
+               <td width="80%" colspan="3">January 1, 20xx  through December 31, 20xx </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Steward</span></td>
+               <td width="80%" colspan="3">The Joint Commission</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Developer</span></td>
+               <td width="80%" colspan="3">The Joint Commission</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Endorsed By</span></td>
+               <td width="80%" colspan="3">National Quality Forum</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Description</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Ischemic stroke patients administered antithrombotic therapy by the end of hospital day 2.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Copyright</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Measure specifications are in the Public Domain
+
+LOINC(R) is a registered trademark of the Regenstrief Institute.
+
+This material contains SNOMED Clinical Terms(R) (SNOMED CT(c)) copyright 2004&#8211;2010 International Health Terminology Standards Development Organization. All rights reserved.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Disclaimer</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>These performance measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications. The measures and specifications are provided without warranty.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Scoring</span></td>
+               <td width="80%" colspan="3">Proportion</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Type</span></td>
+               <td width="80%" colspan="3">Process</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Stratification</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Risk Adjustment</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Rate Aggregation</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Rationale</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>The effectiveness of antithrombotic agents in reducing stroke mortality, stroke-related morbidity and recurrence rates has been studied in several large clinical trials. While the use of these agents for patients with acute ischemic stroke and transient ischemic attacks continues to be the subject of study, substantial evidence is available from completed studies. Data at this time suggest that antithrombotic therapy should be administered within 2 days of symptom onset in acute ischemic stroke patients to reduce stroke mortality and morbidity as long as no contraindications exist.
+
+Anticoagulants at doses to prevent venous thromboembolism are insufficient antithrombotic therapy to prevent recurrent ischemic stroke or TIA.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Clinical Recommendation Statement</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Antithrombotic therapy should be administered within 2 days of symptom onset in acute ischemic stroke patients to reduce stroke mortality and morbidity as long as no contraindications exist.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Improvement Notation</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>An increase in rate</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Antithrombotic Trialists, Collaboration. "Collaborative Meta-Analysis of Randomised Trials of Antiplatelet Therapy for Prevention of Death, Myocardial Infarction, and Stroke in High Risk Patients." [In eng]. BMJ 324, no. 7329 (Jan 12 2002): 71-86.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Chen, Z. M., P. Sandercock, H. C. Pan, C. Counsell, R. Collins, L. S. Liu, J. X. Xie, C. Warlow, and R. Peto. "Indications for Early Aspirin Use in Acute Ischemic Stroke : A Combined Analysis of 40 000 Randomized Patients from the Chinese Acute Stroke Trial and the International Stroke Trial. On Behalf of the Cast and Ist Collaborative Groups." [In eng]. Stroke 31, no. 6 (Jun 2000): 1240-9.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Coull, B. M., L. S. Williams, L. B. Goldstein, J. F. Meschia, D. Heitzman, S. Chaturvedi, K. C. Johnston, et al. "Anticoagulants and Antiplatelet Agents in Acute Ischemic Stroke: Report of the Joint Stroke Guideline Development Committee of the American Academy of Neurology and the American Stroke Association (a Division of the American Heart Association)." [In eng]. Stroke 33, no. 7 (Jul 2002): 1934-42.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Furie, K. L., S. E. Kasner, R. J. Adams, G. W. Albers, R. L. Bush, S. C. Fagan, J. L. Halperin, et al. "Guidelines for the Prevention of Stroke in Patients with Stroke or Transient Ischemic Attack: A Guideline for Healthcare Professionals from the American Heart Association/American Stroke Association." [In eng]. Stroke 42, no. 1 (Jan 2011): 227-76.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Guyatt, G. H., E. A. Akl, M. Crowther, D. D. Gutterman, H. J. Schuunemann, Therapy American College of Chest Physicians Antithrombotic, and Panel Prevention of Thrombosis. "Executive Summary: Antithrombotic Therapy and Prevention of Thrombosis, 9th Ed: American College of Chest Physicians Evidence-Based Clinical Practice Guidelines." [In eng]. Chest 141, no. 2 Suppl (Feb 2012): 7S-47S.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Jauch, E. C., J. L. Saver, H. P. Adams, Jr., A. Bruno, J. J. Connors, B. M. Demaerschalk, P. Khatri, et al. "Guidelines for the Early Management of Patients with Acute Ischemic Stroke: A Guideline for Healthcare Professionals from the American Heart Association/American Stroke Association." [In Eng]. Stroke  (Jan 31 2013).</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Definition</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Guidance</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>The unit of measurement for this measure is an inpatient episode of care. Each distinct hospitalization should be reported, regardless of whether the same patient is admitted for inpatient care more than once during the measurement period. In addition, the eMeasure logic intends to represent events within or surrounding a single occurrence of an inpatient hospitalization.
+
+The &#8220;Non-elective admissions&#8221; value set intends to capture all non-scheduled hospitalizations. This value set is a subset of the &#8220;Inpatient encounter&#8221; value set, excluding concepts that specifically refer to elective hospital admissions. Non-elective admissions include emergency, urgent and unplanned admissions, including patients admitted for observation.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Transmission Format</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Initial Patient Population</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Patients age 18 and older discharged from inpatient care (non-elective admissions) with a principal diagnosis of ischemic or hemorrhagic stroke and a length of stay less or equal to 120 days.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Patients with a principal diagnosis of Ischemic stroke.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator Exclusions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Patients who have a duration of stay less than 2 days
+
+Patients with comfort measures documented on day or the day after arrival
+
+Patients with intra-venous or intra-arterial Thrombolytic (t-PA) Therapy administered within 24 hours prior to arrival or anytime during hospitalization.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Numerator</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Patients who had antithrombotic therapy administered the day of or day after hospital arrival.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Numerator Exclusions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator Exceptions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Patients with a documented reason for not administering antithrombotic therapy the day of or day after hospital arrival.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Population</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Observations</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Supplemental Data Elements</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>For every patient evaluated by this measure also identify payer, race, ethnicity and sex.</pre></div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <h2><a name="toc">Table of Contents</a></h2>
+      <ul>
+         <li><a href="#d1e544">Population criteria</a></li>
+         <li><a href="#d1e2862">Data criteria (QDM Data Elements)</a></li>
+         <li><a href="#d1e3562">Reporting Stratification</a></li>
+         <li><a href="#d1e3583">Supplemental Data Elements</a></li>
+      </ul>
+      <hr align="left" color="teal" size="2" width="80%">
+      <h3><a name="d1e544" href="#toc">Population criteria</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               <b>Initial Patient Population =</b>
+               
+               <ul>
+                  <li>AND: "Patient Characteristic Birthdate: birth date"  &gt;= 18 year(s) starts before start of "Occurrence A of Encounter, Performed:
+                     Non-Elective Inpatient Encounter"
+                  </li>
+                  <li>AND: "Occurrence A of Encounter, Performed: Non-Elective Inpatient Encounter (length of stay &lt;= 120 day(s))"</li>
+                  <li>AND: "Occurrence A of Encounter, Performed: Non-Elective Inpatient Encounter" ends during "Measurement Period"</li>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: "Diagnosis, Active: Ischemic Stroke (ordinality: 'Principal')"</li>
+                        <li>OR: "Diagnosis, Active: Hemorrhagic Stroke (ordinality: 'Principal')"</li>
+                        <li> starts during "Occurrence A of Encounter, Performed: Non-Elective Inpatient Encounter"</li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator =</b>
+               
+               <ul>
+                  <li>AND: "Initial Patient Population"</li>
+                  <li>AND: "Diagnosis, Active: Ischemic Stroke (ordinality: 'Principal')" starts during "Occurrence A of Encounter, Performed: Non-Elective
+                     Inpatient Encounter"
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator Exclusions =</b>
+               
+               <ul>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Occurrence A of Encounter, Performed: Non-Elective Inpatient Encounter (length of stay &lt; 2 day(s))"</li>
+                              <li>AND NOT: "Occurrence A of Encounter, Performed: Emergency Department Visit"  &lt;= 1 hour(s) ends before start of "Occurrence
+                                 A of Encounter, Performed: Non-Elective Inpatient Encounter"
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Occurrence A of Encounter, Performed: Emergency Department Visit"  &lt;= 1 hour(s) ends before start of "Occurrence A of
+                                 Encounter, Performed: Non-Elective Inpatient Encounter"
+                              </li>
+                              <li>AND: Difference between dates &lt; 2 days of:
+                                 <ul>
+                                    <li>AND: "Occurrence A of Encounter, Performed: Non-Elective Inpatient Encounter (discharge datetime)"</li>
+                                    <li>AND: "Occurrence A of Encounter, Performed: Emergency Department Visit (admission datetime)"</li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Occurrence A of Encounter, Performed: Emergency Department Visit"  &lt;= 1 hour(s) ends before start of "Occurrence A of
+                                 Encounter, Performed: Non-Elective Inpatient Encounter"
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>OR: 
+                                       <ul>
+                                          <li>OR: "Medication, Administered: Thrombolytic (t-PA) Therapy"</li>
+                                          <li>OR: "Procedure, Performed: Intravenous or Intra-arterial Thrombolytic (t-PA) Therapy"</li>
+                                          <li>  &lt;= 24 hour(s) starts before start of "Occurrence A of Encounter, Performed: Emergency Department Visit"</li>
+                                       </ul>
+                                       
+                                    </li>
+                                    <li>OR: 
+                                       <ul>
+                                          <li>AND: "Occurrence A of Medication, Administered: Thrombolytic (t-PA) Therapy" starts after start of "Occurrence A of Encounter,
+                                             Performed: Emergency Department Visit"
+                                          </li>
+                                          <li>AND: "Occurrence A of Medication, Administered: Thrombolytic (t-PA) Therapy" starts before or during "Occurrence A of Encounter,
+                                             Performed: Non-Elective Inpatient Encounter"
+                                          </li>
+                                       </ul>
+                                       
+                                    </li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>OR: 
+                                 <ul>
+                                    <li>OR: "Medication, Administered: Thrombolytic (t-PA) Therapy"</li>
+                                    <li>OR: "Procedure, Performed: Intravenous or Intra-arterial Thrombolytic (t-PA) Therapy"</li>
+                                    <li>  &lt;= 24 hour(s) starts before start of "Occurrence A of Encounter, Performed: Non-Elective Inpatient Encounter"</li>
+                                 </ul>
+                                 
+                              </li>
+                              <li>OR: "Medication, Administered: Thrombolytic (t-PA) Therapy" during "Occurrence A of Encounter, Performed: Non-Elective Inpatient
+                                 Encounter"
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>OR: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Encounter, Performed: Emergency Department Visit"  &lt;= 1 hour(s) ends before start of "Occurrence A of
+                                       Encounter, Performed: Non-Elective Inpatient Encounter"
+                                    </li>
+                                    <li>AND: 
+                                       <ul>
+                                          <li>OR: "Intervention, Order: Comfort Measures"</li>
+                                          <li>OR: "Intervention, Performed: Comfort Measures"</li>
+                                          <li>  &lt;= 1 day(s) starts after start of "Occurrence A of Encounter, Performed: Emergency Department Visit"</li>
+                                       </ul>
+                                       
+                                    </li>
+                                 </ul>
+                                 
+                              </li>
+                              <li>OR: 
+                                 <ul>
+                                    <li>OR: "Intervention, Order: Comfort Measures"</li>
+                                    <li>OR: "Intervention, Performed: Comfort Measures"</li>
+                                    <li>  &lt;= 1 day(s) starts after start of "Occurrence A of Encounter, Performed: Non-Elective Inpatient Encounter"</li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Numerator =</b>
+               
+               <ul>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: "Medication, Administered: Antithrombotic Therapy"  &lt;= 1 day(s) starts after start of "Occurrence A of Encounter, Performed:
+                           Non-Elective Inpatient Encounter"
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Medication, Administered: Antithrombotic Therapy"  &lt;= 1 day(s) starts after start of "Occurrence A of Encounter, Performed:
+                                 Emergency Department Visit"
+                              </li>
+                              <li>AND: "Occurrence A of Encounter, Performed: Emergency Department Visit"  &lt;= 1 hour(s) ends before start of "Occurrence A of
+                                 Encounter, Performed: Non-Elective Inpatient Encounter"
+                              </li>
+                           </ul>
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator Exceptions =</b>
+               
+               <ul>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Occurrence A of Encounter, Performed: Emergency Department Visit"  &lt;= 1 hour(s) ends before start of "Occurrence A of
+                                 Encounter, Performed: Non-Elective Inpatient Encounter"
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>OR: "Medication, Order not done: Medical Reason" for "Antithrombotic ingredient specific "</li>
+                                    <li>OR: "Medication, Administered not done: Medical Reason" for "Antithrombotic Therapy "</li>
+                                    <li>OR: "Medication, Order not done: Patient Refusal" for "Antithrombotic Therapy "</li>
+                                    <li>OR: "Medication, Administered not done: Patient Refusal" for "Antithrombotic Therapy "</li>
+                                    <li>  &lt;= 1 day(s) starts after start of "Occurrence A of Encounter, Performed: Emergency Department Visit"</li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>OR: "Medication, Order not done: Medical Reason" for "Antithrombotic ingredient specific "</li>
+                              <li>OR: "Medication, Administered not done: Medical Reason" for "Antithrombotic Therapy "</li>
+                              <li>OR: "Medication, Order not done: Patient Refusal" for "Antithrombotic Therapy "</li>
+                              <li>OR: "Medication, Administered not done: Patient Refusal" for "Antithrombotic Therapy "</li>
+                              <li>  &lt;= 1 day(s) starts after start of "Occurrence A of Encounter, Performed: Non-Elective Inpatient Encounter"</li>
+                           </ul>
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+         </ul>
+         
+      </div>
+      <h3><a name="d1e2862" href="#toc">Data criteria (QDM Data Elements)</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               "Diagnosis, Active: Hemorrhagic Stroke" using "Hemorrhagic Stroke Grouping Value Set (2.16.840.1.113883.3.117.1.7.1.212)"
+            </li>
+            <li>
+               "Diagnosis, Active: Ischemic Stroke" using "Ischemic Stroke Grouping Value Set (2.16.840.1.113883.3.117.1.7.1.247)"
+            </li>
+            <li>
+               "Encounter, Performed: Emergency Department Visit" using "Emergency Department Visit SNOMEDCT Value Set (2.16.840.1.113883.3.117.1.7.1.292)"
+            </li>
+            <li>
+               "Encounter, Performed: Non-Elective Inpatient Encounter" using "Non-Elective Inpatient Encounter SNOMEDCT Value Set (2.16.840.1.113883.3.117.1.7.1.424)"
+            </li>
+            <li>
+               "Intervention, Order: Comfort Measures " using "Comfort Measures SNOMEDCT Value Set (1.3.6.1.4.1.33895.1.3.0.45)"
+            </li>
+            <li>
+               "Intervention, Performed: Comfort Measures " using "Comfort Measures SNOMEDCT Value Set (1.3.6.1.4.1.33895.1.3.0.45)"
+            </li>
+            <li>
+               "Medication, Administered not done: Medical Reason" using "Medical Reason SNOMEDCT Value Set (2.16.840.1.113883.3.117.1.7.1.473)"
+            </li>
+            <li>
+               "Medication, Administered not done: Patient Refusal" using "Patient Refusal SNOMEDCT Value Set (2.16.840.1.113883.3.117.1.7.1.93)"
+            </li>
+            <li>
+               "Medication, Administered: Antithrombotic Therapy" using "Antithrombotic Therapy RXNORM Value Set (2.16.840.1.113883.3.117.1.7.1.201)"
+            </li>
+            <li>
+               "Medication, Administered: Thrombolytic (t-PA) Therapy" using "Thrombolytic (t-PA) Therapy RXNORM Value Set (2.16.840.1.113883.3.117.1.7.1.226)"
+            </li>
+            <li>
+               "Medication, Order not done: Medical Reason" using "Medical Reason SNOMEDCT Value Set (2.16.840.1.113883.3.117.1.7.1.473)"
+            </li>
+            <li>
+               "Medication, Order not done: Patient Refusal" using "Patient Refusal SNOMEDCT Value Set (2.16.840.1.113883.3.117.1.7.1.93)"
+            </li>
+            <li>
+               "Medication, Order: Antithrombotic Therapy" using "Antithrombotic Therapy RXNORM Value Set (2.16.840.1.113883.3.117.1.7.1.201)"
+            </li>
+            <li>
+               "Medication, Order: Antithrombotic ingredient specific" using "Antithrombotic ingredient specific RXNORM Value Set (2.16.840.1.113762.1.4.1021.8)"
+            </li>
+            <li>
+               "Patient Characteristic Birthdate: birth date" using "birth date LOINC Value Set (2.16.840.1.113883.3.560.100.4)"
+            </li>
+            <li>
+               "Procedure, Performed: Intravenous or Intra-arterial Thrombolytic (t-PA) Therapy" using "Intravenous or Intra-arterial Thrombolytic (t-PA) Therapy Grouping Value Set (2.16.840.1.113762.1.4.1045.21)"
+            </li>
+            <li>
+               Attribute: "Ordinality: Principal" using "Principal SNOMEDCT Value Set  (2.16.840.1.113883.3.117.1.7.1.14)"
+            </li>
+         </ul>
+         
+      </div>
+      <h3><a name="d1e3562" href="#toc">Reporting Stratification</a></h3>
+      <div>
+         
+         <ul>
+            <li>None</li>
+         </ul>
+         
+      </div>
+      <h3><a name="d1e3583" href="#toc">Supplemental Data Elements</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               "Patient Characteristic Ethnicity: Ethnicity" using "Ethnicity CDCREC Value Set (2.16.840.1.114222.4.11.837)"
+            </li>
+            <li>
+               "Patient Characteristic Payer: Payer" using "Payer SOP Value Set (2.16.840.1.114222.4.11.3591)"
+            </li>
+            <li>
+               "Patient Characteristic Race: Race" using "Race CDCREC Value Set (2.16.840.1.114222.4.11.836)"
+            </li>
+            <li>
+               "Patient Characteristic Sex: ONC Administrative Sex" using "ONC Administrative Sex AdministrativeSex Value Set (2.16.840.1.113762.1.4.1)"
+            </li>
+         </ul>
+         
+      </div><br><hr align="left" color="teal" size="2" width="80%"><br><table class="header_table">
+         <tbody>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Set</span></td>
+               <td colspan="3" width="80%">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto;word-wrap:break-word">eMeasure Stroke (eSTK)</div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

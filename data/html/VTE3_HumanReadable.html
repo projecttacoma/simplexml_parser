@@ -1,0 +1,883 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:n1="urn:hl7-org:v3">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <title>Venous Thromboembolism Patients with Anticoagulation Overlap Therapy</title><style type="text/css">
+body {
+	color: rgb(26, 26, 26);
+	background-color: rgb(255,255,255);
+	font-family: Verdana, Tahoma, sans-serif;
+	font-size: 11px;
+}
+
+a {
+	color: rgb(0, 0, 255);
+	background-color: rgb(255,255,255);
+}
+
+h1 {
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 11pt;
+	font-weight: bold;
+}
+
+h3 {
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+h4 {
+	font-size: 8pt;
+	font-weight: bold;
+}
+
+div {
+	width: 80%;
+}
+
+table {
+	line-height: 10pt;
+	width: 80%;
+}
+
+tr {
+	background-color: rgb(224,224,224);
+}
+
+td {
+	padding: 0.1cm 0.2cm;
+	vertical-align: top;
+}
+
+.h1center {
+	font-size: 12pt;
+	font-weight: bold;
+	text-align: center;
+	width: 80%;
+}
+
+.header_table{
+	border: 1pt inset rgb(0,0,0);
+}
+
+.narr_table {
+	width: 100%;
+}
+
+.narr_tr {
+	background-color: rgb(225,225,225);
+}
+pre {
+ overflow: auto; /* Use horizontal scroller if needed; for Firefox 2, not needed in Firefox 3 */
+ white-space: pre-wrap; /* css-3 */
+ white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+ white-space: -pre-wrap; /* Opera 4-6 */
+ white-space: -o-pre-wrap; /* Opera 7 */
+ word-wrap: break-word; /* Internet Explorer 5.5+ */
+ font-family: Verdana, Tahoma, sans-serif;
+ font-size: 11px;
+ text-align:left;
+ margin: 0px 0px 0px 0px;
+ padding:0px 0px 0px 0px;
+}
+.narr_th {
+	background-color: rgb(201,201,201);
+}
+
+.td_label{
+	font-weight: bold;
+	color: white;
+}
+	</style></head>
+   <body>
+      <table class="header_table">
+         <tbody>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Title</span></td>
+               <td width="80%" colspan="3">Venous Thromboembolism Patients with Anticoagulation Overlap Therapy</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Identifier<br>(Measure Authoring Tool)</span></td>
+               <td width="30%">73</td>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Version number</span></td>
+               <td width="30%">3</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">NQF Number</span></td>
+               <td width="30%">0373</td>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">GUID</span></td>
+               <td> 6f069bb2-b3c4-4bf4-adc5-f6dd424a10b7</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measurement Period</span></td>
+               <td width="80%" colspan="3">January 1, 20xx  through December 31, 20xx </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Steward</span></td>
+               <td width="80%" colspan="3">Joint Commission</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Developer</span></td>
+               <td width="80%" colspan="3">Joint Commission</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Endorsed By</span></td>
+               <td width="80%" colspan="3">National Quality Forum</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Description</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>This measure assesses the number of patients diagnosed with confirmed VTE who received an overlap of parenteral (intravenous [IV] or subcutaneous [subcu]) anticoagulation and warfarin therapy. For patients who received less than five days of overlap therapy, they should be discharged on both medications or have a reason for discontinuation of overlap therapy. Overlap therapy should be administered for at least five days with an international normalized ratio (INR) greater than or equal to 2 prior to discontinuation of the parenteral anticoagulation therapy, discharged on both medications or have a reason for discontinuation of overlap therapy.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Copyright</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Measure specifications are in the Public Domain.
+
+LOINC(R) is a registered trademark of the Regenstrief Institute.
+
+This material contains SNOMED Clinical Terms (R) (SNOMED CT(c)) copyright 2004-2010 International Health Terminology Standards Development Organization. All rights reserved.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Disclaimer</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>These performance measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications. The measures and specifications are provided without warranty.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Scoring</span></td>
+               <td width="80%" colspan="3">Proportion</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Type</span></td>
+               <td width="80%" colspan="3">Process</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Stratification</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Risk Adjustment</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Rate Aggregation</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Rationale</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>For patients who present with a confirmed acute VTE, parenteral anticoagulation is the first line of therapy because of its rapid onset of action (Buller et al., 2004).  Warfarin can be initiated on the first day of treatment after the first dose of a parenteral anticoagulant has been given. Because the warfarin has a very slow onset of action, it cannot be used as mono-therapy for acute VTE (Ansell et al., 2008). 
+
+The strong (Level I) recommendations to overlap parenteral anticoagulation with oral warfarin therapy in the initial treatment of VTE events is based in part on the known effect of warfarin on the coagulation cascade (Brandjes, et al.,1992). The early increase in the Pro thrombin time (PT) and INR often reflects the laboratory finding of initial reduction in clotting factors of the extrinsic pathway of coagulation resulting in prolongation of the PT/INR, while the patient is still at risk of thromboembolic events due to persistent levels of coagulation factors of the intrinsic pathway and common pathways of coagulation.
+
+The recommendation that heparins and warfarin overlap for a five-day period is based on pharmacokinetic, pharmacologic, pathophysiologic, and clinical evidence as noted by Wittkowsky A.K. (2005). All studies support the pharmacokinetic characteristics of warfarin and the time delay in achieving an antithrombotic effect suggesting the need for overlap of heparin during initial warfarin dosing in order to prevent thrombus extension, embolization to the lungs, death due to Pulmonary Emboli (PE), and the development of complications such as recurrent thromboembolic events and the postthrombotic syndrome. Kearon et al, 2008 also denotes current recommendation for treatment of confirmed VTE to begin with oral warfarin therapy, with combination of initial anticoagulation therapy for a minimum of 5 days and until the INR is &gt;2.0 for at least 24 hours, and then a recommended target rate.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Clinical Recommendation Statement</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Overlap therapy of both warfarin and parenteral therapy is the recommended treatment for VTE patients if there are no contraindications. This therapy should take place over five or more days, until an INR greater than or equal to 2.0 is reached prior to discontinuation of parenteral therapy.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Improvement Notation</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>An increase in the rate</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Ansell J, Hirsch J, Hylek E, Jacobson A, Crowther M, Palareti G. Pharmacology and management of the vitamin K antagonists: The Eighth ACCP Conference on Antithrombotic and Thrombolytic Therapy. Chest. 2008 133:160S-198S.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Brandjes DP, Heijboer H, B&#65533;ller HR, et al. Acenocoumarol and heparin compared with acenocoumarol alone in the initial treatment of proximal-vein thrombosis. N Engl J Med. 1992; 327:1485-9.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Guyatt, G.H., Akl, E.A., Crowther, M., Gutterman, D., Schunemann, H. Antithromboitic Therapy and Prevention of Thrombosis, 9th edition: American College of Chest Physicians Evidence-Based Clinical Practice Guidelines. CHEST 2012; 141(2) (Supp):7S-47S.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Wittkowsky AK. Why warfarin and heparin need to overlap when treating acute venous thromboembolism. Dis Mon 2005; 51:112-115.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Definition</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Guidance</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>The unit of measurement for this measure is an inpatient episode of care. Each distinct hospitalization should be reported, regardless of whether the same patient is admitted for inpatient care more than once during the measurement period. In addition, the eMeasure logic intends to represent events within or surrounding a single occurrence of an inpatient hospitalization.
+
+For date difference calculations, use the LAST (most recent) of the alternative dates as the end date and the EARLIEST of the alternative dates as the start date. The calculation should be performed as end date minus start date.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Transmission Format</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Initial Patient Population</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Patients with a diagnosis code for venous thromboembolism (VTE), a patient age greater than or equal to 18 years, and a length of stay less than or equal to 120 days.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Patients with confirmed VTE who received warfarin.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator Exclusions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>&#8226;	Patients with Comfort Measures documented
+&#8226;	Patients discharged to a health care facility for hospice care
+&#8226;	Patients discharged to home for hospice care
+&#8226;	Patients who expired
+&#8226;	Patients who left against medical advice
+&#8226;	Patients discharged to another hospital
+&#8226;	Patients without warfarin therapy during hospitalization 
+&#8226;	Patients without VTE confirmed by diagnostic testing</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Numerator</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Patients who received overlap therapy (warfarin and parenteral anticoagulation):
+
+&#8226;	Five or more days, with an INR greater than or equal to 2 prior to discontinuation of parenteral therapy OR
+&#8226;	Five or more days, with an INR less than 2 and discharged on overlap therapy OR
+&#8226;	Less than five days and discharged on overlap therapy OR
+&#8226;	With documentation of reason for discontinuation of parenteral therapy OR
+&#8226;	With documentation of a reason for no overlap therapy</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Numerator Exclusions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator Exceptions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Population</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Observations</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Supplemental Data Elements</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>For every patient evaluated by this measure also identify payer, race, ethnicity and sex.</pre></div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <h2><a name="toc">Table of Contents</a></h2>
+      <ul>
+         <li><a href="#d1e521">Population criteria</a></li>
+         <li><a href="#d1e6124">Data criteria (QDM Data Elements)</a></li>
+         <li><a href="#d1e7177">Reporting Stratification</a></li>
+         <li><a href="#d1e7198">Supplemental Data Elements</a></li>
+      </ul>
+      <hr align="left" color="teal" size="2" width="80%">
+      <h3><a name="d1e521" href="#toc">Population criteria</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               <b>Initial Patient Population =</b>
+               
+               <ul>
+                  <li>AND: "Patient Characteristic Birthdate: birth date"  &gt;= 18 year(s) starts before start of "Occurrence A of Encounter, Performed:
+                     Inpatient Encounter"
+                  </li>
+                  <li>AND: "Occurrence A of Encounter, Performed: Encounter Inpatient (length of stay &lt;= 120 day(s))"</li>
+                  <li>AND: "Occurrence A of Encounter, Performed: Encounter Inpatient" ends during "Measurement Period"</li>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: 
+                           <ul>
+                              <li>OR: "Diagnosis, Active: Venous Thromboembolism"</li>
+                              <li>OR: "Diagnosis, Active: Obstetrics VTE"</li>
+                              <li> starts during "Occurrence A of Encounter, Performed: Encounter Inpatient"</li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Occurrence A of Encounter, Performed: Encounter Inpatient"  &lt;= 1 hour(s) starts after end of "Occurrence A of Encounter,
+                                 Performed: Emergency Department Visit"
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>OR: "Diagnosis, Active: Venous Thromboembolism"</li>
+                                    <li>OR: "Diagnosis, Active: Obstetrics VTE"</li>
+                                    <li> starts during "Occurrence A of Encounter, Performed: Emergency Department Visit"</li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator =</b>
+               
+               <ul>
+                  <li>AND: "Initial Patient Population"</li>
+                  <li>AND:  FIRST: 
+                     <ul>
+                        <li>OR: "Occurrence A of Diagnostic Study, Result: VTE Diagnostic Test (result: 'VTE Confirmed')" during "Occurrence A of Encounter,
+                           Performed: Encounter Inpatient"
+                        </li>
+                        <li>OR: "Occurrence A of Diagnostic Study, Result: VTE Diagnostic Test (result: 'VTE Confirmed')"  &lt;= 4 day(s) starts before start
+                           of "Occurrence A of Encounter, Performed: Encounter Inpatient"
+                        </li>
+                        <li>OR: "Occurrence A of Diagnostic Study, Result: VTE Diagnostic Test (result: 'VTE Confirmed')"  &lt;= 4 day(s) starts before start
+                           of ("Occurrence A of Encounter, Performed: Emergency Department Visit"  &lt;= 1 hour(s) ends before start of "Occurrence A of
+                           Encounter, Performed: Encounter Inpatient")
+                        </li>
+                        <li>OR: "Occurrence A of Diagnostic Study, Result: VTE Diagnostic Test (result: 'VTE Confirmed')" during ("Occurrence A of Encounter,
+                           Performed: Emergency Department Visit"  &lt;= 1 hour(s) ends before start of "Occurrence A of Encounter, Performed: Encounter
+                           Inpatient")
+                        </li>
+                     </ul>
+                     
+                  </li>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: "Medication, Administered: Warfarin" starts during "Occurrence A of Encounter, Performed: Encounter Inpatient"</li>
+                        <li>OR: "Medication, Administered: Warfarin" starts during "Occurrence A of Encounter, Performed: Emergency Department Visit"</li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator Exclusions =</b>
+               
+               <ul>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: 
+                           <ul>
+                              <li>OR: "Intervention, Order: Comfort Measures"</li>
+                              <li>OR: "Intervention, Performed: Comfort Measures"</li>
+                              <li> starts during "Occurrence A of Encounter, Performed: Encounter Inpatient"</li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Occurrence A of Encounter, Performed: Encounter Inpatient"  &lt;= 1 hour(s) starts after end of "Occurrence A of Encounter,
+                                 Performed: Emergency Department Visit"
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>OR: "Intervention, Order: Comfort Measures"</li>
+                                    <li>OR: "Intervention, Performed: Comfort Measures"</li>
+                                    <li> starts during "Occurrence A of Encounter, Performed: Emergency Department Visit"</li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: "Occurrence A of Encounter, Performed: Inpatient Encounter (discharge status: 'Discharge To Another Hospital')"</li>
+                        <li>OR: "Occurrence A of Encounter, Performed: Inpatient Encounter (discharge status: 'Discharged to Home for Hospice Care')"</li>
+                        <li>OR: "Occurrence A of Encounter, Performed: Inpatient Encounter (discharge status: 'Patient Expired')"</li>
+                        <li>OR: "Occurrence A of Encounter, Performed: Inpatient Encounter (discharge status: 'Discharged to Health Care Facility for
+                           Hospice Care')"
+                        </li>
+                        <li>OR: "Occurrence A of Encounter, Performed: Inpatient Encounter (discharge status: 'Left Against Medical Advice')"</li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Numerator =</b>
+               
+               <ul>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: 
+                                 <ul>
+                                    <li>OR: "Medication, Administered: Parenteral Anticoagulant"  &lt; 1 day(s) starts after start of ("Medication, Administered: Warfarin"
+                                       during "Occurrence A of Encounter, Performed: Encounter Inpatient")
+                                    </li>
+                                    <li>OR: "Medication, Administered: Warfarin"  &lt; 1 day(s) starts after start of ("Medication, Administered: Parenteral Anticoagulant"
+                                       during "Occurrence A of Encounter, Performed: Encounter Inpatient")
+                                    </li>
+                                    <li>OR: 
+                                       <ul>
+                                          <li>AND: "Occurrence A of Encounter, Performed: Encounter Inpatient"  &lt;= 1 hour(s) starts after end of "Occurrence A of Encounter,
+                                             Performed: Emergency Department Visit"
+                                          </li>
+                                          <li>AND: 
+                                             <ul>
+                                                <li>OR: "Medication, Administered: Parenteral Anticoagulant"  &lt; 1 day(s) starts after start of ("Medication, Administered: Warfarin"
+                                                   during "Occurrence A of Encounter, Performed: Emergency Department Visit")
+                                                </li>
+                                                <li>OR: "Medication, Administered: Warfarin"  &lt; 1 day(s) starts after start of ("Medication, Administered: Parenteral Anticoagulant"
+                                                   during "Occurrence A of Encounter, Performed: Emergency Department Visit")
+                                                </li>
+                                             </ul>
+                                             
+                                          </li>
+                                       </ul>
+                                       
+                                    </li>
+                                 </ul>
+                                 
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>OR: 
+                                       <ul>
+                                          <li>AND: Difference between dates &gt;= 4 days of:
+                                             <ul>
+                                                <li>AND: FIRST:
+                                                   <ul>
+                                                      <li>OR: "Medication, Administered: Parenteral Anticoagulant"  &lt; 1 day(s) starts after start of ("Medication, Administered: Warfarin"
+                                                         during "Occurrence A of Encounter, Performed: Encounter Inpatient")
+                                                      </li>
+                                                      <li>OR: "Medication, Administered: Warfarin"  &lt; 1 day(s) starts after start of ("Medication, Administered: Parenteral Anticoagulant"
+                                                         during "Occurrence A of Encounter, Performed: Encounter Inpatient")
+                                                      </li>
+                                                      <li>OR: "Medication, Administered: Parenteral Anticoagulant"  &lt; 1 day(s) starts after start of ("Medication, Administered: Warfarin"
+                                                         during "Occurrence A of Encounter, Performed: Emergency Department Visit")
+                                                      </li>
+                                                      <li>OR: "Medication, Administered: Warfarin"  &lt; 1 day(s) starts after start of ("Medication, Administered: Parenteral Anticoagulant"
+                                                         during "Occurrence A of Encounter, Performed: Emergency Department Visit")
+                                                      </li>
+                                                   </ul>
+                                                   
+                                                </li>
+                                                <li>AND: MOST RECENT:
+                                                   <ul>
+                                                      <li>OR: "Occurrence A of Medication, Administered: Parenteral Anticoagulant" during "Occurrence A of Encounter, Performed: Encounter
+                                                         Inpatient"
+                                                      </li>
+                                                      <li>OR: "Occurrence A of Medication, Administered: Parenteral Anticoagulant" during "Occurrence A of Encounter, Performed: Emergency
+                                                         Department Visit"
+                                                      </li>
+                                                   </ul>
+                                                   
+                                                </li>
+                                             </ul>
+                                             
+                                          </li>
+                                          <li>AND: 
+                                             <ul>
+                                                <li>OR: "Laboratory Test, Result: INR (result &gt;= 2.0 )"  &lt;= 1 day(s) starts after start of MOST RECENT :"Occurrence A of Medication,
+                                                   Administered: Parenteral Anticoagulant"
+                                                </li>
+                                                <li>OR: 
+                                                   <ul>
+                                                      <li>AND: "Laboratory Test, Result: INR (result &lt; 2.0 )"  &lt;= 1 day(s) starts after start of MOST RECENT :"Occurrence A of Medication,
+                                                         Administered: Parenteral Anticoagulant"
+                                                      </li>
+                                                      <li>AND: 
+                                                         <ul>
+                                                            <li>OR: 
+                                                               <ul>
+                                                                  <li>OR: "Medication, Discharge: Parenteral Anticoagulant"</li>
+                                                                  <li>OR: "Medication, Discharge not done: Medical Reason" for "Parenteral anticoagulant ingredient specific "</li>
+                                                                  <li>OR: "Medication, Discharge not done: Patient Refusal" for "Parenteral anticoagulant ingredient specific "</li>
+                                                                  <li> starts during "Occurrence A of Encounter, Performed: Encounter Inpatient"</li>
+                                                               </ul>
+                                                               
+                                                            </li>
+                                                            <li>OR: 
+                                                               <ul>
+                                                                  <li>OR: "Medication, Administered not done: Medical Reason" for "Parenteral Anticoagulant "</li>
+                                                                  <li>OR: "Medication, Administered not done: Patient Refusal" for "Parenteral Anticoagulant "</li>
+                                                                  <li>  &lt;= 1 day(s) starts after start of  (MOST RECENT:"Occurrence A of Medication, Administered: Parenteral Anticoagulant" during
+                                                                     "Occurrence A of Encounter, Performed: Encounter Inpatient")
+                                                                  </li>
+                                                               </ul>
+                                                               
+                                                            </li>
+                                                         </ul>
+                                                         
+                                                      </li>
+                                                   </ul>
+                                                   
+                                                </li>
+                                                <li>OR: "Diagnosis, Active: Thrombocytopenia"  &lt;= 1 day(s) starts after start of MOST RECENT :"Occurrence A of Medication, Administered:
+                                                   Parenteral Anticoagulant"
+                                                </li>
+                                             </ul>
+                                             
+                                          </li>
+                                       </ul>
+                                       
+                                    </li>
+                                    <li>OR: 
+                                       <ul>
+                                          <li>AND: Difference between dates &lt; 4 days of:
+                                             <ul>
+                                                <li>AND: FIRST:
+                                                   <ul>
+                                                      <li>OR: "Medication, Administered: Parenteral Anticoagulant"  &lt; 1 day(s) starts after start of ("Medication, Administered: Warfarin"
+                                                         during "Occurrence A of Encounter, Performed: Encounter Inpatient")
+                                                      </li>
+                                                      <li>OR: "Medication, Administered: Warfarin"  &lt; 1 day(s) starts after start of ("Medication, Administered: Parenteral Anticoagulant"
+                                                         during "Occurrence A of Encounter, Performed: Encounter Inpatient")
+                                                      </li>
+                                                      <li>OR: "Medication, Administered: Parenteral Anticoagulant"  &lt; 1 day(s) starts after start of ("Medication, Administered: Warfarin"
+                                                         during "Occurrence A of Encounter, Performed: Emergency Department Visit")
+                                                      </li>
+                                                      <li>OR: "Medication, Administered: Warfarin"  &lt; 1 day(s) starts after start of ("Medication, Administered: Parenteral Anticoagulant"
+                                                         during "Occurrence A of Encounter, Performed: Emergency Department Visit")
+                                                      </li>
+                                                   </ul>
+                                                   
+                                                </li>
+                                                <li>AND: MOST RECENT:
+                                                   <ul>
+                                                      <li>OR: "Occurrence A of Medication, Administered: Parenteral Anticoagulant" during "Occurrence A of Encounter, Performed: Encounter
+                                                         Inpatient"
+                                                      </li>
+                                                      <li>OR: "Occurrence A of Medication, Administered: Parenteral Anticoagulant" during "Occurrence A of Encounter, Performed: Emergency
+                                                         Department Visit"
+                                                      </li>
+                                                   </ul>
+                                                   
+                                                </li>
+                                             </ul>
+                                             
+                                          </li>
+                                          <li>AND: 
+                                             <ul>
+                                                <li>OR: "Medication, Discharge: Parenteral Anticoagulant" starts during "Occurrence A of Encounter, Performed: Encounter Inpatient"</li>
+                                                <li>OR: 
+                                                   <ul>
+                                                      <li>OR: "Medication, Discharge not done: Medical Reason" for "Parenteral anticoagulant ingredient specific "</li>
+                                                      <li>OR: "Medication, Discharge not done: Patient Refusal" for "Parenteral anticoagulant ingredient specific "</li>
+                                                      <li> starts during "Occurrence A of Encounter, Performed: Encounter Inpatient"</li>
+                                                   </ul>
+                                                   
+                                                </li>
+                                                <li>OR: 
+                                                   <ul>
+                                                      <li>OR: "Medication, Administered not done: Medical Reason" for "Parenteral Anticoagulant "</li>
+                                                      <li>OR: "Medication, Administered not done: Patient Refusal" for "Parenteral Anticoagulant "</li>
+                                                      <li>  &lt;= 1 day(s) starts after start of  (MOST RECENT:"Occurrence A of Medication, Administered: Parenteral Anticoagulant" during
+                                                         "Occurrence A of Encounter, Performed: Encounter Inpatient")
+                                                      </li>
+                                                   </ul>
+                                                   
+                                                </li>
+                                                <li>OR: 
+                                                   <ul>
+                                                      <li>OR: "Medication, Administered not done: Medical Reason" for "Parenteral Anticoagulant "</li>
+                                                      <li>OR: "Medication, Administered not done: Patient Refusal" for "Parenteral Anticoagulant "</li>
+                                                      <li>  &lt;= 1 day(s) starts after start of  (MOST RECENT:"Occurrence A of Medication, Administered: Parenteral Anticoagulant" during
+                                                         "Occurrence A of Encounter, Performed: Encounter Inpatient")
+                                                      </li>
+                                                   </ul>
+                                                   
+                                                </li>
+                                                <li>OR: "Diagnosis, Active: Thrombocytopenia"  &lt;= 1 day(s) starts after start of MOST RECENT :"Occurrence A of Medication, Administered:
+                                                   Parenteral Anticoagulant"
+                                                </li>
+                                             </ul>
+                                             
+                                          </li>
+                                       </ul>
+                                       
+                                    </li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>OR: 
+                                 <ul>
+                                    <li>OR: "Medication, Order not done: Medical Reason" for "Parenteral anticoagulant ingredient specific "</li>
+                                    <li>OR: "Medication, Order not done: Patient Refusal" for "Parenteral anticoagulant ingredient specific "</li>
+                                    <li>OR: "Medication, Administered not done: Medical Reason" for "Parenteral Anticoagulant "</li>
+                                    <li>OR: "Medication, Administered not done: Patient Refusal" for "Parenteral Anticoagulant "</li>
+                                    <li>  &lt;= 1 day(s) starts after start of  ("Occurrence A of Diagnostic Study, Result: VTE Diagnostic Test" during "Occurrence A
+                                       of Encounter, Performed: Encounter Inpatient")
+                                    </li>
+                                 </ul>
+                                 
+                              </li>
+                              <li>OR: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Encounter, Performed: Inpatient Encounter"  &lt;= 1 hour(s) starts after end of "Occurrence A of Encounter,
+                                       Performed: Emergency Department Visit"
+                                    </li>
+                                    <li>AND: 
+                                       <ul>
+                                          <li>OR: "Medication, Order not done: Medical Reason" for "Parenteral anticoagulant ingredient specific "</li>
+                                          <li>OR: "Medication, Order not done: Patient Refusal" for "Parenteral anticoagulant ingredient specific "</li>
+                                          <li>OR: "Medication, Administered not done: Medical Reason" for "Parenteral Anticoagulant "</li>
+                                          <li>OR: "Medication, Administered not done: Patient Refusal" for "Parenteral Anticoagulant "</li>
+                                          <li>  &lt;= 1 day(s) starts after start of  ("Occurrence A of Diagnostic Study, Result: VTE Diagnostic Test" during "Occurrence A
+                                             of Encounter, Performed: Emergency Department Visit")
+                                          </li>
+                                       </ul>
+                                       
+                                    </li>
+                                 </ul>
+                                 
+                              </li>
+                              <li>OR: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Diagnostic Study, Result: VTE Diagnostic Test"  &lt;= 4 day(s) starts before start of "Occurrence A of
+                                       Encounter, Performed: Inpatient Encounter"
+                                    </li>
+                                    <li>AND: 
+                                       <ul>
+                                          <li>OR: "Medication, Order not done: Medical Reason" for "Parenteral anticoagulant ingredient specific "</li>
+                                          <li>OR: "Medication, Order not done: Patient Refusal" for "Parenteral anticoagulant ingredient specific "</li>
+                                          <li>OR: "Medication, Administered not done: Medical Reason" for "Parenteral Anticoagulant "</li>
+                                          <li>OR: "Medication, Administered not done: Patient Refusal" for "Parenteral Anticoagulant "</li>
+                                          <li>  &lt;= 1 day(s) starts after start of "Occurrence A of Encounter, Performed: Encounter Inpatient"</li>
+                                       </ul>
+                                       
+                                    </li>
+                                 </ul>
+                                 
+                              </li>
+                              <li>OR: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Encounter, Performed: Encounter Inpatient"  &lt;= 1 hour(s) starts after end of "Occurrence A of Encounter,
+                                       Performed: Emergency Department Visit"
+                                    </li>
+                                    <li>AND: "Occurrence A of Diagnostic Study, Result: VTE Diagnostic Test"  &lt;= 4 day(s) starts before start of "Occurrence A of
+                                       Encounter, Performed: Emergency Department Visit"
+                                    </li>
+                                    <li>AND: 
+                                       <ul>
+                                          <li>OR: "Medication, Order not done: Medical Reason" for "Parenteral anticoagulant ingredient specific "</li>
+                                          <li>OR: "Medication, Order not done: Patient Refusal" for "Parenteral anticoagulant ingredient specific "</li>
+                                          <li>OR: "Medication, Administered not done: Medical Reason" for "Parenteral Anticoagulant "</li>
+                                          <li>OR: "Medication, Administered not done: Patient Refusal" for "Parenteral Anticoagulant "</li>
+                                          <li>  &lt;= 1 day(s) starts after start of "Occurrence A of Encounter, Performed: Emergency Department Visit"</li>
+                                       </ul>
+                                       
+                                    </li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>OR: "Medication, Administered: Oral Factor Xa Inhibitor for VTE Prophylaxis" starts during "Occurrence A of Encounter, Performed:
+                                 Inpatient Encounter"
+                              </li>
+                              <li>OR: "Medication, Administered: Oral Factor Xa Inhibitor for VTE Prophylaxis" starts during "Occurrence A of Encounter, Performed:
+                                 Emergency Department Visit"
+                              </li>
+                              <li> starts after start of "Occurrence A of Diagnostic Study, Result: VTE Diagnostic Test"</li>
+                           </ul>
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator Exceptions =</b>
+               
+               <ul>
+                  <li>None</li>
+               </ul>
+               
+            </li>
+         </ul>
+         
+      </div>
+      <h3><a name="d1e6124" href="#toc">Data criteria (QDM Data Elements)</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               "Diagnosis, Active: Obstetrics VTE" using "Obstetrics VTE Grouping Value Set (2.16.840.1.113883.3.117.1.7.1.264)"
+            </li>
+            <li>
+               "Diagnosis, Active: Thrombocytopenia" using "Thrombocytopenia Grouping Value Set (2.16.840.1.113762.1.4.1045.45)"
+            </li>
+            <li>
+               "Diagnosis, Active: Venous Thromboembolism" using "Venous Thromboembolism Grouping Value Set (2.16.840.1.113883.3.117.1.7.1.279)"
+            </li>
+            <li>
+               "Diagnostic Study, Result: VTE Diagnostic Test" using "VTE Diagnostic Test Grouping Value Set (2.16.840.1.113883.3.117.1.7.1.276)"
+            </li>
+            <li>
+               "Encounter, Performed: Emergency Department Visit" using "Emergency Department Visit SNOMEDCT Value Set (2.16.840.1.113883.3.117.1.7.1.292)"
+            </li>
+            <li>
+               "Encounter, Performed: Encounter Inpatient" using "Encounter Inpatient SNOMEDCT Value Set (2.16.840.1.113883.3.666.5.307)"
+            </li>
+            <li>
+               "Encounter, Performed: Inpatient Encounter" using "Inpatient Encounter SNOMEDCT Value Set (2.16.840.1.113883.3.117.1.7.1.23)"
+            </li>
+            <li>
+               "Intervention, Order: Comfort Measures " using "Comfort Measures SNOMEDCT Value Set (1.3.6.1.4.1.33895.1.3.0.45)"
+            </li>
+            <li>
+               "Intervention, Performed: Comfort Measures " using "Comfort Measures SNOMEDCT Value Set (1.3.6.1.4.1.33895.1.3.0.45)"
+            </li>
+            <li>
+               "Laboratory Test, Result: INR" using "INR LOINC Value Set (2.16.840.1.113883.3.117.1.7.1.213)"
+            </li>
+            <li>
+               "Medication, Administered not done: Medical Reason" using "Medical Reason SNOMEDCT Value Set (2.16.840.1.113883.3.117.1.7.1.473)"
+            </li>
+            <li>
+               "Medication, Administered not done: Patient Refusal" using "Patient Refusal SNOMEDCT Value Set (2.16.840.1.113883.3.117.1.7.1.93)"
+            </li>
+            <li>
+               "Medication, Administered: Oral Factor Xa Inhibitor for VTE Prophylaxis" using "Oral Factor Xa Inhibitor for VTE Prophylaxis RXNORM Value Set (2.16.840.1.113883.3.117.1.7.1.134)"
+            </li>
+            <li>
+               "Medication, Administered: Parenteral Anticoagulant" using "Parenteral Anticoagulant RXNORM Value Set (2.16.840.1.113883.3.117.1.7.1.266)"
+            </li>
+            <li>
+               "Medication, Administered: Warfarin" using "Warfarin RXNORM Value Set (2.16.840.1.113883.3.117.1.7.1.232)"
+            </li>
+            <li>
+               "Medication, Discharge not done: Medical Reason" using "Medical Reason SNOMEDCT Value Set (2.16.840.1.113883.3.117.1.7.1.473)"
+            </li>
+            <li>
+               "Medication, Discharge not done: Patient Refusal" using "Patient Refusal SNOMEDCT Value Set (2.16.840.1.113883.3.117.1.7.1.93)"
+            </li>
+            <li>
+               "Medication, Discharge: Parenteral Anticoagulant" using "Parenteral Anticoagulant RXNORM Value Set (2.16.840.1.113883.3.117.1.7.1.266)"
+            </li>
+            <li>
+               "Medication, Discharge: Parenteral anticoagulant ingredient specific" using "Parenteral anticoagulant ingredient specific RXNORM Value Set (2.16.840.1.113762.1.4.1021.4)"
+            </li>
+            <li>
+               "Medication, Order not done: Medical Reason" using "Medical Reason SNOMEDCT Value Set (2.16.840.1.113883.3.117.1.7.1.473)"
+            </li>
+            <li>
+               "Medication, Order not done: Patient Refusal" using "Patient Refusal SNOMEDCT Value Set (2.16.840.1.113883.3.117.1.7.1.93)"
+            </li>
+            <li>
+               "Medication, Order: Parenteral anticoagulant ingredient specific" using "Parenteral anticoagulant ingredient specific RXNORM Value Set (2.16.840.1.113762.1.4.1021.4)"
+            </li>
+            <li>
+               "Patient Characteristic Birthdate: birth date" using "birth date LOINC Value Set (2.16.840.1.113883.3.560.100.4)"
+            </li>
+            <li>
+               Attribute: "Discharge status: Discharged to Health Care Facility for Hospice Care" using "Discharged to Health Care Facility for Hospice Care SNOMEDCT Value Set  (2.16.840.1.113883.3.117.1.7.1.207)"
+            </li>
+            <li>
+               Attribute: "Discharge status: Discharged to Home for Hospice Care" using "Discharged to Home for Hospice Care SNOMEDCT Value Set  (2.16.840.1.113883.3.117.1.7.1.209)"
+            </li>
+            <li>
+               Attribute: "Discharge status: Discharge To Another Hospital" using "Discharge To Another Hospital SNOMEDCT Value Set  (2.16.840.1.113883.3.117.1.7.1.87)"
+            </li>
+            <li>
+               Attribute: "Discharge status: Left Against Medical Advice" using "Left Against Medical Advice SNOMEDCT Value Set  (2.16.840.1.113883.3.117.1.7.1.308)"
+            </li>
+            <li>
+               Attribute: "Discharge status: Patient Expired" using "Patient Expired SNOMEDCT Value Set  (2.16.840.1.113883.3.117.1.7.1.309)"
+            </li>
+            <li>
+               Attribute: "Result: VTE Confirmed" using "VTE Confirmed SNOMEDCT Value Set  (2.16.840.1.113883.3.117.1.7.1.407)"
+            </li>
+         </ul>
+         
+      </div>
+      <h3><a name="d1e7177" href="#toc">Reporting Stratification</a></h3>
+      <div>
+         
+         <ul>
+            <li>None</li>
+         </ul>
+         
+      </div>
+      <h3><a name="d1e7198" href="#toc">Supplemental Data Elements</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               "Patient Characteristic Ethnicity: Ethnicity" using "Ethnicity CDCREC Value Set (2.16.840.1.114222.4.11.837)"
+            </li>
+            <li>
+               "Patient Characteristic Payer: Payer" using "Payer SOP Value Set (2.16.840.1.114222.4.11.3591)"
+            </li>
+            <li>
+               "Patient Characteristic Race: Race" using "Race CDCREC Value Set (2.16.840.1.114222.4.11.836)"
+            </li>
+            <li>
+               "Patient Characteristic Sex: ONC Administrative Sex" using "ONC Administrative Sex AdministrativeSex Value Set (2.16.840.1.113762.1.4.1)"
+            </li>
+         </ul>
+         
+      </div><br><hr align="left" color="teal" size="2" width="80%"><br><table class="header_table">
+         <tbody>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Set</span></td>
+               <td colspan="3" width="80%">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto;word-wrap:break-word">eMeasure Venous Thromboembolism (eVTE)</div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

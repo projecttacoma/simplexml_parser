@@ -1,0 +1,1426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<measure>
+  <measureDetails>
+    <uuid>40280381-446b-b8c2-0144-9f324c5b2d25</uuid>
+    <title>Prophylactic Antibiotic Received Within One Hour Prior to Surgical Incision</title>
+    <shortTitle>SCIP Prophylactic Antibiotic 1 H</shortTitle>
+    <emeasureid>171</emeasureid>
+    <guid>d09add1d-30f5-462d-b677-3d17d9ccd664</guid>
+    <version>4</version>
+    <status>In Progress</status>
+    <nqfid extension="0527" root="2.16.840.1.113883.3.560.1"/>
+    <period uuid="40280381-3d27-5493-013d-4b637d1342c7">
+      <startDate uuid="cd2b9d5b-2730-4a17-ad03-1cb5bc87eb35">00000101</startDate>
+      <stopDate uuid="ec5088e7-fb99-49a7-9a83-93a2ec9a1747">00001231</stopDate>
+    </period>
+    <steward id="2.16.840.1.113883.3.560.3.31">Centers for Medicare &amp; Medicaid Services</steward>
+    <developers>
+      <developer id="2.16.840.1.113883">Oklahoma Foundation for Medical Quality</developer>
+    </developers>
+    <endorsement id="2.16.840.1.113883.3.560">National Quality Forum</endorsement>
+    <description>Surgical patients with prophylactic antibiotics initiated within one hour prior to surgical incision. Patients who received vancomycin or a fluoroquinolone for prophylactic antibiotics should have the antibiotics initiated within two hours prior to surgical incision. Due to the longer infusion time required for vancomycin or a fluoroquinolone, it is acceptable to start these antibiotics within two hours prior to incision time.</description>
+    <copyright>Measure specifications are in the Public Domain.
+
+LOINC(R) is a registered trademark of the Regenstrief Institute.
+ 
+This material contains SNOMED Clinical Terms (R) (SNOMED CT(c)) copyright 2004-2010 International Health Terminology Standards Development Organization. All rights reserved.</copyright>
+    <disclaimer>None</disclaimer>
+    <scoring id="PROPOR">Proportion</scoring>
+    <types>
+      <type id="PROCESS">Process</type>
+    </types>
+    <stratification>None</stratification>
+    <riskAdjustment>None</riskAdjustment>
+    <aggregation>None</aggregation>
+    <rationale>A goal of prophylaxis with antibiotics is to establish bactericidal tissue and serum levels at the time of skin incision. Studies performed in the 1960’s and 1970’s demonstrated that a common reason for failure of prophylaxis was delay of antibiotic administration until after the operation. In a study of 2,847 surgery patients at LDS Hospital in Salt Lake City, it was found that the lowest incidence of post-operative infection was associated with antibiotic administration during the one hour prior to surgery. The risk of infection increased progressively with greater time intervals between administration and skin incision. This relationship was observed whether antibiotics preceded or followed skin incision (Classen 1993).   Opportunities to improve care have been demonstrated and timely administration has been recommended. For example, at LDS Hospital, administration of the first antibiotic dose “on call” to the operating room was frequently associated with timing errors. Altering the system there resulted in an increase in appropriate timing from 40% of cases in 1985 to 99% of cases in 1998.</rationale>
+    <recommendations>None</recommendations>
+    <improvementNotations>An increase in the rate</improvementNotations>
+    <references>
+      <reference>Bratzler DW, Houck PM, for the Surgical Infection Prevention Guidelines Writers Group. Antimicrobial prophylaxis for surgery: An advisory statement from the National Surgical Infection Prevention Project. CID. 2004:38(15 June):1706-1715.
+</reference>
+      <reference>Mangram AJ, Horan TC, Pearson ML, et al. Guidelines for prevention of surgical site infection, 1999. Infect Control Hosp Epidemiol. 1999;20:247-280.
+</reference>
+      <reference>Silver A, Eichorn A, Kral J, et al. Timeliness and use of antibiotic prophylaxis in selected inpatient surgical procedures. Am J Surg. 1996;171:548-552.
+</reference>
+      <reference>Larsen RA, Evans RS, Burke JP, et al. Improved perioperative antibiotic use and reduced surgical wound infections through use of computer decision analysis. Infect Control Hosp Epidemiol. 1989;10:316-320.
+</reference>
+      <reference>Finkelstein R, Reinhertz G, Embom A. Surveillance of the use of antibiotic prophylaxis in surgery. Isr J Med Sci. 1996;32:1093-1097.
+</reference>
+      <reference>Matuschka PR, Cheadle WG, Burke JD, et al. A new standard of care: administration of preoperative antibiotics in the operating room. Am Surg. 1997;63:500-503.
+</reference>
+      <reference>Gorecki P, Schein M, Rucinski JC, et al. Antibiotic administration in patients undergoing common surgical procedures in a community teaching hospital: the chaos continues. World J Surg. 1999;23:429-432.
+</reference>
+      <reference>Bernard HR, Cole WR. The prophylaxis of surgical infections: the effect of prophylactic antimicrobial drugs on the incidence of infection following potentially contaminated operations. Surgery. 1964;56:151-157.
+</reference>
+      <reference>Polk HC, Lopez-Mayor JF. Postoperative wound infection: a prospective study of determinant factors and prevention. Surgery. 1969;66:97-103.
+</reference>
+      <reference>Stone HH, Hooper CA, Kolb LD, et al. Antibiotic prophylaxis in gastric, biliary, and colonic surgery. Ann Surg. 1976;184:443-452.
+</reference>
+      <reference>American College of Obstetricians and Gynecologists (ACOG) Committee on Practice Bulletins ACOG Practice Bulletin No 104 Antibiotic prophylaxis for gynecologic procedures. Obstet Gynecol May 2009; 113(5) : 1180-1189.
+</reference>
+    </references>
+    <definitions>None</definitions>
+    <guidance>The measurement period is one calendar year but the reporting period is 3 months as a calendar quarter; Q1 = Jan – Mar, Q2 = Apr – Jun, Q3 = Jul – Sep, Q4 is Oct – Dec.
+
+Denominator Exclusion guidance:
+
+The exclusion for patients who are clinical trial participants is limited to patients participating in a clinical trial for the same conditions as covered by the measure. Other clinical trials are not valid reasons for exclusions.</guidance>
+    <transmissionFormat>None</transmissionFormat>
+    <initialPatientPopDescription>All hospital discharges for selective surgery with hospital stays &lt;= 120 days during the measurement year for patients age 18 and older at the time of hospital admission with no evidence of prior infection</initialPatientPopDescription>
+    <denominatorDescription>Denominator(s): All selected surgical patients 18 years of age and older with no evidence of prior infection with a Principal Procedure Code of selected surgeries.
+Denominator for population 1 – Coronary artery bypass graft (CABG) procedures
+Denominator for population 2 - Other cardiac surgery
+Denominator for population 3 - Hip arthroplasty
+Denominator for population 4 – Knee arthroplasty
+Denominator for population 5 – Colon surgery
+Denominator for population 6 – Abdominal hysterectomy
+Denominator for population 7 – Vaginal hysterectomy
+Denominator for population 8 - Vascular surgery</denominatorDescription>
+    <denominatorExclusionsDescription>"
+• Patients who had a hysterectomy and a caesarean section performed during this hospitalization 
+• Patients who had a principal diagnosis suggestive of preoperative infectious diseases
+• Patients enrolled in clinical trials-this exclusion is limited to patients participating in a clinical trial for the same conditions as covered by the measure.  Other clinical trials are not valid reasons for exclusion. 
+• Patients with physician/advanced practice nurse/physician assistant (physician/APN/PA) documented infection prior to surgical procedure of interest 
+• Patients who had other procedures requiring general or spinal anesthesia that occurred within 3 days (4 days for CABG or Other Cardiac Surgery) prior to or after the procedure of interest (during separate surgical episodes) during this hospital stay 
+"</denominatorExclusionsDescription>
+    <numeratorDescription>Number of surgical patients with prophylactic antibiotics initiated within one hour prior to surgical incision (two hours if receiving vancomycin or a fluoroquinolone).</numeratorDescription>
+    <numeratorExclusionsDescription>Not applicable</numeratorExclusionsDescription>
+    <denominatorExceptionsDescription>None</denominatorExceptionsDescription>
+    <measurePopulationDescription>Not applicable</measurePopulationDescription>
+    <measureObservationsDescription>Not applicable</measureObservationsDescription>
+    <supplementalData>For every patient evaluated by this measure also identify payer, race, ethnicity, and sex.</supplementalData>
+    <qualityMeasureSet uuid="5ac755a1-795c-4ffa-8514-81cc9ba0bdfa">Surgical Care Improvement Project</qualityMeasureSet>
+  </measureDetails>
+  <supplementalDataElements>
+    <elementRef id="40280381-3d27-5493-013d-4b637d1242a9" name="ONC Administrative Sex"/>
+    <elementRef id="40280381-3d27-5493-013d-4b637d1242aa" name="Race"/>
+    <elementRef id="40280381-3d27-5493-013d-4b637d1242ab" name="Ethnicity"/>
+    <elementRef id="40280381-3d27-5493-013d-4b637d1242ac" name="Payer"/>
+  </supplementalDataElements>
+  <measureGrouping>
+    <group sequence="1">
+      <clause displayName="Initial Patient Population 2" type="initialPatientPopulation" uuid="533D0D8D-27AC-4F10-ABE7-14B9324B1F0F">
+        <logicalOp displayName="AND" type="and">
+          <relationalOp displayName="&gt;= 18 years Starts Before Start Of" operatorType="Greater Than or Equal To" quantity="18" type="SBS" unit="years">
+            <elementRef displayName="birth date : Patient Characteristic Birthdate" id="40280381-3d27-5493-013d-4b637d1342c5" type="qdm"/>
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+          </relationalOp>
+          <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm">
+            <attribute comparisonValue="120" mode="Less Than or Equal To" name="length of stay" unit="days"/>
+          </elementRef>
+          <relationalOp displayName="    Ends During" quantity="" type="EDU">
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+            <elementRef displayName="Measurement Period : Timing Element" id="40280381-3d27-5493-013d-4b637d1342c7" type="qdm"/>
+          </relationalOp>
+          <relationalOp displayName="During" type="DURING">
+            <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+          </relationalOp>
+          <relationalOp displayName="During" type="DURING">
+            <elementRef displayName="Occurrence A of SCIP Major Surgical Procedure : Procedure, Performed" id="40280381-3d61-56a7-013d-b2690cb60341" type="qdm">
+              <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+            </elementRef>
+            <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+          </relationalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Denominator 1" type="denominator" uuid="13E4D3CB-5AE4-4EFA-A33F-9034308C2B1B">
+        <logicalOp displayName="AND" type="and">
+          <logicalOp displayName="OR" type="or">
+            <relationalOp displayName="During" type="DURING">
+              <elementRef displayName="Occurrence A of Hospital measures-CABG : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1442d8" type="qdm">
+                <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="Starts After End Of" type="SAE">
+              <elementRef displayName="Occurrence A of Hospital measures-CABG : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1442d8" type="qdm">
+                <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+              </elementRef>
+              <relationalOp displayName="During" type="DURING">
+                <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="b2b9e5b3-8c6a-4bc2-bce0-082b9529f440" type="qdm"/>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+              </relationalOp>
+            </relationalOp>
+          </logicalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Denominator Exclusions 1" type="denominatorExclusions" uuid="A141DD8E-1369-47BE-8D84-4078610C329F">
+        <logicalOp displayName="AND" type="and">
+          <logicalOp displayName="OR" type="or">
+            <relationalOp displayName="&lt;= 4 days Ends Before Start Of" operatorType="Less Than or Equal To" quantity="4" type="EBS" unit="days">
+              <elementRef displayName="Occurrence B of General or Neuraxial Anesthesia : Procedure, Performed" id="8a166371-84b8-4807-92fe-d47ddcd1789e" type="qdm"/>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 4 days Starts After End Of" operatorType="Less Than or Equal To" quantity="4" type="SAE" unit="days">
+              <elementRef displayName="Occurrence B of General or Neuraxial Anesthesia : Procedure, Performed" id="8a166371-84b8-4807-92fe-d47ddcd1789e" type="qdm"/>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 4 days Starts After End Of" operatorType="Less Than or Equal To" quantity="4" type="SAE" unit="days">
+              <elementRef displayName="Hospital measures-Pacemaker or implantable defibrillator insertion procedure : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1342bd" type="qdm"/>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 4 days Ends Before Start Of" operatorType="Less Than or Equal To" quantity="4" type="EBS" unit="days">
+              <elementRef displayName="Hospital measures-Pacemaker or implantable defibrillator insertion procedure : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1342bd" type="qdm"/>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="During" type="DURING">
+              <elementRef displayName="Hospital Measures - Any infection : Diagnosis, Active" id="40280381-3d27-5493-013d-4b637d1342c8" type="qdm">
+                <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+              </elementRef>
+              <elementRef displayName="Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1342c3" type="qdm"/>
+            </relationalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="Starts Before Or During" type="SBOD">
+                <elementRef displayName="Occurrence A of Clinical Trial Participant : Patient Characteristic Clinical Trial Participant" id="40280381-3d27-5493-013d-4b637d1442e0" type="qdm"/>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+              </relationalOp>
+              <functionalOp displayName="NOT" type="NOT" uuid="90296d32-7141-4c73-bc53-dee5e89b6d5a">
+                <relationalOp displayName="Ends Before Start Of" type="EBS">
+                  <elementRef displayName="Occurrence A of Clinical Trial Participant : Patient Characteristic Clinical Trial Participant" id="40280381-3d27-5493-013d-4b637d1442e0" type="qdm"/>
+                  <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+                </relationalOp>
+              </functionalOp>
+            </logicalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="Starts Before Start Of" type="SBS">
+                <elementRef displayName="Occurrence A of Any Infection Prior to Anesthesia Concepts : Diagnosis, Active" id="40280381-3d27-5493-013d-4b637d1142a4" type="qdm"/>
+                <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+              </relationalOp>
+              <functionalOp displayName="NOT" type="NOT" uuid="8b6dd093-ed3a-46b5-940b-ab58c61d055e">
+                <relationalOp displayName="Ends Before Start Of" type="EBS">
+                  <elementRef displayName="Occurrence A of Any Infection Prior to Anesthesia Concepts : Diagnosis, Active" id="40280381-3d27-5493-013d-4b637d1142a4" type="qdm"/>
+                  <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+                </relationalOp>
+              </functionalOp>
+            </logicalOp>
+          </logicalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Numerator 1" type="numerator" uuid="0E353F6D-4ED9-461F-A8A0-23D141BA56DC">
+        <logicalOp displayName="AND" type="and">
+          <logicalOp displayName="OR" type="or">
+            <relationalOp displayName="&lt;= 120 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="120" type="SBS" unit="minutes">
+              <elementRef displayName="IV quinolones : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b5" type="qdm">
+                <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm">
+                <attribute mode="Check if Present" name="incision datetime"/>
+              </elementRef>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 120 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="120" type="SBS" unit="minutes">
+              <elementRef displayName="Hospital measures-IV Vancomycin : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b6" type="qdm">
+                <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm">
+                <attribute mode="Check if Present" name="incision datetime"/>
+              </elementRef>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 60 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="60" type="SBS" unit="minutes">
+              <elementRef displayName="IV Antimicrobial medication : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b3" type="qdm">
+                <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm">
+                <attribute mode="Check if Present" name="incision datetime"/>
+              </elementRef>
+            </relationalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="Starts After End Of" type="SAE">
+                <elementRef displayName="Occurrence A of Hospital measures-CABG : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1442d8" type="qdm">
+                  <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+                </elementRef>
+                <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="916ab4d0-7603-4209-87fa-e5928db0aba0" type="qdm"/>
+              </relationalOp>
+              <logicalOp displayName="OR" type="or">
+                <relationalOp displayName="&lt;= 120 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="120" type="SBS" unit="minutes">
+                  <elementRef displayName="IV quinolones : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b5" type="qdm">
+                    <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+                  </elementRef>
+                  <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="916ab4d0-7603-4209-87fa-e5928db0aba0" type="qdm"/>
+                </relationalOp>
+                <relationalOp displayName="&lt;= 120 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="120" type="SBS" unit="minutes">
+                  <elementRef displayName="Hospital measures-IV Vancomycin : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b6" type="qdm">
+                    <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+                  </elementRef>
+                  <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="916ab4d0-7603-4209-87fa-e5928db0aba0" type="qdm"/>
+                </relationalOp>
+                <relationalOp displayName="&lt;= 60 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="60" type="SBS" unit="minutes">
+                  <elementRef displayName="IV Antimicrobial medication : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b3" type="qdm">
+                    <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+                  </elementRef>
+                  <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="916ab4d0-7603-4209-87fa-e5928db0aba0" type="qdm"/>
+                </relationalOp>
+              </logicalOp>
+            </logicalOp>
+          </logicalOp>
+        </logicalOp>
+      </clause>
+    </group>
+    <group sequence="2">
+      <clause displayName="Initial Patient Population 2" type="initialPatientPopulation" uuid="F3E974B2-5F35-4D24-9A34-1D75CE2A2DDF">
+        <logicalOp displayName="AND" type="and">
+          <relationalOp displayName="&gt;= 18 years Starts Before Start Of" operatorType="Greater Than or Equal To" quantity="18" type="SBS" unit="years">
+            <elementRef displayName="birth date : Patient Characteristic Birthdate" id="40280381-3d27-5493-013d-4b637d1342c5" type="qdm"/>
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+          </relationalOp>
+          <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm">
+            <attribute comparisonValue="120" mode="Less Than or Equal To" name="length of stay" unit="days"/>
+          </elementRef>
+          <relationalOp displayName="    Ends During" quantity="" type="EDU">
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+            <elementRef displayName="Measurement Period : Timing Element" id="40280381-3d27-5493-013d-4b637d1342c7" type="qdm"/>
+          </relationalOp>
+          <relationalOp displayName="During" type="DURING">
+            <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+          </relationalOp>
+          <relationalOp displayName="During" type="DURING">
+            <elementRef displayName="Occurrence A of SCIP Major Surgical Procedure : Procedure, Performed" id="40280381-3d61-56a7-013d-b2690cb60341" type="qdm">
+              <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+            </elementRef>
+            <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+          </relationalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Denominator 2" type="denominator" uuid="AC78A4C6-E715-40D2-960D-C0962C4957E4">
+        <logicalOp displayName="AND" type="and">
+          <logicalOp displayName="OR" type="or">
+            <relationalOp displayName="During" type="DURING">
+              <elementRef displayName="Occurrence A of Hospital measures-Other Cardiac Surgery : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1442dc" type="qdm">
+                <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="Starts After End Of" type="SAE">
+              <elementRef displayName="Occurrence A of Hospital measures-Other Cardiac Surgery : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1442dc" type="qdm">
+                <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+              </elementRef>
+              <relationalOp displayName="During" type="DURING">
+                <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="b2b9e5b3-8c6a-4bc2-bce0-082b9529f440" type="qdm"/>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+              </relationalOp>
+            </relationalOp>
+          </logicalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Denominator Exclusions 2" type="denominatorExclusions" uuid="2722A569-4B54-4CCD-85C4-675EFFD5912F">
+        <logicalOp displayName="AND" type="and">
+          <logicalOp displayName="OR" type="or">
+            <relationalOp displayName="&lt;= 4 days Starts After End Of" operatorType="Less Than or Equal To" quantity="4" type="SAE" unit="days">
+              <elementRef displayName="Hospital measures-Pacemaker or implantable defibrillator insertion procedure : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1342bd" type="qdm"/>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 4 days Starts After End Of" operatorType="Less Than or Equal To" quantity="4" type="SAE" unit="days">
+              <elementRef displayName="Occurrence B of General or Neuraxial Anesthesia : Procedure, Performed" id="8a166371-84b8-4807-92fe-d47ddcd1789e" type="qdm"/>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 4 days Ends Before Start Of" operatorType="Less Than or Equal To" quantity="4" type="EBS" unit="days">
+              <elementRef displayName="Occurrence B of General or Neuraxial Anesthesia : Procedure, Performed" id="8a166371-84b8-4807-92fe-d47ddcd1789e" type="qdm"/>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 4 days Ends Before Start Of" operatorType="Less Than or Equal To" quantity="4" type="EBS" unit="days">
+              <elementRef displayName="Hospital measures-Pacemaker or implantable defibrillator insertion procedure : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1342bd" type="qdm"/>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="During" type="DURING">
+              <elementRef displayName="Hospital Measures - Any infection : Diagnosis, Active" id="40280381-3d27-5493-013d-4b637d1342c8" type="qdm">
+                <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+              </elementRef>
+              <elementRef displayName="Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1342c3" type="qdm"/>
+            </relationalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="Starts Before Start Of" type="SBS">
+                <elementRef displayName="Occurrence A of Any Infection Prior to Anesthesia Concepts : Diagnosis, Active" id="40280381-3d27-5493-013d-4b637d1142a4" type="qdm"/>
+                <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+              </relationalOp>
+              <functionalOp displayName="NOT" type="NOT" uuid="fd797f82-a423-40b4-a007-5d9d049fbf01">
+                <relationalOp displayName="Ends Before Start Of" type="EBS">
+                  <elementRef displayName="Occurrence A of Any Infection Prior to Anesthesia Concepts : Diagnosis, Active" id="40280381-3d27-5493-013d-4b637d1142a4" type="qdm"/>
+                  <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+                </relationalOp>
+              </functionalOp>
+            </logicalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="Starts Before Or During" type="SBOD">
+                <elementRef displayName="Occurrence A of Clinical Trial Participant : Patient Characteristic Clinical Trial Participant" id="40280381-3d27-5493-013d-4b637d1442e0" type="qdm"/>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+              </relationalOp>
+              <functionalOp displayName="NOT" type="NOT" uuid="d14aacc2-6e70-4295-af7f-1b7cd8b5bb32">
+                <relationalOp displayName="Ends Before Start Of" type="EBS">
+                  <elementRef displayName="Occurrence A of Clinical Trial Participant : Patient Characteristic Clinical Trial Participant" id="40280381-3d27-5493-013d-4b637d1442e0" type="qdm"/>
+                  <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+                </relationalOp>
+              </functionalOp>
+            </logicalOp>
+          </logicalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Numerator 2" type="numerator" uuid="B7B45E30-3F8E-4866-9FE2-31040323742C">
+        <logicalOp displayName="AND" type="and">
+          <logicalOp displayName="OR" type="or">
+            <relationalOp displayName="&lt;= 120 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="120" type="SBS" unit="minutes">
+              <elementRef displayName="IV quinolones : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b5" type="qdm">
+                <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm">
+                <attribute mode="Check if Present" name="incision datetime"/>
+              </elementRef>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 120 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="120" type="SBS" unit="minutes">
+              <elementRef displayName="Hospital measures-IV Vancomycin : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b6" type="qdm">
+                <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm">
+                <attribute mode="Check if Present" name="incision datetime"/>
+              </elementRef>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 60 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="60" type="SBS" unit="minutes">
+              <elementRef displayName="IV Antimicrobial medication : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b3" type="qdm">
+                <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm">
+                <attribute mode="Check if Present" name="incision datetime"/>
+              </elementRef>
+            </relationalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="Starts After End Of" type="SAE">
+                <elementRef displayName="Occurrence A of Hospital measures-Other Cardiac Surgery : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1442dc" type="qdm">
+                  <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+                </elementRef>
+                <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="b2b9e5b3-8c6a-4bc2-bce0-082b9529f440" type="qdm"/>
+              </relationalOp>
+              <logicalOp displayName="OR" type="or">
+                <relationalOp displayName="&lt;= 120 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="120" type="SBS" unit="minutes">
+                  <elementRef displayName="IV quinolones : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b5" type="qdm">
+                    <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+                  </elementRef>
+                  <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="916ab4d0-7603-4209-87fa-e5928db0aba0" type="qdm"/>
+                </relationalOp>
+                <relationalOp displayName="&lt;= 120 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="120" type="SBS" unit="minutes">
+                  <elementRef displayName="Hospital measures-IV Vancomycin : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b6" type="qdm">
+                    <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+                  </elementRef>
+                  <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="916ab4d0-7603-4209-87fa-e5928db0aba0" type="qdm"/>
+                </relationalOp>
+                <relationalOp displayName="&lt;= 60 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="60" type="SBS" unit="minutes">
+                  <elementRef displayName="IV Antimicrobial medication : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b3" type="qdm">
+                    <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+                  </elementRef>
+                  <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="916ab4d0-7603-4209-87fa-e5928db0aba0" type="qdm"/>
+                </relationalOp>
+              </logicalOp>
+            </logicalOp>
+          </logicalOp>
+        </logicalOp>
+      </clause>
+    </group>
+    <group sequence="3">
+      <clause displayName="Initial Patient Population 2" type="initialPatientPopulation" uuid="18A84003-B5BC-457D-A6CA-0F9605C32A5B">
+        <logicalOp displayName="AND" type="and">
+          <relationalOp displayName="&gt;= 18 years Starts Before Start Of" operatorType="Greater Than or Equal To" quantity="18" type="SBS" unit="years">
+            <elementRef displayName="birth date : Patient Characteristic Birthdate" id="40280381-3d27-5493-013d-4b637d1342c5" type="qdm"/>
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+          </relationalOp>
+          <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm">
+            <attribute comparisonValue="120" mode="Less Than or Equal To" name="length of stay" unit="days"/>
+          </elementRef>
+          <relationalOp displayName="    Ends During" quantity="" type="EDU">
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+            <elementRef displayName="Measurement Period : Timing Element" id="40280381-3d27-5493-013d-4b637d1342c7" type="qdm"/>
+          </relationalOp>
+          <relationalOp displayName="During" type="DURING">
+            <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+          </relationalOp>
+          <relationalOp displayName="During" type="DURING">
+            <elementRef displayName="Occurrence A of SCIP Major Surgical Procedure : Procedure, Performed" id="40280381-3d61-56a7-013d-b2690cb60341" type="qdm">
+              <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+            </elementRef>
+            <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+          </relationalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Denominator 3" type="denominator" uuid="2A3850EE-6DE4-487B-95DE-247F9621D296">
+        <logicalOp displayName="AND" type="and">
+          <logicalOp displayName="OR" type="or">
+            <relationalOp displayName="During" type="DURING">
+              <elementRef displayName="Occurrence A of Hospital measures-Hip arthroplasty : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1442da" type="qdm">
+                <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="Starts After End Of" type="SAE">
+              <elementRef displayName="Occurrence A of Hospital measures-Hip arthroplasty : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1442da" type="qdm">
+                <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+              </elementRef>
+              <relationalOp displayName="During" type="DURING">
+                <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="b2b9e5b3-8c6a-4bc2-bce0-082b9529f440" type="qdm"/>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+              </relationalOp>
+            </relationalOp>
+          </logicalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Denominator Exclusions 3" type="denominatorExclusions" uuid="07BBBCDE-3E88-4E7B-9A6F-B00D90791952">
+        <logicalOp displayName="AND" type="and">
+          <logicalOp displayName="OR" type="or">
+            <relationalOp displayName="&lt;= 3 days Ends Before Start Of" operatorType="Less Than or Equal To" quantity="3" type="EBS" unit="days">
+              <elementRef displayName="Occurrence B of General or Neuraxial Anesthesia : Procedure, Performed" id="8a166371-84b8-4807-92fe-d47ddcd1789e" type="qdm"/>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 3 days Starts After End Of" operatorType="Less Than or Equal To" quantity="3" type="SAE" unit="days">
+              <elementRef displayName="Occurrence B of General or Neuraxial Anesthesia : Procedure, Performed" id="8a166371-84b8-4807-92fe-d47ddcd1789e" type="qdm"/>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 3 days Ends Before Start Of" operatorType="Less Than or Equal To" quantity="3" type="EBS" unit="days">
+              <elementRef displayName="Hospital measures-Pacemaker or implantable defibrillator insertion procedure : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1342bd" type="qdm"/>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 3 days Starts After End Of" operatorType="Less Than or Equal To" quantity="3" type="SAE" unit="days">
+              <elementRef displayName="Hospital measures-Pacemaker or implantable defibrillator insertion procedure : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1342bd" type="qdm"/>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="During" type="DURING">
+              <elementRef displayName="Hospital Measures - Any infection : Diagnosis, Active" id="40280381-3d27-5493-013d-4b637d1342c8" type="qdm">
+                <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+              </elementRef>
+              <elementRef displayName="Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1342c3" type="qdm"/>
+            </relationalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="Starts Before Start Of" type="SBS">
+                <elementRef displayName="Occurrence A of Any Infection Prior to Anesthesia Concepts : Diagnosis, Active" id="40280381-3d27-5493-013d-4b637d1142a4" type="qdm"/>
+                <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+              </relationalOp>
+              <functionalOp displayName="NOT" type="NOT" uuid="e58acd8e-21c0-4d6f-a950-6e1d8e98869d">
+                <relationalOp displayName="Ends Before Start Of" type="EBS">
+                  <elementRef displayName="Occurrence A of Any Infection Prior to Anesthesia Concepts : Diagnosis, Active" id="40280381-3d27-5493-013d-4b637d1142a4" type="qdm"/>
+                  <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+                </relationalOp>
+              </functionalOp>
+            </logicalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="Starts Before Or During" type="SBOD">
+                <elementRef displayName="Occurrence A of Clinical Trial Participant : Patient Characteristic Clinical Trial Participant" id="40280381-3d27-5493-013d-4b637d1442e0" type="qdm"/>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+              </relationalOp>
+              <functionalOp displayName="NOT" type="NOT" uuid="4cfc7c55-8134-4038-ba5c-788e361d8a18">
+                <relationalOp displayName="Ends Before Start Of" type="EBS">
+                  <elementRef displayName="Occurrence A of Clinical Trial Participant : Patient Characteristic Clinical Trial Participant" id="40280381-3d27-5493-013d-4b637d1442e0" type="qdm"/>
+                  <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+                </relationalOp>
+              </functionalOp>
+            </logicalOp>
+          </logicalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Numerator 3" type="numerator" uuid="0FFDD7DF-D59E-455A-8D9C-E3F59AB421D2">
+        <logicalOp displayName="AND" type="and">
+          <logicalOp displayName="OR" type="or">
+            <relationalOp displayName="&lt;= 120 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="120" type="SBS" unit="minutes">
+              <elementRef displayName="IV quinolones : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b5" type="qdm">
+                <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm">
+                <attribute mode="Check if Present" name="incision datetime"/>
+              </elementRef>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 120 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="120" type="SBS" unit="minutes">
+              <elementRef displayName="Hospital measures-IV Vancomycin : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b6" type="qdm">
+                <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm">
+                <attribute mode="Check if Present" name="incision datetime"/>
+              </elementRef>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 60 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="60" type="SBS" unit="minutes">
+              <elementRef displayName="IV Antimicrobial medication : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b3" type="qdm">
+                <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm">
+                <attribute mode="Check if Present" name="incision datetime"/>
+              </elementRef>
+            </relationalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="Starts After End Of" type="SAE">
+                <elementRef displayName="Occurrence A of Hospital measures-Hip arthroplasty : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1442da" type="qdm">
+                  <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+                </elementRef>
+                <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="b2b9e5b3-8c6a-4bc2-bce0-082b9529f440" type="qdm"/>
+              </relationalOp>
+              <logicalOp displayName="OR" type="or">
+                <relationalOp displayName="&lt;= 120 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="120" type="SBS" unit="minutes">
+                  <elementRef displayName="IV quinolones : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b5" type="qdm">
+                    <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+                  </elementRef>
+                  <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="916ab4d0-7603-4209-87fa-e5928db0aba0" type="qdm"/>
+                </relationalOp>
+                <relationalOp displayName="&lt;= 120 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="120" type="SBS" unit="minutes">
+                  <elementRef displayName="Hospital measures-IV Vancomycin : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b6" type="qdm">
+                    <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+                  </elementRef>
+                  <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="916ab4d0-7603-4209-87fa-e5928db0aba0" type="qdm"/>
+                </relationalOp>
+                <relationalOp displayName="&lt;= 60 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="60" type="SBS" unit="minutes">
+                  <elementRef displayName="IV Antimicrobial medication : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b3" type="qdm">
+                    <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+                  </elementRef>
+                  <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="916ab4d0-7603-4209-87fa-e5928db0aba0" type="qdm"/>
+                </relationalOp>
+              </logicalOp>
+            </logicalOp>
+          </logicalOp>
+        </logicalOp>
+      </clause>
+    </group>
+    <group sequence="4">
+      <clause displayName="Initial Patient Population 2" type="initialPatientPopulation" uuid="E6C67FE6-1052-4659-82C0-6BD137256D1B">
+        <logicalOp displayName="AND" type="and">
+          <relationalOp displayName="&gt;= 18 years Starts Before Start Of" operatorType="Greater Than or Equal To" quantity="18" type="SBS" unit="years">
+            <elementRef displayName="birth date : Patient Characteristic Birthdate" id="40280381-3d27-5493-013d-4b637d1342c5" type="qdm"/>
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+          </relationalOp>
+          <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm">
+            <attribute comparisonValue="120" mode="Less Than or Equal To" name="length of stay" unit="days"/>
+          </elementRef>
+          <relationalOp displayName="    Ends During" quantity="" type="EDU">
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+            <elementRef displayName="Measurement Period : Timing Element" id="40280381-3d27-5493-013d-4b637d1342c7" type="qdm"/>
+          </relationalOp>
+          <relationalOp displayName="During" type="DURING">
+            <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+          </relationalOp>
+          <relationalOp displayName="During" type="DURING">
+            <elementRef displayName="Occurrence A of SCIP Major Surgical Procedure : Procedure, Performed" id="40280381-3d61-56a7-013d-b2690cb60341" type="qdm">
+              <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+            </elementRef>
+            <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+          </relationalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Denominator 4" type="denominator" uuid="D4228B05-CEE5-482F-895D-64575FE2D27F">
+        <logicalOp displayName="AND" type="and">
+          <logicalOp displayName="OR" type="or">
+            <relationalOp displayName="During" type="DURING">
+              <elementRef displayName="Occurrence A of Hospital measures-Knee arthroplasty : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1242a5" type="qdm">
+                <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="Starts After End Of" type="SAE">
+              <elementRef displayName="Occurrence A of Hospital measures-Knee arthroplasty : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1242a5" type="qdm">
+                <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+              </elementRef>
+              <relationalOp displayName="During" type="DURING">
+                <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="b2b9e5b3-8c6a-4bc2-bce0-082b9529f440" type="qdm"/>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+              </relationalOp>
+            </relationalOp>
+          </logicalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Denominator Exclusions 4" type="denominatorExclusions" uuid="81845E8A-1A4C-4F68-AA71-582BC9CB8C50">
+        <logicalOp displayName="AND" type="and">
+          <logicalOp displayName="OR" type="or">
+            <relationalOp displayName="&lt;= 3 days Ends Before Start Of" operatorType="Less Than or Equal To" quantity="3" type="EBS" unit="days">
+              <elementRef displayName="Occurrence B of General or Neuraxial Anesthesia : Procedure, Performed" id="8a166371-84b8-4807-92fe-d47ddcd1789e" type="qdm"/>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 3 days Starts After End Of" operatorType="Less Than or Equal To" quantity="3" type="SAE" unit="days">
+              <elementRef displayName="Occurrence B of General or Neuraxial Anesthesia : Procedure, Performed" id="8a166371-84b8-4807-92fe-d47ddcd1789e" type="qdm"/>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 3 days Ends Before Start Of" operatorType="Less Than or Equal To" quantity="3" type="EBS" unit="days">
+              <elementRef displayName="Hospital measures-Pacemaker or implantable defibrillator insertion procedure : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1342bd" type="qdm"/>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 3 days Starts After End Of" operatorType="Less Than or Equal To" quantity="3" type="SAE" unit="days">
+              <elementRef displayName="Hospital measures-Pacemaker or implantable defibrillator insertion procedure : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1342bd" type="qdm"/>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="During" type="DURING">
+              <elementRef displayName="Hospital Measures - Any infection : Diagnosis, Active" id="40280381-3d27-5493-013d-4b637d1342c8" type="qdm">
+                <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+              </elementRef>
+              <elementRef displayName="Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1342c3" type="qdm"/>
+            </relationalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="Starts Before Start Of" type="SBS">
+                <elementRef displayName="Occurrence A of Any Infection Prior to Anesthesia Concepts : Diagnosis, Active" id="40280381-3d27-5493-013d-4b637d1142a4" type="qdm"/>
+                <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+              </relationalOp>
+              <functionalOp displayName="NOT" type="NOT" uuid="77cb905b-a26b-4848-bcbe-8d5cfaa6f7ab">
+                <relationalOp displayName="Ends Before Start Of" type="EBS">
+                  <elementRef displayName="Occurrence A of Any Infection Prior to Anesthesia Concepts : Diagnosis, Active" id="40280381-3d27-5493-013d-4b637d1142a4" type="qdm"/>
+                  <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+                </relationalOp>
+              </functionalOp>
+            </logicalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="Starts Before Or During" type="SBOD">
+                <elementRef displayName="Occurrence A of Clinical Trial Participant : Patient Characteristic Clinical Trial Participant" id="40280381-3d27-5493-013d-4b637d1442e0" type="qdm"/>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+              </relationalOp>
+              <functionalOp displayName="NOT" type="NOT" uuid="001995e3-fd3b-4148-80af-eb8802b1ee04">
+                <relationalOp displayName="Ends Before Start Of" type="EBS">
+                  <elementRef displayName="Occurrence A of Clinical Trial Participant : Patient Characteristic Clinical Trial Participant" id="40280381-3d27-5493-013d-4b637d1442e0" type="qdm"/>
+                  <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+                </relationalOp>
+              </functionalOp>
+            </logicalOp>
+          </logicalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Numerator 4" type="numerator" uuid="37D3DCA2-D235-414E-ACC7-078C6F04C2D2">
+        <logicalOp displayName="AND" type="and">
+          <logicalOp displayName="OR" type="or">
+            <relationalOp displayName="&lt;= 120 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="120" type="SBS" unit="minutes">
+              <elementRef displayName="IV quinolones : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b5" type="qdm">
+                <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm">
+                <attribute mode="Check if Present" name="incision datetime"/>
+              </elementRef>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 120 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="120" type="SBS" unit="minutes">
+              <elementRef displayName="Hospital measures-IV Vancomycin : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b6" type="qdm">
+                <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm">
+                <attribute mode="Check if Present" name="incision datetime"/>
+              </elementRef>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 60 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="60" type="SBS" unit="minutes">
+              <elementRef displayName="IV Antimicrobial medication : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b3" type="qdm">
+                <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm">
+                <attribute mode="Check if Present" name="incision datetime"/>
+              </elementRef>
+            </relationalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="Starts After End Of" type="SAE">
+                <elementRef displayName="Occurrence A of Hospital measures-Knee arthroplasty : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1242a5" type="qdm">
+                  <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+                </elementRef>
+                <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="b2b9e5b3-8c6a-4bc2-bce0-082b9529f440" type="qdm"/>
+              </relationalOp>
+              <logicalOp displayName="OR" type="or">
+                <relationalOp displayName="&lt;= 120 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="120" type="SBS" unit="minutes">
+                  <elementRef displayName="IV quinolones : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b5" type="qdm">
+                    <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+                  </elementRef>
+                  <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="916ab4d0-7603-4209-87fa-e5928db0aba0" type="qdm"/>
+                </relationalOp>
+                <relationalOp displayName="&lt;= 120 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="120" type="SBS" unit="minutes">
+                  <elementRef displayName="Hospital measures-IV Vancomycin : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b6" type="qdm">
+                    <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+                  </elementRef>
+                  <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="916ab4d0-7603-4209-87fa-e5928db0aba0" type="qdm"/>
+                </relationalOp>
+                <relationalOp displayName="&lt;= 60 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="60" type="SBS" unit="minutes">
+                  <elementRef displayName="IV Antimicrobial medication : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b3" type="qdm">
+                    <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+                  </elementRef>
+                  <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="916ab4d0-7603-4209-87fa-e5928db0aba0" type="qdm"/>
+                </relationalOp>
+              </logicalOp>
+            </logicalOp>
+          </logicalOp>
+        </logicalOp>
+      </clause>
+    </group>
+    <group sequence="5">
+      <clause displayName="Initial Patient Population 2" type="initialPatientPopulation" uuid="7D371EE0-468B-41AE-B191-D8673375D5A3">
+        <logicalOp displayName="AND" type="and">
+          <relationalOp displayName="&gt;= 18 years Starts Before Start Of" operatorType="Greater Than or Equal To" quantity="18" type="SBS" unit="years">
+            <elementRef displayName="birth date : Patient Characteristic Birthdate" id="40280381-3d27-5493-013d-4b637d1342c5" type="qdm"/>
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+          </relationalOp>
+          <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm">
+            <attribute comparisonValue="120" mode="Less Than or Equal To" name="length of stay" unit="days"/>
+          </elementRef>
+          <relationalOp displayName="    Ends During" quantity="" type="EDU">
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+            <elementRef displayName="Measurement Period : Timing Element" id="40280381-3d27-5493-013d-4b637d1342c7" type="qdm"/>
+          </relationalOp>
+          <relationalOp displayName="During" type="DURING">
+            <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+          </relationalOp>
+          <relationalOp displayName="During" type="DURING">
+            <elementRef displayName="Occurrence A of SCIP Major Surgical Procedure : Procedure, Performed" id="40280381-3d61-56a7-013d-b2690cb60341" type="qdm">
+              <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+            </elementRef>
+            <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+          </relationalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Denominator 5" type="denominator" uuid="A1B5FAFD-E82B-4005-A65A-01FF6A117F3C">
+        <logicalOp displayName="AND" type="and">
+          <logicalOp displayName="OR" type="or">
+            <relationalOp displayName="During" type="DURING">
+              <elementRef displayName="Occurrence A of Hospital measures- Colon surgery : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1442df" type="qdm">
+                <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="Starts After End Of" type="SAE">
+              <elementRef displayName="Occurrence A of Hospital measures- Colon surgery : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1442df" type="qdm">
+                <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+              </elementRef>
+              <relationalOp displayName="During" type="DURING">
+                <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="b2b9e5b3-8c6a-4bc2-bce0-082b9529f440" type="qdm"/>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+              </relationalOp>
+            </relationalOp>
+          </logicalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Denominator Exclusions 5" type="denominatorExclusions" uuid="FC275EBB-12C0-4194-ABA1-F47B40164D49">
+        <logicalOp displayName="AND" type="and">
+          <logicalOp displayName="OR" type="or">
+            <relationalOp displayName="&lt;= 3 days Starts After End Of" operatorType="Less Than or Equal To" quantity="3" type="SAE" unit="days">
+              <elementRef displayName="Hospital measures-Pacemaker or implantable defibrillator insertion procedure : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1342bd" type="qdm"/>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 3 days Ends Before Start Of" operatorType="Less Than or Equal To" quantity="3" type="EBS" unit="days">
+              <elementRef displayName="Occurrence B of General or Neuraxial Anesthesia : Procedure, Performed" id="8a166371-84b8-4807-92fe-d47ddcd1789e" type="qdm"/>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 3 days Starts After End Of" operatorType="Less Than or Equal To" quantity="3" type="SAE" unit="days">
+              <elementRef displayName="Occurrence B of General or Neuraxial Anesthesia : Procedure, Performed" id="8a166371-84b8-4807-92fe-d47ddcd1789e" type="qdm"/>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 3 days Ends Before Start Of" operatorType="Less Than or Equal To" quantity="3" type="EBS" unit="days">
+              <elementRef displayName="Hospital measures-Pacemaker or implantable defibrillator insertion procedure : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1342bd" type="qdm"/>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="During" type="DURING">
+              <elementRef displayName="Hospital Measures - Any infection : Diagnosis, Active" id="40280381-3d27-5493-013d-4b637d1342c8" type="qdm">
+                <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+              </elementRef>
+              <elementRef displayName="Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1342c3" type="qdm"/>
+            </relationalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="Starts Before Start Of" type="SBS">
+                <elementRef displayName="Occurrence A of Any Infection Prior to Anesthesia Concepts : Diagnosis, Active" id="40280381-3d27-5493-013d-4b637d1142a4" type="qdm"/>
+                <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+              </relationalOp>
+              <functionalOp displayName="NOT" type="NOT" uuid="36ca1f0f-8a91-41ef-8187-cad74339dfd1">
+                <relationalOp displayName="Ends Before Start Of" type="EBS">
+                  <elementRef displayName="Occurrence A of Any Infection Prior to Anesthesia Concepts : Diagnosis, Active" id="40280381-3d27-5493-013d-4b637d1142a4" type="qdm"/>
+                  <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+                </relationalOp>
+              </functionalOp>
+            </logicalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="Starts Before Or During" type="SBOD">
+                <elementRef displayName="Occurrence A of Clinical Trial Participant : Patient Characteristic Clinical Trial Participant" id="40280381-3d27-5493-013d-4b637d1442e0" type="qdm"/>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+              </relationalOp>
+              <functionalOp displayName="NOT" type="NOT" uuid="e3f70a7a-d850-4351-8932-b14c121d2278">
+                <relationalOp displayName="Ends Before Start Of" type="EBS">
+                  <elementRef displayName="Occurrence A of Clinical Trial Participant : Patient Characteristic Clinical Trial Participant" id="40280381-3d27-5493-013d-4b637d1442e0" type="qdm"/>
+                  <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+                </relationalOp>
+              </functionalOp>
+            </logicalOp>
+          </logicalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Numerator 5" type="numerator" uuid="C061B7D5-2A53-462A-BB66-D0F515286F10">
+        <logicalOp displayName="AND" type="and">
+          <logicalOp displayName="OR" type="or">
+            <relationalOp displayName="&lt;= 120 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="120" type="SBS" unit="minutes">
+              <elementRef displayName="IV quinolones : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b5" type="qdm">
+                <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm">
+                <attribute mode="Check if Present" name="incision datetime"/>
+              </elementRef>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 120 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="120" type="SBS" unit="minutes">
+              <elementRef displayName="Hospital measures-IV Vancomycin : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b6" type="qdm">
+                <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm">
+                <attribute mode="Check if Present" name="incision datetime"/>
+              </elementRef>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 60 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="60" type="SBS" unit="minutes">
+              <elementRef displayName="IV Antimicrobial medication : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b3" type="qdm">
+                <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm">
+                <attribute mode="Check if Present" name="incision datetime"/>
+              </elementRef>
+            </relationalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="Starts After End Of" type="SAE">
+                <elementRef displayName="Occurrence A of Hospital measures- Colon surgery : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1442df" type="qdm">
+                  <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+                </elementRef>
+                <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="b2b9e5b3-8c6a-4bc2-bce0-082b9529f440" type="qdm"/>
+              </relationalOp>
+              <logicalOp displayName="OR" type="or">
+                <relationalOp displayName="&lt;= 120 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="120" type="SBS" unit="minutes">
+                  <elementRef displayName="IV quinolones : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b5" type="qdm">
+                    <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+                  </elementRef>
+                  <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="916ab4d0-7603-4209-87fa-e5928db0aba0" type="qdm"/>
+                </relationalOp>
+                <relationalOp displayName="&lt;= 120 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="120" type="SBS" unit="minutes">
+                  <elementRef displayName="Hospital measures-IV Vancomycin : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b6" type="qdm">
+                    <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+                  </elementRef>
+                  <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="916ab4d0-7603-4209-87fa-e5928db0aba0" type="qdm"/>
+                </relationalOp>
+                <relationalOp displayName="&lt;= 60 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="60" type="SBS" unit="minutes">
+                  <elementRef displayName="IV Antimicrobial medication : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b3" type="qdm">
+                    <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+                  </elementRef>
+                  <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="916ab4d0-7603-4209-87fa-e5928db0aba0" type="qdm"/>
+                </relationalOp>
+              </logicalOp>
+            </logicalOp>
+          </logicalOp>
+        </logicalOp>
+      </clause>
+    </group>
+    <group sequence="6">
+      <clause displayName="Initial Patient Population 2" type="initialPatientPopulation" uuid="9661AA6A-3923-4746-A697-0C71DBD9600C">
+        <logicalOp displayName="AND" type="and">
+          <relationalOp displayName="&gt;= 18 years Starts Before Start Of" operatorType="Greater Than or Equal To" quantity="18" type="SBS" unit="years">
+            <elementRef displayName="birth date : Patient Characteristic Birthdate" id="40280381-3d27-5493-013d-4b637d1342c5" type="qdm"/>
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+          </relationalOp>
+          <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm">
+            <attribute comparisonValue="120" mode="Less Than or Equal To" name="length of stay" unit="days"/>
+          </elementRef>
+          <relationalOp displayName="    Ends During" quantity="" type="EDU">
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+            <elementRef displayName="Measurement Period : Timing Element" id="40280381-3d27-5493-013d-4b637d1342c7" type="qdm"/>
+          </relationalOp>
+          <relationalOp displayName="During" type="DURING">
+            <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+          </relationalOp>
+          <relationalOp displayName="During" type="DURING">
+            <elementRef displayName="Occurrence A of SCIP Major Surgical Procedure : Procedure, Performed" id="40280381-3d61-56a7-013d-b2690cb60341" type="qdm">
+              <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+            </elementRef>
+            <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+          </relationalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Denominator 6" type="denominator" uuid="ACA6793A-0D25-4EA8-B18E-85EA6DFF5499">
+        <logicalOp displayName="AND" type="and">
+          <logicalOp displayName="OR" type="or">
+            <relationalOp displayName="During" type="DURING">
+              <elementRef displayName="Occurrence A of Hospital measures-Abdominal hysterectomy : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1442d7" type="qdm">
+                <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="Starts After End Of" type="SAE">
+              <elementRef displayName="Occurrence A of Hospital measures-Abdominal hysterectomy : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1442d7" type="qdm">
+                <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+              </elementRef>
+              <relationalOp displayName="During" type="DURING">
+                <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="b2b9e5b3-8c6a-4bc2-bce0-082b9529f440" type="qdm"/>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+              </relationalOp>
+            </relationalOp>
+          </logicalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Denominator Exclusions 6" type="denominatorExclusions" uuid="73400619-6C2F-4031-B095-25DA026F7E83">
+        <logicalOp displayName="AND" type="and">
+          <logicalOp displayName="OR" type="or">
+            <relationalOp displayName="&lt;= 3 days Ends Before Start Of" operatorType="Less Than or Equal To" quantity="3" type="EBS" unit="days">
+              <elementRef displayName="Occurrence B of General or Neuraxial Anesthesia : Procedure, Performed" id="8a166371-84b8-4807-92fe-d47ddcd1789e" type="qdm"/>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 3 days Ends Before Start Of" operatorType="Less Than or Equal To" quantity="3" type="EBS" unit="days">
+              <elementRef displayName="Hospital measures-Pacemaker or implantable defibrillator insertion procedure : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1342bd" type="qdm"/>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 3 days Starts After End Of" operatorType="Less Than or Equal To" quantity="3" type="SAE" unit="days">
+              <elementRef displayName="Hospital measures-Pacemaker or implantable defibrillator insertion procedure : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1342bd" type="qdm"/>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 3 days Starts After End Of" operatorType="Less Than or Equal To" quantity="3" type="SAE" unit="days">
+              <elementRef displayName="Occurrence B of General or Neuraxial Anesthesia : Procedure, Performed" id="8a166371-84b8-4807-92fe-d47ddcd1789e" type="qdm"/>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="During" type="DURING">
+              <elementRef displayName="Hospital Measures-Caesarean Section : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1242b0" type="qdm"/>
+              <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="During" type="DURING">
+              <elementRef displayName="Hospital Measures - Any infection : Diagnosis, Active" id="40280381-3d27-5493-013d-4b637d1342c8" type="qdm">
+                <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+              </elementRef>
+              <elementRef displayName="Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1342c3" type="qdm"/>
+            </relationalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="Starts Before Start Of" type="SBS">
+                <elementRef displayName="Occurrence A of Any Infection Prior to Anesthesia Concepts : Diagnosis, Active" id="40280381-3d27-5493-013d-4b637d1142a4" type="qdm"/>
+                <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+              </relationalOp>
+              <functionalOp displayName="NOT" type="NOT" uuid="f7ef3c0d-cba6-458e-80ed-30b001dc91ca">
+                <relationalOp displayName="Ends Before Start Of" type="EBS">
+                  <elementRef displayName="Occurrence A of Any Infection Prior to Anesthesia Concepts : Diagnosis, Active" id="40280381-3d27-5493-013d-4b637d1142a4" type="qdm"/>
+                  <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+                </relationalOp>
+              </functionalOp>
+            </logicalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="Starts Before Or During" type="SBOD">
+                <elementRef displayName="Occurrence A of Clinical Trial Participant : Patient Characteristic Clinical Trial Participant" id="40280381-3d27-5493-013d-4b637d1442e0" type="qdm"/>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+              </relationalOp>
+              <functionalOp displayName="NOT" type="NOT" uuid="ed2f5e6f-ada8-43d6-ae98-7626c4a28980">
+                <relationalOp displayName="Ends Before Start Of" type="EBS">
+                  <elementRef displayName="Occurrence A of Clinical Trial Participant : Patient Characteristic Clinical Trial Participant" id="40280381-3d27-5493-013d-4b637d1442e0" type="qdm"/>
+                  <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+                </relationalOp>
+              </functionalOp>
+            </logicalOp>
+          </logicalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Numerator 6" type="numerator" uuid="6DF43804-DCDF-46CD-9EFA-27BE4F8F87EB">
+        <logicalOp displayName="AND" type="and">
+          <logicalOp displayName="OR" type="or">
+            <relationalOp displayName="&lt;= 120 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="120" type="SBS" unit="minutes">
+              <elementRef displayName="IV quinolones : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b5" type="qdm">
+                <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm">
+                <attribute mode="Check if Present" name="incision datetime"/>
+              </elementRef>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 120 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="120" type="SBS" unit="minutes">
+              <elementRef displayName="Hospital measures-IV Vancomycin : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b6" type="qdm">
+                <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm">
+                <attribute mode="Check if Present" name="incision datetime"/>
+              </elementRef>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 60 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="60" type="SBS" unit="minutes">
+              <elementRef displayName="IV Antimicrobial medication : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b3" type="qdm">
+                <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm">
+                <attribute mode="Check if Present" name="incision datetime"/>
+              </elementRef>
+            </relationalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="Starts After End Of" type="SAE">
+                <elementRef displayName="Occurrence A of Hospital measures-Abdominal hysterectomy : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1442d7" type="qdm">
+                  <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+                </elementRef>
+                <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="b2b9e5b3-8c6a-4bc2-bce0-082b9529f440" type="qdm"/>
+              </relationalOp>
+              <logicalOp displayName="OR" type="or">
+                <relationalOp displayName="&lt;= 120 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="120" type="SBS" unit="minutes">
+                  <elementRef displayName="IV quinolones : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b5" type="qdm">
+                    <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+                  </elementRef>
+                  <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="916ab4d0-7603-4209-87fa-e5928db0aba0" type="qdm"/>
+                </relationalOp>
+                <relationalOp displayName="&lt;= 120 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="120" type="SBS" unit="minutes">
+                  <elementRef displayName="Hospital measures-IV Vancomycin : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b6" type="qdm">
+                    <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+                  </elementRef>
+                  <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="916ab4d0-7603-4209-87fa-e5928db0aba0" type="qdm"/>
+                </relationalOp>
+                <relationalOp displayName="&lt;= 60 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="60" type="SBS" unit="minutes">
+                  <elementRef displayName="IV Antimicrobial medication : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b3" type="qdm">
+                    <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+                  </elementRef>
+                  <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="916ab4d0-7603-4209-87fa-e5928db0aba0" type="qdm"/>
+                </relationalOp>
+              </logicalOp>
+            </logicalOp>
+          </logicalOp>
+        </logicalOp>
+      </clause>
+    </group>
+    <group sequence="7">
+      <clause displayName="Initial Patient Population 2" type="initialPatientPopulation" uuid="36714BA7-19F9-45A8-8EC7-72B58B8D64AF">
+        <logicalOp displayName="AND" type="and">
+          <relationalOp displayName="&gt;= 18 years Starts Before Start Of" operatorType="Greater Than or Equal To" quantity="18" type="SBS" unit="years">
+            <elementRef displayName="birth date : Patient Characteristic Birthdate" id="40280381-3d27-5493-013d-4b637d1342c5" type="qdm"/>
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+          </relationalOp>
+          <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm">
+            <attribute comparisonValue="120" mode="Less Than or Equal To" name="length of stay" unit="days"/>
+          </elementRef>
+          <relationalOp displayName="    Ends During" quantity="" type="EDU">
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+            <elementRef displayName="Measurement Period : Timing Element" id="40280381-3d27-5493-013d-4b637d1342c7" type="qdm"/>
+          </relationalOp>
+          <relationalOp displayName="During" type="DURING">
+            <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+          </relationalOp>
+          <relationalOp displayName="During" type="DURING">
+            <elementRef displayName="Occurrence A of SCIP Major Surgical Procedure : Procedure, Performed" id="40280381-3d61-56a7-013d-b2690cb60341" type="qdm">
+              <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+            </elementRef>
+            <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+          </relationalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Denominator 7" type="denominator" uuid="BE66EBA8-1EAE-4BC7-8C03-C2E86C06CB9D">
+        <logicalOp displayName="AND" type="and">
+          <logicalOp displayName="OR" type="or">
+            <relationalOp displayName="During" type="DURING">
+              <elementRef displayName="Occurrence A of Hospital measures-Vaginal hysterectomy : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1442dd" type="qdm">
+                <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="Starts After End Of" type="SAE">
+              <elementRef displayName="Occurrence A of Hospital measures-Vaginal hysterectomy : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1442dd" type="qdm">
+                <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+              </elementRef>
+              <relationalOp displayName="During" type="DURING">
+                <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="b2b9e5b3-8c6a-4bc2-bce0-082b9529f440" type="qdm"/>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+              </relationalOp>
+            </relationalOp>
+          </logicalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Denominator Exclusions 7" type="denominatorExclusions" uuid="1C585CE8-6F6E-4335-896C-19C8BD799942">
+        <logicalOp displayName="AND" type="and">
+          <logicalOp displayName="OR" type="or">
+            <relationalOp displayName="&lt;= 3 days Ends Before Start Of" operatorType="Less Than or Equal To" quantity="3" type="EBS" unit="days">
+              <elementRef displayName="Occurrence B of General or Neuraxial Anesthesia : Procedure, Performed" id="8a166371-84b8-4807-92fe-d47ddcd1789e" type="qdm"/>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 3 days Ends Before Start Of" operatorType="Less Than or Equal To" quantity="3" type="EBS" unit="days">
+              <elementRef displayName="Hospital measures-Pacemaker or implantable defibrillator insertion procedure : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1342bd" type="qdm"/>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 3 days Starts After End Of" operatorType="Less Than or Equal To" quantity="3" type="SAE" unit="days">
+              <elementRef displayName="Hospital measures-Pacemaker or implantable defibrillator insertion procedure : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1342bd" type="qdm"/>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 3 days Starts After End Of" operatorType="Less Than or Equal To" quantity="3" type="SAE" unit="days">
+              <elementRef displayName="Occurrence B of General or Neuraxial Anesthesia : Procedure, Performed" id="8a166371-84b8-4807-92fe-d47ddcd1789e" type="qdm"/>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="During" type="DURING">
+              <elementRef displayName="Hospital Measures-Caesarean Section : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1242b0" type="qdm"/>
+              <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="During" type="DURING">
+              <elementRef displayName="Hospital Measures - Any infection : Diagnosis, Active" id="40280381-3d27-5493-013d-4b637d1342c8" type="qdm">
+                <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+              </elementRef>
+              <elementRef displayName="Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1342c3" type="qdm"/>
+            </relationalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="Starts Before Start Of" type="SBS">
+                <elementRef displayName="Occurrence A of Any Infection Prior to Anesthesia Concepts : Diagnosis, Active" id="40280381-3d27-5493-013d-4b637d1142a4" type="qdm"/>
+                <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+              </relationalOp>
+              <functionalOp displayName="NOT" type="NOT" uuid="b8436f93-93dd-43c0-b117-a6b08054f28d">
+                <relationalOp displayName="Ends Before Start Of" type="EBS">
+                  <elementRef displayName="Occurrence A of Any Infection Prior to Anesthesia Concepts : Diagnosis, Active" id="40280381-3d27-5493-013d-4b637d1142a4" type="qdm"/>
+                  <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+                </relationalOp>
+              </functionalOp>
+            </logicalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="Starts Before Or During" type="SBOD">
+                <elementRef displayName="Occurrence A of Clinical Trial Participant : Patient Characteristic Clinical Trial Participant" id="40280381-3d27-5493-013d-4b637d1442e0" type="qdm"/>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+              </relationalOp>
+              <functionalOp displayName="NOT" type="NOT" uuid="dd08850d-1bc6-4273-9d2f-092822c38097">
+                <relationalOp displayName="Ends Before Start Of" type="EBS">
+                  <elementRef displayName="Occurrence A of Clinical Trial Participant : Patient Characteristic Clinical Trial Participant" id="40280381-3d27-5493-013d-4b637d1442e0" type="qdm"/>
+                  <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+                </relationalOp>
+              </functionalOp>
+            </logicalOp>
+          </logicalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Numerator 7" type="numerator" uuid="68CA0D30-2F98-4634-835A-45B7CD6CBE39">
+        <logicalOp displayName="AND" type="and">
+          <logicalOp displayName="OR" type="or">
+            <relationalOp displayName="&lt;= 120 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="120" type="SBS" unit="minutes">
+              <elementRef displayName="IV quinolones : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b5" type="qdm">
+                <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm">
+                <attribute mode="Check if Present" name="incision datetime"/>
+              </elementRef>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 120 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="120" type="SBS" unit="minutes">
+              <elementRef displayName="Hospital measures-IV Vancomycin : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b6" type="qdm">
+                <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm">
+                <attribute mode="Check if Present" name="incision datetime"/>
+              </elementRef>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 60 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="60" type="SBS" unit="minutes">
+              <elementRef displayName="IV Antimicrobial medication : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b3" type="qdm">
+                <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm">
+                <attribute mode="Check if Present" name="incision datetime"/>
+              </elementRef>
+            </relationalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="Starts After End Of" type="SAE">
+                <elementRef displayName="Occurrence A of Hospital measures-Vaginal hysterectomy : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1442dd" type="qdm">
+                  <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+                </elementRef>
+                <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="b2b9e5b3-8c6a-4bc2-bce0-082b9529f440" type="qdm"/>
+              </relationalOp>
+              <logicalOp displayName="OR" type="or">
+                <relationalOp displayName="&lt;= 120 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="120" type="SBS" unit="minutes">
+                  <elementRef displayName="IV quinolones : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b5" type="qdm">
+                    <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+                  </elementRef>
+                  <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="916ab4d0-7603-4209-87fa-e5928db0aba0" type="qdm"/>
+                </relationalOp>
+                <relationalOp displayName="&lt;= 120 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="120" type="SBS" unit="minutes">
+                  <elementRef displayName="Hospital measures-IV Vancomycin : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b6" type="qdm">
+                    <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+                  </elementRef>
+                  <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="916ab4d0-7603-4209-87fa-e5928db0aba0" type="qdm"/>
+                </relationalOp>
+                <relationalOp displayName="&lt;= 60 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="60" type="SBS" unit="minutes">
+                  <elementRef displayName="IV Antimicrobial medication : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b3" type="qdm">
+                    <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+                  </elementRef>
+                  <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="916ab4d0-7603-4209-87fa-e5928db0aba0" type="qdm"/>
+                </relationalOp>
+              </logicalOp>
+            </logicalOp>
+          </logicalOp>
+        </logicalOp>
+      </clause>
+    </group>
+    <group sequence="8">
+      <clause displayName="Initial Patient Population 2" type="initialPatientPopulation" uuid="D5F2A7E2-8EAD-4CD4-B7C4-6818D928796E">
+        <logicalOp displayName="AND" type="and">
+          <relationalOp displayName="&gt;= 18 years Starts Before Start Of" operatorType="Greater Than or Equal To" quantity="18" type="SBS" unit="years">
+            <elementRef displayName="birth date : Patient Characteristic Birthdate" id="40280381-3d27-5493-013d-4b637d1342c5" type="qdm"/>
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+          </relationalOp>
+          <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm">
+            <attribute comparisonValue="120" mode="Less Than or Equal To" name="length of stay" unit="days"/>
+          </elementRef>
+          <relationalOp displayName="    Ends During" quantity="" type="EDU">
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+            <elementRef displayName="Measurement Period : Timing Element" id="40280381-3d27-5493-013d-4b637d1342c7" type="qdm"/>
+          </relationalOp>
+          <relationalOp displayName="During" type="DURING">
+            <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+          </relationalOp>
+          <relationalOp displayName="During" type="DURING">
+            <elementRef displayName="Occurrence A of SCIP Major Surgical Procedure : Procedure, Performed" id="40280381-3d61-56a7-013d-b2690cb60341" type="qdm">
+              <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+            </elementRef>
+            <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+          </relationalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Denominator 8" type="denominator" uuid="C78F631B-4D08-4291-B2C8-BBF41BFAC574">
+        <logicalOp displayName="AND" type="and">
+          <logicalOp displayName="OR" type="or">
+            <relationalOp displayName="During" type="DURING">
+              <elementRef displayName="Occurrence A of Hospital measures-Vascular surgery : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1442de" type="qdm">
+                <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="Starts After End Of" type="SAE">
+              <elementRef displayName="Occurrence A of Hospital measures-Vascular surgery : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1442de" type="qdm">
+                <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+              </elementRef>
+              <relationalOp displayName="During" type="DURING">
+                <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="b2b9e5b3-8c6a-4bc2-bce0-082b9529f440" type="qdm"/>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+              </relationalOp>
+            </relationalOp>
+          </logicalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Denominator Exclusions 8" type="denominatorExclusions" uuid="A8027993-C41D-42E5-A390-80AB5F097740">
+        <logicalOp displayName="AND" type="and">
+          <logicalOp displayName="OR" type="or">
+            <relationalOp displayName="&lt;= 3 days Ends Before Start Of" operatorType="Less Than or Equal To" quantity="3" type="EBS" unit="days">
+              <elementRef displayName="Occurrence B of General or Neuraxial Anesthesia : Procedure, Performed" id="8a166371-84b8-4807-92fe-d47ddcd1789e" type="qdm"/>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 3 days Starts After End Of" operatorType="Less Than or Equal To" quantity="3" type="SAE" unit="days">
+              <elementRef displayName="Occurrence B of General or Neuraxial Anesthesia : Procedure, Performed" id="8a166371-84b8-4807-92fe-d47ddcd1789e" type="qdm"/>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 3 days Ends Before Start Of" operatorType="Less Than or Equal To" quantity="3" type="EBS" unit="days">
+              <elementRef displayName="Hospital measures-Pacemaker or implantable defibrillator insertion procedure : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1342bd" type="qdm"/>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 3 days Starts After End Of" operatorType="Less Than or Equal To" quantity="3" type="SAE" unit="days">
+              <elementRef displayName="Hospital measures-Pacemaker or implantable defibrillator insertion procedure : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1342bd" type="qdm"/>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="During" type="DURING">
+              <elementRef displayName="Hospital Measures - Any infection : Diagnosis, Active" id="40280381-3d27-5493-013d-4b637d1342c8" type="qdm">
+                <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+              </elementRef>
+              <elementRef displayName="Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1342c3" type="qdm"/>
+            </relationalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="Starts Before Start Of" type="SBS">
+                <elementRef displayName="Occurrence A of Any Infection Prior to Anesthesia Concepts : Diagnosis, Active" id="40280381-3d27-5493-013d-4b637d1142a4" type="qdm"/>
+                <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+              </relationalOp>
+              <functionalOp displayName="NOT" type="NOT" uuid="1735dd2d-9f8f-4305-8803-23a81ebf3227">
+                <relationalOp displayName="Ends Before Start Of" type="EBS">
+                  <elementRef displayName="Occurrence A of Any Infection Prior to Anesthesia Concepts : Diagnosis, Active" id="40280381-3d27-5493-013d-4b637d1142a4" type="qdm"/>
+                  <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm"/>
+                </relationalOp>
+              </functionalOp>
+            </logicalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="Starts Before Or During" type="SBOD">
+                <elementRef displayName="Occurrence A of Clinical Trial Participant : Patient Characteristic Clinical Trial Participant" id="40280381-3d27-5493-013d-4b637d1442e0" type="qdm"/>
+                <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+              </relationalOp>
+              <functionalOp displayName="NOT" type="NOT" uuid="db1587e3-c56f-485f-8a9a-2bae57f43bb6">
+                <relationalOp displayName="Ends Before Start Of" type="EBS">
+                  <elementRef displayName="Occurrence A of Clinical Trial Participant : Patient Characteristic Clinical Trial Participant" id="40280381-3d27-5493-013d-4b637d1442e0" type="qdm"/>
+                  <elementRef displayName="Occurrence A of Encounter Inpatient : Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" type="qdm"/>
+                </relationalOp>
+              </functionalOp>
+            </logicalOp>
+          </logicalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Numerator 8" type="numerator" uuid="DA972A74-4F64-45A4-A1D2-3592E23E884E">
+        <logicalOp displayName="AND" type="and">
+          <logicalOp displayName="OR" type="or">
+            <relationalOp displayName="&lt;= 120 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="120" type="SBS" unit="minutes">
+              <elementRef displayName="IV quinolones : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b5" type="qdm">
+                <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm">
+                <attribute mode="Check if Present" name="incision datetime"/>
+              </elementRef>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 120 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="120" type="SBS" unit="minutes">
+              <elementRef displayName="Hospital measures-IV Vancomycin : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b6" type="qdm">
+                <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm">
+                <attribute mode="Check if Present" name="incision datetime"/>
+              </elementRef>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 60 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="60" type="SBS" unit="minutes">
+              <elementRef displayName="IV Antimicrobial medication : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b3" type="qdm">
+                <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of General or Neuraxial Anesthesia : Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" type="qdm">
+                <attribute mode="Check if Present" name="incision datetime"/>
+              </elementRef>
+            </relationalOp>
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="Starts After End Of" type="SAE">
+                <elementRef displayName="Occurrence A of Hospital measures-Vascular surgery : Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1442de" type="qdm">
+                  <attribute mode="Value Set" name="ordinality" qdmUUID="02e7f506-f30f-4c38-9261-79e5321dec3b"/>
+                </elementRef>
+                <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="b2b9e5b3-8c6a-4bc2-bce0-082b9529f440" type="qdm"/>
+              </relationalOp>
+              <logicalOp displayName="OR" type="or">
+                <relationalOp displayName="&lt;= 120 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="120" type="SBS" unit="minutes">
+                  <elementRef displayName="IV quinolones : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b5" type="qdm">
+                    <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+                  </elementRef>
+                  <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="916ab4d0-7603-4209-87fa-e5928db0aba0" type="qdm"/>
+                </relationalOp>
+                <relationalOp displayName="&lt;= 120 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="120" type="SBS" unit="minutes">
+                  <elementRef displayName="Hospital measures-IV Vancomycin : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b6" type="qdm">
+                    <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+                  </elementRef>
+                  <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="916ab4d0-7603-4209-87fa-e5928db0aba0" type="qdm"/>
+                </relationalOp>
+                <relationalOp displayName="&lt;= 60 minutes Starts Before Start Of" operatorType="Less Than or Equal To" quantity="60" type="SBS" unit="minutes">
+                  <elementRef displayName="IV Antimicrobial medication : Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b3" type="qdm">
+                    <attribute mode="Value Set" name="route" qdmUUID="40280381-3d27-5493-013d-4b637d1342be"/>
+                  </elementRef>
+                  <elementRef displayName="Occurrence A of Laparoscopic Procedures : Procedure, Performed" id="916ab4d0-7603-4209-87fa-e5928db0aba0" type="qdm"/>
+                </relationalOp>
+              </logicalOp>
+            </logicalOp>
+          </logicalOp>
+        </logicalOp>
+      </clause>
+    </group>
+  </measureGrouping>
+  <elementLookUp>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Diagnosis, Active" id="40280381-3d27-5493-013d-4b637d1142a4" instance="Occurrence A" name="Any Infection Prior to Anesthesia Concepts" oid="2.16.840.1.113883.3.666.5.2256" suppDataElement="false" taxonomy="Grouping" uuid="40280381-3d27-5493-013d-4b637d1142a4" version="1"/>
+    <qdm codeSystemName="National Quality Forum" datatype="Patient Characteristic Birthdate" id="40280381-3d27-5493-013d-4b637d1342c5" name="birth date" oid="2.16.840.1.113883.3.560.100.4" suppDataElement="false" taxonomy="LOINC" uuid="40280381-3d27-5493-013d-4b637d1342c5" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Patient Characteristic Clinical Trial Participant" id="40280381-3d27-5493-013d-4b637d1442e0" instance="Occurrence A" name="Clinical Trial Participant" oid="2.16.840.1.113883.3.526.2.643" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3d27-5493-013d-4b637d1442e0" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1442d6" instance="Occurrence A" name="Encounter Inpatient" oid="2.16.840.1.113883.3.666.5.307" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3d27-5493-013d-4b637d1442d6" version="1"/>
+    <qdm codeSystemName="CDC NCHS" datatype="Patient Characteristic Ethnicity" id="40280381-3d27-5493-013d-4b637d1242ab" name="Ethnicity" oid="2.16.840.1.114222.4.11.837" suppDataElement="true" taxonomy="CDCREC" uuid="40280381-3d27-5493-013d-4b637d1242ab" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Diagnosis, Active" id="40280381-3d27-5493-013d-4b637d1342c8" name="Hospital Measures - Any infection" oid="2.16.840.1.113883.3.666.5.696" suppDataElement="false" taxonomy="Grouping" uuid="40280381-3d27-5493-013d-4b637d1342c8" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1442df" instance="Occurrence A" name="Hospital measures- Colon surgery" oid="2.16.840.1.113883.3.666.5.705" suppDataElement="false" taxonomy="Grouping" uuid="40280381-3d27-5493-013d-4b637d1442df" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1442d7" instance="Occurrence A" name="Hospital measures-Abdominal hysterectomy" oid="2.16.840.1.113883.3.666.5.710" suppDataElement="false" taxonomy="Grouping" uuid="40280381-3d27-5493-013d-4b637d1442d7" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1442d8" instance="Occurrence A" name="Hospital measures-CABG" oid="2.16.840.1.113883.3.666.5.694" suppDataElement="false" taxonomy="Grouping" uuid="40280381-3d27-5493-013d-4b637d1442d8" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1242b0" name="Hospital Measures-Caesarean Section" oid="2.16.840.1.113883.3.666.5.1921" suppDataElement="false" taxonomy="Grouping" uuid="40280381-3d27-5493-013d-4b637d1242b0" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1442da" instance="Occurrence A" name="Hospital measures-Hip arthroplasty" oid="2.16.840.1.113883.3.666.5.703" suppDataElement="false" taxonomy="Grouping" uuid="40280381-3d27-5493-013d-4b637d1442da" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b3" name="IV Antimicrobial medication" oid="2.16.840.1.113883.3.666.5.765" suppDataElement="false" taxonomy="RXNORM" uuid="40280381-3d27-5493-013d-4b637d1242b3" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b6" name="Hospital measures-IV Vancomycin" oid="2.16.840.1.113883.3.666.5.766" suppDataElement="false" taxonomy="RXNORM" uuid="40280381-3d27-5493-013d-4b637d1242b6" version="1"/>
+    <qdm codeSystemName="Centers for Medicare &amp; Medicaid Services" datatype="Procedure, Performed" id="40280381-3d61-56a7-013d-b26cf0e20343" instance="Occurrence A" name="General or Neuraxial Anesthesia" oid="2.16.840.1.113883.3.666.5.1743" suppDataElement="false" taxonomy="Grouping" uuid="40280381-3d61-56a7-013d-b26cf0e20343" version="1"/>
+    <qdm datatype="Procedure, Performed" id="8a166371-84b8-4807-92fe-d47ddcd1789e" instance="Occurrence B" name="General or Neuraxial Anesthesia" oid="2.16.840.1.113883.3.666.5.1743" suppDataElement="false" taxonomy="Grouping" uuid="8a166371-84b8-4807-92fe-d47ddcd1789e" version="1.0"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1242a5" instance="Occurrence A" name="Hospital measures-Knee arthroplasty" oid="2.16.840.1.113883.3.666.5.1816" suppDataElement="false" taxonomy="Grouping" uuid="40280381-3d27-5493-013d-4b637d1242a5" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1442dc" instance="Occurrence A" name="Hospital measures-Other Cardiac Surgery" oid="2.16.840.1.113883.3.666.5.701" suppDataElement="false" taxonomy="Grouping" uuid="40280381-3d27-5493-013d-4b637d1442dc" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1342bd" name="Hospital measures-Pacemaker or implantable defibrillator insertion procedure" oid="2.16.840.1.113883.3.666.5.1741" suppDataElement="false" taxonomy="Grouping" uuid="40280381-3d27-5493-013d-4b637d1342bd" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="attribute" id="40280381-3d27-5493-013d-4b637d1342be" name="Hospital measures-Route IV" oid="2.16.840.1.113883.3.666.5.1108" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3d27-5493-013d-4b637d1342be" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Medication, Administered" id="40280381-3d27-5493-013d-4b637d1242b5" name="IV quinolones" oid="2.16.840.1.113883.3.666.5.835" suppDataElement="false" taxonomy="RXNORM" uuid="40280381-3d27-5493-013d-4b637d1242b5" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1442dd" instance="Occurrence A" name="Hospital measures-Vaginal hysterectomy" oid="2.16.840.1.113883.3.666.5.712" suppDataElement="false" taxonomy="Grouping" uuid="40280381-3d27-5493-013d-4b637d1442dd" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Procedure, Performed" id="40280381-3d27-5493-013d-4b637d1442de" instance="Occurrence A" name="Hospital measures-Vascular surgery" oid="2.16.840.1.113883.3.666.5.713" suppDataElement="false" taxonomy="Grouping" uuid="40280381-3d27-5493-013d-4b637d1442de" version="1"/>
+    <qdm codeSystemName="National Quality Forum" datatype="Timing Element" id="40280381-3d27-5493-013d-4b637d1342c7" name="Measurement Period" oid="2.16.840.1.113883.3.67.1.101.1.53" suppDataElement="false" taxonomy="NQF" uuid="40280381-3d27-5493-013d-4b637d1342c7" version="1"/>
+    <qdm codeSystemName="National Library of Medicine" datatype="Patient Characteristic Sex" id="40280381-3d27-5493-013d-4b637d1242a9" name="ONC Administrative Sex" oid="2.16.840.1.113762.1.4.1" suppDataElement="true" taxonomy="AdministrativeSex" uuid="40280381-3d27-5493-013d-4b637d1242a9" version="1"/>
+    <qdm codeSystemName="PHDSC" datatype="Patient Characteristic Payer" id="40280381-3d27-5493-013d-4b637d1242ac" name="Payer" oid="2.16.840.1.114222.4.11.3591" suppDataElement="true" taxonomy="SOP" uuid="40280381-3d27-5493-013d-4b637d1242ac" version="1"/>
+    <qdm codeSystemName="CDC NCHS" datatype="Patient Characteristic Race" id="40280381-3d27-5493-013d-4b637d1242aa" name="Race" oid="2.16.840.1.114222.4.11.836" suppDataElement="true" taxonomy="CDCREC" uuid="40280381-3d27-5493-013d-4b637d1242aa" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Procedure, Performed" id="40280381-3d61-56a7-013d-b2690cb60341" instance="Occurrence A" name="SCIP Major Surgical Procedure" oid="2.16.840.1.113883.3.117.1.7.1.2" suppDataElement="false" taxonomy="Grouping" uuid="40280381-3d61-56a7-013d-b2690cb60341" version="1"/>
+    <qdm datatype="attribute" id="02e7f506-f30f-4c38-9261-79e5321dec3b" name="Principal" oid="2.16.840.1.113883.3.117.1.7.1.14" suppDataElement="false" taxonomy="SNOMEDCT" uuid="02e7f506-f30f-4c38-9261-79e5321dec3b" version="1.0"/>
+    <qdm datatype="Procedure, Performed" id="b2b9e5b3-8c6a-4bc2-bce0-082b9529f440" instance="Occurrence A" name="Laparoscopic Procedures" oid="2.16.840.1.113762.1.4.1045.4" suppDataElement="false" taxonomy="SNOMEDCT" uuid="b2b9e5b3-8c6a-4bc2-bce0-082b9529f440" version="1.0"/>
+    <qdm datatype="Procedure, Performed" id="916ab4d0-7603-4209-87fa-e5928db0aba0" instance="Occurrence A" name="Laparoscopic Procedures" oid="2.16.840.1.113762.1.4.1045.52" suppDataElement="false" taxonomy="Grouping" uuid="916ab4d0-7603-4209-87fa-e5928db0aba0" version="1.0"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Diagnosis, Active" id="5c9a0fea-e00c-4300-a46a-4ce373000ab0" name="Any Infection Prior to Anesthesia Concepts" oid="2.16.840.1.113883.3.666.5.2256" suppDataElement="false" taxonomy="Grouping" uuid="5c9a0fea-e00c-4300-a46a-4ce373000ab0" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Patient Characteristic Clinical Trial Participant" id="ecaa8cd9-0760-432c-986e-16445d2be686" name="Clinical Trial Participant" oid="2.16.840.1.113883.3.526.2.643" suppDataElement="false" taxonomy="SNOMEDCT" uuid="ecaa8cd9-0760-432c-986e-16445d2be686" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Encounter, Performed" id="40280381-3d27-5493-013d-4b637d1342c3" name="Encounter Inpatient" oid="2.16.840.1.113883.3.666.5.307" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3d27-5493-013d-4b637d1342c3" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Procedure, Performed" id="f5c5398b-174c-4a02-9aa8-71a59bb9668d" name="Hospital measures- Colon surgery" oid="2.16.840.1.113883.3.666.5.705" suppDataElement="false" taxonomy="Grouping" uuid="f5c5398b-174c-4a02-9aa8-71a59bb9668d" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Procedure, Performed" id="0c5b46be-7269-4011-bd40-9fa63016a75f" name="Hospital measures-Abdominal hysterectomy" oid="2.16.840.1.113883.3.666.5.710" suppDataElement="false" taxonomy="Grouping" uuid="0c5b46be-7269-4011-bd40-9fa63016a75f" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Procedure, Performed" id="35aa89a9-6350-424b-a762-2e657b49c211" name="Hospital measures-CABG" oid="2.16.840.1.113883.3.666.5.694" suppDataElement="false" taxonomy="Grouping" uuid="35aa89a9-6350-424b-a762-2e657b49c211" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Procedure, Performed" id="826d8f90-6eca-4d9d-9f01-682a93fa227f" name="Hospital measures-Hip arthroplasty" oid="2.16.840.1.113883.3.666.5.703" suppDataElement="false" taxonomy="Grouping" uuid="826d8f90-6eca-4d9d-9f01-682a93fa227f" version="1"/>
+    <qdm codeSystemName="Centers for Medicare &amp; Medicaid Services" datatype="Procedure, Performed" id="51ab1455-479a-4d9d-984b-51a0db315fa2" name="General or Neuraxial Anesthesia" oid="2.16.840.1.113883.3.666.5.1743" suppDataElement="false" taxonomy="Grouping" uuid="51ab1455-479a-4d9d-984b-51a0db315fa2" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Procedure, Performed" id="a1224cde-e8bb-4169-ab6f-6cafb743736f" name="Hospital measures-Knee arthroplasty" oid="2.16.840.1.113883.3.666.5.1816" suppDataElement="false" taxonomy="Grouping" uuid="a1224cde-e8bb-4169-ab6f-6cafb743736f" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Procedure, Performed" id="469cafbd-97e0-4709-bca4-e455005d3e30" name="Hospital measures-Other Cardiac Surgery" oid="2.16.840.1.113883.3.666.5.701" suppDataElement="false" taxonomy="Grouping" uuid="469cafbd-97e0-4709-bca4-e455005d3e30" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Procedure, Performed" id="df35be30-cec8-4a5a-9bc6-3ddb7cc3f3cf" name="Hospital measures-Vaginal hysterectomy" oid="2.16.840.1.113883.3.666.5.712" suppDataElement="false" taxonomy="Grouping" uuid="df35be30-cec8-4a5a-9bc6-3ddb7cc3f3cf" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Procedure, Performed" id="9a5bf3e7-d364-43e1-8852-0b65b51479d7" name="Hospital measures-Vascular surgery" oid="2.16.840.1.113883.3.666.5.713" suppDataElement="false" taxonomy="Grouping" uuid="9a5bf3e7-d364-43e1-8852-0b65b51479d7" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Procedure, Performed" id="ebd2b200-4df0-42de-aea8-b6b9ac1264a7" name="SCIP Major Surgical Procedure" oid="2.16.840.1.113883.3.117.1.7.1.2" suppDataElement="false" taxonomy="Grouping" uuid="ebd2b200-4df0-42de-aea8-b6b9ac1264a7" version="1"/>
+    <qdm datatype="Procedure, Performed" id="6c11a221-56d5-481f-b0f3-c44a4561ebf0" name="Laparoscopic Procedures" oid="2.16.840.1.113762.1.4.1045.4" suppDataElement="false" taxonomy="SNOMEDCT" uuid="6c11a221-56d5-481f-b0f3-c44a4561ebf0" version="1.0"/>
+    <qdm datatype="Procedure, Performed" id="b8763fd5-b057-4d06-b869-855d1b6ff61b" name="Laparoscopic Procedures" oid="2.16.840.1.113762.1.4.1045.52" suppDataElement="false" taxonomy="Grouping" uuid="b8763fd5-b057-4d06-b869-855d1b6ff61b" version="1.0"/>
+  </elementLookUp>
+  <strata displayName="Stratification">
+    <clause displayName="Stratum 1" type="stratum" uuid="40280381-3d27-5493-013d-4b641dab44c7">
+      <logicalOp displayName="AND" type="and"/>
+    </clause>
+  </strata>
+</measure>

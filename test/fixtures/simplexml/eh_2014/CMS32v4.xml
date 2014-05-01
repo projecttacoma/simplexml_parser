@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<measure>
+  <measureDetails>
+    <uuid>40280381-43db-d64c-0144-6a8b0a3b30c6</uuid>
+    <title>Median Time from ED Arrival to ED Departure for Discharged ED Patients</title>
+    <shortTitle>ED-3</shortTitle>
+    <emeasureid>32</emeasureid>
+    <guid>3fd13096-2c8f-40b5-9297-b714e8de9133</guid>
+    <version>4</version>
+    <status>In Progress</status>
+    <nqfid extension="0496" root="2.16.840.1.113883.3.560.1"/>
+    <period uuid="40280381-3d27-5493-013d-61073dba2a36">
+      <startDate uuid="6380fa56-dc72-4991-aa33-0623f2e5ac41">00000101</startDate>
+      <stopDate uuid="d5a2a5e6-ed74-4064-9390-5977d2d311c3">00001231</stopDate>
+    </period>
+    <steward id="2.16.840.1.113883.3.560.3.31">Centers for Medicare &amp; Medicaid Services</steward>
+    <developers>
+      <developer id="2.16.840.1.113883">Oklahoma Foundation for Medical Quality</developer>
+    </developers>
+    <endorsement id="2.16.840.1.113883.3.560">National Quality Forum</endorsement>
+    <description>Median time from emergency department arrival to time of departure from the emergency room for patients discharged from the emergency department.</description>
+    <copyright>None</copyright>
+    <disclaimer>None</disclaimer>
+    <scoring id="CONTVAR">Continuous Variable</scoring>
+    <types>
+      <type id="PROCESS">Process</type>
+    </types>
+    <stratification>The measure is stratified. Stratum 1 - all discharged ED patients; Stratum 2 – all patients with diagnosis consistent with mental disorders; Stratum 3 – all patients transferred to another acute care hospital; and Stratum 4 – all patients other than those included in populations 2 and 3.
+Do Not Include in any of the Strata: Patients who are not an ED Patient; Patients who expire in the ED; Patients admitted to the hospital from the ED.</stratification>
+    <riskAdjustment>None</riskAdjustment>
+    <aggregation>None</aggregation>
+    <rationale>In recent times, EDs have experienced significant overcrowding. Although once only a problem in large, urban, teaching hospitals, the phenomenon has spread to other suburban and rural healthcare organizations. According to a 2002 national U.S. survey, more than 90 percent of large hospitals report EDs operating "at" or "over" capacity. Overcrowding and heavy emergency resource demand have led to a number of problems, including ambulance refusals, prolonged patient waiting times, increased suffering for those who wait, rushed and unpleasant treatment environments, and potentially poor patient outcomes. Approximately one third of hospitals in the U.S. report increases in ambulance diversion in a given year, whereas up to half report crowded conditions in the ED. In a recent national survey, 40 percent of hospital leaders viewed ED crowding as a symptom of workforce shortages. ED crowding may result in delays in the administration of medication such as antibiotics for pneumonia and has been associated with perceptions of compromised emergency care. For patients with non-ST-segment-elevation myocardial infarction, long ED stays were associated with decreased use of guideline-recommended therapies and a higher risk of recurrent myocardial infarction. When EDs are overwhelmed, their ability to respond to community emergencies and disasters may be compromised.</rationale>
+    <recommendations>Reducing the time patients remain in the emergency department (ED) can improve access to treatment and increase quality of care. Reducing this time potentially improves access to care specific to the patient condition and increases the capability to provide additional treatment.</recommendations>
+    <improvementNotations>A decrease in the median value indicates less time in the emergency department and enhances throughput.</improvementNotations>
+    <references>
+      <reference>Diercks DB, et al. Prolonged emergency department stays of non-ST-segment-elevation myocardial infarction patients are associated with worse adherence to the American College of Cardiology/American Heart Association guidelines for management and increased adverse events. Ann Emerg Med.2007;50:489-96.</reference>
+      <reference>Derlet RW, Richards JR. Emergency department overcrowding in Florida, New York, and Texas. South Med J. 2002;95:846-9</reference>
+      <reference>Derlet RW, Richards JR. Overcrowding in the nation's emergency departments: complex causes and disturbing effects.</reference>
+      <reference>Fatovich DM, Hirsch RL. Entry overload, emergency department overcrowding, and ambulance bypass. Emerg Med J. 2003;
+Ann Emerg Med. 2000;35:63-8.
+20:406-9</reference>
+      <reference>Hwang U, Richardson LD, Sonuyi TO, Morrison RS. The effect of emergency department crowding on the management of pain in older adults with hip fracture. J Am Geriatr Soc. 2006;.
+54:270-5</reference>
+      <reference>Institute of Medicine of the National Academies. Future of emergency care: Hospital-based emergency care at the breaking point. The National Academies Press 2006.</reference>
+      <reference>Kyriacou DN, Ricketts V, Dyne PL, McCollough MD, Talan DA. A 5-year time study analysis of emergency department patient care efficiency. Ann Emerg Med. 1999;34:326-35</reference>
+      <reference>Pines JM, et al. ED crowding is associated with variable perceptions of care compromise. Acad Emerg Med. 2007;14:1176-81.</reference>
+      <reference>Pines JM, et al. Emergency department crowding is associated with poor care for patients with severe pain. Ann Emerg Med. 2008;51:6-7.</reference>
+      <reference>Schull MJ, et al. Emergency department crowding and thrombolysis delays in acute myocardial infarction. Ann Emerg Med. 2004;44:577-85.</reference>
+      <reference>Siegel B, et al. Enhancing work flow to reduce crowding. Jt Comm J Qual Patient Saf. 2007;33(11 Suppl):57-67.</reference>
+      <reference>Trzeciak S, Rivers EP. Emergency department overcrowding in the United States: an emerging threat to patient safety and public health. Emerg Med J. 2003;20:402-5</reference>
+      <reference>Wilper AP, Woolhandler S, Lasser KE, McCormick D, Cutrona SL, Bor DH, Himmelstein DU. Waits to see an emergency department physician: U.S. trends and predictors, 1997-2004. Health Aff (Millwood). 2008;.
+27:w84-95.</reference>
+    </references>
+    <definitions>None</definitions>
+    <guidance>This measure uses a continuous variable.  The specification provides elements from the clinical electronic record required to calculate for each ED encounter, i.e., the length of time the patient was in the Emergency Department, also stated as: the Emergency Department departure time minus the Emergency Department arrival time. The calculation requires the median of all ED encounter durations.  This measure specification defines how to determine an individual Emergency Department stay. Reporting requires the median of all patient stays ([Encounter: encounter ED].departuredatetime - [Encounter: encounter ED].arrivaldatetime).
+
+The measurement period is one calendar year but the reporting period is 3 months as a calendar quarter; Q1 = Jan – Mar, Q2 = Apr – Jun, Q3 = Jul – Sep, Q4 is Oct – Dec.</guidance>
+    <transmissionFormat>None</transmissionFormat>
+    <initialPatientPopDescription>Patients seen in an emergency department and discharged.</initialPatientPopDescription>
+    <denominatorDescription>Not applicable</denominatorDescription>
+    <denominatorExclusionsDescription>Not applicable</denominatorExclusionsDescription>
+    <numeratorDescription>Not applicable</numeratorDescription>
+    <numeratorExclusionsDescription>Not applicable</numeratorExclusionsDescription>
+    <denominatorExceptionsDescription>Not applicable</denominatorExceptionsDescription>
+    <measurePopulationDescription>Any emergency department (ED) visit during the measurement period.</measurePopulationDescription>
+    <measureObservationsDescription>Median Time (in minutes) from ED arrival to ED departure for patients discharged from the emergency department.</measureObservationsDescription>
+    <supplementalData>For every patient evaluated by this measure also identify payer, race, ethnicity and sex.</supplementalData>
+    <qualityMeasureSet uuid="e0bebe71-ce5d-4777-a64d-b6cbb54f413b">Emergency Department</qualityMeasureSet>
+  </measureDetails>
+  <supplementalDataElements>
+    <elementRef id="40280381-3d27-5493-013d-61073db92a32" name="ONC Administrative Sex"/>
+    <elementRef id="40280381-3d27-5493-013d-61073db92a33" name="Race"/>
+    <elementRef id="40280381-3d27-5493-013d-61073dba2a34" name="Ethnicity"/>
+    <elementRef id="40280381-3d27-5493-013d-61073dba2a35" name="Payer"/>
+  </supplementalDataElements>
+  <measureGrouping>
+    <group sequence="1">
+      <clause displayName="Initial Patient Population 1" type="initialPatientPopulation" uuid="1E8C5F63-E8E0-4719-8AFD-0A8ABE0875EE">
+        <logicalOp displayName="AND" type="and">
+          <relationalOp displayName="During" type="DURING">
+            <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="40280381-3d27-5493-013d-61073db92a31" type="qdm">
+              <attribute mode="Check if Present" name="facility location arrival datetime"/>
+            </elementRef>
+            <elementRef displayName="Measurement Period : Timing Element" id="40280381-3d27-5493-013d-61073dba2a36" type="qdm"/>
+          </relationalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Measure Population 1" type="measurePopulation" uuid="D0D65E54-D262-4DE8-981B-6C541F0B68AA">
+        <logicalOp displayName="AND" type="and">
+          <functionalOp displayName="NOT" type="NOT" uuid="2cfc6462-8253-40a4-ad77-9d2585577ca8">
+            <relationalOp displayName="&lt;= 6 hours Ends Before Start Of" operatorType="Less Than or Equal To" quantity="6" type="EBS" unit="hours">
+              <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="40280381-3d27-5493-013d-61073db92a31" type="qdm"/>
+              <elementRef displayName="Encounter Inpatient : Encounter, Performed" id="2f356da9-9e4f-442a-9232-4a10ae95334c" type="qdm"/>
+            </relationalOp>
+          </functionalOp>
+          <functionalOp displayName="NOT" type="NOT" uuid="f1c41092-90c7-41cf-bdfa-d5bb12066a74">
+            <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="40280381-3d27-5493-013d-61073db92a31" type="qdm">
+              <attribute mode="Value Set" name="discharge status" qdmUUID="6dbeffcf-3628-4db2-bcd5-829b4dc1db4f"/>
+            </elementRef>
+          </functionalOp>
+        </logicalOp>
+      </clause>
+    </group>
+  </measureGrouping>
+  <elementLookUp>
+    <qdm codeSystemName="Lantana" datatype="Encounter, Performed" id="40280381-3d27-5493-013d-61073db92a31" instance="Occurrence A" name="Emergency Department Visit" oid="2.16.840.1.113883.3.117.1.7.1.292" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3d27-5493-013d-61073db92a31" version="1"/>
+    <qdm codeSystemName="National Library of Medicine" datatype="Patient Characteristic Sex" id="40280381-3d27-5493-013d-61073db92a32" name="ONC Administrative Sex" oid="2.16.840.1.113762.1.4.1" suppDataElement="true" taxonomy="AdministrativeSex" uuid="40280381-3d27-5493-013d-61073db92a32" version="1"/>
+    <qdm codeSystemName="CDC NCHS" datatype="Patient Characteristic Race" id="40280381-3d27-5493-013d-61073db92a33" name="Race" oid="2.16.840.1.114222.4.11.836" suppDataElement="true" taxonomy="CDCREC" uuid="40280381-3d27-5493-013d-61073db92a33" version="1"/>
+    <qdm codeSystemName="CDC NCHS" datatype="Patient Characteristic Ethnicity" id="40280381-3d27-5493-013d-61073dba2a34" name="Ethnicity" oid="2.16.840.1.114222.4.11.837" suppDataElement="true" taxonomy="CDCREC" uuid="40280381-3d27-5493-013d-61073dba2a34" version="1"/>
+    <qdm codeSystemName="PHDSC" datatype="Patient Characteristic Payer" id="40280381-3d27-5493-013d-61073dba2a35" name="Payer" oid="2.16.840.1.114222.4.11.3591" suppDataElement="true" taxonomy="SOP" uuid="40280381-3d27-5493-013d-61073dba2a35" version="1"/>
+    <qdm codeSystemName="National Quality Forum" datatype="Timing Element" id="40280381-3d27-5493-013d-61073dba2a36" name="Measurement Period" oid="2.16.840.1.113883.3.67.1.101.1.53" suppDataElement="false" taxonomy="NQF" uuid="40280381-3d27-5493-013d-61073dba2a36" version="1"/>
+    <qdm datatype="Diagnosis, Active" id="d54b4d21-1481-426e-aa94-4de2f269cc1e" name="Psychiatric/Mental Health Patient" oid="2.16.840.1.113883.3.117.1.7.1.299" suppDataElement="false" taxonomy="Grouping" uuid="d54b4d21-1481-426e-aa94-4de2f269cc1e" version="1.0"/>
+    <qdm datatype="attribute" id="eb159349-cd80-4a18-b231-97164fb919c6" name="Principal" oid="2.16.840.1.113883.3.117.1.7.1.14" suppDataElement="false" taxonomy="SNOMEDCT" uuid="eb159349-cd80-4a18-b231-97164fb919c6" version="1.0"/>
+    <qdm datatype="Transfer To" id="2637096a-1fcd-4b2a-aa28-f202869017ae" name="Hospital Measures-Acute care hospital" oid="2.16.840.1.113883.3.666.5.684" suppDataElement="false" taxonomy="SNOMEDCT" uuid="2637096a-1fcd-4b2a-aa28-f202869017ae" version="1.0"/>
+    <qdm datatype="attribute" id="6dbeffcf-3628-4db2-bcd5-829b4dc1db4f" name="Expired" oid="2.16.840.1.113883.3.666.5.730" suppDataElement="false" taxonomy="Grouping" uuid="6dbeffcf-3628-4db2-bcd5-829b4dc1db4f" version="1.0"/>
+    <qdm datatype="Encounter, Performed" id="2f356da9-9e4f-442a-9232-4a10ae95334c" name="Encounter Inpatient" oid="2.16.840.1.113883.3.666.5.307" suppDataElement="false" taxonomy="SNOMEDCT" uuid="2f356da9-9e4f-442a-9232-4a10ae95334c" version="1.0"/>
+    <qdm codeSystemName="Lantana" datatype="Encounter, Performed" id="38da732b-b864-4b9d-82cd-74d0e2a4be91" name="Emergency Department Visit" oid="2.16.840.1.113883.3.117.1.7.1.292" suppDataElement="false" taxonomy="SNOMEDCT" uuid="38da732b-b864-4b9d-82cd-74d0e2a4be91" version="1"/>
+  </elementLookUp>
+  <measureObservations displayName="Measure Observations">
+    <clause displayName="Measure Observation 1" type="measureObservation" uuid="40280381-3d27-5493-013d-61074c432a63">
+      <logicalOp displayName="AND" type="and">
+        <functionalOp displayName="MEDIAN" type="MEDIAN" uuid="1562cbd0-d681-467f-94b7-0b959cce85db">
+          <functionalOp displayName="TIMEDIFF" type="TIMEDIFF" uuid="1e99c122-ef73-4f99-a100-36277b8dbd3a">
+            <logicalOp displayName="AND" type="and">
+              <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="40280381-3d27-5493-013d-61073db92a31" type="qdm">
+                <attribute mode="Check if Present" name="facility location arrival datetime"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="40280381-3d27-5493-013d-61073db92a31" type="qdm">
+                <attribute mode="Check if Present" name="facility location departure datetime"/>
+              </elementRef>
+            </logicalOp>
+          </functionalOp>
+        </functionalOp>
+      </logicalOp>
+    </clause>
+  </measureObservations>
+  <strata displayName="Stratification">
+    <clause displayName="Stratum 1" type="stratum" uuid="40280381-3d27-5493-013d-61074fd32a72">
+      <logicalOp displayName="AND" type="and">
+        <relationalOp displayName="During" type="DURING">
+          <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="40280381-3d27-5493-013d-61073db92a31" type="qdm">
+            <attribute mode="Check if Present" name="facility location arrival datetime"/>
+          </elementRef>
+          <elementRef displayName="Measurement Period : Timing Element" id="40280381-3d27-5493-013d-61073dba2a36" type="qdm"/>
+        </relationalOp>
+      </logicalOp>
+    </clause>
+    <clause displayName="Stratum 2" type="stratum" uuid="40280381-3d27-5493-013d-610750cb2a74">
+      <logicalOp displayName="AND" type="and">
+        <relationalOp displayName="Starts During" type="SDU">
+          <elementRef displayName="Psychiatric/Mental Health Patient : Diagnosis, Active" id="d54b4d21-1481-426e-aa94-4de2f269cc1e" type="qdm">
+            <attribute mode="Value Set" name="ordinality" qdmUUID="eb159349-cd80-4a18-b231-97164fb919c6"/>
+          </elementRef>
+          <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="40280381-3d27-5493-013d-61073db92a31" type="qdm"/>
+        </relationalOp>
+      </logicalOp>
+    </clause>
+    <clause displayName="Stratum 3" type="stratum" uuid="40280381-3d27-5493-013d-610751872a76">
+      <logicalOp displayName="AND" type="and">
+        <relationalOp displayName="&lt;= 6 hours Starts After End Of" operatorType="Less Than or Equal To" quantity="6" type="SAE" unit="hours">
+          <elementRef displayName="Hospital Measures-Acute care hospital : Transfer To" id="2637096a-1fcd-4b2a-aa28-f202869017ae" type="qdm"/>
+          <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="40280381-3d27-5493-013d-61073db92a31" type="qdm"/>
+        </relationalOp>
+      </logicalOp>
+    </clause>
+    <clause displayName="Stratum 4" type="stratum" uuid="40280381-3d27-5493-013d-610751c42a78">
+      <logicalOp displayName="AND" type="and"/>
+    </clause>
+    <clause displayName="Stratum 5" type="stratum" uuid="40280381-3d27-5493-013d-6107531c2a79">
+      <logicalOp displayName="AND" type="and">
+        <functionalOp displayName="NOT" type="NOT" uuid="bc37602a-5a62-475e-8a5a-ad1680064b80">
+          <logicalOp displayName="OR" type="or">
+            <relationalOp displayName="Starts During" type="SDU">
+              <elementRef displayName="Psychiatric/Mental Health Patient : Diagnosis, Active" id="d54b4d21-1481-426e-aa94-4de2f269cc1e" type="qdm">
+                <attribute mode="Value Set" name="ordinality" qdmUUID="eb159349-cd80-4a18-b231-97164fb919c6"/>
+              </elementRef>
+              <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="40280381-3d27-5493-013d-61073db92a31" type="qdm"/>
+            </relationalOp>
+            <relationalOp displayName="&lt;= 6 hours Starts After End Of" operatorType="Less Than or Equal To" quantity="6" type="SAE" unit="hours">
+              <elementRef displayName="Hospital Measures-Acute care hospital : Transfer To" id="2637096a-1fcd-4b2a-aa28-f202869017ae" type="qdm"/>
+              <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="40280381-3d27-5493-013d-61073db92a31" type="qdm"/>
+            </relationalOp>
+          </logicalOp>
+        </functionalOp>
+      </logicalOp>
+    </clause>
+  </strata>
+</measure>

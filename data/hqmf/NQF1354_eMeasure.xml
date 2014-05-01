@@ -1,0 +1,1014 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="xslt/eMeasure.xsl"?>
+<QualityMeasureDocument xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+         
+      <!--
+         **************************************************************   
+         Measure Details Section
+         **************************************************************
+      -->
+         
+      <typeId root="2.16.840.1.113883.1.3" extension="POQM_HD000001"/>
+   <id root="40280381-43db-d64c-0144-5571970a2685"/>
+   <code code="57024-2" codeSystem="2.16.840.1.113883.6.1"
+         displayName="Health Quality Measure Document"/>
+   <title>Hearing Screening Prior To Hospital Discharge</title>
+   <text>This measure assesses the proportion of births that have been screened for hearing loss before hospital discharge.</text>
+   <statusCode code="InProgress"/>
+   <setId root="0924fbae-3fdb-4d0a-aab7-9f354e699fde"/>
+   <versionNumber value="3"/>
+   <author typeCode="AUT">
+      <assignedPerson classCode="ASSIGNED">
+         <representedOrganization classCode="ORG" determinerCode="INSTANCE">
+            <id root="a2ad6757-7503-4ef4-a0b2-5cff3522d667"/>
+            <name>CDC Early Hearing Detection and Intervention Program</name>
+            <contactParty classCode="CON" nullFlavor="UNK"/>
+         </representedOrganization>
+      </assignedPerson>
+   </author>
+   <custodian>
+      <assignedPerson classCode="ASSIGNED">
+         <representedOrganization classCode="ORG" determinerCode="INSTANCE">
+            <id root=""/>
+            <name>CDC National Center on Birth Defects and Developmental Disabilities</name>
+            <contactParty classCode="CON" nullFlavor="UNK"/>
+         </representedOrganization>
+      </assignedPerson>
+   </custodian>
+   <verifier typeCode="VRF">
+      <assignedPerson classCode="ASSIGNED">
+         <representedOrganization classCode="ORG" determinerCode="INSTANCE">
+            <id root="2.16.840.1.113883.3.560"/>
+            <name>National Quality Forum</name>
+            <contactParty classCode="CON" nullFlavor="UNK"/>
+         </representedOrganization>
+      </assignedPerson>
+   </verifier>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>Finalized Date/Time</originalText>
+         </code>
+         <value xsi:type="TS" value=""/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="COPY" codeSystem="2.16.840.1.113883.5.4" displayName="Copyright"/>
+         <value xsi:type="ED" mediaType="text/plain">None</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="MSRSCORE" codeSystem="2.16.840.1.113883.5.4"
+               displayName="Measure Scoring"/>
+         <value xsi:type="CD" code="PROPOR" codeSystem="2.16.840.1.113883.1.11.20367"
+                displayName="Proportion"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="MSRTYPE" codeSystem="2.16.840.1.113883.5.4" displayName="Measure Type"/>
+         <value xsi:type="CD" code="PROCESS" codeSystem="2.16.840.1.113883.1.11.20368"
+                displayName="Process"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="STRAT" codeSystem="2.16.840.1.113883.5.4" displayName="Stratification"/>
+         <value xsi:type="ED" mediaType="text/plain">None</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="MSRADJ" codeSystem="2.16.840.1.113883.5.4" displayName="Risk Adjustment"/>
+         <value xsi:type="ED" mediaType="text/plain">None</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="MSRAGG" codeSystem="2.16.840.1.113883.5.4" displayName="Rate Aggregation"/>
+         <value xsi:type="ED" mediaType="text/plain">None</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="RAT" codeSystem="2.16.840.1.113883.5.4" displayName="Rationale"/>
+         <value xsi:type="ED" mediaType="text/plain">Birthing facility staff should review the effectiveness and timeliness of screening relative to nursery discharge. Benchmarks set within the EHCP may trigger hospital or jurisdictional compliance activities, such as re-writing of procedural guidelines or re-training of screening staff.</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="CRS" codeSystem="2.16.840.1.113883.3.560"
+               displayName="Clinical Recommendation Statement"/>
+         <value xsi:type="ED" mediaType="text/plain">None</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="IDUR" codeSystem="2.16.840.1.113883.3.560"
+               displayName="Improvement Notation"/>
+         <value xsi:type="ED" mediaType="text/plain">An increase in the rate.</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>NQF ID Number</originalText>
+         </code>
+         <value xsi:type="II" root="2.16.840.1.113883.3.560.1" extension="1354"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="DISC" codeSystem="2.16.840.1.113883.5.4" displayName="Disclaimer">
+            <originalText>Disclaimer</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">None</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>eMeasure Identifier</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">31</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <templateId root="2.16.840.1.113883.3.560.1.74"/>
+         <id root="40280381-3d27-5493-013d-4d7cf5d2636d"/>
+         <code code="MSRTP" displayName="Measurement period"
+               codeSystem="2.16.840.1.113883.3.560"/>
+         <value xsi:type="IVL_TS">
+            <low value="00000101"/>
+            <high value="00001231"/>
+         </value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <localVariableName>measureStartDate</localVariableName>
+      <measureAttribute>
+         <templateId root="2.16.840.1.113883.3.560.1.75"/>
+         <id root="13e641a6-d344-466e-8898-869aebd6795e"/>
+         <code code="MSRSD" displayName="Measurement start date"
+               codeSystem="2.16.840.1.113883.3.560"/>
+         <value xsi:type="TS" value="00000101"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <localVariableName>measureEndDate</localVariableName>
+      <measureAttribute>
+         <templateId root="2.16.840.1.113883.3.560.1.75"/>
+         <id root="d44d4a7b-53c4-40a7-9196-71aed0ed1aa2"/>
+         <code code="MSRED" displayName="Measurement end date"
+               codeSystem="2.16.840.1.113883.3.560"/>
+         <value xsi:type="TS" value="00001231"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="REF" codeSystem="2.16.840.1.113883.5.4" displayName="Reference"/>
+         <value xsi:type="ED" mediaType="text/plain">HRSA Title V Block Grant MCHB Performance Measure: Percentage of newborns who have been screened for hearing before hospital discharge.</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="REF" codeSystem="2.16.840.1.113883.5.4" displayName="Reference"/>
+         <value xsi:type="ED" mediaType="text/plain">U.S. Preventive Services Task Force (www.ahrq.gov/clinic/uspstf/uspsnbhr.htm) Year 2007 Position Statement: Principles and Guidelines for Early Hearing Detection and Intervention Programs. Joint Committee on Infant Hearing. Pediatrics 2007;120;898-921 (http://pediatrics.aappublications.org/cgi/content/full/120/4/898?ijkey=oj9BAleq21OlA&amp;keytype=ref&amp;siteid=aapjournals)</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="REF" codeSystem="2.16.840.1.113883.5.4" displayName="Reference"/>
+         <value xsi:type="ED" mediaType="text/plain">HRSA Title V Block Grant MCHB Performance Measure: Percentage of newborns who have been screened for hearing before hospital discharge.</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="DEF" codeSystem="2.16.840.1.113883.3.560" displayName="Definition"/>
+         <value xsi:type="ED" mediaType="text/plain">None</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="GUIDE" codeSystem="2.16.840.1.113883.5.4" displayName="Guidance"/>
+         <value xsi:type="ED" mediaType="text/plain">The measurement period is one calendar year but the reporting period is jurisdictionally defined.
+
+The logic phrase AND: “Occurrence A of Encounter, Performed: Inpatient Encounter (reason: 'Birth')” intends to capture admission type of newborn for the encounter. Where this information is available in existing EHR structured fields (e.g. data that is fed to UB 04, field location 14), it can be used to map the criterion specified in the logic.
+
+The logic phrase AND: “Diagnosis, Active: Liveborn Born In Hospital” starts during “Occurrence A of Encounter, Performed: Inpatient Encounter” intends to capture the point of origin for the inpatient admission. Where this information is available in existing EHR structured fields (e.g. data that is fed to UB-04, field location 15), it can be used to map the criterion specified in the logic.</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>Transmission Format</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">None</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="IPP" codeSystem="2.16.840.1.113883.5.1063">
+            <originalText>Initial Patient Population</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">All live births discharged during the measurement time period born at a facility</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="DENOM" codeSystem="2.16.840.1.113883.5.1063">
+            <originalText>Denominator</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">All live births discharged during the measurement time period born at a facility</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>Denominator Exclusions</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Patient deceased prior to discharge and has not received hearing screening.</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="NUMER" codeSystem="2.16.840.1.113883.5.1063">
+            <originalText>Numerator</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">All live births during the measurement time period born at a facility and screened for
+hearing loss prior to discharge, or not being screened due to medical reasons or medical exclusions.</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>Numerator Exclusions</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Not applicable</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="DENEXCEP" codeSystem="2.16.840.1.113883.5.1063">
+            <originalText>Denominator Exceptions</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">None</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="MSRPOPL" codeSystem="2.16.840.1.113883.5.1063">
+            <originalText>Measure Population</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Not applicable</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>Measure Observations</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Not applicable</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>Supplemental Data Elements</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">For every patient evaluated by this measure also identify payer, race, ethnicity and sex.</value>
+      </measureAttribute>
+   </subjectOf>
+   <componentOf>
+      <qualityMeasureSet classCode="ACT">
+         <id root="7b3f8e62-29f2-4ad5-9df1-a7178a438ca9"/>
+         <title>Early Hearing Detection and Intervention (EHDI)</title>
+      </qualityMeasureSet>
+   </componentOf>
+         
+            <!--
+                **************************************************************   
+                Population Criteria Section
+                **************************************************************
+            --><component typeCode="COMP">
+      <section>
+         <code code="57026-7" codeSystem="2.16.840.1.113883.6.1"
+               displayName="Population criteria"/>
+         <title>Population criteria</title>
+         <text>
+            <list>
+               <item>
+                  <content styleCode="Bold">Initial Patient Population =</content>
+                  <list>
+                     <item>AND: "Occurrence A of Encounter, Performed: Encounter Inpatient" ends during "Measurement Period"</item>
+                     <item>AND: <list>
+                           <item>OR: "Diagnosis, Active: Liveborn Newborn Born in Hospital" starts during "Occurrence A of Encounter, Performed: Encounter Inpatient"</item>
+                           <item>OR: "Diagnosis, Active: Livebirth" starts during "Occurrence A of Encounter, Performed: Encounter Inpatient"</item>
+                        </list>
+                     </item>
+                  </list>
+               </item>
+               <item>
+                  <content styleCode="Bold">Denominator =</content>
+                  <list>
+                     <item>AND: "Initial Patient Population"</item>
+                  </list>
+               </item>
+               <item>
+                  <content styleCode="Bold">Denominator Exclusions =</content>
+                  <list>
+                     <item>AND: <list>
+                           <item>AND: "Patient Characteristic Expired: Patient Expired"</item>
+                           <item>AND NOT: <list>
+                                 <item>OR: "Diagnostic Study, Result: Newborn Hearing Screen Left"</item>
+                                 <item>OR: "Diagnostic Study, Result: Newborn Hearing Screen Right"</item>
+                              </list>
+                           </item>
+                           <item> during "Occurrence A of Encounter, Performed: Encounter Inpatient"</item>
+                        </list>
+                     </item>
+                  </list>
+               </item>
+               <item>
+                  <content styleCode="Bold">Numerator =</content>
+                  <list>
+                     <item>AND: <list>
+                           <item>AND: <list>
+                                 <item>OR: "Diagnostic Study, Result: Newborn Hearing Screen Left (result: 'Pass Or Refer')"</item>
+                                 <item>OR: "Diagnostic Study, Result not done: Medical Reasons" for "Newborn Hearing Screen Left "</item>
+                              </list>
+                           </item>
+                           <item>AND: <list>
+                                 <item>OR: "Diagnostic Study, Result: Newborn Hearing Screen Right (result: 'Pass Or Refer')"</item>
+                                 <item>OR: "Diagnostic Study, Result not done: Medical Reasons" for "Newborn Hearing Screen Right "</item>
+                              </list>
+                           </item>
+                           <item> during "Occurrence A of Encounter, Performed: Encounter Inpatient"</item>
+                        </list>
+                     </item>
+                  </list>
+               </item>
+               <item>
+                  <content styleCode="Bold">Denominator Exceptions =</content>
+                  <list>
+                     <item>None</item>
+                  </list>
+               </item>
+            </list>
+         </text>
+         <!--
+            **************************************************************   
+            Population Criteria Section: initialPatientPopulation 
+            **************************************************************
+      --><entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+               <id root="D9177550-D867-482F-917E-E2967522C93B"/>
+               <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+               <value xsi:type="CD" code="IPP" codeSystem="2.16.840.1.113883.5.1063"
+                      codeSystemName="HL7 Observation Value"
+                      displayName="Initial Patient Population"/>
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern --><templateId root="2.16.840.1.113883.3.560.1.79"/>
+                     <id root="ad38942f-a105-4001-8d18-7232643541ac"/>
+                     <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                     <sourceOf typeCode="COMP">
+                        <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                           <code code="2.16.840.1.113883.3.666.5.307"
+                                 displayName="Encounter Inpatient SNOMEDCT Value Set"
+                                 codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                           <title>Occurrence A of Encounter, Performed: Encounter Inpatient</title>
+                           <statusCode code="completed"/>
+                           <sourceOf typeCode="EDU">
+                              <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                 <id root="40280381-3d27-5493-013d-4d7cf5d2636d"/>
+                                 <title>Measurement Period</title>
+                              </observation>
+                           </sourceOf>
+                        </encounter>
+                     </sourceOf>
+                  </act>
+               </sourceOf>
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnosis, Active pattern --><templateId root="2.16.840.1.113883.3.560.1.2"/>
+                           <id root="a8b615d5-0c5f-4767-a7a3-06152650b3c2"/>
+                           <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+                           <sourceOf typeCode="COMP">
+                              <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                 <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                                 <title>Diagnosis, Active: Liveborn Newborn Born in Hospital</title>
+                                 <value xsi:type="CD" code="2.16.840.1.113762.1.4.1046.6"
+                                        displayName="Liveborn Newborn Born in Hospital Grouping Value Set"/>
+                                 <sourceOf typeCode="REFR">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                                       <value xsi:type="CD" code="55561003" displayName="active"
+                                              codeSystem="2.16.840.1.113883.6.96"/>
+                                    </observation>
+                                 </sourceOf>
+                                 <sourceOf typeCode="SDU">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <id root="ad38942f-a105-4001-8d18-7232643541ac"/>
+                                       <title>Occurrence A of Encounter, Performed: Encounter Inpatient</title>
+                                    </observation>
+                                 </sourceOf>
+                              </observation>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnosis, Active pattern --><templateId root="2.16.840.1.113883.3.560.1.2"/>
+                           <id root="40280381-3d27-5493-013d-4d7cf5d2636a"/>
+                           <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+                           <sourceOf typeCode="COMP">
+                              <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                 <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                                 <title>Diagnosis, Active: Livebirth</title>
+                                 <value xsi:type="CD" code="2.16.840.1.114222.4.1.214079.1.1.1"
+                                        displayName="Livebirth SNOMEDCT Value Set"/>
+                                 <sourceOf typeCode="REFR">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                                       <value xsi:type="CD" code="55561003" displayName="active"
+                                              codeSystem="2.16.840.1.113883.6.96"/>
+                                    </observation>
+                                 </sourceOf>
+                                 <sourceOf typeCode="SDU">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <id root="ad38942f-a105-4001-8d18-7232643541ac"/>
+                                       <title>Occurrence A of Encounter, Performed: Encounter Inpatient</title>
+                                    </observation>
+                                 </sourceOf>
+                              </observation>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                  </act>
+               </sourceOf>
+            </observation>
+         </entry>
+         <!--
+            **************************************************************   
+            Population Criteria Section: denominator 
+            **************************************************************
+      --><entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+               <id root="7EB11292-BC5F-4CA3-BED4-1D2C9E9A336F"/>
+               <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+               <value xsi:type="CD" code="DENOM" codeSystem="2.16.840.1.113883.5.1063"
+                      codeSystemName="HL7 Observation Value"
+                      displayName="Denominator"/>
+               <!--  top and/or --><sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <id root="D9177550-D867-482F-917E-E2967522C93B"/>
+                     <title>Initial Patient Population </title>
+                  </observation>
+               </sourceOf>
+            </observation>
+         </entry>
+         <!--
+            **************************************************************   
+            Population Criteria Section: denominatorExclusions 
+            **************************************************************
+      --><entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN" isCriterionInd="true" actionNegationInd="true">
+               <id root="4bca0c94-d471-47a2-b031-3fce1fd25049"/>
+               <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+               <value xsi:type="CD" code="DENOM" codeSystem="2.16.840.1.113883.5.1063"
+                      codeSystemName="HL7 Observation Value"
+                      displayName="Denominator"/>
+               <!--  top and/or --><sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <id root="D9177550-D867-482F-917E-E2967522C93B"/>
+                     <title>Initial Patient Population </title>
+                  </observation>
+               </sourceOf>
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="AND"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Expired pattern --><templateId root="2.16.840.1.113883.3.560.1.404"/>
+                           <id root="ce50e5de-63bd-4743-a3e4-96909d946611"/>
+                           <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+                           <sourceOf typeCode="COMP">
+                              <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                 <code code="419099009" codeSystem="2.16.840.1.113883.6.96" displayName="Expired"/>
+                                 <title>Patient Characteristic Expired: Patient Expired</title>
+                                 <value xsi:type="CD" code="2.16.840.1.113883.3.117.1.7.1.309"
+                                        codeSystem="2.16.840.1.113883.3.560.101.1"
+                                        displayName="Patient Expired SNOMEDCT Value Set"/>
+                              </observation>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="AND"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true" actionNegationInd="true">
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="OR"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnostic Study, Result pattern --><templateId root="2.16.840.1.113883.3.560.1.11"/>
+                                 <id root="40280381-3d27-5493-013d-4d7cf5d36382"/>
+                                 <code code="30954-2" displayName="Results" codeSystem="2.16.840.1.113883.6.1"/>
+                                 <sourceOf typeCode="COMP">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="2.16.840.1.114222.4.1.214079.1.1.3"
+                                             displayName="Newborn Hearing Screen Left LOINC Value Set"
+                                             codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                       <title>Diagnostic Study, Result: Newborn Hearing Screen Left</title>
+                                       <statusCode code="completed"/>
+                                    </observation>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="OR"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnostic Study, Result pattern --><templateId root="2.16.840.1.113883.3.560.1.11"/>
+                                 <id root="40280381-3d27-5493-013d-4d7cf5d36383"/>
+                                 <code code="30954-2" displayName="Results" codeSystem="2.16.840.1.113883.6.1"/>
+                                 <sourceOf typeCode="COMP">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="2.16.840.1.114222.4.1.214079.1.1.4"
+                                             displayName="Newborn Hearing Screen Right LOINC Value Set"
+                                             codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                       <title>Diagnostic Study, Result: Newborn Hearing Screen Right</title>
+                                       <statusCode code="completed"/>
+                                    </observation>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="DURING">
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern --><templateId root="2.16.840.1.113883.3.560.1.79"/>
+                           <id root="ad38942f-a105-4001-8d18-7232643541ac"/>
+                           <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                           <sourceOf typeCode="COMP">
+                              <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                 <code code="2.16.840.1.113883.3.666.5.307"
+                                       displayName="Encounter Inpatient SNOMEDCT Value Set"
+                                       codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                 <title>Occurrence A of Encounter, Performed: Encounter Inpatient</title>
+                                 <statusCode code="completed"/>
+                              </encounter>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                  </act>
+               </sourceOf>
+            </observation>
+         </entry>
+         <!--
+            **************************************************************   
+            Population Criteria Section: numerator 
+            **************************************************************
+      --><entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+               <id root="64fca1d9-26ba-4b96-b364-b8d01a55332d"/>
+               <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+               <value xsi:type="CD" code="NUMER" codeSystem="2.16.840.1.113883.5.1063"
+                      codeSystemName="HL7 Observation Value"
+                      displayName="Numerator"/>
+               <!--  top and/or --><sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <id root="7EB11292-BC5F-4CA3-BED4-1D2C9E9A336F"/>
+                     <title>Denominator</title>
+                  </observation>
+               </sourceOf>
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="AND"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="OR"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnostic Study, Result pattern --><templateId root="2.16.840.1.113883.3.560.1.11"/>
+                                 <id root="40280381-3d27-5493-013d-4d7cf5d36382"/>
+                                 <code code="30954-2" displayName="Results" codeSystem="2.16.840.1.113883.6.1"/>
+                                 <sourceOf typeCode="COMP">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="2.16.840.1.114222.4.1.214079.1.1.3"
+                                             displayName="Newborn Hearing Screen Left LOINC Value Set"
+                                             codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                       <title>Diagnostic Study, Result: Newborn Hearing Screen Left (result: 'Pass Or Refer')</title>
+                                       <statusCode code="completed"/>
+                                       <sourceOf typeCode="REFR">
+                                          <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                             <templateId root="2.16.840.1.113883.3.560.1.1019.2"/>
+                                             <code code="385676005" codeSystem="2.16.840.1.113883.6.96" displayName="result"
+                                                   codeSystemName="SNOMED-CT"/>
+                                             <value xsi:type="CD" code="2.16.840.1.114222.4.1.214079.1.1.6"
+                                                    codeSystem="2.16.840.1.113883.3.560.101.1"
+                                                    displayName="result"/>
+                                          </observation>
+                                       </sourceOf>
+                                    </observation>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="OR"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true" actionNegationInd="true"><!-- Diagnostic Study, Result pattern --><templateId root="2.16.840.1.113883.3.560.1.11"/>
+                                 <id root="40280381-3d27-5493-013d-4d7cf5d36382"/>
+                                 <code code="30954-2" displayName="Results" codeSystem="2.16.840.1.113883.6.1"/>
+                                 <sourceOf typeCode="COMP">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="2.16.840.1.114222.4.1.214079.1.1.3"
+                                             displayName="Newborn Hearing Screen Left LOINC Value Set"
+                                             codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                       <title>Diagnostic Study, Result not done: Medical Reasons</title>
+                                       <statusCode code="completed"/>
+                                       <sourceOf typeCode="RSON">
+                                          <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                             <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                             <value xsi:type="CD" code="2.16.840.1.114222.4.1.214079.1.1.7"
+                                                    displayName="Medical Reasons SNOMEDCT"/>
+                                          </observation>
+                                       </sourceOf>
+                                    </observation>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="AND"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="OR"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnostic Study, Result pattern --><templateId root="2.16.840.1.113883.3.560.1.11"/>
+                                 <id root="40280381-3d27-5493-013d-4d7cf5d36383"/>
+                                 <code code="30954-2" displayName="Results" codeSystem="2.16.840.1.113883.6.1"/>
+                                 <sourceOf typeCode="COMP">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="2.16.840.1.114222.4.1.214079.1.1.4"
+                                             displayName="Newborn Hearing Screen Right LOINC Value Set"
+                                             codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                       <title>Diagnostic Study, Result: Newborn Hearing Screen Right (result: 'Pass Or Refer')</title>
+                                       <statusCode code="completed"/>
+                                       <sourceOf typeCode="REFR">
+                                          <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                             <templateId root="2.16.840.1.113883.3.560.1.1019.2"/>
+                                             <code code="385676005" codeSystem="2.16.840.1.113883.6.96" displayName="result"
+                                                   codeSystemName="SNOMED-CT"/>
+                                             <value xsi:type="CD" code="2.16.840.1.114222.4.1.214079.1.1.6"
+                                                    codeSystem="2.16.840.1.113883.3.560.101.1"
+                                                    displayName="result"/>
+                                          </observation>
+                                       </sourceOf>
+                                    </observation>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="OR"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true" actionNegationInd="true"><!-- Diagnostic Study, Result pattern --><templateId root="2.16.840.1.113883.3.560.1.11"/>
+                                 <id root="40280381-3d27-5493-013d-4d7cf5d36383"/>
+                                 <code code="30954-2" displayName="Results" codeSystem="2.16.840.1.113883.6.1"/>
+                                 <sourceOf typeCode="COMP">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="2.16.840.1.114222.4.1.214079.1.1.4"
+                                             displayName="Newborn Hearing Screen Right LOINC Value Set"
+                                             codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                       <title>Diagnostic Study, Result not done: Medical Reasons</title>
+                                       <statusCode code="completed"/>
+                                       <sourceOf typeCode="RSON">
+                                          <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                             <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                             <value xsi:type="CD" code="2.16.840.1.114222.4.1.214079.1.1.7"
+                                                    displayName="Medical Reasons SNOMEDCT"/>
+                                          </observation>
+                                       </sourceOf>
+                                    </observation>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="DURING">
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern --><templateId root="2.16.840.1.113883.3.560.1.79"/>
+                           <id root="ad38942f-a105-4001-8d18-7232643541ac"/>
+                           <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                           <sourceOf typeCode="COMP">
+                              <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                 <code code="2.16.840.1.113883.3.666.5.307"
+                                       displayName="Encounter Inpatient SNOMEDCT Value Set"
+                                       codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                 <title>Occurrence A of Encounter, Performed: Encounter Inpatient</title>
+                                 <statusCode code="completed"/>
+                              </encounter>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                  </act>
+               </sourceOf>
+            </observation>
+         </entry>
+      </section>
+   </component>
+         
+      <!--
+         ******************************************   
+         Data Criteria Section
+         ******************************************
+      --><component typeCode="COMP">
+      <section>
+         <code code="57025-9" codeSystem="2.16.840.1.113883.6.1"
+               displayName="Data criteria (QDM Data Elements)"/>
+         <title>Data criteria (QDM Data Elements)</title>
+         <text>
+            <list>
+               <item>
+                  <content>"Diagnosis, Active: Livebirth"</content> using "Livebirth SNOMEDCT Value Set (2.16.840.1.114222.4.1.214079.1.1.1)"</item>
+               <item>
+                  <content>"Diagnosis, Active: Liveborn Newborn Born in Hospital"</content> using "Liveborn Newborn Born in Hospital Grouping Value Set (2.16.840.1.113762.1.4.1046.6)"</item>
+               <item>
+                  <content>"Diagnostic Study, Result not done: Medical Reasons"</content> using "Medical Reasons SNOMEDCT Value Set (2.16.840.1.114222.4.1.214079.1.1.7)"</item>
+               <item>
+                  <content>"Diagnostic Study, Result not done: Medical Reasons"</content> using "Medical Reasons SNOMEDCT Value Set (2.16.840.1.114222.4.1.214079.1.1.7)"</item>
+               <item>
+                  <content>"Diagnostic Study, Result: Newborn Hearing Screen Left"</content> using "Newborn Hearing Screen Left LOINC Value Set (2.16.840.1.114222.4.1.214079.1.1.3)"</item>
+               <item>
+                  <content>"Diagnostic Study, Result: Newborn Hearing Screen Right"</content> using "Newborn Hearing Screen Right LOINC Value Set (2.16.840.1.114222.4.1.214079.1.1.4)"</item>
+               <item>
+                  <content>"Encounter, Performed: Encounter Inpatient"</content> using "Encounter Inpatient SNOMEDCT Value Set (2.16.840.1.113883.3.666.5.307)"</item>
+               <item>
+                  <content>"Patient Characteristic Expired: Patient Expired"</content> using "Patient Expired SNOMEDCT Value Set (2.16.840.1.113883.3.117.1.7.1.309)"</item>
+               <item>
+                  <content>Attribute: "Result: Pass Or Refer"</content> using "Pass Or Refer SNOMEDCT Value Set  (2.16.840.1.114222.4.1.214079.1.1.6)"</item>
+            </list>
+         </text>
+         <entry typeCode="COMP">
+            <observation classCode="OBS" moodCode="DEF">
+               <templateId root="2.16.840.1.113883.3.560.1.79"/>
+               <id root="ad38942f-a105-4001-8d18-7232643541ac"/>
+               <sourceOf typeCode="DRIV">
+                  <localVariableName>Encounter Inpatient</localVariableName>
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <id root="1bd8d16f-9eec-48d7-9e32-bfde86bbe8f0"/>
+                  </observation>
+               </sourceOf>
+            </observation>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnosis, Active pattern --><templateId root="2.16.840.1.113883.3.560.1.2"/>
+               <id root="40280381-3d27-5493-013d-4d7cf5d2636a"/>
+               <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                     <title>Diagnosis, Active: Livebirth</title>
+                     <value xsi:type="CD" code="2.16.840.1.114222.4.1.214079.1.1.1"
+                            displayName="Livebirth SNOMEDCT Value Set"/>
+                     <sourceOf typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                           <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                           <value xsi:type="CD" code="55561003" displayName="active"
+                                  codeSystem="2.16.840.1.113883.6.96"/>
+                        </observation>
+                     </sourceOf>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnosis, Active pattern --><templateId root="2.16.840.1.113883.3.560.1.2"/>
+               <id root="a8b615d5-0c5f-4767-a7a3-06152650b3c2"/>
+               <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                     <title>Diagnosis, Active: Liveborn Newborn Born in Hospital</title>
+                     <value xsi:type="CD" code="2.16.840.1.113762.1.4.1046.6"
+                            displayName="Liveborn Newborn Born in Hospital Grouping Value Set"/>
+                     <sourceOf typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                           <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                           <value xsi:type="CD" code="55561003" displayName="active"
+                                  codeSystem="2.16.840.1.113883.6.96"/>
+                        </observation>
+                     </sourceOf>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnostic Study, Result pattern --><templateId root="2.16.840.1.113883.3.560.1.11"/>
+               <id root="40280381-3d27-5493-013d-4d7cf5d36382"/>
+               <code code="30954-2" displayName="Results" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.114222.4.1.214079.1.1.3"
+                           displayName="Newborn Hearing Screen Left LOINC Value Set"
+                           codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Diagnostic Study, Result: Newborn Hearing Screen Left</title>
+                     <statusCode code="completed"/>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnostic Study, Result pattern --><templateId root="2.16.840.1.113883.3.560.1.111"/>
+               <id root="40280381-3d27-5493-013d-4d7cf5d26378"/>
+               <code code="30954-2" displayName="Results" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.114222.4.1.214079.1.1.3"
+                           displayName="Newborn Hearing Screen Left LOINC Value Set"
+                           codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Diagnostic Study, Result not done: Medical Reasons</title>
+                     <statusCode code="completed"/>
+                     <sourceOf typeCode="RSON">
+                        <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                           <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                           <value xsi:type="CD" code="2.16.840.1.114222.4.1.214079.1.1.7"
+                                  displayName="Medical Reasons SNOMEDCT Value Set"/>
+                        </observation>
+                     </sourceOf>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnostic Study, Result pattern --><templateId root="2.16.840.1.113883.3.560.1.11"/>
+               <id root="40280381-3d27-5493-013d-4d7cf5d36383"/>
+               <code code="30954-2" displayName="Results" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.114222.4.1.214079.1.1.4"
+                           displayName="Newborn Hearing Screen Right LOINC Value Set"
+                           codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Diagnostic Study, Result: Newborn Hearing Screen Right</title>
+                     <statusCode code="completed"/>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnostic Study, Result pattern --><templateId root="2.16.840.1.113883.3.560.1.111"/>
+               <id root="40280381-3d27-5493-013d-4d7cf5d26378"/>
+               <code code="30954-2" displayName="Results" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.114222.4.1.214079.1.1.4"
+                           displayName="Newborn Hearing Screen Right LOINC Value Set"
+                           codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Diagnostic Study, Result not done: Medical Reasons</title>
+                     <statusCode code="completed"/>
+                     <sourceOf typeCode="RSON">
+                        <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                           <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                           <value xsi:type="CD" code="2.16.840.1.114222.4.1.214079.1.1.7"
+                                  displayName="Medical Reasons SNOMEDCT Value Set"/>
+                        </observation>
+                     </sourceOf>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Expired pattern --><templateId root="2.16.840.1.113883.3.560.1.404"/>
+               <id root="ce50e5de-63bd-4743-a3e4-96909d946611"/>
+               <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="419099009" codeSystem="2.16.840.1.113883.6.96" displayName="Expired"/>
+                     <title>Patient Characteristic Expired: Patient Expired</title>
+                     <value xsi:type="CD" code="2.16.840.1.113883.3.117.1.7.1.309"
+                            codeSystem="2.16.840.1.113883.3.560.101.1"
+                            displayName="Patient Expired SNOMEDCT Value Set"/>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern --><templateId root="2.16.840.1.113883.3.560.1.79"/>
+               <id root="1bd8d16f-9eec-48d7-9e32-bfde86bbe8f0"/>
+               <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+               <sourceOf typeCode="COMP">
+                  <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.666.5.307"
+                           displayName="Encounter Inpatient SNOMEDCT Value Set"
+                           codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Encounter, Performed: Encounter Inpatient</title>
+                     <statusCode code="completed"/>
+                  </encounter>
+               </sourceOf>
+            </act>
+         </entry>
+      </section>
+   </component>
+            
+         <!--
+            **************************************************************   
+            Stratification Section
+            **************************************************************
+         --><component typeCode="COMP">
+      <section>
+         <code code="69669-0" codeSystem="2.16.840.1.113883.6.1"
+               displayName="Population stratification description"/>
+         <title>Reporting Stratification</title>
+         <text>
+            <list>
+               <item>None</item>
+            </list>
+         </text>
+      </section>
+   </component>
+         
+      <!--
+         ******************************************   
+         Supplemental Data Elements Section
+         ******************************************
+      --><component typeCode="COMP">
+      <section>
+         <code code="69670-8" codeSystem="2.16.840.1.113883.6.1"
+               displayName="Supplemental Data Elements"/>
+         <title>Supplemental Data Elements</title>
+         <text>
+            <list>
+               <item>
+                  <content>"Patient Characteristic Ethnicity: Ethnicity"</content> using "Ethnicity CDCREC Value Set (2.16.840.1.114222.4.11.837)"</item>
+               <item>
+                  <content>"Patient Characteristic Payer: Payer"</content> using "Payer SOP Value Set (2.16.840.1.114222.4.11.3591)"</item>
+               <item>
+                  <content>"Patient Characteristic Race: Race"</content> using "Race CDCREC Value Set (2.16.840.1.114222.4.11.836)"</item>
+               <item>
+                  <content>"Patient Characteristic Sex: ONC Administrative Sex"</content> using "ONC Administrative Sex AdministrativeSex Value Set (2.16.840.1.113762.1.4.1)"</item>
+            </list>
+         </text>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Sex pattern --><templateId root="2.16.840.1.113883.3.560.1.402"/>
+               <id root="40280381-3d27-5493-013d-4d7cf5d26366"/>
+               <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="263495000" codeSystem="2.16.840.1.113883.6.96" displayName="Sex"/>
+                     <title>Patient Characteristic Sex: ONC Administrative Sex</title>
+                     <value xsi:type="CD" code="2.16.840.1.113762.1.4.1"
+                            codeSystem="2.16.840.1.113883.3.560.101.1"
+                            displayName="ONC Administrative Sex AdministrativeSex Value Set"/>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Race pattern --><templateId root="2.16.840.1.113883.3.560.1.406"/>
+               <id root="40280381-3d27-5493-013d-4d7cf5d26367"/>
+               <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="32624-9" codeSystem="2.16.840.1.113883.6.1" displayName="Race"/>
+                     <title>Patient Characteristic Race: Race</title>
+                     <value xsi:type="CD" code="2.16.840.1.114222.4.11.836"
+                            codeSystem="2.16.840.1.113883.3.560.101.1"
+                            displayName="Race CDCREC Value Set"/>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Ethnicity pattern --><templateId root="2.16.840.1.113883.3.560.1.403"/>
+               <id root="40280381-3d27-5493-013d-4d7cf5d26368"/>
+               <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="54133-4" codeSystem="2.16.840.1.113883.6.1" displayName="Ethnicity"/>
+                     <title>Patient Characteristic Ethnicity: Ethnicity</title>
+                     <value xsi:type="CD" code="2.16.840.1.114222.4.11.837"
+                            codeSystem="2.16.840.1.113883.3.560.101.1"
+                            displayName="Ethnicity CDCREC Value Set"/>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Payer pattern --><templateId root="2.16.840.1.113883.3.560.1.405"/>
+               <id root="40280381-3d27-5493-013d-4d7cf5d26369"/>
+               <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="48768-6" codeSystem="2.16.840.1.113883.6.1" displayName="Payer"/>
+                     <title>Patient Characteristic Payer: Payer</title>
+                     <value xsi:type="CD" code="2.16.840.1.114222.4.11.3591"
+                            codeSystem="2.16.840.1.113883.3.560.101.1"
+                            displayName="Payer SOP Value Set"/>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+      </section>
+   </component>
+</QualityMeasureDocument>

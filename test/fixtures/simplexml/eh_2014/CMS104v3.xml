@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<measure>
+  <measureDetails>
+    <uuid>40280381-446b-b8c2-0144-9e6e127929e3</uuid>
+    <title>Discharged on Antithrombotic Therapy</title>
+    <shortTitle>Discharged on Antithrombotic The</shortTitle>
+    <emeasureid>104</emeasureid>
+    <guid>42bf391f-38a3-4c0f-9ece-dcd47e9609d9</guid>
+    <version>3</version>
+    <status>In Progress</status>
+    <nqfid extension="0435" root="2.16.840.1.113883.3.560.1"/>
+    <period uuid="40280381-3d27-5493-013d-4dca4b996aeb">
+      <startDate uuid="8ca8c39a-5f63-42e3-b543-a5090cf4fee6">00000101</startDate>
+      <stopDate uuid="7c92c3d5-a3ba-478c-874d-ab45dd0b679f">00001231</stopDate>
+    </period>
+    <steward>The Joint Commission</steward>
+    <developers>
+      <developer id="9229c1ce-71e7-4b0a-a832-09bcd88aa0d9">The Joint Commission</developer>
+    </developers>
+    <endorsement id="2.16.840.1.113883.3.560">National Quality Forum</endorsement>
+    <description>Ischemic stroke patients prescribed antithrombotic therapy at hospital discharge</description>
+    <copyright>Measure specifications are in the Public Domain
+
+LOINC(R) is a registered trademark of the Regenstrief Institute.
+
+This material contains SNOMED Clinical Terms (R) (SNOMED CT(c) ) copyright 2004-–2010 International Health Terminology Standards Development Organization. All rights reserved.</copyright>
+    <disclaimer>These performance measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications. The measures and specifications are provided without warranty.</disclaimer>
+    <scoring id="PROPOR">Proportion</scoring>
+    <types>
+      <type id="PROCESS">Process</type>
+    </types>
+    <stratification>None</stratification>
+    <riskAdjustment>None</riskAdjustment>
+    <aggregation>None</aggregation>
+    <rationale>The effectiveness of antithrombotic agents in reducing stroke mortality, stroke- related morbidity and recurrence rates has been studied in several large clinical trials. While the use of these agents for patients with acute ischemic stroke and transient ischemic attacks continues to be the subject of study, substantial evidence is available from completed studies. Data at this time suggest that antithrombotic therapy should be prescribed at discharge following acute ischemic stroke to reduce stroke mortality and morbidity as long as no contraindications exist. For patients with a stroke due to a cardioembolic source (e.g., atrial fibrillation, mechanical heart valve), warfarin is recommended unless contraindicated. Warfarin is not generally recommended for secondary stroke prevention in patients presumed to have a non-cardioembolic stroke.
+Anticoagulants at doses to prevent venous thromboembolism are insufficient antithrombotic therapy to prevent recurrent ischemic stroke or TIA.</rationale>
+    <recommendations>Clinical trial results suggest that antithrombotic therapy should be prescribed at discharge following acute ischemic stroke to reduce stroke mortality and morbidity as long as no contraindications exist.</recommendations>
+    <improvementNotations>An increase in rate</improvementNotations>
+    <references>
+      <reference>Adams HP, del Zoppo G, Alberts MJ, Bhatt DL, Brass L, Furlan A, Grubb RL, Higashida RT, Jauch EC, Kidwell C, Lyden PD, Morgenstern LB, Qureshi AI, Rosenwasser RH, Scott PA, Wijdicks E. Guidelines for the Early Management of Adults with Ischemic Stroke: A Guideline From the American Heart Association/American Stroke Association Stroke Council, Clinical CardiologyCouncil, Cardiovascular Radiology and Intervention Council, and the Atherosclerotic Peripheral Vascular Disease and Quality of Care Outcomes in Research Interdisciplinary Working Groups. Stroke. 2007;38:1655-1711.</reference>
+      <reference>Adams H, Adams R, Del Zoppo G, Goldstein LB. Guidelines for the Early Management of Patients With Ischemic Stroke: Guidelines Update A Scientific Statement From the Stroke Council of the American Heart Association/American Stroke Association. Stroke Vol. 36, 2005: 916:923.</reference>
+      <reference>Albers GW, Amarenco P, Easton JD, Sacco RL, Teal P. Antithrombotic and Thrombolytic Therapy for Ischemic Stroke. Chest Vol. 119, 2001: 300-320.</reference>
+      <reference>Brott TG, Clark WM, Grotta JC, et al. Stroke the first hours. Guidelines for acute treatment. Consensus Statement. National Stroke Association. 2000.</reference>
+      <reference>Chen ZM, Sandercock P, Pan HC, et al. Indications for early aspirin use in acute ischemic stroke: a combined analysis of 40,000 randomized patients from the Chinese acute stroke trial and the international stroke trial. On behalf of the CAST and IST collaborative groups, Stroke 2000;31:1240-1249.</reference>
+      <reference>Coull BM, Williams LS, Goldstein LB, et al. Anticoagulants and Antiplatelet Agents in Acute Ischemic Stroke. Report of the Joint Stroke Guideline Development Committee of the American Academy of Neurology and the American Stroke Association (a Division of the American Heart Association) Stroke. 2002;33:1934 - 1942.</reference>
+      <reference>Guideline on the Use of Aspirin as Secondary Prophylaxis for Vascular Disease in Primary Care, Centre for Health Services Research University of Newcastle upon Tyne, &amp; Centre for Health Economics of York, 1998.</reference>
+      <reference>Sacco RL, Adams R, Albers G, Alberts MJ, Benavente O, Furie K, Goldstein LB, Gorelick P, Halperin J, Harbaugh R, Johnston SC, Katzan I, Kelly-Hayes M, Kenton EJ, Marks M, Schwamm LH, Tomsick T. Guidelines for Prevention of Stroke in Patients With Ischemic Stroke or Transient Ischemic Attack: A Statement for Healthcare Professionals From the American Heart Association/American Stroke Association Council on Stroke: Co-Sponsored by the Council on Cardiovascular Radiology and Intervention. Stroke. Vol. 37, 2006:577.</reference>
+    </references>
+    <definitions>None</definitions>
+    <guidance>The unit of measurement for this measure is an inpatient episode of care. Each distinct hospitalization should be reported, regardless of whether the same patient is admitted for inpatient care more than once during the measurement period. In addition, the eMeasure logic intends to represent events within or surrounding a single occurrence of an inpatient hospitalization.
+
+The “Non-elective Inpatient Encounter” value set intends to capture all non-scheduled hospitalizations. This value set is a subset of the “Inpatient encounter” value set, excluding concepts that specifically refer to elective hospital admissions. Non-elective admissions include emergency, urgent and unplanned admissions, including patients admitted for observation.</guidance>
+    <transmissionFormat>None</transmissionFormat>
+    <initialPatientPopDescription>Patients age 18 and older discharged from inpatient care (non-elective admissions) with a principal diagnosis of ischemic or hemorrhagic stroke and a length of stay less or equal to 120 days.</initialPatientPopDescription>
+    <denominatorDescription>Patients with a principal diagnosis of Ischemic stroke.</denominatorDescription>
+    <denominatorExclusionsDescription>Patients with comfort measures documented.
+Patients admitted for elective carotid intervention. This exclusion is implicitly modeled by only including non-elective hospitalizations.
+Patients discharged to another hospital
+Patients who left against medical advice
+Patients who expired
+Patients discharged to home for hospice care
+Patients discharged to a health care facility for hospice care</denominatorExclusionsDescription>
+    <numeratorDescription>Patients prescribed antithrombotic therapy at hospital discharge.</numeratorDescription>
+    <numeratorExclusionsDescription>Not Applicable</numeratorExclusionsDescription>
+    <denominatorExceptionsDescription>Patients with a documented reason for not prescribing antithrombotic therapy at discharge.</denominatorExceptionsDescription>
+    <measurePopulationDescription>Not Applicable</measurePopulationDescription>
+    <measureObservationsDescription>Not Applicable</measureObservationsDescription>
+    <supplementalData>For every patient evaluated by this measure also identify payer, race, ethnicity, and sex.</supplementalData>
+    <qualityMeasureSet uuid="96c82f79-b78d-49c7-b389-e8a7d6476a8e">eMeasure Stroke (eSTK)</qualityMeasureSet>
+  </measureDetails>
+  <supplementalDataElements>
+    <elementRef id="40280381-3d27-5493-013d-4dca4b986ae7" name="Ethnicity"/>
+    <elementRef id="40280381-3d27-5493-013d-4dca4b986ae5" name="ONC Administrative Sex"/>
+    <elementRef id="40280381-3d27-5493-013d-4dca4b986ae8" name="Payer"/>
+    <elementRef id="40280381-3d27-5493-013d-4dca4b986ae6" name="Race"/>
+  </supplementalDataElements>
+  <measureGrouping>
+    <group sequence="1">
+      <clause displayName="Initial Patient Population 1" type="initialPatientPopulation" uuid="11E34E4B-65AD-4CB7-BD66-FB584D9E3502">
+        <logicalOp displayName="AND" type="and">
+          <relationalOp displayName="&gt;= 18 years Starts Before Start Of" operatorType="Greater Than or Equal To" quantity="18" type="SBS" unit="years">
+            <elementRef displayName="birth date : Patient Characteristic Birthdate" id="40280381-3d27-5493-013d-4dca4b986ae9" type="qdm"/>
+            <elementRef displayName="Occurrence A of Non-Elective Inpatient Encounter : Encounter, Performed" id="40280381-3d61-56a7-013d-7f1466b6554b" type="qdm"/>
+          </relationalOp>
+          <elementRef displayName="Occurrence A of Non-Elective Inpatient Encounter : Encounter, Performed" id="40280381-3d61-56a7-013d-7f1466b6554b" type="qdm">
+            <attribute comparisonValue="120" mode="Less Than or Equal To" name="length of stay" unit="days"/>
+          </elementRef>
+          <relationalOp displayName="    Ends During" quantity="" type="EDU">
+            <elementRef displayName="Occurrence A of Non-Elective Inpatient Encounter : Encounter, Performed" id="40280381-3d61-56a7-013d-7f1466b6554b" type="qdm"/>
+            <elementRef displayName="Measurement Period : Timing Element" id="40280381-3d27-5493-013d-4dca4b996aeb" type="qdm"/>
+          </relationalOp>
+          <relationalOp displayName="Starts During" type="SDU">
+            <logicalOp displayName="OR" type="or">
+              <elementRef displayName="Hemorrhagic Stroke : Diagnosis, Active" id="40280381-3d27-5493-013d-4dca4b996aed" type="qdm">
+                <attribute mode="Value Set" name="ordinality" qdmUUID="0181de2c-f6c2-4eb6-950f-210fc1af5029"/>
+              </elementRef>
+              <elementRef displayName="Ischemic Stroke : Diagnosis, Active" id="40280381-3d27-5493-013d-4dca4b996af9" type="qdm">
+                <attribute mode="Value Set" name="ordinality" qdmUUID="0181de2c-f6c2-4eb6-950f-210fc1af5029"/>
+              </elementRef>
+            </logicalOp>
+            <elementRef displayName="Occurrence A of Non-Elective Inpatient Encounter : Encounter, Performed" id="40280381-3d61-56a7-013d-7f1466b6554b" type="qdm"/>
+          </relationalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Denominator 1" type="denominator" uuid="BCD45E34-251A-4D05-B009-BC11CA1E3D95">
+        <logicalOp displayName="AND" type="and">
+          <relationalOp displayName="Starts During" type="SDU">
+            <elementRef displayName="Ischemic Stroke : Diagnosis, Active" id="40280381-3d27-5493-013d-4dca4b996af9" type="qdm">
+              <attribute mode="Value Set" name="ordinality" qdmUUID="0181de2c-f6c2-4eb6-950f-210fc1af5029"/>
+            </elementRef>
+            <elementRef displayName="Occurrence A of Non-Elective Inpatient Encounter : Encounter, Performed" id="40280381-3d61-56a7-013d-7f1466b6554b" type="qdm"/>
+          </relationalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Denominator Exclusions 1" type="denominatorExclusions" uuid="DA7E6D3E-1960-467F-975E-E49070B13AD0">
+        <logicalOp displayName="AND" type="and">
+          <logicalOp displayName="OR" type="or">
+            <logicalOp displayName="AND" type="and">
+              <relationalOp displayName="&lt;= 1 hours Ends Before Start Of" operatorType="Less Than or Equal To" quantity="1" type="EBS" unit="hours">
+                <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="40280381-3d27-5493-013d-4dca4b996b0a" type="qdm"/>
+                <elementRef displayName="Occurrence A of Non-Elective Inpatient Encounter : Encounter, Performed" id="40280381-3d61-56a7-013d-7f1466b6554b" type="qdm"/>
+              </relationalOp>
+              <relationalOp displayName="Starts During" type="SDU">
+                <logicalOp displayName="OR" type="or">
+                  <elementRef displayName="Comfort Measures  : Intervention, Order" id="5d155dc6-ca9c-471c-89b6-979128f685d9" type="qdm"/>
+                  <elementRef displayName="Comfort Measures  : Intervention, Performed" id="59f1730e-0898-4660-a67e-47d423133853" type="qdm"/>
+                </logicalOp>
+                <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="40280381-3d27-5493-013d-4dca4b996b0a" type="qdm"/>
+              </relationalOp>
+            </logicalOp>
+            <relationalOp displayName="Starts During" type="SDU">
+              <logicalOp displayName="OR" type="or">
+                <elementRef displayName="Comfort Measures  : Intervention, Order" id="5d155dc6-ca9c-471c-89b6-979128f685d9" type="qdm"/>
+                <elementRef displayName="Comfort Measures  : Intervention, Performed" id="59f1730e-0898-4660-a67e-47d423133853" type="qdm"/>
+              </logicalOp>
+              <elementRef displayName="Occurrence A of Non-Elective Inpatient Encounter : Encounter, Performed" id="40280381-3d61-56a7-013d-7f1466b6554b" type="qdm"/>
+            </relationalOp>
+            <elementRef displayName="Occurrence A of Non-Elective Inpatient Encounter : Encounter, Performed" id="40280381-3d61-56a7-013d-7f1466b6554b" type="qdm">
+              <attribute mode="Value Set" name="discharge status" qdmUUID="40280381-3d27-5493-013d-4dca4b996b03"/>
+            </elementRef>
+            <elementRef displayName="Occurrence A of Non-Elective Inpatient Encounter : Encounter, Performed" id="40280381-3d61-56a7-013d-7f1466b6554b" type="qdm">
+              <attribute mode="Value Set" name="discharge status" qdmUUID="40280381-3d27-5493-013d-4dca4b996afa"/>
+            </elementRef>
+            <elementRef displayName="Occurrence A of Non-Elective Inpatient Encounter : Encounter, Performed" id="40280381-3d61-56a7-013d-7f1466b6554b" type="qdm">
+              <attribute mode="Value Set" name="discharge status" qdmUUID="40280381-3d27-5493-013d-4dca4b996afc"/>
+            </elementRef>
+            <elementRef displayName="Occurrence A of Non-Elective Inpatient Encounter : Encounter, Performed" id="40280381-3d61-56a7-013d-7f1466b6554b" type="qdm">
+              <attribute mode="Value Set" name="discharge status" qdmUUID="40280381-3d27-5493-013d-4dca4b996b01"/>
+            </elementRef>
+            <elementRef displayName="Occurrence A of Non-Elective Inpatient Encounter : Encounter, Performed" id="40280381-3d61-56a7-013d-7f1466b6554b" type="qdm">
+              <attribute mode="Value Set" name="discharge status" qdmUUID="40280381-3d27-5493-013d-4dca4b996afd"/>
+            </elementRef>
+          </logicalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Denominator Exceptions 1" type="denominatorExceptions" uuid="B08F38FD-5472-4268-8468-43A463583D7E">
+        <logicalOp displayName="AND" type="and">
+          <relationalOp displayName="    Starts During" quantity="" type="SDU">
+            <logicalOp displayName="OR" type="or">
+              <elementRef displayName="Antithrombotic ingredient specific : Medication, Discharge" id="000931f8-5fe8-4d03-a306-9a02bdc462da" type="qdm">
+                <attribute mode="Value Set" name="negation rationale" qdmUUID="40280381-3d27-5493-013d-4dca4b996b05"/>
+              </elementRef>
+              <elementRef displayName="Antithrombotic ingredient specific : Medication, Discharge" id="000931f8-5fe8-4d03-a306-9a02bdc462da" type="qdm">
+                <attribute mode="Value Set" name="negation rationale" qdmUUID="40280381-3d27-5493-013d-4dca4b996b04"/>
+              </elementRef>
+            </logicalOp>
+            <elementRef displayName="Occurrence A of Non-Elective Inpatient Encounter : Encounter, Performed" id="40280381-3d61-56a7-013d-7f1466b6554b" type="qdm"/>
+          </relationalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Numerator 1" type="numerator" uuid="652A00B2-1536-40F6-8936-F6061844B0DD">
+        <logicalOp displayName="AND" type="and">
+          <relationalOp displayName="    Starts During" quantity="" type="SDU">
+            <elementRef displayName="Antithrombotic Therapy : Medication, Discharge" id="40280381-3d27-5493-013d-4dca4b9a6b0d" type="qdm"/>
+            <elementRef displayName="Occurrence A of Non-Elective Inpatient Encounter : Encounter, Performed" id="40280381-3d61-56a7-013d-7f1466b6554b" type="qdm"/>
+          </relationalOp>
+        </logicalOp>
+      </clause>
+    </group>
+  </measureGrouping>
+  <elementLookUp>
+    <qdm codeSystemName="National Library of Medicine" datatype="Patient Characteristic Sex" id="40280381-3d27-5493-013d-4dca4b986ae5" name="ONC Administrative Sex" oid="2.16.840.1.113762.1.4.1" suppDataElement="true" taxonomy="AdministrativeSex" uuid="40280381-3d27-5493-013d-4dca4b986ae5" version="1"/>
+    <qdm codeSystemName="CDC NCHS" datatype="Patient Characteristic Race" id="40280381-3d27-5493-013d-4dca4b986ae6" name="Race" oid="2.16.840.1.114222.4.11.836" suppDataElement="true" taxonomy="CDCREC" uuid="40280381-3d27-5493-013d-4dca4b986ae6" version="1"/>
+    <qdm codeSystemName="CDC NCHS" datatype="Patient Characteristic Ethnicity" id="40280381-3d27-5493-013d-4dca4b986ae7" name="Ethnicity" oid="2.16.840.1.114222.4.11.837" suppDataElement="true" taxonomy="CDCREC" uuid="40280381-3d27-5493-013d-4dca4b986ae7" version="1"/>
+    <qdm codeSystemName="PHDSC" datatype="Patient Characteristic Payer" id="40280381-3d27-5493-013d-4dca4b986ae8" name="Payer" oid="2.16.840.1.114222.4.11.3591" suppDataElement="true" taxonomy="SOP" uuid="40280381-3d27-5493-013d-4dca4b986ae8" version="1"/>
+    <qdm codeSystemName="National Quality Forum" datatype="Patient Characteristic Birthdate" id="40280381-3d27-5493-013d-4dca4b986ae9" name="birth date" oid="2.16.840.1.113883.3.560.100.4" suppDataElement="false" taxonomy="LOINC" uuid="40280381-3d27-5493-013d-4dca4b986ae9" version="1"/>
+    <qdm codeSystemName="National Quality Forum" datatype="Timing Element" id="40280381-3d27-5493-013d-4dca4b996aeb" name="Measurement Period" oid="2.16.840.1.113883.3.67.1.101.1.53" suppDataElement="false" taxonomy="NQF" uuid="40280381-3d27-5493-013d-4dca4b996aeb" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="Diagnosis, Active" id="40280381-3d27-5493-013d-4dca4b996aed" name="Hemorrhagic Stroke" oid="2.16.840.1.113883.3.117.1.7.1.212" suppDataElement="false" taxonomy="Grouping" uuid="40280381-3d27-5493-013d-4dca4b996aed" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="Diagnosis, Active" id="40280381-3d27-5493-013d-4dca4b996af9" name="Ischemic Stroke" oid="2.16.840.1.113883.3.117.1.7.1.247" suppDataElement="false" taxonomy="Grouping" uuid="40280381-3d27-5493-013d-4dca4b996af9" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="attribute" id="40280381-3d27-5493-013d-4dca4b996afa" name="Left Against Medical Advice" oid="2.16.840.1.113883.3.117.1.7.1.308" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3d27-5493-013d-4dca4b996afa" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="attribute" id="40280381-3d27-5493-013d-4dca4b996afc" name="Discharged to Home for Hospice Care" oid="2.16.840.1.113883.3.117.1.7.1.209" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3d27-5493-013d-4dca4b996afc" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="attribute" id="40280381-3d27-5493-013d-4dca4b996afd" name="Discharged to Health Care Facility for Hospice Care" oid="2.16.840.1.113883.3.117.1.7.1.207" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3d27-5493-013d-4dca4b996afd" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="attribute" id="40280381-3d27-5493-013d-4dca4b996b01" name="Patient Expired" oid="2.16.840.1.113883.3.117.1.7.1.309" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3d27-5493-013d-4dca4b996b01" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="attribute" id="40280381-3d27-5493-013d-4dca4b996b03" name="Discharge To Another Hospital" oid="2.16.840.1.113883.3.117.1.7.1.87" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3d27-5493-013d-4dca4b996b03" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="attribute" id="40280381-3d27-5493-013d-4dca4b996b04" name="Patient Refusal" oid="2.16.840.1.113883.3.117.1.7.1.93" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3d27-5493-013d-4dca4b996b04" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="attribute" id="40280381-3d27-5493-013d-4dca4b996b05" name="Medical Reason" oid="2.16.840.1.113883.3.117.1.7.1.473" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3d27-5493-013d-4dca4b996b05" version="1"/>
+    <qdm codeSystemName="Lantana" datatype="Encounter, Performed" id="40280381-3d27-5493-013d-4dca4b996b0a" instance="Occurrence A" name="Emergency Department Visit" oid="2.16.840.1.113883.3.117.1.7.1.292" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3d27-5493-013d-4dca4b996b0a" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="Medication, Discharge" id="40280381-3d27-5493-013d-4dca4b9a6b0d" name="Antithrombotic Therapy" oid="2.16.840.1.113883.3.117.1.7.1.201" suppDataElement="false" taxonomy="RXNORM" uuid="40280381-3d27-5493-013d-4dca4b9a6b0d" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="Encounter, Performed" id="40280381-3d61-56a7-013d-7f1466b6554b" instance="Occurrence A" name="Non-Elective Inpatient Encounter" oid="2.16.840.1.113883.3.117.1.7.1.424" suppDataElement="false" taxonomy="SNOMEDCT" uuid="40280381-3d61-56a7-013d-7f1466b6554b" version="1"/>
+    <qdm datatype="Intervention, Performed" id="59f1730e-0898-4660-a67e-47d423133853" name="Comfort Measures " oid="1.3.6.1.4.1.33895.1.3.0.45" suppDataElement="false" taxonomy="SNOMEDCT" uuid="59f1730e-0898-4660-a67e-47d423133853" version="1.0"/>
+    <qdm datatype="Intervention, Order" id="5d155dc6-ca9c-471c-89b6-979128f685d9" name="Comfort Measures " oid="1.3.6.1.4.1.33895.1.3.0.45" suppDataElement="false" taxonomy="SNOMEDCT" uuid="5d155dc6-ca9c-471c-89b6-979128f685d9" version="1.0"/>
+    <qdm datatype="attribute" id="0181de2c-f6c2-4eb6-950f-210fc1af5029" name="Principal" oid="2.16.840.1.113883.3.117.1.7.1.14" suppDataElement="false" taxonomy="SNOMEDCT" uuid="0181de2c-f6c2-4eb6-950f-210fc1af5029" version="1.0"/>
+    <qdm datatype="Medication, Discharge" id="000931f8-5fe8-4d03-a306-9a02bdc462da" name="Antithrombotic ingredient specific" oid="2.16.840.1.113762.1.4.1021.8" suppDataElement="false" taxonomy="RXNORM" uuid="000931f8-5fe8-4d03-a306-9a02bdc462da" version="1.0"/>
+    <qdm codeSystemName="Lantana" datatype="Encounter, Performed" id="29025eef-6f98-48df-b4ae-78a12f68d413" name="Emergency Department Visit" oid="2.16.840.1.113883.3.117.1.7.1.292" suppDataElement="false" taxonomy="SNOMEDCT" uuid="29025eef-6f98-48df-b4ae-78a12f68d413" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="Encounter, Performed" id="ff28e03d-85f8-49ea-aa1a-6bc24878eedc" name="Non-Elective Inpatient Encounter" oid="2.16.840.1.113883.3.117.1.7.1.424" suppDataElement="false" taxonomy="SNOMEDCT" uuid="ff28e03d-85f8-49ea-aa1a-6bc24878eedc" version="1"/>
+  </elementLookUp>
+  <strata displayName="Stratification">
+    <clause displayName="Stratum 1" type="stratum" uuid="40280381-3d27-5493-013d-4dca5f026b78">
+      <logicalOp displayName="AND" type="and"/>
+    </clause>
+  </strata>
+</measure>

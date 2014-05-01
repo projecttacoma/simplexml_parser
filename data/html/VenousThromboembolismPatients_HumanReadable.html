@@ -1,0 +1,634 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:n1="urn:hl7-org:v3">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <title>Venous Thromboembolism Patients Receiving Unfractionated Heparin with Dosages/Platelet Count Monitoring by Protocol or Nomogram</title><style type="text/css">
+body {
+	color: rgb(26, 26, 26);
+	background-color: rgb(255,255,255);
+	font-family: Verdana, Tahoma, sans-serif;
+	font-size: 11px;
+}
+
+a {
+	color: rgb(0, 0, 255);
+	background-color: rgb(255,255,255);
+}
+
+h1 {
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 11pt;
+	font-weight: bold;
+}
+
+h3 {
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+h4 {
+	font-size: 8pt;
+	font-weight: bold;
+}
+
+div {
+	width: 80%;
+}
+
+table {
+	line-height: 10pt;
+	width: 80%;
+}
+
+tr {
+	background-color: rgb(224,224,224);
+}
+
+td {
+	padding: 0.1cm 0.2cm;
+	vertical-align: top;
+}
+
+.h1center {
+	font-size: 12pt;
+	font-weight: bold;
+	text-align: center;
+	width: 80%;
+}
+
+.header_table{
+	border: 1pt inset rgb(0,0,0);
+}
+
+.narr_table {
+	width: 100%;
+}
+
+.narr_tr {
+	background-color: rgb(225,225,225);
+}
+pre {
+ overflow: auto; /* Use horizontal scroller if needed; for Firefox 2, not needed in Firefox 3 */
+ white-space: pre-wrap; /* css-3 */
+ white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+ white-space: -pre-wrap; /* Opera 4-6 */
+ white-space: -o-pre-wrap; /* Opera 7 */
+ word-wrap: break-word; /* Internet Explorer 5.5+ */
+ font-family: Verdana, Tahoma, sans-serif;
+ font-size: 11px;
+ text-align:left;
+ margin: 0px 0px 0px 0px;
+ padding:0px 0px 0px 0px;
+}
+.narr_th {
+	background-color: rgb(201,201,201);
+}
+
+.td_label{
+	font-weight: bold;
+	color: white;
+}
+	</style></head>
+   <body>
+      <table class="header_table">
+         <tbody>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Title</span></td>
+               <td width="80%" colspan="3">Venous Thromboembolism Patients Receiving Unfractionated Heparin with Dosages/Platelet Count Monitoring by Protocol or Nomogram</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Identifier<br>(Measure Authoring Tool)</span></td>
+               <td width="30%">109</td>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Version number</span></td>
+               <td width="30%">3</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">NQF Number</span></td>
+               <td width="30%">0374</td>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">GUID</span></td>
+               <td> bcce43dd-08e3-46c3-bfdd-0b1b472690f0</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measurement Period</span></td>
+               <td width="80%" colspan="3">January 1, 20xx  through December 31, 20xx </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Steward</span></td>
+               <td width="80%" colspan="3">Joint Commission</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Developer</span></td>
+               <td width="80%" colspan="3">Joint Commission</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Endorsed By</span></td>
+               <td width="80%" colspan="3">National Quality Forum</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Description</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>This measure assesses the number of patients diagnosed with confirmed VTE who received intravenous (IV) UFH therapy dosages AND had their platelet counts monitored using defined parameters such as a nomogram or protocol.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Copyright</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Measure specifications are in the Public Domain.
+
+LOINC(R) is a registered trademark of the Regenstrief Institute.
+
+This material contains SNOMED Clinical Terms(R) (SNOMED CT(c)) copyright 2004-&#8211;2010 International Health Terminology Standards Development Organization. All rights reserved.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Disclaimer</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>These performance measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications. The measures and specifications are provided without warranty.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Scoring</span></td>
+               <td width="80%" colspan="3">Proportion</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Type</span></td>
+               <td width="80%" colspan="3">Process</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Stratification</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Risk Adjustment</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Rate Aggregation</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Rationale</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Heparin is commonly involved in adverse drug events (Geerts et al., 2008). Sub-therapeutic and supratherapeutic levels can lead to thromboembolic or bleeding complications that may increase the patient&#8217;s length of stay. The use of weight-based nomograms has increased the likelihood that a therapeutic partial prothromboplastin time (aPTT) will be achieved within the first 24 to 48 hours of therapy. The risk of recurrent thromboembolism is reduced when a therapeutic level of heparin is reached quickly. Unfractionated heparin (UFH) management by weight-based aPTT adjusted protocols have demonstrated their ability through clinical trials to achieve a therapeutic aPTT more rapidly than with standard UFH dosing without increasing major bleeding (Rashke et al, 1993).
+
+Heparin nomograms are superior compared to routine care in the timely achievement of therapeutic anticoagulation despite the trend toward patients having aPTTs above the target range (ahrq.gov/clinic/ptsafety/chap9.htm, retrieved October 6, 2011). Heparin-induced thrombocytopenia (HIT) occurs more commonly in patients who receive UFH than in those who receive low molecular weight heparin (Martin et. al., 2005). HIT is defined as an unexplained fall in platelet count (specifically, a 50% fall in platelet count from baseline, even if the platelet count remains above 150 x 109/L) (Warkentin et. al., 2008). Platelet counts generally begin to fall 5-10 days after the initiation of heparin therapy. Prompt recognition of HIT is important so that heparin can be discontinued and the risk of venous and arterial thrombosis minimized. To detect HIT, platelet count monitoring is recommended for all patients treated with UFH (Warkentin et. al., 2008).</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Clinical Recommendation Statement</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>NoneHeparin-induced thrombocytopenia (HIT) may occur in patients who receive unfractionated heparin (UHF) for treatment of thromboembolism. Prompt recognition of HIT by evaluation of platelet counts can allow for detection of HIT, and the subsequent discontinuation of UFH.  Management of UFH by nomogram/protocol is recommended to decrease the time outside of the therapeutic range.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Improvement Notation</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>An increase in rate</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Gandi TK, Shojania KG, Bates DW. Chapter 9. Protocols for High-Risk Drugs: Reducing Adverse Drugs Events Related to Anticoagulants. Retrieved from the World Wide Web at http://www.ahrq.gov/clinic/ptsafety/chap9.htm accessed on October 6, 2011.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Geerts WH, Bergquist D., Pineo,GF., Heit, J.A., Samama, CM., Lassen, MR., Colwell, CW. Prevention of venous thromboembolism: American College of Chest Physicians Evidence-Based Clinical Practice Guidelines (8th Edition). CHEST. 2008:133; 381-453.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Guyatt, G.H., Akl, E.A., Crowther, M., Gutterman, D., Schunemann, H. Antithromboitic Therapy and Prevention of Thrombosis, 9th edition: American College of Chest Physicians Evidence-Based Clinical Practice Guidelines. CHEST 2012; 141(2) (Supp):7S-47S.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Martel, N., Lee, J., and Wells, P.S. Risk for heparin induced thrombocytopenia with unfractionated and low-molecular-weight heparin thromboprophylaxis: a meta-analysis. Blood 2005 June; 106:2710-2715.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Raschke RA, Reilly BM, Guidry JR et al. The weight-based heparin dosing nomogram compared with &#8216;standard care&#8217; nomogram. Ann Intern Med. 1993 Nov 1; 119(9):874-81.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Warkentin TE, Roberts RS, Hirsh J, et al. An improved definition of immune heparin-induced thrombocytopenia in postoperative orthopedic patients. Arch Intern Med 2003; 163:2518-24.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Definition</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Guidance</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>The unit of measurement for this measure is an inpatient episode of care. Each distinct hospitalization should be reported, regardless of whether the same patient is admitted for inpatient care more than once during the measurement period. In addition, the eMeasure logic intends to represent events within or surrounding a single occurrence of an inpatient hospitalization.
+
+Treatment adjustment by protocol and/or use of a clinical pathway must be specific to unfractionated heparin therapy. Heparin protocols and clinical pathways may include use of a nomogram.
+
+The construct of Unfractionated Heparin (route: 'Intravenous route') intends to capture continually infused heparin rather than heparin flushes or pushes.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Transmission Format</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Initial Patient Population</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Patients age 18 and older discharged from hospital inpatient acute care with a diagnosis of venous thromboembolism (VTE)and a length of stay less than or equal to 120 days.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Patients with VTE confirmed through a diagnostic test and receiving IV UFH therapy</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator Exclusions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Patients with comfort measures documented
+Patients discharged to another hospital
+Patients who left against medical advice
+Patients who expired
+Patients discharged to home for hospice care
+Patients discharged to a health care facility for hospice care</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Numerator</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Patients who have their IV UFH therapy dosages and platelet counts monitored according to defined parameters such as a nomogram or protocol.
+Patients who are on UFH therapy for less than 24 hours and have their UFH therapy dosages monitored according to defined parameters such as a nomogram or protocol.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Numerator Exclusions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator Exceptions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Population</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Observations</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Supplemental Data Elements</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>For every patient evaluated by this measure also identify payer, race, ethnicity and sex.</pre></div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <h2><a name="toc">Table of Contents</a></h2>
+      <ul>
+         <li><a href="#d1e544">Population criteria</a></li>
+         <li><a href="#d1e2524">Data criteria (QDM Data Elements)</a></li>
+         <li><a href="#d1e3084">Reporting Stratification</a></li>
+         <li><a href="#d1e3105">Supplemental Data Elements</a></li>
+      </ul>
+      <hr align="left" color="teal" size="2" width="80%">
+      <h3><a name="d1e544" href="#toc">Population criteria</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               <b>Initial Patient Population =</b>
+               
+               <ul>
+                  <li>AND: "Patient Characteristic Birthdate: birth date"  &gt;= 18 year(s) starts before start of "Occurrence A of Encounter, Performed:
+                     Encounter Inpatient"
+                  </li>
+                  <li>AND: "Occurrence A of Encounter, Performed: Encounter Inpatient (length of stay &lt;= 120 day(s))"</li>
+                  <li>AND: "Occurrence A of Encounter, Performed: Encounter Inpatient" ends during "Measurement Period"</li>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Occurrence A of Encounter, Performed: Emergency Department Visit"  &lt;= 1 hour(s) ends before start of "Occurrence A of
+                                 Encounter, Performed: Encounter Inpatient"
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>OR: "Diagnosis, Active: Venous Thromboembolism"</li>
+                                    <li>OR: "Diagnosis, Active: Obstetrics VTE"</li>
+                                    <li> starts during "Occurrence A of Encounter, Performed: Emergency Department Visit"</li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>OR: "Diagnosis, Active: Venous Thromboembolism"</li>
+                              <li>OR: "Diagnosis, Active: Obstetrics VTE"</li>
+                              <li> starts during "Occurrence A of Encounter, Performed: Encounter Inpatient"</li>
+                           </ul>
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator =</b>
+               
+               <ul>
+                  <li>AND: "Initial Patient Population"</li>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: "Diagnostic Study, Result: VTE Diagnostic Test (result: 'VTE Confirmed')"  &lt;= 4 day(s) starts before start of "Occurrence
+                           A of Encounter, Performed: Encounter Inpatient"
+                        </li>
+                        <li>OR: "Diagnostic Study, Result: VTE Diagnostic Test (result: 'VTE Confirmed')" during "Occurrence A of Encounter, Performed:
+                           Encounter Inpatient"
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Occurrence A of Encounter, Performed: Emergency Department Visit"  &lt;= 1 hour(s) ends before start of "Occurrence A of
+                                 Encounter, Performed: Encounter Inpatient"
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>OR: "Diagnostic Study, Result: VTE Diagnostic Test (result: 'VTE Confirmed')"  &lt;= 4 day(s) starts before start of "Occurrence
+                                       A of Encounter, Performed: Emergency Department Visit"
+                                    </li>
+                                    <li>OR: "Diagnostic Study, Result: VTE Diagnostic Test (result: 'VTE Confirmed')" during "Occurrence A of Encounter, Performed:
+                                       Emergency Department Visit"
+                                    </li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Occurrence A of Encounter, Performed: Emergency Department Visit"  &lt;= 1 hour(s) ends before start of "Occurrence A of
+                                 Encounter, Performed: Encounter Inpatient"
+                              </li>
+                              <li>AND: "Medication, Administered: Unfractionated Heparin (route: 'Intravenous route')" starts during "Occurrence A of Encounter,
+                                 Performed: Emergency Department Visit"
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: "Medication, Administered: Unfractionated Heparin (route: 'Intravenous route')" starts during "Occurrence A of Encounter,
+                           Performed: Encounter Inpatient"
+                        </li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator Exclusions =</b>
+               
+               <ul>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Occurrence A of Encounter, Performed: Emergency Department Visit"  &lt;= 1 hour(s) ends before start of "Occurrence A of
+                                 Encounter, Performed: Encounter Inpatient"
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>OR: "Intervention, Order: Comfort Measures"</li>
+                                    <li>OR: "Intervention, Performed: Comfort Measures"</li>
+                                    <li> starts during "Occurrence A of Encounter, Performed: Emergency Department Visit"</li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>OR: "Intervention, Order: Comfort Measures"</li>
+                              <li>OR: "Intervention, Performed: Comfort Measures"</li>
+                              <li> starts during "Occurrence A of Encounter, Performed: Encounter Inpatient"</li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: "Occurrence A of Encounter, Performed: Encounter Inpatient (discharge status: 'Discharge To Another Hospital')"</li>
+                        <li>OR: "Occurrence A of Encounter, Performed: Encounter Inpatient (discharge status: 'Left Against Medical Advice')"</li>
+                        <li>OR: "Occurrence A of Encounter, Performed: Encounter Inpatient (discharge status: 'Patient Expired')"</li>
+                        <li>OR: "Occurrence A of Encounter, Performed: Encounter Inpatient (discharge status: 'Discharged to Home for Hospice Care')"</li>
+                        <li>OR: "Occurrence A of Encounter, Performed: Encounter Inpatient (discharge status: 'Discharged to Health Care Facility for
+                           Hospice Care')"
+                        </li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Numerator =</b>
+               
+               <ul>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: "Occurrence A of Medication, Order: Unfractionated Heparin" starts during "Occurrence A of Encounter, Performed: Encounter
+                           Inpatient"
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Occurrence A of Encounter, Performed: Emergency Department Visit"  &lt;= 1 hour(s) ends before start of "Occurrence A of
+                                 Encounter, Performed: Encounter Inpatient"
+                              </li>
+                              <li>AND: "Occurrence A of Medication, Order: Unfractionated Heparin" starts during "Occurrence A of Encounter, Performed: Emergency
+                                 Department Visit"
+                              </li>
+                           </ul>
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+                  <li>AND: 
+                     <ul>
+                        <li>AND: 
+                           <ul>
+                              <li>AND: 
+                                 <ul>
+                                    <li>OR: "Procedure, Performed: Treatment Adjusted by Protocol"</li>
+                                    <li>OR: "Procedure, Performed: Clinical Pathway Protocol"</li>
+                                 </ul>
+                                 
+                              </li>
+                              <li>AND: "Laboratory Test, Performed: Platelet Count"</li>
+                              <li> starts after start of "Occurrence A of Medication, Order: Unfractionated Heparin (route: 'Intravenous route')"</li>
+                           </ul>
+                           
+                        </li>
+                        <li> during "Occurrence A of Encounter, Performed: Encounter Inpatient"</li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator Exceptions =</b>
+               
+               <ul>
+                  <li>None</li>
+               </ul>
+               
+            </li>
+         </ul>
+         
+      </div>
+      <h3><a name="d1e2524" href="#toc">Data criteria (QDM Data Elements)</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               "Diagnosis, Active: Obstetrics VTE" using "Obstetrics VTE Grouping Value Set (2.16.840.1.113883.3.117.1.7.1.264)"
+            </li>
+            <li>
+               "Diagnosis, Active: Venous Thromboembolism" using "Venous Thromboembolism Grouping Value Set (2.16.840.1.113883.3.117.1.7.1.279)"
+            </li>
+            <li>
+               "Diagnostic Study, Result: VTE Diagnostic Test" using "VTE Diagnostic Test Grouping Value Set (2.16.840.1.113883.3.117.1.7.1.276)"
+            </li>
+            <li>
+               "Encounter, Performed: Emergency Department Visit" using "Emergency Department Visit SNOMEDCT Value Set (2.16.840.1.113883.3.117.1.7.1.292)"
+            </li>
+            <li>
+               "Encounter, Performed: Encounter Inpatient" using "Encounter Inpatient SNOMEDCT Value Set (2.16.840.1.113883.3.666.5.307)"
+            </li>
+            <li>
+               "Intervention, Order: Comfort Measures " using "Comfort Measures SNOMEDCT Value Set (1.3.6.1.4.1.33895.1.3.0.45)"
+            </li>
+            <li>
+               "Intervention, Performed: Comfort Measures " using "Comfort Measures SNOMEDCT Value Set (1.3.6.1.4.1.33895.1.3.0.45)"
+            </li>
+            <li>
+               "Laboratory Test, Performed: Platelet Count" using "Platelet Count LOINC Value Set (2.16.840.1.113883.3.117.1.7.1.267)"
+            </li>
+            <li>
+               "Medication, Administered: Unfractionated Heparin" using "Unfractionated Heparin RXNORM Value Set (2.16.840.1.113883.3.117.1.7.1.218)"
+            </li>
+            <li>
+               "Medication, Order: Unfractionated Heparin" using "Unfractionated Heparin RXNORM Value Set (2.16.840.1.113883.3.117.1.7.1.218)"
+            </li>
+            <li>
+               "Patient Characteristic Birthdate: birth date" using "birth date LOINC Value Set (2.16.840.1.113883.3.560.100.4)"
+            </li>
+            <li>
+               "Procedure, Performed: Clinical Pathway Protocol" using "Clinical Pathway Protocol SNOMEDCT Value Set (2.16.840.1.113883.3.117.1.7.1.253)"
+            </li>
+            <li>
+               "Procedure, Performed: Treatment Adjusted by Protocol" using "Treatment Adjusted by Protocol SNOMEDCT Value Set (2.16.840.1.113883.3.117.1.7.1.278)"
+            </li>
+            <li>
+               Attribute: "Discharge status: Discharge To Another Hospital" using "Discharge To Another Hospital SNOMEDCT Value Set  (2.16.840.1.113883.3.117.1.7.1.87)"
+            </li>
+            <li>
+               Attribute: "Discharge status: Discharged to Health Care Facility for Hospice Care" using "Discharged to Health Care Facility for Hospice Care SNOMEDCT Value Set  (2.16.840.1.113883.3.117.1.7.1.207)"
+            </li>
+            <li>
+               Attribute: "Discharge status: Discharged to Home for Hospice Care" using "Discharged to Home for Hospice Care SNOMEDCT Value Set  (2.16.840.1.113883.3.117.1.7.1.209)"
+            </li>
+            <li>
+               Attribute: "Route: Intravenous route" using "Intravenous route SNOMEDCT Value Set  (2.16.840.1.113883.3.117.1.7.1.222)"
+            </li>
+            <li>
+               Attribute: "Discharge status: Left Against Medical Advice" using "Left Against Medical Advice SNOMEDCT Value Set  (2.16.840.1.113883.3.117.1.7.1.308)"
+            </li>
+            <li>
+               Attribute: "Discharge status: Patient Expired" using "Patient Expired SNOMEDCT Value Set  (2.16.840.1.113883.3.117.1.7.1.309)"
+            </li>
+            <li>
+               Attribute: "Result: VTE Confirmed" using "VTE Confirmed SNOMEDCT Value Set  (2.16.840.1.113883.3.117.1.7.1.407)"
+            </li>
+         </ul>
+         
+      </div>
+      <h3><a name="d1e3084" href="#toc">Reporting Stratification</a></h3>
+      <div>
+         
+         <ul>
+            <li>None</li>
+         </ul>
+         
+      </div>
+      <h3><a name="d1e3105" href="#toc">Supplemental Data Elements</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               "Patient Characteristic Ethnicity: Ethnicity" using "Ethnicity CDCREC Value Set (2.16.840.1.114222.4.11.837)"
+            </li>
+            <li>
+               "Patient Characteristic Payer: Payer" using "Payer SOP Value Set (2.16.840.1.114222.4.11.3591)"
+            </li>
+            <li>
+               "Patient Characteristic Race: Race" using "Race CDCREC Value Set (2.16.840.1.114222.4.11.836)"
+            </li>
+            <li>
+               "Patient Characteristic Sex: ONC Administrative Sex" using "ONC Administrative Sex AdministrativeSex Value Set (2.16.840.1.113762.1.4.1)"
+            </li>
+         </ul>
+         
+      </div><br><hr align="left" color="teal" size="2" width="80%"><br><table class="header_table">
+         <tbody>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Set</span></td>
+               <td colspan="3" width="80%">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto;word-wrap:break-word">eMeasure Venous Thromboembolism (eVTE)</div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>
