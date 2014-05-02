@@ -9,7 +9,6 @@ module SimpleXml
     # Create a new SimpleXml::Document instance by parsing at file at the supplied path
     # @param [String] path the path to the HQMF document
     def initialize(xml_contents)
-      HQMF::Counter.instance.reset()
       @doc = @entry = Document.parse(xml_contents)
       details = @doc.at_xpath('measure/measureDetails')
       @id = details.at_xpath('uuid').text.upcase

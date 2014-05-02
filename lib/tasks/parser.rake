@@ -14,7 +14,7 @@ namespace :hqmf do
         puts "### processing: #{file}..."
         puts "####################################"
 
-        measure = SimpleXml::Document.new(File.read file).to_model
+        measure = SimpleXml::Parser.parse(File.read(file), SimpleXml::Parser::SIMPLEXML_VERSION_1)
         outfile = File.join(outdir, "#{measure.cms_id}.json")
         File.open(outfile, 'w') {|f| f.write(JSON.pretty_generate(measure.to_json)) }
         puts "Wrote: #{outfile}\n"
@@ -34,7 +34,7 @@ namespace :hqmf do
       puts "### processing: #{file}..."
       puts "####################################"
 
-      measure = SimpleXml::Document.new(File.read file).to_model
+      measure = SimpleXml::Parser.parse(File.read(file), SimpleXml::Parser::SIMPLEXML_VERSION_1)
       outfile = File.join(outdir, "#{measure.cms_id}.json")
       File.open(outfile, 'w') {|f| f.write(JSON.pretty_generate(measure.to_json)) }
       puts "Wrote: #{outfile}\n"

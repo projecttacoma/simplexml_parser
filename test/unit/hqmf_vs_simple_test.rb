@@ -12,7 +12,7 @@ class HQMFV1V2RoundtripTest < Test::Unit::TestCase
 
   # Create a blank folder for the errors
   FileUtils.rm_rf(RESULTS_DIR) if File.directory?(RESULTS_DIR)
-  Dir.mkdir RESULTS_DIR
+  FileUtils.mkdir_p RESULTS_DIR
 
   # Automatically generate one test method per measure file
   measure_files = File.join(HQMF_ROOT, '*.xml')
@@ -28,10 +28,10 @@ class HQMFV1V2RoundtripTest < Test::Unit::TestCase
   def do_roundtrip_test(measure_filename, measure_name)
     puts ">> #{measure_name}"
     # parse the model from the V1 XML
-    hqmf_model = HQMF::Parser.parse(File.open(measure_filename).read, '1.0')
+    hqmf_model = HQMF::Parser.parse(File.open(measure_filename).read, HQMF::Parser::HQMF_VERSION_1)
 
     simple_xml = File.join(SIMPLE_XML_ROOT, "#{hqmf_model.cms_id}.xml")
-    simple_xml_model = SimpleXml::Document.new(File.read simple_xml).to_model
+    simple_xml_model = SimpleXml::Parser.parse(File.read(simple_xml), SimpleXml::Parser::SIMPLEXML_VERSION_1)
 
     hqmf_model.all_data_criteria.sort! {|l,r| l.id <=> r.id}
     simple_xml_model.all_data_criteria.sort! {|l,r| l.id <=> r.id}
@@ -76,7 +76,7 @@ class HQMFV1V2RoundtripTest < Test::Unit::TestCase
       File.open(outfile, 'w') {|f| f.write(JSON.pretty_generate(simple_xml_json)) }
     end
 
-    assert diff.empty?, 'Differences in model between HQMF and SimpleXml'
+    assert diff.empty?, 'Differences in model between HQMF and SimpleXml... we need a better comparison mechanism'
     
   end
 
