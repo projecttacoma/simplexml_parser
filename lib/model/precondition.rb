@@ -65,6 +65,8 @@ module SimpleXml
       @preconditions = @entry.children.reject {|e| e.name == 'text'}.collect do |precondition|
         Precondition.new(precondition, @doc)
       end
+     
+       @preconditions.select! {|p| !p.preconditions.empty? || p.reference}
     end
 
     def handle_temporal
