@@ -1,7 +1,7 @@
 source "http://rubygems.org"
 gemspec
 
-gem 'health-data-standards', :git => 'https://github.com/projectcypress/health-data-standards.git', :branch => 'simple_xml_parser'
+gem 'health-data-standards', :git => 'https://github.com/projectcypress/health-data-standards.git', :branch => 'hqmf_r2.1'
 #gem 'health-data-standards', :path => '../health-data-standards'
 
 gem 'rake'

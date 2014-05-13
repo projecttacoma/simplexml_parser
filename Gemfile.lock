@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/projectcypress/health-data-standards.git
-  revision: 32d56943cf31eb834b434f8f8c0721e4637e5a70
-  branch: simple_xml_parser
+  revision: 02b8d14a0f52015af96ed04e96f654c139391050
+  branch: hqmf_r2.1
   specs:
     health-data-standards (3.4.5)
       activesupport (~> 3.2.14)
