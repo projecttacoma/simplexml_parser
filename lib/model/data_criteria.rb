@@ -81,8 +81,9 @@ module SimpleXml
         return criteria if criteria.id == HQMF::Document::MEASURE_PERIOD_ID
 
         criteria.id = "#{criteria.id}_precondition_#{precondition_id}" if update_id
-        doc.derived_data_criteria << criteria
+        doc.derived_data_criteria << criteria unless doc.derived_data_criteria.map(&:id).include? criteria.id
 
+        # handle attributes
         attributes = element.xpath('attribute')
         if (attributes)
           attributes.each do |attribute|

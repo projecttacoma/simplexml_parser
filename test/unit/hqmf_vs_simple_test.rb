@@ -1,7 +1,7 @@
 require 'fileutils'
 require_relative '../test_helper'
 
-class HQMFV1V2RoundtripTest < Test::Unit::TestCase
+class HQMFVsSimpleTest < Test::Unit::TestCase
   RESULTS_DIR = File.join('tmp','hqmf_simple_diffs')
 
 #  HQMF_ROOT = File.join('test', 'fixtures', 'hqmf', '2_4_0_bundle')
@@ -42,7 +42,16 @@ class HQMFV1V2RoundtripTest < Test::Unit::TestCase
     simple_xml_model.instance_variable_set(:@attributes, [])
 
     # reject the negated source data criteria... these are bad artifacts from HQMF v1.0
+    # we also want to pull those from the derived data criteria as well, but not all the negated from there, only the bad from the source data criteria
     hqmf_model.source_data_criteria.reject! {|dc| dc.negation}
+
+    # only compare referenced data criteria since those are the ones that will impact calculation
+    referenced_ids = hqmf_model.referenced_data_criteria.map(&:id)
+    hqmf_model.all_data_criteria.reject! {|dc| !referenced_ids.include? dc.id }
+    referenced_ids = simple_xml_model.referenced_data_criteria.map(&:id)
+    simple_xml_model.all_data_criteria.reject! {|dc| !referenced_ids.include? dc.id }
+
+
 
     # try to match IDs for data criteria that have changed
     # simple_referenced_dc = simple_xml_model.referenced_data_criteria
@@ -58,6 +67,7 @@ class HQMFV1V2RoundtripTest < Test::Unit::TestCase
     # simple_xml_model.all_population_criteria.each do |pc|
     #   update_referenced_ids(pc, dc_key_translation)
     # end
+
 
     hqmf_json = JSON.parse(hqmf_model.to_json.to_json)
     simple_xml_json = JSON.parse(simple_xml_model.to_json.to_json)

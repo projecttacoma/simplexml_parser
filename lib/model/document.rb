@@ -61,6 +61,7 @@ module SimpleXml
         end
       end
 
+
       # Extract the population criteria and population collections
       @populations = []
       @population_criteria = []
@@ -90,6 +91,10 @@ module SimpleXml
 
       end
 
+      # add supplemental data elements
+      @doc.xpath('measure/supplementalDataElements/elementRef').each do |supplemental|
+        @derived_data_criteria << @criteria_map[supplemental.at_xpath('@id').value]
+      end
 
       puts "\t NEED TO HANDLE STRATIFICATIONS"
       # stratifier_id_def = population_def.at_xpath('cda:templateId/cda:item[@root="'+HQMF::Document::STRATIFIED_POPULATION_TEMPLATE_ID+'"]/@controlInformationRoot', NAMESPACES)
@@ -113,7 +118,7 @@ module SimpleXml
     # Get all the data criteria defined by the measure
     # @return [Array] an array of SimpleXml::DataCriteria describing the data elements used by the measure
     def all_data_criteria
-      @derived_data_criteria + source_data_criteria
+      @derived_data_criteria
     end
     
     # Get a specific data criteria by id.
