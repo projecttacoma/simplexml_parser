@@ -1,4 +1,5 @@
 require 'fileutils'
+require 'digest'
 require_relative '../test_helper'
 
 class HQMFVsSimpleTest < Test::Unit::TestCase
@@ -51,7 +52,11 @@ class HQMFVsSimpleTest < Test::Unit::TestCase
     referenced_ids = simple_xml_model.referenced_data_criteria.map(&:id)
     simple_xml_model.all_data_criteria.reject! {|dc| !referenced_ids.include? dc.id }
 
-
+    # Generate new IDs for data criteria in both models by hashing a subset of the fields.
+    # Then remap the original IDs created when each model was parsed to the common ID for
+    # comparison below.
+    remap_ids(hqmf_model)
+    remap_ids(simple_xml_model)
 
     # try to match IDs for data criteria that have changed
     # simple_referenced_dc = simple_xml_model.referenced_data_criteria
@@ -88,6 +93,84 @@ class HQMFVsSimpleTest < Test::Unit::TestCase
 
     assert diff.empty?, 'Differences in model between HQMF and SimpleXml... we need a better comparison mechanism'
     
+  end
+
+  def remap_ids(measure_model)
+    idmap = Hash.new
+
+    # First pass calculates new IDs by hashing various attributes that should be identical in both models
+    measure_model.all_data_criteria.each do |dc|
+      # generate a SHA256 hash of key fields in the data criteria
+      sha256 = Digest::SHA256.new
+      sha256.update "#{measure_model.id}:#{measure_model.title}:"
+      sha256.update "#{dc.code_list_id}:"
+      sha256.update "#{dc.definition}:"
+      sha256.update "#{dc.negation}:"
+      sha256.update dc.status.nil? ? "<nil>:" : "#{dc.status}:"
+      sha256.update dc.negation_code_list_id.nil? ? "<nil>:" : "#{dc.negation_code_list_id}:"
+      sha256.update dc.value.nil? ? "<nil>:" : "#{dc.value.type}:"
+      if dc.subset_operators.nil?
+        sha256.update "<nil>:"
+      else
+        dc.subset_operators.each do |sso|
+          sha256.update "#{sso.type}:"
+        end
+      end
+      sha256.update dc.derivation_operator.nil? ? "<nil>:" : "#{dc.derivation_operator}:"
+      idmap[dc.id] = sha256.hexdigest
+    end
+
+    # Second pass reassigns IDs using the hash-generated ID
+    measure_model.all_data_criteria.each do |dc|
+      if ! idmap[dc.id].nil?
+        dc.id = idmap[dc.id]
+      else
+        puts "IDMAP: No mapped ID for data criteria: #{dc.id}"
+      end
+      unless dc.temporal_references.nil?
+        dc.temporal_references.each do |tr|
+          if ! idmap[tr.reference.id].nil?
+            tr.reference.id = idmap[tr.reference.id]
+          else
+            puts "IDMAP: No mapped ID for temporal reference: #{tr.reference.id}"
+          end
+        end
+      end
+      unless dc.children_criteria.nil?
+        dc.children_criteria.each_index do |cci|
+          child_id = dc.children_criteria[cci]
+          if ! idmap[child_id].nil?
+            dc.children_criteria[cci] = idmap[child_id]
+          else
+            puts "IDMAP: No mapped ID for child criteria: #{child_id}"
+          end
+        end
+      end
+    end
+
+    # Now that the data criteria IDs have been remapped, we need to change the
+    # references to those data criteria in the population criteria.
+    measure_model.all_population_criteria.each do |pc|
+      remap_preconditions(idmap, pc.preconditions)
+    end
+    puts "\nIDMAP DONE\n\n"
+  end
+
+  def remap_preconditions(idmap, preconditions)
+    if preconditions.nil?
+      return
+    end
+
+    preconditions.each do |pc|
+      remap_preconditions(idmap, pc.preconditions)
+      unless pc.reference.nil?
+        if ! idmap[pc.reference.id].nil?
+          pc.reference.id = idmap[pc.reference.id]
+        else
+          puts "IDMAP: no mapped ID for #{pc.reference.id}"
+        end
+      end
+    end
   end
 
   # def get_dc_key_translation(hqmf_referenced_dc, simple_referenced_dc, dc_key_translation)
