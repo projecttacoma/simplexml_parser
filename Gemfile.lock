@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/projectcypress/health-data-standards.git
-  revision: 02b8d14a0f52015af96ed04e96f654c139391050
+  revision: 24edd91b5aa4ee0c89e5be79aa46f9437822e71f
   branch: hqmf_r2.1
   specs:
     health-data-standards (3.4.5)
@@ -81,7 +81,7 @@ GEM
     mongoid-tree (1.0.4)
       mongoid (>= 3.0, <= 4.0)
     moped (1.5.2)
-    multi_json (1.8.2)
+    multi_json (1.10.1)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
     origin (1.1.0)
@@ -137,7 +137,7 @@ GEM
       polyglot (>= 0.3.1)
     turn (0.9.6)
       ansi
-    tzinfo (0.3.38)
+    tzinfo (0.3.39)
     uuid (2.3.7)
       macaddr (~> 1.0)
 
