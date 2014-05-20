@@ -42,20 +42,24 @@ module SimpleXml
 
       @hqmf_id = attr_val('@id')
 
+      parts = type.split(',')
+      def_and_status = parse_definition_and_status(type)
+      @definition = def_and_status[:definition]
+      @status = def_and_status[:status]
+
       specifics_counter = nil
       if instance
+        fix_description_for_hqmf_match()
         specifics_counter = HQMF::Counter.instance.next
         @specific_occurrence = instance.split[1]
-        @specific_occurrence_const = @description.gsub(/\W/,' ').upcase.split.join('_')
+        @specific_occurrence_const = DataCriteria.format_so_const(@description)
         @id = id || format_id("#{instance} #{@title}#{specifics_counter}")
       else
         @id = id || format_id("#{@description}")
       end
 
-      parts = type.split(',')
-      def_and_status = parse_definition_and_status(type)
-      @definition = def_and_status[:definition]
-      @status = def_and_status[:status]
+      handle_transfer() if (['transfer_from', 'transfer_to'].include? definition)
+
 
     end
 
@@ -80,11 +84,14 @@ module SimpleXml
         criteria = doc.criteria_map[element.at_xpath('@id').value].dup
         return criteria if criteria.id == HQMF::Document::MEASURE_PERIOD_ID
 
+        # if we have attributes then we want to update the ID sice we have changed the DC
+        attributes = element.xpath('attribute')
+        update_id = update_id || !attributes.empty?
+
         criteria.id = "#{criteria.id}_precondition_#{precondition_id}" if update_id
         doc.derived_data_criteria << criteria unless doc.derived_data_criteria.map(&:id).include? criteria.id
 
         # handle attributes
-        attributes = element.xpath('attribute')
         if (attributes)
           attributes.each do |attribute|
             
@@ -94,19 +101,10 @@ module SimpleXml
 
             if key == 'RESULT'
               criteria.value = value
-              # puts "\t RENAMING TITLE... WE ONLY WANT TO DO THIS FOR COMPARISON"
-              # TODO: REMOVE ME!!!!!!!!!!!!!!!!!!!!
-              # criteria.value.instance_variable_set(:@title, 'result') 
             elsif key == 'NEGATION_RATIONALE'
               criteria.negation = true
               criteria.negation_code_list_id = value.code_list_id
             else
-              # if value.is_a? Coded
-              #   puts "\t RENAMING TITLE... WE ONLY WANT TO DO THIS FOR COMPARISON"
-              #   TODO: REMOVE ME!!!!!!!!!!!!!!!!!!!!
-              #   value.instance_variable_set(:@title, orig_key) 
-              # end
-
               criteria.field_values ||= {}
               criteria.field_values[key] = value
             end
@@ -150,6 +148,16 @@ module SimpleXml
       @temporal_references ||= []
       @temporal_references << temporal
     end
+
+    def push_down_temporal(temporal, doc)
+      # push down through a grouping
+      if @children_criteria
+        @children_criteria.each {|child_id| doc.data_criteria(child_id).push_down_temporal(temporal, doc)} 
+      else
+        # if this is not a grouping, just add the temporal reference
+        add_temporal(temporal)
+      end
+    end
     
     def self.translate_field(name)
       name = name.tr(' ','_').upcase
@@ -174,6 +182,10 @@ module SimpleXml
         @specific_occurrence_const, @source_data_criteria)
     end
 
+    def self.format_so_const(description)
+      description.gsub(/\W/,' ').upcase.split.join('_')
+    end
+
     private
 
     def format_id(value)
@@ -182,7 +194,7 @@ module SimpleXml
 
     def parse_definition_and_status(type)
 
-      type.gsub!('Patient Characteristic', 'Patient Characteristic,') if type.starts_with? 'Patient Characteristic'
+      type = type.gsub('Patient Characteristic', 'Patient Characteristic,') if type.starts_with? 'Patient Characteristic'
       case type
       when 'Patient Characteristic, Sex'
         type = 'Patient Characteristic, Gender'
@@ -210,6 +222,18 @@ module SimpleXml
       status = nil if status && status.empty?
 
       {definition: definition, status: status}
+    end
+
+    def handle_transfer
+      @field_values ||= {}
+      value = Coded.new(@code_list_id,@title)
+      @field_values[definition.upcase] = value
+      @code_list_id = nil
+    end
+
+    # TODO: Move this fix into hqmf parser instead
+    def fix_description_for_hqmf_match
+      @description = "#{@definition.titleize}, #{@status.titleize}: #{@title}" if @status == 'ordered'
     end
  
   end

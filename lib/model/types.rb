@@ -18,7 +18,8 @@ module SimpleXml
   class Value
     include SimpleXml::Utilities
     
-    TIME_UNIT_TRANSLATION = { years: 'a', months: 'mo', weeks: 'wk', days: 'd', hours: 'h', minutes: 'min'}
+    TIME_UNIT_TRANSLATION = { years: 'a', months: 'mo', weeks: 'wk', days: 'd', hours: 'h', minutes: 'min', seconds: 's'}
+    OTHER_UNIT_TRANSLATION = { 'mmHg' => 'mm[Hg]', 'per mm3' => '/mm3', 'copies/mL' => '[copies]/mL', 'bpm' => '{H.B}/min'}
 
     attr_reader :type, :unit, :value
     
@@ -47,6 +48,7 @@ module SimpleXml
 
     def translate_unit(unit)
       unit = (TIME_UNIT_TRANSLATION[unit.downcase.to_sym] || unit) if unit
+      unit = (OTHER_UNIT_TRANSLATION[unit] || unit) if unit
       unit
     end
   end
@@ -134,6 +136,7 @@ module SimpleXml
 
     def initialize(type, value = nil)
       @type = translate_type(type)
+      @value = value
     end
 
     def translate_type(type)

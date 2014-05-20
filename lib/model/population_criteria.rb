@@ -12,6 +12,7 @@ module SimpleXml
     NUMER = 'numerator'
     MSRPOPL = 'measurePopulation'
     OBSERV = 'measureObservation'
+    STRATUM = "stratum"
 
 
     TITLES = {
@@ -24,7 +25,8 @@ module SimpleXml
       HQMF::PopulationCriteria::OBSERV => 'Measure Observation'
     }
 
-    attr_reader :preconditions, :id, :hqmf_id, :title, :type
+    attr_accessor :id, :hqmf_id, :aggregator
+    attr_reader :preconditions, :title, :type, :entry
     
     # Create a new population criteria from the supplied HQMF entry
     # @param [Nokogiri::XML::Element] the HQMF entry
@@ -37,12 +39,14 @@ module SimpleXml
       @title = TITLES[@type]
 
       @id = @type
-      @id += "" if (index > 0)
+      @id += "_#{index}" if (index > 0)
 
       @preconditions = @entry.xpath('logicalOp').collect do |precondition_def|
         Precondition.new(precondition_def, @doc)
       end
       @preconditions.select! {|p| !p.preconditions.empty? || p.reference}
+
+      handle_negations
 
     end
 
@@ -62,14 +66,35 @@ module SimpleXml
         HQMF::PopulationCriteria::MSRPOPL
       when OBSERV
         HQMF::PopulationCriteria::OBSERV
+      when STRATUM
+        STRATUM.upcase
       else
         raise "Unknown population criteria type #{type}"
       end
     end
+
+    def handle_negations
+      @preconditions.each do |p|
+        p.handle_negations(self)
+      end
+    end
+
+    def get_logic_leaves(children=nil)
+      children ||= @preconditions
+      leaves = []
+      children.each do |precondition|
+        unless (precondition.preconditions.empty?)
+          leaves.concat get_logic_leaves(precondition.preconditions)
+        else
+          leaves << precondition
+        end
+      end
+      leaves
+    end
     
     def to_model
       mps = preconditions.collect {|p| p.to_model}
-      HQMF::PopulationCriteria.new(id, hqmf_id, type, mps, title)
+      HQMF::PopulationCriteria.new(id, hqmf_id, type, mps, title, aggregator)
     end
 
   end

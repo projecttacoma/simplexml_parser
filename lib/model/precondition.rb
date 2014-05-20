@@ -11,13 +11,13 @@ module SimpleXml
 
     attr_reader :id, :preconditions, :reference, :conjunction_code, :negation
 
-    def initialize(entry, doc)
+    def initialize(entry, doc, negated=false)
       @doc = doc
       @entry = entry
       entry = nil
       @id = HQMF::Counter.instance.next
       @preconditions = []
-      @negation = false
+      @negation = negated
       @subset = nil
 
       if @entry.name == FUNCTIONAL_OP
@@ -35,7 +35,6 @@ module SimpleXml
       else
         raise "unknown precondition type: #{@entry.name}"
       end
-
     end
 
     def handle_functional
@@ -62,11 +61,21 @@ module SimpleXml
 
     def handle_logical
       @conjunction_code = translate_type(attr_val('@type'))
-      @preconditions = @entry.children.reject {|e| e.name == 'text'}.collect do |precondition|
-        Precondition.new(precondition, @doc)
+      @preconditions = []
+      @entry.children.reject {|e| e.name == 'text'}.collect do |precondition|
+        # if we have a negated child with multiple logical children, then we want to make sure we don't infer an extra AND
+        if negation_with_logical_children?(precondition)
+          precondition.children.reject {|e| e.name == 'text'}.each do |child|
+            @preconditions << Precondition.new(child, @doc, true)
+          end
+        else
+          @preconditions << Precondition.new(precondition, @doc)
+        end
+
       end
      
-       @preconditions.select! {|p| !p.preconditions.empty? || p.reference}
+      @preconditions.select! {|p| !p.preconditions.empty? || p.reference}
+
     end
 
     def handle_temporal
@@ -83,6 +92,7 @@ module SimpleXml
       temporal = TemporalReference.new(type, comparison, quantity, unit, right)
 
       if (left_child.name == LOGICAL_OP)
+        # make this the left and then push down the right... we have no current node to construct
         copy(Precondition.new(left_child, @doc))
         push_down_temporal(self, temporal)
       else
@@ -99,10 +109,20 @@ module SimpleXml
 
     def push_down_temporal(precondition, temporal)
       if precondition.preconditions.empty?
-        @doc.data_criteria(precondition.reference.id).add_temporal(temporal)
+        @doc.data_criteria(precondition.reference.id).push_down_temporal(temporal, @doc)
       else
         precondition.preconditions.each {|p| push_down_temporal(p, temporal)}
       end
+    end
+
+    def negation_with_logical_children?(precondition)
+      if precondition.name == FUNCTIONAL_OP && precondition.at_xpath('@type').value == 'NOT'
+        children = precondition.children.reject {|e| e.name == 'text'}
+        if (children.length > 1)
+          return children.count == children.select {|c| c.name == LOGICAL_OP}.count
+        end
+      end
+      false
     end
 
     def translate_type(type)
@@ -125,9 +145,55 @@ module SimpleXml
       @preconditions = other.preconditions
       @reference = other.reference
       @conjunction_code = other.conjunction_code
-      @negation = other.negation
+      # do not copy negation... we want the negation from the parent to remain
+      #@negation = other.negation
     end
     
+    def to_model
+      pcs = preconditions.collect {|p| p.to_model}
+      mr = reference ? reference.to_model : nil
+      HQMF::Precondition.new(id, pcs, mr, conjunction_code, negation)
+    end
+
+    def handle_negations(parent)
+      negations = []
+      @preconditions.delete_if {|p| negations << p if p.negation}
+      unless (negations.empty?)
+        negations.each {|p| p.instance_variable_set(:@negation, false) }
+        inverted_conjunction_code = HQMF::Precondition::INVERSIONS[conjunction_code]
+        
+        # if we only have negations, then do not create an extra element
+        if @preconditions.empty?
+          @negation = true
+          @conjunction_code = inverted_conjunction_code
+          @preconditions.concat negations
+        else
+          # create a new inverted element for the subset of the children that are negated
+          @preconditions << ParsedPrecondition.new(nil, negations, nil, inverted_conjunction_code, true)
+        end
+      end
+      @preconditions.each do |p|
+        p.handle_negations(self)
+      end
+    end
+
+  end
+
+  class ParsedPrecondition
+    attr_reader :id, :preconditions, :reference, :conjunction_code, :negation
+    def initialize(id, preconditions, reference, conjunction_code, negation)
+      @id = id
+      @preconditions = preconditions
+      @reference = reference
+      @conjunction_code = conjunction_code
+      @negation = negation
+    end
+    # negations already handled since parsed prconditions came from handling the parent's negations... just continue
+    def handle_negations(parent)
+      @preconditions.each do |p|
+        p.handle_negations(self)
+      end
+    end
     def to_model
       pcs = preconditions.collect {|p| p.to_model}
       mr = reference ? reference.to_model : nil

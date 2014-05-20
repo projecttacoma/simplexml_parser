@@ -66,7 +66,7 @@ module SimpleXml
       @populations = []
       @population_criteria = []
       
-      population_defs = @doc.xpath('measure/measureGrouping/group')
+      population_defs = @doc.xpath('measure/measureGrouping/group').to_a.sort! {|l,r| l.at_xpath('@sequence').value <=> r.at_xpath('@sequence').value}
       population_defs.each_with_index do |population_def, population_index|
 
         population = {}
@@ -80,13 +80,16 @@ module SimpleXml
 
         @doc.xpath('measure/measureObservations').children.reject {|e| e.name == 'text'}.each_with_index do |observ_def, observ_index|
           observ = PopulationCriteria.new(observ_def, self, population_index)
+
+          rewrite_observ(observ)
+
           @population_criteria << observ
           population[observ.type] = observ.id
           raise "multiple observations... don't know how to tie to populations" if observ_index > 0
         end
 
         population['id'] = "Population#{population_index}"
-        population['title'] = "Population #{population_index}" if population_defs.length > 1
+        population['title'] = "Population #{population_index+1}" if population_defs.length > 1
         @populations << population
 
       end
@@ -96,8 +99,17 @@ module SimpleXml
         @derived_data_criteria << @criteria_map[supplemental.at_xpath('@id').value]
       end
 
-      puts "\t NEED TO HANDLE STRATIFICATIONS"
-      # stratifier_id_def = population_def.at_xpath('cda:templateId/cda:item[@root="'+HQMF::Document::STRATIFIED_POPULATION_TEMPLATE_ID+'"]/@controlInformationRoot', NAMESPACES)
+      @stratifications = []
+      @doc.xpath('measure/strata/clause').each_with_index do |strata_def, index|
+        @stratifications << PopulationCriteria.new(strata_def, self, index)
+      end
+      @stratifications.reject! {|s| s.preconditions.empty? }
+
+      if (@stratifications.length > 0)
+        handle_stratifications
+      end
+
+
       # population['stratification'] = stratifier_id_def.value if stratifier_id_def
 
     end
@@ -149,6 +161,61 @@ module SimpleXml
         'high' => { 'type' => "TS", 'value' => "201212312359", 'inclusive?' => true, 'derived?' => false },
         'width' => { 'type' => "PQ", 'unit' => "a", 'value' => "1", 'inclusive?' => true, 'derived?' => false }
       });
+    end
+
+    def rewrite_observ(observ)
+      # we want to use the first leaf to calcualculate the value for the observation
+      first_leaf = observ.get_logic_leaves.first
+      # we want to pull the aggregation function off of the top level comparison
+      first_criteria = data_criteria(first_leaf.reference.id)
+
+      # pop the last subset operator which should be the closest to the root of the logic tree.  Add that aggregation function to the observation as the aggregator
+      observ.aggregator = first_criteria.subset_operators.pop.type
+      first_criteria.subset_operators = nil if first_criteria.subset_operators.empty?
+
+      # # we want to get rid of any AND statements at the top level.  This is calculating a numeric value, not evaluating boolean logic
+      observ.preconditions.clear
+      observ.preconditions << first_leaf
+    end
+
+    def handle_stratifications
+      ipp_keys = populations.map {|p| p}
+  
+      stratified_populations = []
+      populations.each do |population|
+        @stratifications.each_with_index do |stratification, strat_index|
+
+          ipp = population_criteria(population[HQMF::PopulationCriteria::IPP])
+          new_ipp = PopulationCriteria.new(ipp.entry, self, populations.length + strat_index)
+          new_ipp.hqmf_id = stratification.hqmf_id.upcase
+          
+          # we want to join together the ANDs for the IPP and the strat... unless the strat is negated, then just add it as a child
+          if (stratification.preconditions.first.negation)
+            strat_children = stratification.preconditions
+            negated = true
+          else
+            strat_children = stratification.preconditions.first.preconditions
+          end
+          new_ipp_children = new_ipp.preconditions.first.preconditions
+
+          new_ipp_children.concat(strat_children)
+          new_ipp_children.rotate!(-1*strat_children.length) unless negated
+
+          @population_criteria << new_ipp
+          new_population = population.dup
+          new_population[HQMF::PopulationCriteria::IPP] = new_ipp.id
+          new_population['stratification'] = stratification.hqmf_id.upcase
+          new_population['title'] = "Population #{populations.length + strat_index+1}"
+          new_population['id'] = "Population#{populations.length + strat_index+1}"
+
+          stratified_populations << new_population
+
+        #   ids = stratification.preconditions.map(&:id)
+        #   new_population.preconditions.delete_if {|precondition| ids.include? precondition.id}
+
+        end
+      end
+      populations.concat stratified_populations
     end
     
     private
