@@ -19,7 +19,7 @@ class HQMFVsSimpleTest < Test::Unit::TestCase
   measure_files = File.join(HQMF_ROOT, '*.xml')
   
   Dir.glob(measure_files).each do | measure_filename |
-    # next unless (measure_filename.ends_with? 'MedianAdmitDecisionTime_eMeasure.xml')
+    # next unless (measure_filename.ends_with? 'Ini_Eng_Alc_Drug_Dep_eMeasure.xml')
     measure_name = File.basename(measure_filename, ".xml")
     define_method("test_#{measure_name}") do
       do_roundtrip_test(measure_filename, measure_name)
@@ -140,6 +140,7 @@ class HQMFVsSimpleTest < Test::Unit::TestCase
     sha256 << "#{criteria.definition}:"
     sha256 << (criteria.status.nil? ? "<nil>:" : "#{criteria.status}:")
     sha256 << "#{criteria.negation}:"
+    sha256 << (criteria.specific_occurrence.nil? ? "<nil>:" : "#{criteria.specific_occurrence}:")
     sha256 << (criteria.negation_code_list_id.nil? ? "<nil>:" : "#{criteria.negation_code_list_id}:")
 
     # build hashes of each complex child... these will update refereces to other data criteria as the hash is built

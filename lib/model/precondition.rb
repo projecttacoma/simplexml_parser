@@ -89,7 +89,11 @@ module SimpleXml
       right_child = children[1]
 
       right = DataCriteria.get_criteria(right_child, @id, @doc, @subset, type, false)
+
       temporal = TemporalReference.new(type, comparison, quantity, unit, right)
+
+      # check to see if we are referening MP start or end and make sure that the timing is appropriate
+      update_temporal_mp_reference(temporal, right)
 
       if (left_child.name == LOGICAL_OP)
         # make this the left and then push down the right... we have no current node to construct
@@ -174,6 +178,30 @@ module SimpleXml
       end
       @preconditions.each do |p|
         p.handle_negations(self)
+      end
+    end
+
+    def update_temporal_mp_reference(temporal, right)
+
+      if (right.id== HQMF::Document::MEASURE_PERIOD_ID)
+        references_start = {'SBS'=>'SBE','SAS'=>'SAE','EBS'=>'EBE','EAS'=>'EAE','SCW'=>'SCWE'}
+        references_end = {'EBE'=>'EBS','EAE'=>'EAS','SBE'=>'SBS','SAE'=>'SAS','ECW'=>'ECWS'}
+
+        if @doc.measure_period_map[right.hqmf_id] == :measure_period_start && references_end[temporal.type]
+          # before or after the END of the measurement period START.  Convert to before or after the START of the measurement period.
+          # SAE of MPS => SAS of MP
+          # ends concurrent with measurement period START. Convert to concurrent with START of measurement period.
+          # ECW of MPS => ECWS
+          temporal.type = references_end[temporal.type]
+        elsif @doc.measure_period_map[right.hqmf_id] == :measure_period_end && references_start[temporal.type]
+          # before or after the START of the measurement period END.  Convert to before or after the END of the measurement period.
+          # SBS of MPE => SBE of MP
+          # starts concurrent with measurement period END. Convert to concurrent with END of measurement period.
+          # SCW of MPE => SCWE
+          temporal.type = references_start[temporal.type]
+        end
+
+
       end
     end
 

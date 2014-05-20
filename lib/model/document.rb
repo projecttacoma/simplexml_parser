@@ -39,60 +39,11 @@ module SimpleXml
       end
       
       # Extract the data criteria
-      @source_data_criteria = []
-      @derived_data_criteria = []
-      @attribute_map = {}
-      @doc.xpath('measure/elementLookUp/qdm').each do |entry|
-        data_type = entry.at_xpath('@datatype').value
-        if !['Timing Element', 'attribute'].include? data_type
-          criteria = DataCriteria.new(entry)
-          @source_data_criteria << criteria
-          @criteria_map[criteria.hqmf_id] = criteria
-        elsif data_type == 'attribute'
-          attribute = Attribute.new(entry.at_xpath('@id').value, entry.at_xpath('@oid').value, entry.at_xpath('@name').value)
-          @attribute_map[attribute.id] = attribute
-        elsif data_type == 'Timing Element'
-          name = entry.at_xpath('@name').value
-          if MEASURE_PERIOD_TITLES[name]
-            hqmf_id = entry.at_xpath('@uuid').value
-            @criteria_map[hqmf_id] = OpenStruct.new(id: HQMF::Document::MEASURE_PERIOD_ID, hqmf_id: hqmf_id)
-            @measure_period_map[hqmf_id] = MEASURE_PERIOD_TITLES[name]
-          end
-        end
-      end
-
+      extract_data_criteria
 
       # Extract the population criteria and population collections
-      @populations = []
-      @population_criteria = []
-      
-      population_defs = @doc.xpath('measure/measureGrouping/group').to_a.sort! {|l,r| l.at_xpath('@sequence').value <=> r.at_xpath('@sequence').value}
-      population_defs.each_with_index do |population_def, population_index|
+      extract_population_criteria
 
-        population = {}
-        population_def.xpath('clause').each do |criteria_def|
-
-          criteria = PopulationCriteria.new(criteria_def, self, population_index)
-          @population_criteria << criteria
-          population[criteria.type] = criteria.id
-
-        end
-
-        @doc.xpath('measure/measureObservations').children.reject {|e| e.name == 'text'}.each_with_index do |observ_def, observ_index|
-          observ = PopulationCriteria.new(observ_def, self, population_index)
-
-          rewrite_observ(observ)
-
-          @population_criteria << observ
-          population[observ.type] = observ.id
-          raise "multiple observations... don't know how to tie to populations" if observ_index > 0
-        end
-
-        population['id'] = "Population#{population_index}"
-        population['title'] = "Population #{population_index+1}" if population_defs.length > 1
-        @populations << population
-
-      end
 
       # add supplemental data elements
       @doc.xpath('measure/supplementalDataElements/elementRef').each do |supplemental|
@@ -109,8 +60,6 @@ module SimpleXml
         handle_stratifications
       end
 
-
-      # population['stratification'] = stratifier_id_def.value if stratifier_id_def
 
     end
     
@@ -176,17 +125,18 @@ module SimpleXml
       # # we want to get rid of any AND statements at the top level.  This is calculating a numeric value, not evaluating boolean logic
       observ.preconditions.clear
       observ.preconditions << first_leaf
+      observ
     end
 
     def handle_stratifications
-      ipp_keys = populations.map {|p| p}
+      ipp_keys = populations.map {|p| p[HQMF::PopulationCriteria::IPP]}.uniq
   
       stratified_populations = []
       populations.each do |population|
         @stratifications.each_with_index do |stratification, strat_index|
 
           ipp = population_criteria(population[HQMF::PopulationCriteria::IPP])
-          new_ipp = PopulationCriteria.new(ipp.entry, self, populations.length + strat_index)
+          new_ipp = PopulationCriteria.new(ipp.entry, self, ipp_keys.length + strat_index)
           new_ipp.hqmf_id = stratification.hqmf_id.upcase
           
           # we want to join together the ANDs for the IPP and the strat... unless the strat is negated, then just add it as a child
@@ -222,6 +172,82 @@ module SimpleXml
     
     def find(collection, attribute, value)
       collection.find {|e| e.send(attribute)==value}
+    end
+
+    def extract_data_criteria
+      @source_data_criteria = []
+      @derived_data_criteria = []
+      @attribute_map = {}
+      @doc.xpath('measure/elementLookUp/qdm').each do |entry|
+        data_type = entry.at_xpath('@datatype').value
+        if !['Timing Element', 'attribute'].include? data_type
+          criteria = DataCriteria.new(entry)
+          @source_data_criteria << criteria
+          @criteria_map[criteria.hqmf_id] = criteria
+        elsif data_type == 'attribute'
+          attribute = Attribute.new(entry.at_xpath('@id').value, entry.at_xpath('@oid').value, entry.at_xpath('@name').value)
+          @attribute_map[attribute.id] = attribute
+        elsif data_type == 'Timing Element'
+          name = entry.at_xpath('@name').value
+          if MEASURE_PERIOD_TITLES[name]
+            hqmf_id = entry.at_xpath('@uuid').value
+            @criteria_map[hqmf_id] = OpenStruct.new(id: HQMF::Document::MEASURE_PERIOD_ID, hqmf_id: hqmf_id)
+            @measure_period_map[hqmf_id] = MEASURE_PERIOD_TITLES[name]
+          end
+        end
+      end
+    end
+
+    def extract_population_criteria
+      @populations = []
+      @population_criteria = []
+      
+      duplicate_offset = 0
+      population_defs = @doc.xpath('measure/measureGrouping/group').to_a.sort! {|l,r| l.at_xpath('@sequence').value <=> r.at_xpath('@sequence').value}
+      population_defs.each_with_index do |population_def, population_index|
+        group_criteria = []
+        population_def.xpath('clause').each do |criteria_def|
+          group_criteria << PopulationCriteria.new(criteria_def, self, population_index+duplicate_offset)
+        end
+
+        @doc.xpath('measure/measureObservations').children.reject {|e| e.name == 'text'}.each_with_index do |observ_def, observ_index|
+          group_criteria << rewrite_observ(PopulationCriteria.new(observ_def, self, observ_index))
+        end
+
+        population = {}
+        duplicate_pop_criteria = []
+        group_criteria.each do |criteria|
+          if (population[criteria.type].nil?)
+            population[criteria.type] = criteria.id
+          else
+            # we have more than one of a given population criteria type... this is typically more than one numerator
+            duplicate_pop_criteria << criteria
+          end
+        end
+        population['id'] = "Population#{population_index+duplicate_offset}"
+        population['title'] = "Population #{population_index+1+duplicate_offset}" if population_defs.length > 1 || !duplicate_pop_criteria.empty?
+        @populations << population
+
+        # if we have duplicates of a criteria, we want to clone the population for those
+        unless duplicate_pop_criteria.empty?
+          handle_duplicate_pop_criteria(duplicate_pop_criteria, population, population_index, duplicate_offset)
+        end
+
+        @population_criteria.concat group_criteria
+
+      end
+    end
+
+    def handle_duplicate_pop_criteria(duplicate_pop_criteria, population, population_index, duplicate_offset)
+      duplicate_pop_criteria.each do |criteria|
+        duplicate_offset += 1
+        population = population.dup
+        criteria.id = "#{criteria.type}_#{population_index+duplicate_offset}"
+        population[criteria.type] = criteria.id
+        population['id'] = "Population#{population_index+duplicate_offset}"
+        population['title'] = "Population #{population_index+1+duplicate_offset}"
+        @populations << population
+      end
     end
   end
 end

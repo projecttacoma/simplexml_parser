@@ -155,7 +155,8 @@ module SimpleXml
   class TemporalReference
     include SimpleXml::Utilities
     
-    attr_reader :type, :reference, :range
+    attr_accessor :type
+    attr_reader :reference, :range
 
     def initialize(type, comparison, quantity, unit, reference)
       @type = translate_type(type)
