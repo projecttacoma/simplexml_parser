@@ -52,10 +52,10 @@ class HQMFVsSimpleTest < Test::Unit::TestCase
     simple_xml_model.all_data_criteria.reject! {|dc| !referenced_ids.include? dc.id }
 
     # fix the descriptions on hqmf data criteria to align with better simpleXML descripions
-    # also remove empty units in hqmf
+    # also remove empty units in hqmf and AnyValue entries on TIMEDIFF
     (hqmf_model.all_data_criteria + hqmf_model.source_data_criteria).each do |dc|
       fix_hqmf_description(dc)
-      remove_empty_unit(dc)
+      fix_subset_operators(dc)
     end
 
     # HQMF leaf preconditions sometimes have conjunction codes as well as a reference... 
@@ -182,11 +182,12 @@ class HQMFVsSimpleTest < Test::Unit::TestCase
   end
 
   # from hqmf the unit on counts can sometimes be " "... we want to clear these
-  def remove_empty_unit(dc)
+  def fix_subset_operators(dc)
     if (dc.subset_operators)
       dc.subset_operators.each do |subset|
         subset.value.high.instance_variable_set(:@unit, nil) if subset.value.respond_to?(:high) && subset.value.try(:high).try(:unit).try(:strip).try(:empty?)
         subset.value.low.instance_variable_set(:@unit, nil) if subset.value.respond_to?(:low) && subset.value.try(:low).try(:unit).try(:strip).try(:empty?)
+        subset.value = nil if subset.type == 'TIMEDIFF' && subset.value.is_a?(HQMF::AnyValue)
       end
     end
   end

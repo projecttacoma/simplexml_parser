@@ -41,25 +41,11 @@ module SimpleXml
       # Extract the data criteria
       extract_data_criteria
 
-      # Extract the population criteria and population collections
-      extract_population_criteria
+      # Extract race, ethnicity, etc
+      extract_supplemental_data
 
-
-      # add supplemental data elements
-      @doc.xpath('measure/supplementalDataElements/elementRef').each do |supplemental|
-        @derived_data_criteria << @criteria_map[supplemental.at_xpath('@id').value]
-      end
-
-      @stratifications = []
-      @doc.xpath('measure/strata/clause').each_with_index do |strata_def, index|
-        @stratifications << PopulationCriteria.new(strata_def, self, index)
-      end
-      @stratifications.reject! {|s| s.preconditions.empty? }
-
-      if (@stratifications.length > 0)
-        handle_stratifications
-      end
-
+      # extract all the logic and set up populations
+      handle_populations
 
     end
     
@@ -198,6 +184,26 @@ module SimpleXml
       end
     end
 
+    def extract_supplemental_data
+      # add supplemental data elements
+      @doc.xpath('measure/supplementalDataElements/elementRef').each do |supplemental|
+        @derived_data_criteria << @criteria_map[supplemental.at_xpath('@id').value]
+      end
+    end
+
+    def handle_populations
+      # Extract any stratifications, 
+      # stratifications must be extracted before population criteria for titles to be generated properly
+      extract_stratifications
+
+      # Extract the population criteria and population collections
+      extract_population_criteria
+
+      if (@stratifications.length > 0)
+        handle_stratifications
+      end
+    end
+
     def extract_population_criteria
       @populations = []
       @population_criteria = []
@@ -224,8 +230,8 @@ module SimpleXml
             duplicate_pop_criteria << criteria
           end
         end
-        population['id'] = "Population#{population_index+duplicate_offset}"
-        population['title'] = "Population #{population_index+1+duplicate_offset}" if population_defs.length > 1 || !duplicate_pop_criteria.empty?
+        population['id'] = "Population#{population_index+1+duplicate_offset}"
+        population['title'] = "Population #{population_index+1+duplicate_offset}" if population_defs.length > 1 || !duplicate_pop_criteria.empty? || !@stratifications.empty?
         @populations << population
 
         # if we have duplicates of a criteria, we want to clone the population for those
@@ -238,13 +244,21 @@ module SimpleXml
       end
     end
 
+    def extract_stratifications
+      @stratifications = []
+      @doc.xpath('measure/strata/clause').each_with_index do |strata_def, index|
+        @stratifications << PopulationCriteria.new(strata_def, self, index)
+      end
+      @stratifications.reject! {|s| s.preconditions.empty? }
+    end
+
     def handle_duplicate_pop_criteria(duplicate_pop_criteria, population, population_index, duplicate_offset)
       duplicate_pop_criteria.each do |criteria|
         duplicate_offset += 1
         population = population.dup
         criteria.id = "#{criteria.type}_#{population_index+duplicate_offset}"
         population[criteria.type] = criteria.id
-        population['id'] = "Population#{population_index+duplicate_offset}"
+        population['id'] = "Population#{population_index+1+duplicate_offset}"
         population['title'] = "Population #{population_index+1+duplicate_offset}"
         @populations << population
       end
