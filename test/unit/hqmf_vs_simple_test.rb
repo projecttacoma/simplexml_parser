@@ -19,7 +19,7 @@ class HQMFVsSimpleTest < Test::Unit::TestCase
   measure_files = File.join(HQMF_ROOT, '*.xml')
   
   Dir.glob(measure_files).each do | measure_filename |
-    # next unless (measure_filename.ends_with? 'Ini_Eng_Alc_Drug_Dep_eMeasure.xml')
+    # next unless (measure_filename.ends_with? 'SCIPAntibioticSelection_eMeasure.xml')
     measure_name = File.basename(measure_filename, ".xml")
     define_method("test_#{measure_name}") do
       do_roundtrip_test(measure_filename, measure_name)
@@ -56,6 +56,7 @@ class HQMFVsSimpleTest < Test::Unit::TestCase
     (hqmf_model.all_data_criteria + hqmf_model.source_data_criteria).each do |dc|
       fix_hqmf_description(dc)
       fix_subset_operators(dc)
+      fix_fields(dc)
     end
 
     # HQMF leaf preconditions sometimes have conjunction codes as well as a reference... 
@@ -132,9 +133,9 @@ class HQMFVsSimpleTest < Test::Unit::TestCase
     return criteria.id unless criteria_map[criteria.id]
 
     # generate a SHA256 hash of key fields in the data criteria
-    sha256 = Digest::SHA256.new
+    #sha256 = Digest::SHA256.new
     # uncomment to keep string undigested for comparison
-    #sha256 = ''
+    sha256 = ''
 
     sha256 << "#{criteria.code_list_id}:"
     sha256 << "#{criteria.definition}:"
@@ -150,8 +151,8 @@ class HQMFVsSimpleTest < Test::Unit::TestCase
     sha256 << (criteria.temporal_references.nil? ? "<nil>:" : "#{hash_temporals(criteria.temporal_references, criteria_map)}:")
     sha256 << (criteria.field_values.nil? ? "<nil>:" : "#{hash_fields(criteria.field_values)}:")
 
-    sha256.hexdigest
-    #sha256
+    #sha256.hexdigest
+    sha256
   end
 
   def hash_subsets(list)
@@ -179,6 +180,12 @@ class HQMFVsSimpleTest < Test::Unit::TestCase
   def hash_values(value)
     value.instance_variable_set(:@title, '') if value.type == 'CD'
     Digest::SHA256.hexdigest value.to_json.to_json
+  end
+
+  def fix_fields(dc)
+    dc.field_values.keys.each do |key|
+      dc.field_values[key] = HQMF::AnyValue.new if dc.field_values[key].nil?
+    end if dc.field_values
   end
 
   # from hqmf the unit on counts can sometimes be " "... we want to clear these

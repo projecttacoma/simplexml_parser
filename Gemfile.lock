@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/projectcypress/health-data-standards.git
-  revision: 24edd91b5aa4ee0c89e5be79aa46f9437822e71f
+  revision: bdd193aec214bcc0c78dbeb198a22d7fe0c3389c
   branch: hqmf_r2.1
   specs:
-    health-data-standards (3.4.5)
+    health-data-standards (3.4.6)
       activesupport (~> 3.2.14)
       builder (~> 3.0.0)
       erubis (~> 2.7.0)

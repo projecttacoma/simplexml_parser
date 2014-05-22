@@ -25,8 +25,7 @@ module SimpleXml
       end
 
       # if we have a subset then we want this to be a grouping data criteria
-      # we can also have an inferred_and if we have a not with multiple children
-      if (@entry.name == LOGICAL_OP || @inferred_and) && @subset.nil?
+      if (@entry.name == LOGICAL_OP) && @subset.nil?
         handle_logical
       elsif @entry.name == TEMPORAL_OP && @subset.nil?
         handle_temporal
@@ -52,9 +51,6 @@ module SimpleXml
       children = @entry.children.reject {|e| e.name == 'text'}
       if children.count == 1
         @entry = children.first
-      else
-        # we have negations that do not have an AND under them... the AND is inferred
-        @inferred_and = true
       end
 
     end
@@ -122,9 +118,7 @@ module SimpleXml
     def negation_with_logical_children?(precondition)
       if precondition.name == FUNCTIONAL_OP && precondition.at_xpath('@type').value == 'NOT'
         children = precondition.children.reject {|e| e.name == 'text'}
-        if (children.length > 1)
-          return children.count == children.select {|c| c.name == LOGICAL_OP}.count
-        end
+        return children.length > 1
       end
       false
     end
@@ -136,11 +130,7 @@ module SimpleXml
       when 'or'
         HQMF::Precondition::AT_LEAST_ONE_TRUE
       else
-        if @inferred_and
-          HQMF::Precondition::ALL_TRUE
-        else
-          raise "Unknown population criteria type #{type}"
-        end
+        raise "Unknown population criteria type #{type}"
       end
     end
 
