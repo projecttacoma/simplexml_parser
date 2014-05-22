@@ -12,7 +12,7 @@ module SimpleXml
     NUMER = 'numerator'
     MSRPOPL = 'measurePopulation'
     OBSERV = 'measureObservation'
-    STRATUM = "stratum"
+    STRAT = "stratum"
 
 
     TITLES = {
@@ -66,8 +66,8 @@ module SimpleXml
         HQMF::PopulationCriteria::MSRPOPL
       when OBSERV
         HQMF::PopulationCriteria::OBSERV
-      when STRATUM
-        STRATUM.upcase
+      when STRAT
+        HQMF::PopulationCriteria::STRAT
       else
         raise "Unknown population criteria type #{type}"
       end

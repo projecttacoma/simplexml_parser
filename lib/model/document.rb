@@ -114,46 +114,6 @@ module SimpleXml
       observ
     end
 
-    def handle_stratifications
-      ipp_keys = populations.map {|p| p[HQMF::PopulationCriteria::IPP]}.uniq
-  
-      stratified_populations = []
-      populations.each do |population|
-        @stratifications.each_with_index do |stratification, strat_index|
-
-          ipp = population_criteria(population[HQMF::PopulationCriteria::IPP])
-          new_ipp = PopulationCriteria.new(ipp.entry, self, ipp_keys.length + strat_index)
-          new_ipp.hqmf_id = stratification.hqmf_id.upcase
-          
-          # we want to join together the ANDs for the IPP and the strat... unless the strat is negated, then just add it as a child
-          if (stratification.preconditions.first.negation)
-            strat_children = stratification.preconditions
-            negated = true
-          else
-            strat_children = stratification.preconditions.first.preconditions
-          end
-          new_ipp_children = new_ipp.preconditions.first.preconditions
-
-          new_ipp_children.concat(strat_children)
-          new_ipp_children.rotate!(-1*strat_children.length) unless negated
-
-          @population_criteria << new_ipp
-          new_population = population.dup
-          new_population[HQMF::PopulationCriteria::IPP] = new_ipp.id
-          new_population['stratification'] = stratification.hqmf_id.upcase
-          new_population['title'] = "Population #{populations.length + strat_index+1}"
-          new_population['id'] = "Population#{populations.length + strat_index+1}"
-
-          stratified_populations << new_population
-
-        #   ids = stratification.preconditions.map(&:id)
-        #   new_population.preconditions.delete_if {|precondition| ids.include? precondition.id}
-
-        end
-      end
-      populations.concat stratified_populations
-    end
-    
     private
     
     def find(collection, attribute, value)
@@ -199,8 +159,17 @@ module SimpleXml
       # Extract the population criteria and population collections
       extract_population_criteria
 
+      @population_criteria.concat(@stratifications)
+
       if (@stratifications.length > 0)
         handle_stratifications
+      end
+
+      if @populations.length > 1
+        @populations.each_with_index do |population, index|
+          population['id'] = "Population#{index+1}"
+          population['title'] = "Population #{index+1}"
+        end
       end
     end
 
@@ -230,8 +199,6 @@ module SimpleXml
             duplicate_pop_criteria << criteria
           end
         end
-        population['id'] = "Population#{population_index+1+duplicate_offset}"
-        population['title'] = "Population #{population_index+1+duplicate_offset}" if population_defs.length > 1 || !duplicate_pop_criteria.empty? || !@stratifications.empty?
         @populations << population
 
         # if we have duplicates of a criteria, we want to clone the population for those
@@ -246,10 +213,28 @@ module SimpleXml
 
     def extract_stratifications
       @stratifications = []
-      @doc.xpath('measure/strata/clause').each_with_index do |strata_def, index|
-        @stratifications << PopulationCriteria.new(strata_def, self, index)
+      index = 0
+      @doc.xpath('measure/strata/clause').each do |strata_def|
+        strat = PopulationCriteria.new(strata_def, self, index)
+        unless strat.preconditions.empty?
+          @stratifications << strat
+          index += 1
+        end
       end
-      @stratifications.reject! {|s| s.preconditions.empty? }
+    end
+
+    def handle_stratifications
+  
+      stratified_populations = []
+      @populations.each do |population|
+        @stratifications.each do |stratification|
+          new_population = population.dup
+          new_population[HQMF::PopulationCriteria::STRAT] = stratification.id
+          new_population['stratification'] = stratification.hqmf_id.upcase
+          stratified_populations << new_population
+        end
+      end
+      @populations.concat stratified_populations
     end
 
     def handle_duplicate_pop_criteria(duplicate_pop_criteria, population, population_index, duplicate_offset)
@@ -258,8 +243,6 @@ module SimpleXml
         population = population.dup
         criteria.id = "#{criteria.type}_#{population_index+duplicate_offset}"
         population[criteria.type] = criteria.id
-        population['id'] = "Population#{population_index+1+duplicate_offset}"
-        population['title'] = "Population #{population_index+1+duplicate_offset}"
         @populations << population
       end
     end

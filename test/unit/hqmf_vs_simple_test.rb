@@ -19,7 +19,7 @@ class HQMFVsSimpleTest < Test::Unit::TestCase
   measure_files = File.join(HQMF_ROOT, '*.xml')
   
   Dir.glob(measure_files).each do | measure_filename |
-    # next unless (measure_filename.ends_with? 'SCIPAntibioticSelection_eMeasure.xml')
+    # next unless (measure_filename.ends_with? 'ED3_eMeasure.xml')
     measure_name = File.basename(measure_filename, ".xml")
     define_method("test_#{measure_name}") do
       do_roundtrip_test(measure_filename, measure_name)
