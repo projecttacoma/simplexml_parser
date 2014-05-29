@@ -33,7 +33,6 @@ class HQMFVsSimpleTest < Test::Unit::TestCase
     # rebuild hqmf model so that source data criteria are different objects
     hqmf_model = HQMF::Document.from_json(JSON.parse(hqmf_model.to_json.to_json))
 
-    # parse the model from the simple XML
     simple_xml = File.join(SIMPLE_XML_ROOT, "#{hqmf_model.cms_id}.xml")
     simple_xml_model = SimpleXml::Parser.parse(File.read(simple_xml), SimpleXml::Parser::SIMPLEXML_VERSION_1)
 
@@ -90,8 +89,19 @@ class HQMFVsSimpleTest < Test::Unit::TestCase
       File.open(outfile, 'w') {|f| f.write(JSON.pretty_generate(hqmf_json)) }
       outfile = File.join("#{RESULTS_DIR}","#{measure_name}_simplexml.json")
       File.open(outfile, 'w') {|f| f.write(JSON.pretty_generate(simple_xml_json)) }
+      outfile = File.join("#{RESULTS_DIR}","#{measure_name}_crit_diff.json")
+      File.open(outfile, 'w') {|f|
+        f.puts((hqmf_model.all_data_criteria-hqmf_model.source_data_criteria).collect{|dc| dc.id})
+        f.puts
+        f.puts((simple_xml_model.all_data_criteria-simple_xml_model.source_data_criteria).collect{|dc| dc.id})
+        f.puts
+        f.puts((hqmf_v1_model.all_data_criteria).collect{|dc| dc.id})
+      }
     end
-
+      
+    #puts "#{measure_name} -- #{hqmf_model.derived_data_criteria.count}  --  #{simple_xml_model.derived_data_criteria.count} -- #{(hqmf_model.derived_data_criteria.count.to_f/simple_xml_model.derived_data_criteria.count.to_f).to_f}"
+    #puts "#{measure_name} -- #{hqmf_model.source_data_criteria.count}  --  #{simple_xml_model.source_data_criteria.count} -- #{(hqmf_model.source_data_criteria.count.to_f/simple_xml_model.source_data_criteria.count.to_f).to_f}"
+    # puts "#{measure_name} -- #{hqmf_model.all_data_criteria.count}  --  #{simple_xml_model.all_data_criteria.count} -- #{(hqmf_model.all_data_criteria.count.to_f/simple_xml_model.all_data_criteria.count.to_f).to_f}"
     assert diff.empty?, 'Differences in model between HQMF and SimpleXml... we need a better comparison mechanism'
     
   end
