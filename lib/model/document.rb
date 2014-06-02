@@ -15,9 +15,9 @@ module SimpleXml
       @hqmf_set_id = details.at_xpath('guid').text.upcase
       @hqmf_version_number = details.at_xpath('version').text.to_i
       @title = details.at_xpath('title').text
-      @description = details.at_xpath('description').text
-      @cms_id = "CMS#{details.at_xpath('emeasureid').text}v#{@hqmf_version_number}"
-      @nqf_id = details.at_xpath('nqfid/@extension').value
+      @description = details.at_xpath('description').try(:text)
+      @cms_id = "CMS#{details.at_xpath('emeasureid').try(:text)}v#{@hqmf_version_number}"
+      @nqf_id = details.at_xpath('nqfid/@extension').try(:value)
 
       @attributes = []
       details.children.reject {|e| e.name == 'text'}.each do |attribute|
@@ -77,9 +77,8 @@ module SimpleXml
     
     # Parse an XML document at the supplied path
     # @return [Nokogiri::XML::Document]
-    def self.parse(hqmf_contents)
-      doc = Nokogiri::XML(hqmf_contents)
-      doc
+    def self.parse(xml_contents)
+      xml_contents.kind_of?(Nokogiri::XML::Document) ? xml_contents : Nokogiri::XML(xml_contents)
     end
 
     def to_model

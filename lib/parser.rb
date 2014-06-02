@@ -29,8 +29,7 @@ module SimpleXml
         result
       end
 
-      def self.valid?(xml_contents)
-        doc = Document.parse(xml_contents)
+      def self.valid?(doc)
         !doc.at_xpath('measure/measureDetails').nil?
       end
 
