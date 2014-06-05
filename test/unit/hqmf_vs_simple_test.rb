@@ -29,12 +29,12 @@ class HQMFVsSimpleTest < Test::Unit::TestCase
   def do_roundtrip_test(measure_filename, measure_name)
     puts ">> #{measure_name}"
     # parse the model from the V1 XML
-    hqmf_model = HQMF::Parser.parse(File.open(measure_filename).read, HQMF::Parser::HQMF_VERSION_1)
+    hqmf_model = HQMF::Parser::V1Parser.new.parse(File.open(measure_filename).read)
     # rebuild hqmf model so that source data criteria are different objects
     hqmf_model = HQMF::Document.from_json(JSON.parse(hqmf_model.to_json.to_json))
 
     simple_xml = File.join(SIMPLE_XML_ROOT, "#{hqmf_model.cms_id}.xml")
-    simple_xml_model = SimpleXml::Parser.parse(File.read(simple_xml), SimpleXml::Parser::SIMPLEXML_VERSION_1)
+    simple_xml_model = SimpleXml::Parser::V1Parser.new.parse(File.read(simple_xml))
 
     # ignore the attributes... these are not that important
     hqmf_model.instance_variable_set(:@attributes, [])
