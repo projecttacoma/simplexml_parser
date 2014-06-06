@@ -31,7 +31,7 @@ class HQMFVsSimpleTest < Test::Unit::TestCase
     # parse the model from the V1 XML
     hqmf_model = HQMF::Parser::V1Parser.new.parse(File.open(measure_filename).read)
     # rebuild hqmf model so that source data criteria are different objects
-    hqmf_model = HQMF::Document.from_json(JSON.parse(hqmf_model.to_json.to_json))
+    hqmf_model = HQMF::Document.from_json(JSON.parse(hqmf_model.to_json.to_json, {max_nesting: 100}))
 
     simple_xml = File.join(SIMPLE_XML_ROOT, "#{hqmf_model.cms_id}.xml")
     simple_xml_model = SimpleXml::Parser::V1Parser.new.parse(File.read(simple_xml))
@@ -77,8 +77,8 @@ class HQMFVsSimpleTest < Test::Unit::TestCase
 
     # COMPARE
 
-    hqmf_json = JSON.parse(hqmf_model.to_json.to_json)
-    simple_xml_json = JSON.parse(simple_xml_model.to_json.to_json)
+    hqmf_json = JSON.parse(hqmf_model.to_json.to_json, {max_nesting: 100})
+    simple_xml_json = JSON.parse(simple_xml_model.to_json.to_json, {max_nesting: 100})
 
     diff = hqmf_json.diff_hash(simple_xml_json, true, true)
 
