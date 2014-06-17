@@ -163,7 +163,7 @@ module SimpleXml
           @preconditions.concat negations
         else
           # create a new inverted element for the subset of the children that are negated
-          @preconditions << ParsedPrecondition.new(nil, negations, nil, inverted_conjunction_code, true)
+          @preconditions << ParsedPrecondition.new(HQMF::Counter.instance.next, negations, nil, inverted_conjunction_code, true)
         end
       end
       @preconditions.each do |p|
