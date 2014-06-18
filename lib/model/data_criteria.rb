@@ -2,7 +2,7 @@ module SimpleXml
   # Represents a data criteria specification
   class DataCriteria
 
-    attr_accessor :id, :field_values, :value, :negation, :negation_code_list_id, :derivation_operator, :children_criteria, :subset_operators
+    attr_accessor :id, :field_values, :value, :negation, :negation_code_list_id, :derivation_operator, :children_criteria, :subset_operators, :comments
     attr_reader :hqmf_id, :title, :display_name, :description, :code_list_id, 
         :definition, :status, :effective_time, :inline_code_list, 
         :temporal_references, :specific_occurrence, 
@@ -40,7 +40,7 @@ module SimpleXml
       @title = name
       @code_list_id = attr_val('@oid')
 
-      @hqmf_id = attr_val('@id')
+      @hqmf_id = attr_val('@uuid')
 
       parts = type.split(',')
       def_and_status = parse_definition_and_status(type)
@@ -75,7 +75,7 @@ module SimpleXml
       if element.name == Precondition::TEMPORAL_OP
         # we have a chain of temporal references
         criteria = convert_precondition_to_criteria(Precondition.new(element, doc), doc, operator)
-      elsif element.name == Precondition::LOGICAL_OP
+      elsif element.name == Precondition::LOGICAL_OP || element.name == Precondition::SET_OP
         # we have a logical group on the right
         criteria = convert_precondition_to_criteria(Precondition.new(element, doc), doc, operator)
       elsif element.name == Precondition::FUNCTIONAL_OP
@@ -179,7 +179,7 @@ module SimpleXml
       HQMF::DataCriteria.new(@id, @title, @display_name, @description, @code_list_id, @children_criteria, 
         @derivation_operator, @definition, @status, val, fv, @effective_time, @inline_code_list, 
         @negation, @negation_code_list_id, trs, subs, @specific_occurrence, 
-        @specific_occurrence_const, @source_data_criteria)
+        @specific_occurrence_const, @source_data_criteria, comments)
     end
 
     def self.format_so_const(description)

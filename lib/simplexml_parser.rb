@@ -11,5 +11,6 @@ require_relative 'model/document'
 require_relative 'model/data_criteria'
 require_relative 'model/population_criteria'
 require_relative 'model/precondition'
+require_relative 'model/sub_tree'
 require_relative 'parser'
 

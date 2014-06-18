@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<measure>
+    <measureDetails>
+        <uuid>8ae45494-459a-051b-0145-9a06561b0004</uuid>
+        <title>chinmay msr 2</title>
+        <shortTitle>chinmay msr 2</shortTitle>
+        <description>chinmay msr 2</description>
+        <guid>3070e2cb-b479-4d7f-815b-55d0bb47aebd</guid>
+        <emeasureid>999</emeasureid>
+        <version>0.0.000</version>
+        <status>In Progress</status>
+        <nqfid root="2.16.840.1.113883.3.560.1"/>
+        <scoring id="CONTVAR">Continuous Variable</scoring>
+        <componentMeasures/>
+        <itemCount/>
+        <period uuid="8a4d8c81309da15201309e46121d00d4">
+          <startDate uuid="ba61232f-8521-4c53-b9fb-24fe911a86f8">00000101</startDate>
+          <stopDate uuid="40280381-3d61-56a7-013e-6224e2cb2602">00001231</stopDate>
+        </period>
+    </measureDetails>
+    <populations displayName="Populations">
+        <initialPopulations displayName="Initial Populations">
+        </initialPopulations>
+        <measurePopulations displayName="Measure Populations">
+        </measurePopulations>
+        <measurePopulationExclusions displayName="Measure Population Exclusions">
+        </measurePopulationExclusions>
+    </populations>
+    <measureObservations displayName="Measure Observations">
+        <clause displayName="Measure Observation 1" type="measureObservation"
+            uuid="8821CC4A-25E5-43D7-A844-7D35AEA82580">
+            <logicalOp displayName="AND" type="and"/>
+        </clause>
+    </measureObservations>
+    <strata displayName="Stratification">
+        <stratification displayName="Stratification 1" type="stratification"
+            uuid="983FB8CC-134E-4C72-8FFE-CD668FB97165">
+            <clause displayName="Stratum 1" type="stratum"
+                uuid="0E1A24D4-88DB-4617-8271-F6CFA7D0CE58"/>
+        </stratification>
+    </strata>
+    <supplementalDataElements>
+        <elementRef id="5d8e49f4-90ac-46ea-8b48-689e7e94bf62" name="ONC Administrative Sex"/>
+        <elementRef id="67b8b576-8231-41ae-a22c-2d5bdd0eb032" name="Race"/>
+        <elementRef id="191698fc-d641-4c75-9be2-db61e7a064d2" name="Ethnicity"/>
+        <elementRef id="d03fd75b-1aa5-4a90-941b-08526b5ba492" name="Payer"/>
+    </supplementalDataElements>
+    <measureGrouping>
+      <group sequence="1">
+            <clause displayName="Initial Population 1" type="initialPatientPopulation"
+                uuid="E725DCA9-8763-44C7-BDAC-C807226D4EB4">
+                <logicalOp displayName="AND" type="and">
+                    <comment displayName="comment" type="comment"/>
+                    <subTreeRef displayName="clause 2" id="2D11E3B9-F0A9-42AC-AC3E-8FAB9D1042B3"
+                        type="subTree"/>
+                    <subTreeRef displayName="clause 3" id="97DD9B43-57E2-4694-BFA9-BF75859F8FC6"
+                        type="subTree"/>
+                    <subTreeRef displayName="clause1" id="A3C5E0AC-5A87-494D-ABEC-9FEB3BD9B065"
+                        type="subTree"/>
+                </logicalOp>
+            </clause>
+            <clause displayName="Measure Population 1" type="measurePopulation"
+                uuid="CDB76E7D-C795-4AE0-B045-8DF096618E17">
+                <logicalOp displayName="AND" type="and"/>
+            </clause>
+<!--             <clause displayName="Measure Population Exclusions 1" type="measurePopulationExclusions"
+                uuid="6C8E8E26-0E1A-4876-8E68-EA1498DDD0D3">
+                <logicalOp displayName="OR" type="or"/>
+            </clause>
+ -->      </group>
+    </measureGrouping>
+
+    <subTreeLookUp>
+        <subTree displayName="clause 2" uuid="2D11E3B9-F0A9-42AC-AC3E-8FAB9D1042B3">
+            <elementRef displayName="TEST QDM : Diagnosis, Active"
+                id="245d4651-18bd-4fc5-bd05-9e7cd9605986" type="qdm"/>
+        </subTree>
+        <subTree displayName="clause 3" uuid="97DD9B43-57E2-4694-BFA9-BF75859F8FC6">
+            <elementRef displayName="TEST QDM 1 : Device, Recommended"
+                id="681d4092-efe3-4d48-bf25-bdc81b93581b" type="qdm"/>
+        </subTree>
+        <subTree displayName="clause1" uuid="A3C5E0AC-5A87-494D-ABEC-9FEB3BD9B065">
+            <setOp displayName="UNION" type="union">
+                <relationalOp displayName="&lt; 10 weeks Starts Concurrent with End"
+                    operatorType="Less Than" quantity="10" type="SCWE" unit="weeks">
+                    <elementRef displayName="TEST QDM : Diagnosis, Active"
+                        id="245d4651-18bd-4fc5-bd05-9e7cd9605986" type="qdm"/>
+                    <elementRef displayName="Measurement Period : Timing Element"
+                        id="6f3704ee-b03c-4fdd-a436-3e5325d258ef" type="qdm"/>
+                </relationalOp>
+                <setOp displayName="INTERSECTION" type="intersection">
+                    <relationalOp displayName="&gt;= 10 days Overlaps"
+                        operatorType="Greater Than or Equal To" quantity="10" type="Overlaps"
+                        unit="days">
+                        <elementRef displayName="TEST QDM : Diagnosis, Active"
+                            id="245d4651-18bd-4fc5-bd05-9e7cd9605986" type="qdm"/>
+                        <elementRef displayName="Measurement End Date : Timing Element"
+                            id="2a509bc0-3def-401a-b68f-dc923b270d77" type="qdm"/>
+                    </relationalOp>
+                    <relationalOp displayName="= 10 hours Ends Concurrent with Start"
+                        operatorType="Equal To" quantity="10" type="ECWS" unit="hours">
+                        <elementRef displayName="TEST QDM : Diagnosis, Active"
+                            id="245d4651-18bd-4fc5-bd05-9e7cd9605986" type="qdm"/>
+                        <elementRef displayName="Measurement Period : Timing Element"
+                            id="6f3704ee-b03c-4fdd-a436-3e5325d258ef" type="qdm"/>
+                    </relationalOp>
+                </setOp>
+                <functionalOp displayName="MIN" type="MIN">
+                    <setOp displayName="UNION" type="union">
+                        <elementRef displayName="TEST QDM : Diagnosis, Active"
+                            id="245d4651-18bd-4fc5-bd05-9e7cd9605986" type="qdm"/>
+                    </setOp>
+                </functionalOp>
+            </setOp>
+        </subTree>
+    </subTreeLookUp>
+    <elementLookUp>
+        <qdm datatype="Timing Element" id="8a4d8c81309da15201309e46121d00d4"
+            name="Measurement Period" oid="2.16.840.1.113883.3.67.1.101.1.53"
+            suppDataElement="false" taxonomy="NQF" uuid="6f3704ee-b03c-4fdd-a436-3e5325d258ef"
+            version="1.0"/>
+        <qdm datatype="Timing Element" id="8a4d8c81309da15201309e46124800e4"
+            name="Measurement Start Date" oid="2.16.840.1.113883.3.67.1.101.1.54"
+            suppDataElement="false" taxonomy="NQF" uuid="e778c530-12d6-4438-9c02-baf39e64ffe6"
+            version="1.0"/>
+        <qdm datatype="Timing Element" id="8a4d8c81309da15201309e46126d00f4"
+            name="Measurement End Date" oid="2.16.840.1.113883.3.67.1.101.1.55"
+            suppDataElement="false" taxonomy="NQF" uuid="2a509bc0-3def-401a-b68f-dc923b270d77"
+            version="1.0"/>
+        <qdm datatype="Patient Characteristic Sex" id="bae50f18267111e1a17a78acc0b65c43"
+            name="ONC Administrative Sex" oid="2.16.840.1.113762.1.4.1" suppDataElement="true"
+            taxonomy="Administrative Sex" uuid="5d8e49f4-90ac-46ea-8b48-689e7e94bf62" version="1.0"/>
+        <qdm datatype="Patient Characteristic Race" id="bae85d87267111e1a17a78acc0b65c43"
+            name="Race" oid="2.16.840.1.114222.4.11.836" suppDataElement="true" taxonomy="CDC"
+            uuid="67b8b576-8231-41ae-a22c-2d5bdd0eb032" version="1.0"/>
+        <qdm datatype="Patient Characteristic Ethnicity" id="bae86046267111e1a17a78acc0b65c43"
+            name="Ethnicity" oid="2.16.840.1.114222.4.11.837" suppDataElement="true" taxonomy="CDC"
+            uuid="191698fc-d641-4c75-9be2-db61e7a064d2" version="1.0"/>
+        <qdm datatype="Patient Characteristic Payer" id="bae86261267111e1a17a78acc0b65c43"
+            name="Payer" oid="2.16.840.1.114222.4.11.3591" suppDataElement="true"
+            taxonomy="Source of Payment Typology" uuid="d03fd75b-1aa5-4a90-941b-08526b5ba492"
+            version="1.0"/>
+        <qdm datatype="Diagnosis, Active" id="5bbef967-d495-4f88-9d37-37498cb12d96" name="TEST QDM"
+            oid="1.1.1.1" suppDataElement="false" taxonomy="User Defined QDM"
+            uuid="245d4651-18bd-4fc5-bd05-9e7cd9605986" version="1.0"/>
+        <qdm datatype="Device, Recommended" id="d0947d58-5878-4823-b726-68099aa4fd07"
+            name="TEST QDM 1" oid="1.1.1.1" suppDataElement="false" taxonomy="User Defined QDM"
+            uuid="681d4092-efe3-4d48-bf25-bdc81b93581b" version="1.0"/>
+    </elementLookUp>
+</measure>

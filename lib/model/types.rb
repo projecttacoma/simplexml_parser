@@ -165,8 +165,11 @@ module SimpleXml
     end
 
     def translate_type(type)
+      # todo: we now have SBDU
       type = 'SBE' if type == 'SBOD'
       type = 'EBE' if type == 'EBOD'
+      type = 'OVERLAP' if type == 'Overlaps'
+
       raise "unknown temporal reference type #{type}" unless HQMF::TemporalReference::TYPES.include? type
       type
     end

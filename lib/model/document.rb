@@ -2,7 +2,7 @@ module SimpleXml
   # Class representing an HQMF document
   class Document
     include SimpleXml::Utilities
-    attr_reader :measure_period, :id, :nqf_id, :hqmf_set_id, :hqmf_version_number, :cms_id, :title, :description, :populations, :attributes, :source_data_criteria, :derived_data_criteria, :criteria_map, :attribute_map, :measure_period_map
+    attr_reader :measure_period, :id, :nqf_id, :hqmf_set_id, :hqmf_version_number, :cms_id, :title, :description, :populations, :attributes, :source_data_criteria, :derived_data_criteria, :criteria_map, :attribute_map, :measure_period_map, :sub_tree_map
 
     MEASURE_PERIOD_TITLES = {'Measurement Period'=>:measure_period, 'Measurement Start Date'=>:measure_period_start, 'Measurement End Date'=>:measure_period_end}
       
@@ -20,7 +20,7 @@ module SimpleXml
       @nqf_id = details.at_xpath('nqfid/@extension').try(:value)
 
       @attributes = []
-      details.children.reject {|e| e.name == 'text'}.each do |attribute|
+      children_of(details).each do |attribute|
         attribute_data = Utilities::MEASURE_ATTRIBUTES_MAP[attribute.name.to_sym]
         if (attribute_data)
           attribute_data['value'] = attribute.at_xpath('@extension').try(:value) || attribute.text
@@ -100,6 +100,12 @@ module SimpleXml
     def rewrite_observ(observ)
       # we want to use the first leaf to calcualculate the value for the observation
       first_leaf = observ.get_logic_leaves.first
+
+      unless first_leaf
+        puts "\t NO DATA IN MEASURE OBSERVATION"
+        return observ
+      end
+
       # we want to pull the aggregation function off of the top level comparison
       first_criteria = data_criteria(first_leaf.reference.id)
 
@@ -151,6 +157,9 @@ module SimpleXml
     end
 
     def handle_populations
+
+      extract_subtrees
+
       # Extract any stratifications, 
       # stratifications must be extracted before population criteria for titles to be generated properly
       extract_stratifications
@@ -184,7 +193,7 @@ module SimpleXml
           group_criteria << PopulationCriteria.new(criteria_def, self, population_index+duplicate_offset)
         end
 
-        @doc.xpath('measure/measureObservations').children.reject {|e| e.name == 'text'}.each_with_index do |observ_def, observ_index|
+        children_of(@doc.xpath('measure/measureObservations')).each_with_index do |observ_def, observ_index|
           group_criteria << rewrite_observ(PopulationCriteria.new(observ_def, self, observ_index))
         end
 
@@ -207,6 +216,14 @@ module SimpleXml
 
         @population_criteria.concat group_criteria
 
+      end
+    end
+
+    def extract_subtrees
+      @sub_tree_map = {}
+      @doc.xpath('measure/subTreeLookUp/subTree').each_with_index do |sub_tree_def|
+        tree = SubTree.new(sub_tree_def, self)
+        @sub_tree_map[tree.id] = tree
       end
     end
 

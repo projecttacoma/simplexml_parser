@@ -6,8 +6,10 @@ module SimpleXml
    
     FUNCTIONAL_OP = 'functionalOp'
     LOGICAL_OP = 'logicalOp'
+    SET_OP = 'setOp'
     TEMPORAL_OP = 'relationalOp'
     DATA_CRITERIA_OP = 'elementRef'
+    SUB_TREE = 'subTreeRef'
 
     attr_reader :id, :preconditions, :reference, :conjunction_code, :negation
 
@@ -25,12 +27,14 @@ module SimpleXml
       end
 
       # if we have a subset then we want this to be a grouping data criteria
-      if (@entry.name == LOGICAL_OP) && @subset.nil?
+      if (@entry.name == LOGICAL_OP || @entry.name == SET_OP) && @subset.nil?
         handle_logical
       elsif @entry.name == TEMPORAL_OP && @subset.nil?
         handle_temporal
       elsif @entry.name == DATA_CRITERIA_OP || @subset
         handle_data_criteria
+      elsif @entry.name == SUB_TREE
+        handle_sub_tree
       else
         raise "unknown precondition type: #{@entry.name}"
       end
@@ -48,7 +52,7 @@ module SimpleXml
         @subset = SubsetOperator.new(type, Utilities.build_value(comparison, quantity, unit))
       end
 
-      children = @entry.children.reject {|e| e.name == 'text'}
+      children = children_of(@entry)
       if children.count == 1
         @entry = children.first
       end
@@ -58,19 +62,20 @@ module SimpleXml
     def handle_logical
       @conjunction_code = translate_type(attr_val('@type'))
       @preconditions = []
-      @entry.children.reject {|e| e.name == 'text'}.collect do |precondition|
+      children_of(@entry).collect do |precondition|
         # if we have a negated child with multiple logical children, then we want to make sure we don't infer an extra AND
         if negation_with_logical_children?(precondition)
-          precondition.children.reject {|e| e.name == 'text'}.each do |child|
+          children_of(precondition).each do |child|
             @preconditions << Precondition.new(child, @doc, true)
           end
         else
           @preconditions << Precondition.new(precondition, @doc)
         end
-
       end
-     
-      @preconditions.select! {|p| !p.preconditions.empty? || p.reference}
+
+      push_down_comments(self, comments_on(@entry))
+      
+      @preconditions.select! {|p| !p.preconditions.empty? || p.reference }
 
     end
 
@@ -79,7 +84,7 @@ module SimpleXml
       comparison = attr_val('@operatorType')
       quantity = attr_val('@quantity')
       unit = attr_val('@unit')
-      children = @entry.children.reject {|e| e.name == 'text'}
+      children = children_of(@entry)
 
       left_child = children[0]
       right_child = children[1]
@@ -107,6 +112,11 @@ module SimpleXml
       @reference = Reference.new(criteria.id)
     end
 
+    def handle_sub_tree
+      sub_tree = @doc.sub_tree_map[attr_val('@id')]
+      copy(sub_tree.precondition)
+    end
+
     def push_down_temporal(precondition, temporal)
       if precondition.preconditions.empty?
         @doc.data_criteria(precondition.reference.id).push_down_temporal(temporal, @doc)
@@ -115,9 +125,18 @@ module SimpleXml
       end
     end
 
+    def push_down_comments(precondition, comments)
+      return if comments.empty?
+      if precondition.preconditions.empty?
+        @doc.data_criteria(precondition.reference.id).comments = comments
+      else
+        precondition.preconditions.each {|p| push_down_comments(p, comments)}
+      end
+    end
+
     def negation_with_logical_children?(precondition)
       if precondition.name == FUNCTIONAL_OP && precondition.at_xpath('@type').value == 'NOT'
-        children = precondition.children.reject {|e| e.name == 'text'}
+        children = children_of(precondition)
         return children.length > 1
       end
       false
@@ -127,7 +146,11 @@ module SimpleXml
       case type
       when 'and'
         HQMF::Precondition::ALL_TRUE
+      when 'intersection'
+        HQMF::Precondition::ALL_TRUE
       when 'or'
+        HQMF::Precondition::AT_LEAST_ONE_TRUE
+      when 'union'
         HQMF::Precondition::AT_LEAST_ONE_TRUE
       else
         raise "Unknown population criteria type #{type}"

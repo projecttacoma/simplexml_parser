@@ -55,7 +55,6 @@ class HQMFVsSimpleTest < Test::Unit::TestCase
     (hqmf_model.all_data_criteria + hqmf_model.source_data_criteria).each do |dc|
       fix_hqmf_description(dc)
       fix_subset_operators(dc)
-      fix_fields(dc)
     end
 
     # HQMF leaf preconditions sometimes have conjunction codes as well as a reference... 
@@ -190,12 +189,6 @@ class HQMFVsSimpleTest < Test::Unit::TestCase
   def hash_values(value)
     value.instance_variable_set(:@title, '') if value.type == 'CD'
     Digest::SHA256.hexdigest value.to_json.to_json
-  end
-
-  def fix_fields(dc)
-    dc.field_values.keys.each do |key|
-      dc.field_values[key] = HQMF::AnyValue.new if dc.field_values[key].nil?
-    end if dc.field_values
   end
 
   # from hqmf the unit on counts can sometimes be " "... we want to clear these

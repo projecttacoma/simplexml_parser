@@ -22,10 +22,14 @@ module SimpleXml
       end
     end
     
-    def to_xml
-      @entry.to_xml
+    def children_of(node)
+      node.xpath('*[not(self::text|self::comment)]')
     end
-    
+
+    def comments_on(node)
+      node.xpath('comment').map {|c| Utilities.attr_val(c, '@displayName')}
+    end
+
     def self.build_value(comparison, quantity, unit)
       return nil if !comparison || !quantity
       unit = nil if unit && unit.strip.empty?
