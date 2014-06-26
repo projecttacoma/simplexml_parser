@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/projectcypress/health-data-standards.git
-  revision: 04930e11567d4557cbe9e8094b9444d89d7ca918
-  branch: update_variable_example
+  revision: d22f873f9272e6b5279929f6ea1308d75a3e3219
+  branch: master
   specs:
     health-data-standards (3.4.6)
       activesupport (~> 4.0.0)
@@ -9,7 +9,7 @@ GIT
       erubis (~> 2.7.0)
       log4r (~> 1.1.10)
       memoist (~> 0.9.1)
-      mongoid (~> 4.0.0.beta2)
+      mongoid (~> 4.0.0.rc2)
       mongoid-tree (~> 1.0.4)
       nokogiri (= 1.6.0)
       protected_attributes (~> 1.0.5)
@@ -71,14 +71,14 @@ GEM
     mime-types (1.25.1)
     mini_portile (0.5.3)
     minitest (4.7.5)
-    mongoid (4.0.0.rc2)
+    mongoid (4.0.0)
       activemodel (~> 4.0)
-      moped (~> 2.0.0.rc2)
+      moped (~> 2.0.0)
       origin (~> 2.1)
       tzinfo (>= 0.3.37)
     mongoid-tree (1.0.4)
       mongoid (>= 3.0, <= 4.0)
-    moped (2.0.0.rc2)
+    moped (2.0.0)
       bson (~> 2.2)
       connection_pool (~> 2.0)
       optionable (~> 0.2.0)
