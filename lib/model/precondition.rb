@@ -10,6 +10,8 @@ module SimpleXml
     TEMPORAL_OP = 'relationalOp'
     DATA_CRITERIA_OP = 'elementRef'
     SUB_TREE = 'subTreeRef'
+    SATISFIES_ALL = 'SATISFIES ALL'
+    SATISFIES_ANY = 'SATISFIES ANY'
 
     attr_reader :id, :preconditions, :reference, :conjunction_code, :negation
 
@@ -31,6 +33,8 @@ module SimpleXml
         handle_logical
       elsif @entry.name == TEMPORAL_OP && @subset.nil?
         handle_temporal
+      elsif attr_val('@type') == SATISFIES_ALL || attr_val('@type') == SATISFIES_ANY
+        handle_satisfies
       elsif @entry.name == DATA_CRITERIA_OP || @subset
         handle_data_criteria
       elsif @entry.name == SUB_TREE
@@ -45,6 +49,8 @@ module SimpleXml
       case type
       when 'NOT'
         @negation = true
+      when SATISFIES_ALL, SATISFIES_ANY
+        ''
       else
         comparison = attr_val('@operatorType')
         quantity = attr_val('@quantity')
@@ -57,6 +63,44 @@ module SimpleXml
         @entry = children.first
       end
 
+    end
+
+    def handle_satisfies
+
+      children = children_of(@entry)
+
+      @entry.children[0].remove()
+      @entry.children[0].remove()
+
+      @preconditions = []
+      children_of(@entry).collect do |precondition|
+        # if we have a negated child with multiple logical children, then we want to make sure we don't infer an extra AND
+        if negation_with_logical_children?(precondition)
+          children_of(precondition).each do |child|
+            @preconditions << Precondition.new(child, @doc, true)
+          end
+        else
+          @preconditions << Precondition.new(precondition, @doc)
+        end
+      end
+
+      push_down_comments(self, comments_on(@entry))
+
+      @preconditions.select! {|p| !p.preconditions.empty? || p.reference }
+
+      if attr_val('@type') == SATISFIES_ALL
+        criteria = DataCriteria.convert_precondition_to_criteria(self, @doc, 'satisfiesAll')
+        criteria.derivation_operator = HQMF::DataCriteria::INTERSECT
+        criteria.instance_variable_set('@definition','satisfies_all')
+      elsif attr_val('@type') == SATISFIES_ANY
+        criteria = DataCriteria.convert_precondition_to_criteria(self, @doc, 'satisfiesAny')
+        criteria.derivation_operator = HQMF::DataCriteria::UNION
+        criteria.instance_variable_set('@definition','satisfies_any')
+      end
+      criteria.instance_variable_set('@description', children[0]['displayName'] || attr_val('@displayName'))
+
+      @preconditions = []
+      @reference = Reference.new(criteria.id)
     end
 
     def handle_logical

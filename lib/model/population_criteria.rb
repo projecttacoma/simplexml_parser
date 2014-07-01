@@ -52,7 +52,7 @@ module SimpleXml
 
     def translate_type(type)
       case type
-      when IPP
+      when IPP, 'initialPopulation'
         HQMF::PopulationCriteria::IPP
       when DENOM
         HQMF::PopulationCriteria::DENOM

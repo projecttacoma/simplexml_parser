@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<measure>
+  <measureDetails>
+    <uuid>40280581-46cf-ce63-0146-d970c63600b6</uuid>
+    <title>Test3</title>
+    <shortTitle>Test3</shortTitle>
+    <guid>0d6dc9d9-117b-4335-b443-d0c7fab09385</guid>
+    <version>0.0.001</version>
+    <status>In Progress</status>
+    <nqfid root="2.16.840.1.113883.3.560.1"/>
+    <period uuid="32ff6212-6192-4ea0-b4d1-8287645745c9">
+      <startDate uuid="c862db05-a61a-45b5-8383-5045036ebb8b">0000xxxx</startDate>
+      <stopDate uuid="74589b48-f0f1-4f30-a222-62b1adb99c47">0000xxxx</stopDate>
+    </period>
+    <scoring id="PROPOR">Proportion</scoring>
+    <componentMeasures/>
+    <itemCount/>
+    <initialPopDescription/>
+    <measurePopulationExclusionsDescription/>
+  </measureDetails>
+  <supplementalDataElements>
+    <elementRef id="9846cb3b-4554-4fe6-a104-a58b32bf857e" name="ONC Administrative Sex"/>
+    <elementRef id="127e460a-647c-4ff4-a9af-76f4773b1392" name="Race"/>
+    <elementRef id="552389c9-f5ee-4802-8ab1-65960c04e22c" name="Ethnicity"/>
+    <elementRef id="7c5c41f1-2d35-4ae2-8792-58587fa5771f" name="Payer"/>
+  </supplementalDataElements>
+  <measureGrouping>
+    <group sequence="1">
+      <clause displayName="Initial Population 1" type="initialPopulation" uuid="45939499-8DF2-48A6-94CD-6A3CE933E622">
+        <logicalOp displayName="AND" type="and">
+          <comment displayName="comment" type="comment"/>
+          <subTreeRef displayName="InpatientDuringMP" id="66D5F3D5-B1B4-4081-9076-9361B1C4AE26" type="subTree"/>
+          <subTreeRef displayName="SatisfiesAny" id="0F886B4F-2843-4C9E-A88F-95C8F01F7395" type="subTree"/>
+          <!-- <subTreeRef displayName="Blood Thiner During Encounter" id="E6CFB197-B622-482C-8071-67EC9093C5F6" type="subTree"/> -->
+        </logicalOp>
+      </clause>
+      <clause displayName="Denominator 1" type="denominator" uuid="6C31C91E-24BB-45B2-B10E-70342674B3FC">
+        <logicalOp displayName="AND" type="and"/>
+      </clause>
+      <clause displayName="Numerator 1" type="numerator" uuid="91B9225B-7364-47FD-813E-DE2407DC32F5">
+        <logicalOp displayName="AND" type="and"/>
+      </clause>
+    </group>
+  </measureGrouping>
+  <subTreeLookUp>
+    <subTree displayName="InpatientDuringMP" uuid="66D5F3D5-B1B4-4081-9076-9361B1C4AE26">
+      <relationalOp displayName="During" type="DURING">
+        <elementRef displayName="Inpatient : Encounter, Performed" id="2db28edc-9b4e-4f8b-ab03-d967c3889ff5" type="qdm"/>
+        <elementRef displayName="Measurement Period : Timing Element" id="32ff6212-6192-4ea0-b4d1-8287645745c9" type="qdm"/>
+      </relationalOp>
+    </subTree>
+    <subTree displayName="SatisfiesAny" uuid="0F886B4F-2843-4C9E-A88F-95C8F01F7395">
+      <functionalOp displayName="SATISFIES ANY" type="SATISFIES ANY">
+        <elementRef displayName="Warfarin : Medication, Administered" id="f3de96a4-3dbc-453e-b4ff-f23e96bee012" type="qdm"/>
+        <relationalOp displayName="&gt; 10 days Starts After Start Of" operatorType="Greater Than" quantity="10" type="SAS" unit="days">
+          <elementRef displayName="Warfarin : Medication, Administered" id="f3de96a4-3dbc-453e-b4ff-f23e96bee012" type="qdm"/>
+          <elementRef displayName="Measurement Period : Timing Element" id="32ff6212-6192-4ea0-b4d1-8287645745c9" type="qdm"/>
+        </relationalOp>
+        <relationalOp displayName="&gt; 10 days Starts Before End Of" operatorType="Greater Than" quantity="10" type="SBE" unit="days">
+          <elementRef displayName="Warfarin : Medication, Administered" id="f3de96a4-3dbc-453e-b4ff-f23e96bee012" type="qdm"/>
+          <elementRef displayName="Measurement Period : Timing Element" id="32ff6212-6192-4ea0-b4d1-8287645745c9" type="qdm"/>
+        </relationalOp>
+      </functionalOp>
+    </subTree>
+    <!-- <subTree displayName="BloodThiners" uuid="2A5124C7-EEEB-4788-930B-660FCF344321">
+      <setOp displayName="UNION" type="union">
+        <elementRef displayName="Warfarin : Medication, Administered" id="f3de96a4-3dbc-453e-b4ff-f23e96bee012" type="qdm"/>
+        <elementRef displayName="Asprin : Medication, Administered" id="76aae8bc-eee6-46d7-82fd-246b7f35fa58" type="qdm"/>
+      </setOp>
+    </subTree> -->
+    <!-- <subTree displayName="Blood Thiner During Encounter" uuid="E6CFB197-B622-482C-8071-67EC9093C5F6">
+      <relationalOp displayName="Starts During" type="SDU">
+        <subTreeRef displayName="BloodThiners" id="2A5124C7-EEEB-4788-930B-660FCF344321" type="subTree"/>
+        <elementRef displayName="Inpatient : Encounter, Performed" id="2db28edc-9b4e-4f8b-ab03-d967c3889ff5" type="qdm"/>
+      </relationalOp>
+    </subTree> -->
+  </subTreeLookUp>
+  <elementLookUp>
+    <qdm datatype="Timing Element" id="32ff6212-6192-4ea0-b4d1-8287645745c9" name="Measurement Period" oid="2.16.840.1.113883.3.67.1.101.1.53" suppDataElement="false" taxonomy="NQF" uuid="32ff6212-6192-4ea0-b4d1-8287645745c9" version="1.0"/>
+    <qdm datatype="Patient Characteristic Sex" id="9846cb3b-4554-4fe6-a104-a58b32bf857e" name="ONC Administrative Sex" oid="2.16.840.1.113762.1.4.1" suppDataElement="true" taxonomy="Administrative Sex" uuid="9846cb3b-4554-4fe6-a104-a58b32bf857e" version="1.0"/>
+    <qdm datatype="Patient Characteristic Race" id="127e460a-647c-4ff4-a9af-76f4773b1392" name="Race" oid="2.16.840.1.114222.4.11.836" suppDataElement="true" taxonomy="CDC" uuid="127e460a-647c-4ff4-a9af-76f4773b1392" version="1.0"/>
+    <qdm datatype="Patient Characteristic Ethnicity" id="552389c9-f5ee-4802-8ab1-65960c04e22c" name="Ethnicity" oid="2.16.840.1.114222.4.11.837" suppDataElement="true" taxonomy="CDC" uuid="552389c9-f5ee-4802-8ab1-65960c04e22c" version="1.0"/>
+    <qdm datatype="Patient Characteristic Payer" id="7c5c41f1-2d35-4ae2-8792-58587fa5771f" name="Payer" oid="2.16.840.1.114222.4.11.3591" suppDataElement="true" taxonomy="Source of Payment Typology" uuid="7c5c41f1-2d35-4ae2-8792-58587fa5771f" version="1.0"/>
+    <qdm datatype="Medication, Administered" id="76aae8bc-eee6-46d7-82fd-246b7f35fa58" name="Asprin" oid="2.16.840.1.113883.3.464.1003.196.12.1211" suppDataElement="false" taxonomy="User Defined QDM" uuid="76aae8bc-eee6-46d7-82fd-246b7f35fa58" version="1.0"/>
+    <qdm datatype="Medication, Administered" id="f3de96a4-3dbc-453e-b4ff-f23e96bee012" name="Warfarin" oid="2.16.840.1.113883.3.117.1.7.1.232" suppDataElement="false" taxonomy="User Defined QDM" uuid="f3de96a4-3dbc-453e-b4ff-f23e96bee012" version="1.0"/>
+    <qdm datatype="Encounter, Performed" id="2db28edc-9b4e-4f8b-ab03-d967c3889ff5" name="Inpatient" oid="2.16.840.1.113883.3.666.5.3001" suppDataElement="false" taxonomy="User Defined QDM" uuid="2db28edc-9b4e-4f8b-ab03-d967c3889ff5" version="1.0"/>
+  </elementLookUp>
+</measure>

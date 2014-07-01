@@ -23,4 +23,24 @@ class SubTreesTest < Test::Unit::TestCase
 
   end
 
+  def test_with_satisfies_all
+    simple_xml = File.join(SIMPLE_XML_ROOT, "with_satisfies_all.xml")
+    simple_xml_model = SimpleXml::Parser::V1Parser.new.parse(File.read(simple_xml))
+
+    simple_xml_model.all_data_criteria.count.must_equal 8
+    simple_xml_model.data_criteria('GROUP_satisfiesAll_CHILDREN_5').derivation_operator.to_s.must_equal 'INTERSECT'
+    simple_xml_model.data_criteria('GROUP_satisfiesAll_CHILDREN_5').type.to_s.must_equal "derived"
+    simple_xml_model.data_criteria('GROUP_satisfiesAll_CHILDREN_5').definition.to_s.must_equal 'satisfies_all'
+  end
+
+  def test_with_satisfies_any
+    simple_xml = File.join(SIMPLE_XML_ROOT, "with_satisfies_any.xml")
+    simple_xml_model = SimpleXml::Parser::V1Parser.new.parse(File.read(simple_xml))
+
+    simple_xml_model.all_data_criteria.count.must_equal 8
+    simple_xml_model.data_criteria('GROUP_satisfiesAny_CHILDREN_5').derivation_operator.to_s.must_equal 'UNION'
+    simple_xml_model.data_criteria('GROUP_satisfiesAny_CHILDREN_5').type.to_s.must_equal "derived"
+    simple_xml_model.data_criteria('GROUP_satisfiesAny_CHILDREN_5').definition.to_s.must_equal 'satisfies_any'
+  end
+
 end
