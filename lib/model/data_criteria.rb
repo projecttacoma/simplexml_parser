@@ -175,11 +175,12 @@ module SimpleXml
       end
       val = value.to_model if value
       subs = subset_operators.collect {|o| o.to_model} if subset_operators
+      @variable ||= false
 
       HQMF::DataCriteria.new(@id, @title, @display_name, @description, @code_list_id, @children_criteria, 
         @derivation_operator, @definition, @status, val, fv, @effective_time, @inline_code_list, 
         @negation, @negation_code_list_id, trs, subs, @specific_occurrence, 
-        @specific_occurrence_const, @source_data_criteria, comments)
+        @specific_occurrence_const, @source_data_criteria, comments, @variable)
     end
 
     def self.format_so_const(description)

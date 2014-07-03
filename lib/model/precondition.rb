@@ -69,6 +69,7 @@ module SimpleXml
 
       children = children_of(@entry)
 
+      # remove start and redundant LHS elementRef from entry
       @entry.children[0].remove()
       @entry.children[0].remove()
 
@@ -103,6 +104,28 @@ module SimpleXml
       @reference = Reference.new(criteria.id)
     end
 
+    def handle_variable
+      # create the grouping data criteria for the variable
+      criteria = DataCriteria.convert_precondition_to_criteria(self, @doc, 'variable')
+      criteria.instance_variable_set('@variable', true)
+      criteria.instance_variable_set('@description', @entry.parent.attributes['displayName'].value || attr_val('@displayName'))
+      criteria.derivation_operator = (@conjunction_code == HQMF::Precondition::ALL_TRUE) ? HQMF::DataCriteria::INTERSECT : HQMF::DataCriteria::UNION
+
+      # add variable datatype for constructing source data criteria
+      @entry.set_attribute('datatype','variable')
+      # construct the source data criteria and add it to the document
+      sdc = DataCriteria.new(@entry)
+      sdc.instance_variable_set('@variable', true)
+      sdc.instance_variable_set('@definition', 'derived')
+      sdc.instance_variable_set('@description', @entry.parent.attributes['displayName'].value || attr_val('@displayName'))
+      sdc.children_criteria = criteria.children_criteria
+      sdc.derivation_operator = criteria.derivation_operator
+      @doc.source_data_criteria << sdc
+
+      @preconditions = []
+      @reference = Reference.new(criteria.id)
+    end
+
     def handle_logical
       @conjunction_code = translate_type(attr_val('@type'))
       @preconditions = []
@@ -121,6 +144,9 @@ module SimpleXml
       
       @preconditions.select! {|p| !p.preconditions.empty? || p.reference }
 
+      if @entry.parent && @entry.parent.attributes && @entry.parent.attributes['variable']
+        handle_variable if @entry.parent.attributes['variable'].value
+      end
     end
 
     def handle_temporal
