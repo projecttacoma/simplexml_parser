@@ -129,6 +129,7 @@ module SimpleXml
       @source_data_criteria = []
       @derived_data_criteria = []
       @attribute_map = {}
+      detect_missing_oids
       @doc.xpath('measure/elementLookUp/qdm').each do |entry|
         data_type = entry.at_xpath('@datatype').value
         if !['Timing Element', 'attribute'].include? data_type
@@ -147,6 +148,20 @@ module SimpleXml
           end
         end
       end
+    end
+
+    def detect_missing_oids
+      invalid_oid_entries = {}
+      @doc.xpath('measure/elementLookUp/qdm').each do |entry|
+        oid = entry.at_xpath('@oid').value
+        data_type = entry.at_xpath('@datatype').value
+        name = entry.at_xpath('@name').value
+        id = entry.at_xpath('@id').value
+        if oid == '1.1.1.1'
+          invalid_oid_entries[id] = "#{data_type}: #{name}"
+        end
+      end
+      raise "Found #{invalid_oid_entries.length} QDM element(s) with missing oids: \n#{JSON.pretty_generate(invalid_oid_entries)}" unless invalid_oid_entries.empty?
     end
 
     def extract_supplemental_data
