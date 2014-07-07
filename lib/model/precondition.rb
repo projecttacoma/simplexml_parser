@@ -144,8 +144,8 @@ module SimpleXml
       
       @preconditions.select! {|p| !p.preconditions.empty? || p.reference }
 
-      if @entry.parent && @entry.parent.attributes && @entry.parent.attributes['variable']
-        handle_variable if @entry.parent.attributes['variable'].value
+      if @entry.parent && @entry.parent.attributes && @entry.parent.attributes['qdmVariable']
+        handle_variable if @entry.parent.attributes['qdmVariable'].value
       end
     end
 
