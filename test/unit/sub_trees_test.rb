@@ -59,4 +59,22 @@ class SubTreesTest < Test::Unit::TestCase
     simple_xml_model.source_data_criteria[6].variable.must_equal true
   end
 
+  def test_with_age_at_with_birthdate
+    simple_xml = File.join(SIMPLE_XML_ROOT, "with_age_at_with_birthdate.xml")
+    simple_xml_model = SimpleXml::Parser::V1Parser.new.parse(File.read(simple_xml))
+
+    simple_xml_model.all_data_criteria.count.must_equal 8
+    simple_xml_model.data_criteria('PatientCharacteristicBirthdateBirthdate_precondition_3').definition.to_s.must_equal 'patient_characteristic_birthdate'
+    simple_xml_model.data_criteria('PatientCharacteristicBirthdateBirthdate_precondition_3').temporal_references[0].type.to_s.must_equal 'SBS'
+  end
+
+  def test_with_age_at_without_birthdate
+    simple_xml = File.join(SIMPLE_XML_ROOT, "with_age_at_without_birthdate.xml")
+    simple_xml_model = SimpleXml::Parser::V1Parser.new.parse(File.read(simple_xml))
+
+    simple_xml_model.all_data_criteria.count.must_equal 7
+    simple_xml_model.data_criteria('PatientCharacteristicBirthdateBirthdate_precondition_3').definition.to_s.must_equal 'patient_characteristic_birthdate'
+    simple_xml_model.data_criteria('PatientCharacteristicBirthdateBirthdate_precondition_3').temporal_references[0].type.to_s.must_equal 'SBS'
+  end
+
 end

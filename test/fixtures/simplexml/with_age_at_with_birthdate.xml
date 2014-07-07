@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<measure>
+  <measureDetails>
+    <uuid>40280581-46cf-ce63-0147-10c2a5b3082e</uuid>
+    <title>AGE_AT2: Test 3</title>
+    <shortTitle>AGE_AT2:Test3</shortTitle>
+    <guid>0a0e3927-5a9c-42f3-9f04-e99c5180c917</guid>
+    <version>0.0.002</version>
+    <status>In Progress</status>
+    <nqfid root="2.16.840.1.113883.3.560.1"/>
+    <period uuid="32ff6212-6192-4ea0-b4d1-8287645745c9">
+      <startDate uuid="b2fe99b9-9793-4a29-9045-a0f9d1c4ee6e">00000101</startDate>
+      <stopDate uuid="144ba6ff-0a9e-40ed-be4e-02c504913f7e">00001231</stopDate>
+    </period>
+    <scoring id="PROPOR">Proportion</scoring>
+    <componentMeasures/>
+    <itemCount/>
+    <initialPopDescription/>
+    <measurePopulationExclusionsDescription/>
+  </measureDetails>
+  <supplementalDataElements>
+    <elementRef id="9846cb3b-4554-4fe6-a104-a58b32bf857e" name="ONC Administrative Sex"/>
+    <elementRef id="127e460a-647c-4ff4-a9af-76f4773b1392" name="Race"/>
+    <elementRef id="552389c9-f5ee-4802-8ab1-65960c04e22c" name="Ethnicity"/>
+    <elementRef id="7c5c41f1-2d35-4ae2-8792-58587fa5771f" name="Payer"/>
+  </supplementalDataElements>
+  <measureGrouping>
+    <group sequence="1">
+      <clause displayName="Initial Population 1" type="initialPopulation" uuid="1E7D737B-F8E6-4C93-A3FA-31789F2ECEBB">
+        <logicalOp displayName="AND" type="and">
+          <comment displayName="comment" type="comment"/>
+          <subTreeRef displayName="bd" id="7C129352-8637-4F5B-88DF-9E83FEFC96AC" type="subTree"/>
+          <subTreeRef displayName="InpatientDuringMP" id="66D5F3D5-B1B4-4081-9076-9361B1C4AE26" type="subTree"/>
+          <subTreeRef displayName="AgeAt" id="6401939C-A8A4-4BB9-ACA3-ED7FBCE89C72" type="subTree"/>
+        </logicalOp>
+      </clause>
+      <clause displayName="Denominator 1" type="denominator" uuid="44643117-EA40-40D3-8ABB-13E38428BCDD">
+        <logicalOp displayName="AND" type="and"/>
+      </clause>
+      <clause displayName="Numerator 1" type="numerator" uuid="9840B95C-C489-41AB-B9DE-377B7F069665">
+        <logicalOp displayName="AND" type="and"/>
+      </clause>
+    </group>
+  </measureGrouping>
+  <subTreeLookUp>
+    <subTree displayName="InpatientDuringMP" uuid="66D5F3D5-B1B4-4081-9076-9361B1C4AE26">
+      <relationalOp displayName="During" type="DURING">
+        <elementRef displayName="Inpatient : Encounter, Performed" id="2db28edc-9b4e-4f8b-ab03-d967c3889ff5" type="qdm"/>
+        <elementRef displayName="Measurement Period : Timing Element" id="32ff6212-6192-4ea0-b4d1-8287645745c9" type="qdm"/>
+      </relationalOp>
+    </subTree>
+    <subTree displayName="AgeAt" uuid="6401939C-A8A4-4BB9-ACA3-ED7FBCE89C72">
+      <setOp displayName="INTERSECTION" type="intersection">
+        <functionalOp displayName="Age &gt;= 2 years at" operatorType="Greater Than or Equal To" quantity="2" type="AGE AT" unit="years">
+          <elementRef displayName="Measurement Period : Timing Element" id="32ff6212-6192-4ea0-b4d1-8287645745c9" type="qdm"/>
+        </functionalOp>
+        <functionalOp displayName="Age &lt; 18 years at" operatorType="Less Than" quantity="18" type="AGE AT" unit="years">
+          <elementRef displayName="Measurement Period : Timing Element" id="32ff6212-6192-4ea0-b4d1-8287645745c9" type="qdm"/>
+        </functionalOp>
+      </setOp>
+    </subTree>
+    <subTree displayName="bd" uuid="7C129352-8637-4F5B-88DF-9E83FEFC96AC">
+      <relationalOp displayName="&gt;= 2 years Starts Before Start Of" operatorType="Greater Than or Equal To" quantity="2" type="SBS" unit="years">
+        <elementRef displayName="birthdate : Patient Characteristic Birthdate" id="14574250-746e-4898-8429-2e20255de395" type="qdm"/>
+        <elementRef displayName="Measurement Period : Timing Element" id="32ff6212-6192-4ea0-b4d1-8287645745c9" type="qdm"/>
+      </relationalOp>
+    </subTree>
+  </subTreeLookUp>
+  <elementLookUp>
+    <qdm datatype="Timing Element" id="32ff6212-6192-4ea0-b4d1-8287645745c9" name="Measurement Period" oid="2.16.840.1.113883.3.67.1.101.1.53" suppDataElement="false" taxonomy="NQF" uuid="32ff6212-6192-4ea0-b4d1-8287645745c9" version="1.0"/>
+    <qdm datatype="Patient Characteristic Sex" id="9846cb3b-4554-4fe6-a104-a58b32bf857e" name="ONC Administrative Sex" oid="2.16.840.1.113762.1.4.1" suppDataElement="true" taxonomy="Administrative Sex" uuid="9846cb3b-4554-4fe6-a104-a58b32bf857e" version="1.0"/>
+    <qdm datatype="Patient Characteristic Race" id="127e460a-647c-4ff4-a9af-76f4773b1392" name="Race" oid="2.16.840.1.114222.4.11.836" suppDataElement="true" taxonomy="CDC" uuid="127e460a-647c-4ff4-a9af-76f4773b1392" version="1.0"/>
+    <qdm datatype="Patient Characteristic Ethnicity" id="552389c9-f5ee-4802-8ab1-65960c04e22c" name="Ethnicity" oid="2.16.840.1.114222.4.11.837" suppDataElement="true" taxonomy="CDC" uuid="552389c9-f5ee-4802-8ab1-65960c04e22c" version="1.0"/>
+    <qdm datatype="Patient Characteristic Payer" id="7c5c41f1-2d35-4ae2-8792-58587fa5771f" name="Payer" oid="2.16.840.1.114222.4.11.3591" suppDataElement="true" taxonomy="Source of Payment Typology" uuid="7c5c41f1-2d35-4ae2-8792-58587fa5771f" version="1.0"/>
+    <qdm datatype="Encounter, Performed" id="2db28edc-9b4e-4f8b-ab03-d967c3889ff5" name="Inpatient" oid="2.16.840.1.113883.3.666.5.307" suppDataElement="false" taxonomy="User Defined QDM" uuid="2db28edc-9b4e-4f8b-ab03-d967c3889ff5" version="1.0"/>
+    <qdm datatype="Patient Characteristic Birthdate" id="14574250-746e-4898-8429-2e20255de395" name="birthdate" oid="2.16.840.1.113883.3.117.1.7.1.70" suppDataElement="false" taxonomy="User Defined QDM" uuid="14574250-746e-4898-8429-2e20255de395" version="1.0"/>
+  </elementLookUp>
+</measure>

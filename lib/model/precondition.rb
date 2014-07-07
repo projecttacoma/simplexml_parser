@@ -12,6 +12,7 @@ module SimpleXml
     SUB_TREE = 'subTreeRef'
     SATISFIES_ALL = 'SATISFIES ALL'
     SATISFIES_ANY = 'SATISFIES ANY'
+    AGE_AT = 'AGE AT'
 
     attr_reader :id, :conjunction_code, :negation
     attr_accessor :preconditions, :reference
@@ -52,6 +53,8 @@ module SimpleXml
         @negation = true
       when SATISFIES_ALL, SATISFIES_ANY
         ''
+      when AGE_AT
+        handle_age_at
       else
         comparison = attr_val('@operatorType')
         quantity = attr_val('@quantity')
@@ -64,6 +67,34 @@ module SimpleXml
         @entry = children.first
       end
 
+    end
+
+    def handle_age_at
+      # find the birthdate QDM element, if it exists
+      birthdate_hqmf_id = nil
+      @doc.source_data_criteria.each do |sdc|
+        birthdate_hqmf_id = sdc.hqmf_id if sdc.definition == 'patient_characteristic_birthdate'
+      end
+
+      # if it doesn't, create one and add it to the document
+      if birthdate_hqmf_id.nil?
+        default_birthdate = '<qdm datatype="Patient Characteristic Birthdate" id="14574250-746e-4898-8429-2e20255de395" name="birthdate" oid="2.16.840.1.113883.3.117.1.7.1.70" suppDataElement="false" taxonomy="User Defined QDM" uuid="14574250-746e-4898-8429-2e20255de395" version="1.0"/>'
+        birthdate_hqmf_id = '14574250-746e-4898-8429-2e20255de395'
+        criteria = DataCriteria.new(Document.parse(default_birthdate).child)
+        @doc.source_data_criteria << criteria
+        @doc.criteria_map[criteria.hqmf_id] = criteria
+      end
+
+      # pull out the timing reference and add the birthdate reference
+      mpElement = @entry.at_css('elementRef')
+      bdElement = @entry.add_child("<elementRef displayName=\"birthdate : Patient Characteristic Birthdate\" id=\"#{birthdate_hqmf_id}\" type=\"qdm\"/>")
+
+      # swap the order of the elements
+      bdElement[0].add_next_sibling(mpElement)
+
+      # convert this entry to a temporal precondition with SBS type
+      @entry.set_attribute('type','SBS')
+      @entry.name = TEMPORAL_OP
     end
 
     def handle_satisfies
