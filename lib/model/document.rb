@@ -151,17 +151,17 @@ module SimpleXml
     end
 
     def detect_missing_oids
-      invalid_oid_entries = {}
+      invalid_oid_entries = []
       @doc.xpath('measure/elementLookUp/qdm').each do |entry|
         oid = entry.at_xpath('@oid').value
         data_type = entry.at_xpath('@datatype').value
         name = entry.at_xpath('@name').value
         id = entry.at_xpath('@id').value
         if oid == '1.1.1.1'
-          invalid_oid_entries[id] = "#{data_type}: #{name}"
+          invalid_oid_entries << "#{data_type}: #{name}"
         end
       end
-      raise "Found #{invalid_oid_entries.length} QDM element(s) with missing oids: \n#{JSON.pretty_generate(invalid_oid_entries)}" unless invalid_oid_entries.empty?
+      raise "All QDM elements require VSAC value sets to load into Bonnie. This measure contains #{invalid_oid_entries.length} QDM elements without VSAC value sets: \n[ #{invalid_oid_entries.join(', ')} ]." unless invalid_oid_entries.empty?
     end
 
     def extract_supplemental_data
