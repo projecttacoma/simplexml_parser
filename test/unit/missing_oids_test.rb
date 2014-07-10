@@ -13,7 +13,7 @@ class MissingOidsTest < Test::Unit::TestCase
   def test_with_missing_oids
     simple_xml = File.join(SIMPLE_XML_ROOT, "with_missing_oids.xml")
     exception = assert_raises(RuntimeError) { SimpleXml::Parser::V1Parser.new.parse(File.read(simple_xml)) }
-    assert_equal( "Found 2 QDM element(s) with missing oids: \n{\n  \"f3de96a4-3dbc-453e-b4ff-f23e96bee012\": \"Medication, Administered: Warfarin\",\n  \"2db28edc-9b4e-4f8b-ab03-d967c3889ff5\": \"Encounter, Performed: Inpatient\"\n}", exception.message )
+    assert_equal( "All QDM elements require VSAC value sets to load into Bonnie. This measure contains 2 QDM elements without VSAC value sets: \n[ Medication, Administered: Warfarin, Encounter, Performed: Inpatient ].", exception.message )
   end
 
 end
