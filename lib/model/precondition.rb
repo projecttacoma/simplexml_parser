@@ -13,7 +13,8 @@ module SimpleXml
     SATISFIES_ALL = 'SATISFIES ALL'
     SATISFIES_ANY = 'SATISFIES ANY'
 
-    attr_reader :id, :preconditions, :reference, :conjunction_code, :negation
+    attr_reader :id, :conjunction_code, :negation
+    attr_accessor :preconditions, :reference
 
     def initialize(entry, doc, negated=false)
       @doc = doc
@@ -104,28 +105,6 @@ module SimpleXml
       @reference = Reference.new(criteria.id)
     end
 
-    def handle_variable
-      # create the grouping data criteria for the variable
-      criteria = DataCriteria.convert_precondition_to_criteria(self, @doc, 'variable')
-      criteria.instance_variable_set('@variable', true)
-      criteria.instance_variable_set('@description', @entry.parent.attributes['displayName'].value || attr_val('@displayName'))
-      criteria.derivation_operator = (@conjunction_code == HQMF::Precondition::ALL_TRUE) ? HQMF::DataCriteria::INTERSECT : HQMF::DataCriteria::UNION
-
-      # add variable datatype for constructing source data criteria
-      @entry.set_attribute('datatype','variable')
-      # construct the source data criteria and add it to the document
-      sdc = DataCriteria.new(@entry)
-      sdc.instance_variable_set('@variable', true)
-      sdc.instance_variable_set('@definition', 'derived')
-      sdc.instance_variable_set('@description', @entry.parent.attributes['displayName'].value || attr_val('@displayName'))
-      sdc.children_criteria = criteria.children_criteria
-      sdc.derivation_operator = criteria.derivation_operator
-      @doc.source_data_criteria << sdc
-
-      @preconditions = []
-      @reference = Reference.new(criteria.id)
-    end
-
     def handle_logical
       @conjunction_code = translate_type(attr_val('@type'))
       @preconditions = []
@@ -143,10 +122,6 @@ module SimpleXml
       push_down_comments(self, comments_on(@entry))
       
       @preconditions.select! {|p| !p.preconditions.empty? || p.reference }
-
-      if @entry.parent && @entry.parent.attributes && @entry.parent.attributes['qdmVariable']
-        handle_variable if @entry.parent.attributes['qdmVariable'].value
-      end
     end
 
     def handle_temporal
@@ -291,7 +266,7 @@ module SimpleXml
   end
 
   class ParsedPrecondition
-    attr_reader :id, :preconditions, :reference, :conjunction_code, :negation
+    attr_accessor :id, :preconditions, :reference, :conjunction_code, :negation
     def initialize(id, preconditions, reference, conjunction_code, negation)
       @id = id
       @preconditions = preconditions

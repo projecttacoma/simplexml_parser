@@ -19,7 +19,31 @@ module SimpleXml
       end
       raise "multiple children of subtree... not clear how to handle this" if preconditions.length > 1
       @precondition = preconditions.first
-
+      convert_to_variable if attr_val('@qdmVariable')
   	end
+
+    def convert_to_variable
+      # wrap a reference precondition with a parent
+      @precondition = ParsedPrecondition.new(HQMF::Counter.instance.next, [@precondition], nil, HQMF::Precondition::ALL_TRUE, false) if @precondition.reference
+
+      # create the grouping data criteria for the variable
+      criteria = DataCriteria.convert_precondition_to_criteria(@precondition, @doc, 'variable')
+      criteria.instance_variable_set('@variable', true)
+      criteria.instance_variable_set('@description', @entry.attributes['displayName'].value || attr_val('@displayName'))
+      criteria.derivation_operator = (@precondition.conjunction_code == HQMF::Precondition::ALL_TRUE) ? HQMF::DataCriteria::INTERSECT : HQMF::DataCriteria::UNION if criteria.children_criteria
+
+      # put variable in source data criteria
+      sdc = criteria.dup
+      sdc.subset_operators = nil if sdc.subset_operators
+      sdc.remove_instance_variable('@temporal_references') if sdc.temporal_references
+      sdc.instance_variable_set('@variable', true)
+      sdc.children_criteria = criteria.children_criteria if criteria.children_criteria
+      sdc.instance_variable_set('@description', @entry.attributes['displayName'].value || attr_val('@displayName'))
+      @doc.source_data_criteria << sdc
+
+      # update the reference to the variable data criteria
+      @precondition.preconditions = []
+      @precondition.reference = Reference.new(criteria.id)
+    end
   end
 end
