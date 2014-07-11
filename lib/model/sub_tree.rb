@@ -33,12 +33,9 @@ module SimpleXml
       criteria.derivation_operator = (@precondition.conjunction_code == HQMF::Precondition::ALL_TRUE) ? HQMF::DataCriteria::INTERSECT : HQMF::DataCriteria::UNION if criteria.children_criteria
 
       # put variable in source data criteria
-      sdc = criteria.dup
+      sdc = Marshal.load(Marshal.dump(criteria))
       sdc.subset_operators = nil if sdc.subset_operators
       sdc.remove_instance_variable('@temporal_references') if sdc.temporal_references
-      sdc.instance_variable_set('@variable', true)
-      sdc.children_criteria = criteria.children_criteria if criteria.children_criteria
-      sdc.instance_variable_set('@description', @entry.attributes['displayName'].value || attr_val('@displayName'))
       @doc.source_data_criteria << sdc
 
       # update the reference to the variable data criteria
