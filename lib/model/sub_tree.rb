@@ -27,20 +27,21 @@ module SimpleXml
       @precondition = ParsedPrecondition.new(HQMF::Counter.instance.next, [@precondition], nil, HQMF::Precondition::ALL_TRUE, false) if @precondition.reference
 
       # create the grouping data criteria for the variable
-      criteria = DataCriteria.convert_precondition_to_criteria(@precondition, @doc, 'variable')
+      criteria = convert_to_data_criteria('variable')
       criteria.instance_variable_set('@variable', true)
       criteria.instance_variable_set('@description', @entry.attributes['displayName'].value || attr_val('@displayName'))
       criteria.derivation_operator = (@precondition.conjunction_code == HQMF::Precondition::ALL_TRUE) ? HQMF::DataCriteria::INTERSECT : HQMF::DataCriteria::UNION if criteria.children_criteria
 
       # put variable in source data criteria
-      sdc = Marshal.load(Marshal.dump(criteria))
-      sdc.subset_operators = nil if sdc.subset_operators
-      sdc.remove_instance_variable('@temporal_references') if sdc.temporal_references
-      @doc.source_data_criteria << sdc
+      @doc.register_source_data_criteria(criteria)
 
       # update the reference to the variable data criteria
       @precondition.preconditions = []
       @precondition.reference = Reference.new(criteria.id)
+    end
+
+    def convert_to_data_criteria(operator='clause')
+      DataCriteria.convert_precondition_to_criteria(@precondition, @doc, operator)
     end
   end
 end

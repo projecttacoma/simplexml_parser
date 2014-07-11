@@ -121,6 +121,14 @@ module SimpleXml
       observ
     end
 
+    def register_source_data_criteria(criteria)
+      sdc = criteria.dup
+      sdc.subset_operators = nil if sdc.subset_operators
+      sdc.remove_instance_variable('@temporal_references') if sdc.temporal_references
+      @source_data_criteria << sdc
+      @criteria_map[criteria.hqmf_id] = criteria
+    end
+
     private
     
     def find(collection, attribute, value)
