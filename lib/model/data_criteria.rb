@@ -81,7 +81,12 @@ module SimpleXml
       elsif element.name == Precondition::FUNCTIONAL_OP
         criteria = doc.data_criteria(Precondition.new(element, doc).reference.id)
       else
-        criteria = doc.criteria_map[element.at_xpath('@id').value].dup
+        criteria = doc.criteria_map[element.at_xpath('@id').value]
+        if !criteria && element.name == Precondition::SUB_TREE
+          criteria = doc.sub_tree_map[Utilities.attr_val(element, '@id')].convert_to_data_criteria
+          doc.register_source_data_criteria(criteria)
+        end
+        criteria = criteria.dup
         return criteria if criteria.id == HQMF::Document::MEASURE_PERIOD_ID
 
         # if we have attributes then we want to update the ID sice we have changed the DC
@@ -141,7 +146,11 @@ module SimpleXml
     end
     
     def dup
-      DataCriteria.new(@entry, @id)
+      if @entry
+        DataCriteria.new(@entry, @id)
+      else
+        Marshal.load(Marshal.dump(self))
+      end
     end
 
     def add_temporal(temporal)
