@@ -78,23 +78,13 @@ module SimpleXml
 
       # if it doesn't, create one and add it to the document
       if birthdate_hqmf_id.nil?
-        default_birthdate = '<qdm datatype="Patient Characteristic Birthdate" id="14574250-746e-4898-8429-2e20255de395" name="birthdate" oid="2.16.840.1.113883.3.117.1.7.1.70" suppDataElement="false" taxonomy="User Defined QDM" uuid="14574250-746e-4898-8429-2e20255de395" version="1.0"/>'
-        birthdate_hqmf_id = '14574250-746e-4898-8429-2e20255de395'
-        criteria = DataCriteria.new(Document.parse(default_birthdate).child)
+        criteria = create_birthdate_criteria
+        birthdate_hqmf_id = criteria.hqmf_id
         @doc.source_data_criteria << criteria
         @doc.criteria_map[criteria.hqmf_id] = criteria
       end
 
-      # pull out the timing reference and add the birthdate reference
-      mpElement = @entry.at_css('elementRef')
-      bdElement = @entry.add_child("<elementRef displayName=\"birthdate : Patient Characteristic Birthdate\" id=\"#{birthdate_hqmf_id}\" type=\"qdm\"/>")
-
-      # swap the order of the elements
-      bdElement[0].add_next_sibling(mpElement)
-
-      # convert this entry to a temporal precondition with SBS type
-      @entry.set_attribute('type','SBS')
-      @entry.name = TEMPORAL_OP
+      @entry = create_age_timing(birthdate_hqmf_id, children_of(@entry).first, attr_val('@operatorType'), attr_val('@quantity'), attr_val('@unit'))
     end
 
     def handle_satisfies
