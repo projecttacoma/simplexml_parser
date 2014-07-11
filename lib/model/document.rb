@@ -5,6 +5,8 @@ module SimpleXml
     attr_reader :measure_period, :id, :nqf_id, :hqmf_set_id, :hqmf_version_number, :cms_id, :title, :description, :populations, :attributes, :source_data_criteria, :derived_data_criteria, :criteria_map, :attribute_map, :measure_period_map, :sub_tree_map
 
     MEASURE_PERIOD_TITLES = {'Measurement Period'=>:measure_period, 'Measurement Start Date'=>:measure_period_start, 'Measurement End Date'=>:measure_period_end}
+
+    UNDEFINED_OID = '1.1.1.1'
       
     # Create a new SimpleXml::Document instance by parsing at file at the supplied path
     # @param [String] path the path to the HQMF document
@@ -157,7 +159,7 @@ module SimpleXml
         data_type = entry.at_xpath('@datatype').value
         name = entry.at_xpath('@name').value
         id = entry.at_xpath('@id').value
-        if oid == '1.1.1.1'
+        if oid == UNDEFINED_OID
           invalid_oid_entries << "#{data_type}: #{name}"
         end
       end
