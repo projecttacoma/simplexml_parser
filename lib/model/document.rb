@@ -5,6 +5,8 @@ module SimpleXml
     attr_reader :measure_period, :id, :nqf_id, :hqmf_set_id, :hqmf_version_number, :cms_id, :title, :description, :populations, :attributes, :source_data_criteria, :derived_data_criteria, :criteria_map, :attribute_map, :measure_period_map, :sub_tree_map
 
     MEASURE_PERIOD_TITLES = {'Measurement Period'=>:measure_period, 'Measurement Start Date'=>:measure_period_start, 'Measurement End Date'=>:measure_period_end}
+
+    UNDEFINED_OID = '1.1.1.1'
       
     # Create a new SimpleXml::Document instance by parsing at file at the supplied path
     # @param [String] path the path to the HQMF document
@@ -129,6 +131,7 @@ module SimpleXml
       @source_data_criteria = []
       @derived_data_criteria = []
       @attribute_map = {}
+      detect_missing_oids
       @doc.xpath('measure/elementLookUp/qdm').each do |entry|
         data_type = entry.at_xpath('@datatype').value
         if !['Timing Element', 'attribute'].include? data_type
@@ -147,6 +150,20 @@ module SimpleXml
           end
         end
       end
+    end
+
+    def detect_missing_oids
+      invalid_oid_entries = []
+      @doc.xpath('measure/elementLookUp/qdm').each do |entry|
+        oid = entry.at_xpath('@oid').value
+        data_type = entry.at_xpath('@datatype').value
+        name = entry.at_xpath('@name').value
+        id = entry.at_xpath('@id').value
+        if oid == UNDEFINED_OID
+          invalid_oid_entries << "#{data_type}: #{name}"
+        end
+      end
+      raise "All QDM elements require VSAC value sets to load into Bonnie. This measure contains #{invalid_oid_entries.length} QDM elements without VSAC value sets: \n[ #{invalid_oid_entries.join(', ')} ]." unless invalid_oid_entries.empty?
     end
 
     def extract_supplemental_data

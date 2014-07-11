@@ -141,10 +141,10 @@
             taxonomy="Source of Payment Typology" uuid="d03fd75b-1aa5-4a90-941b-08526b5ba492"
             version="1.0"/>
         <qdm datatype="Diagnosis, Active" id="5bbef967-d495-4f88-9d37-37498cb12d96" name="TEST QDM"
-            oid="1.1.1.1" suppDataElement="false" taxonomy="User Defined QDM"
+            oid="2.16.840.1.113883.3.666.5.3001" suppDataElement="false" taxonomy="User Defined QDM"
             uuid="245d4651-18bd-4fc5-bd05-9e7cd9605986" version="1.0"/>
         <qdm datatype="Device, Recommended" id="d0947d58-5878-4823-b726-68099aa4fd07"
-            name="TEST QDM 1" oid="1.1.1.1" suppDataElement="false" taxonomy="User Defined QDM"
+            name="TEST QDM 1" oid="2.16.840.1.113883.3.666.5.3001" suppDataElement="false" taxonomy="User Defined QDM"
             uuid="681d4092-efe3-4d48-bf25-bdc81b93581b" version="1.0"/>
     </elementLookUp>
 </measure>
