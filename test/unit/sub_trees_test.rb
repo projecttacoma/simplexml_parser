@@ -43,4 +43,20 @@ class SubTreesTest < Test::Unit::TestCase
     simple_xml_model.data_criteria('GROUP_satisfiesAny_CHILDREN_5').definition.to_s.must_equal 'satisfies_any'
   end
 
+  def test_with_variable
+    simple_xml = File.join(SIMPLE_XML_ROOT, "with_variable.xml")
+    simple_xml_model = SimpleXml::Parser::V1Parser.new.parse(File.read(simple_xml))
+
+    simple_xml_model.all_data_criteria.count.must_equal 8
+    simple_xml_model.data_criteria('GROUP_variable_CHILDREN_5').derivation_operator.to_s.must_equal 'INTERSECT'
+    simple_xml_model.data_criteria('GROUP_variable_CHILDREN_5').type.to_s.must_equal "derived"
+    simple_xml_model.data_criteria('GROUP_variable_CHILDREN_5').definition.to_s.must_equal 'derived'
+    simple_xml_model.data_criteria('GROUP_variable_CHILDREN_5').variable.must_equal true
+
+    simple_xml_model.source_data_criteria[6].derivation_operator.to_s.must_equal 'INTERSECT'
+    simple_xml_model.source_data_criteria[6].type.to_s.must_equal "derived"
+    simple_xml_model.source_data_criteria[6].definition.to_s.must_equal 'derived'
+    simple_xml_model.source_data_criteria[6].variable.must_equal true
+  end
+
 end

@@ -13,7 +13,8 @@ module SimpleXml
     SATISFIES_ALL = 'SATISFIES ALL'
     SATISFIES_ANY = 'SATISFIES ANY'
 
-    attr_reader :id, :preconditions, :reference, :conjunction_code, :negation
+    attr_reader :id, :conjunction_code, :negation
+    attr_accessor :preconditions, :reference
 
     def initialize(entry, doc, negated=false)
       @doc = doc
@@ -69,6 +70,7 @@ module SimpleXml
 
       children = children_of(@entry)
 
+      # remove start and redundant LHS elementRef from entry
       @entry.children[0].remove()
       @entry.children[0].remove()
 
@@ -120,7 +122,6 @@ module SimpleXml
       push_down_comments(self, comments_on(@entry))
       
       @preconditions.select! {|p| !p.preconditions.empty? || p.reference }
-
     end
 
     def handle_temporal
@@ -265,7 +266,7 @@ module SimpleXml
   end
 
   class ParsedPrecondition
-    attr_reader :id, :preconditions, :reference, :conjunction_code, :negation
+    attr_accessor :id, :preconditions, :reference, :conjunction_code, :negation
     def initialize(id, preconditions, reference, conjunction_code, negation)
       @id = id
       @preconditions = preconditions
