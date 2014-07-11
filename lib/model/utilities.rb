@@ -40,6 +40,21 @@ module SimpleXml
       end
     end
 
+    def create_birthdate_criteria
+      default_birthdate = '<qdm datatype="Patient Characteristic Birthdate" id="birth_date_hqmf_id" name="birthdate" oid="2.16.840.1.113883.3.117.1.7.1.70" suppDataElement="false" taxonomy="User Defined QDM" uuid="birth_date_hqmf_id" version="1.0"/>'
+      DataCriteria.new(Document.parse(default_birthdate).child)
+    end
+
+    def create_age_timing(birthdate_hqmf_id, right, operator, quantity, unit)
+      age_element = "
+        <relationalOp displayName='Starts Before Start Of' type='SBS' operatorType='#{operator}' quantity='#{quantity}' unit='#{unit}'>
+          <elementRef displayName='birthdate : Patient Characteristic Birthdate' id='#{birthdate_hqmf_id}' type='qdm'/>
+          #{right.to_s}
+        </relationalOp>
+      "
+      Document.parse(age_element).child
+    end
+
     MEASURE_ATTRIBUTES_MAP = {
       copyright: {"id"=>"COPYRIGHT", "code"=>"COPY", "name"=>"Copyright"},
       scoring: {"id"=>"MEASURE_SCORING", "code"=>"MSRSCORE", "name"=>"Measure Scoring"},

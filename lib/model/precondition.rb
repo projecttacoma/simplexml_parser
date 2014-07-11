@@ -12,6 +12,7 @@ module SimpleXml
     SUB_TREE = 'subTreeRef'
     SATISFIES_ALL = 'SATISFIES ALL'
     SATISFIES_ANY = 'SATISFIES ANY'
+    AGE_AT = 'AGE AT'
 
     attr_reader :id, :conjunction_code, :negation
     attr_accessor :preconditions, :reference
@@ -52,6 +53,8 @@ module SimpleXml
         @negation = true
       when SATISFIES_ALL, SATISFIES_ANY
         ''
+      when AGE_AT
+        handle_age_at
       else
         comparison = attr_val('@operatorType')
         quantity = attr_val('@quantity')
@@ -64,6 +67,24 @@ module SimpleXml
         @entry = children.first
       end
 
+    end
+
+    def handle_age_at
+      # find the birthdate QDM element, if it exists
+      birthdate_hqmf_id = nil
+      @doc.source_data_criteria.each do |sdc|
+        birthdate_hqmf_id = sdc.hqmf_id if sdc.definition == 'patient_characteristic_birthdate'
+      end
+
+      # if it doesn't, create one and add it to the document
+      if birthdate_hqmf_id.nil?
+        criteria = create_birthdate_criteria
+        birthdate_hqmf_id = criteria.hqmf_id
+        @doc.source_data_criteria << criteria
+        @doc.criteria_map[criteria.hqmf_id] = criteria
+      end
+
+      @entry = create_age_timing(birthdate_hqmf_id, children_of(@entry).first, attr_val('@operatorType'), attr_val('@quantity'), attr_val('@unit'))
     end
 
     def handle_satisfies
