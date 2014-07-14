@@ -93,7 +93,6 @@ module SimpleXml
 
       # remove start and redundant LHS elementRef from entry
       @entry.children[0].remove()
-      @entry.children[0].remove()
 
       @preconditions = []
       children_of(@entry).collect do |precondition|
