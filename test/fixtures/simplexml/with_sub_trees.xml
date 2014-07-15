@@ -50,7 +50,7 @@
             <clause displayName="Initial Population 1" type="initialPatientPopulation"
                 uuid="E725DCA9-8763-44C7-BDAC-C807226D4EB4">
                 <logicalOp displayName="AND" type="and">
-                    <comment displayName="comment" type="comment"/>
+                    <comment displayName="a real comment" type="comment"/>
                     <subTreeRef displayName="clause 2" id="2D11E3B9-F0A9-42AC-AC3E-8FAB9D1042B3"
                         type="subTree"/>
                     <subTreeRef displayName="clause 3" id="97DD9B43-57E2-4694-BFA9-BF75859F8FC6"
