@@ -27,7 +27,8 @@ module SimpleXml
     end
 
     def comments_on(node)
-      node.xpath('comment').map {|c| Utilities.attr_val(c, '@displayName')}
+      # find comments and remove comments that have a value of 'comment' since those are bad MAT artifacts
+      node.xpath('comment').map {|c| Utilities.attr_val(c, '@displayName')}.reject {|c| c == 'comment'}
     end
 
     def self.build_value(comparison, quantity, unit)
