@@ -215,11 +215,13 @@ module SimpleXml
       population_defs.each_with_index do |population_def, population_index|
         group_criteria = []
         population_def.xpath('clause').each do |criteria_def|
-          group_criteria << PopulationCriteria.new(criteria_def, self, population_index+duplicate_offset)
+          criteria = PopulationCriteria.new(criteria_def, self, population_index+duplicate_offset)
+          group_criteria << criteria if (criteria.type != HQMF::PopulationCriteria::STRAT && criteria.type != SimpleXml::PopulationCriteria::NUMEX) || !criteria.preconditions.empty?
         end
 
         children_of(@doc.xpath('measure/measureObservations')).each_with_index do |observ_def, observ_index|
-          group_criteria << rewrite_observ(PopulationCriteria.new(observ_def, self, observ_index))
+          criteria = rewrite_observ(PopulationCriteria.new(observ_def, self, observ_index))
+          group_criteria << criteria if !criteria.preconditions.empty?
         end
 
         population = {}

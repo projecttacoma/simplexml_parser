@@ -19,7 +19,7 @@ module SimpleXml
       end
       raise "multiple children of subtree... not clear how to handle this" if preconditions.length > 1
       @precondition = preconditions.first
-      convert_to_variable if attr_val('@qdmVariable')
+      convert_to_variable if attr_val('@qdmVariable') == 'true'
   	end
 
     def convert_to_variable
