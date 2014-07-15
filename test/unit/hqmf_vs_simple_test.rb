@@ -94,7 +94,7 @@ class HQMFVsSimpleTest < Test::Unit::TestCase
         f.puts
         f.puts((simple_xml_model.all_data_criteria-simple_xml_model.source_data_criteria).collect{|dc| dc.id})
         f.puts
-        f.puts((hqmf_v1_model.all_data_criteria).collect{|dc| dc.id})
+        f.puts((hqmf_model.all_data_criteria).collect{|dc| dc.id})
       }
     end
       

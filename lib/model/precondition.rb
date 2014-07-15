@@ -88,14 +88,11 @@ module SimpleXml
     end
 
     def handle_satisfies
-
       children = children_of(@entry)
-
-      # remove start and redundant LHS elementRef from entry
-      @entry.children[0].remove()
-
+      # use shift to remove the left hand entry defining the left hand of the satisfies statement (we don't need that)
+      children.shift
       @preconditions = []
-      children_of(@entry).collect do |precondition|
+      children.collect do |precondition|
         # if we have a negated child with multiple logical children, then we want to make sure we don't infer an extra AND
         if negation_with_logical_children?(precondition)
           children_of(precondition).each do |child|
