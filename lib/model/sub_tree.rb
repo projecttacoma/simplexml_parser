@@ -3,7 +3,7 @@ module SimpleXml
   class SubTree
     include SimpleXml::Utilities
    
-    attr_accessor :id, :name, :precondition
+    attr_reader :id, :name, :precondition
 
     def initialize(entry, doc, negated=false)
       @doc = doc
@@ -13,14 +13,24 @@ module SimpleXml
       @name = attr_val('@displayName')
 
       children = children_of(@entry)
+      raise "multiple children of subtree... not clear how to handle this" if children.length > 1
+      @child = children.first
+      @processed = false
+    end
+
+    def process
+      return if @processed
       preconditions = []
-      children.each do |child|
-        preconditions << Precondition.new(child, doc)
-      end
-      raise "multiple children of subtree... not clear how to handle this" if preconditions.length > 1
+      preconditions << Precondition.new(@child, @doc)
       @precondition = preconditions.first
+      @processed = true
       convert_to_variable if attr_val('@qdmVariable') == 'true'
-  	end
+    end
+
+    def precondition
+      process
+      @precondition
+    end
 
     def convert_to_variable
       # wrap a reference precondition with a parent
@@ -41,6 +51,7 @@ module SimpleXml
     end
 
     def convert_to_data_criteria(operator='clause')
+      process
       DataCriteria.convert_precondition_to_criteria(@precondition, @doc, operator)
     end
   end
