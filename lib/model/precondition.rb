@@ -220,7 +220,7 @@ module SimpleXml
     end
 
     def copy(other)
-      @id = other.id
+      @id = other.id rescue binding.pry
       @preconditions = other.preconditions
       @reference = other.reference
       @conjunction_code = other.conjunction_code

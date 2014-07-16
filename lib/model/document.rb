@@ -252,6 +252,9 @@ module SimpleXml
         tree = SubTree.new(sub_tree_def, self)
         @sub_tree_map[tree.id] = tree
       end
+      sub_tree_map.values.each do |tree|
+        tree.process
+      end
     end
 
     def extract_stratifications
