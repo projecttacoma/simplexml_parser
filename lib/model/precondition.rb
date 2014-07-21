@@ -15,7 +15,7 @@ module SimpleXml
     AGE_AT = 'AGE AT'
 
     attr_reader :id, :conjunction_code, :negation
-    attr_accessor :preconditions, :reference
+    attr_accessor :preconditions, :reference, :comments
 
     def initialize(entry, doc, negated=false)
       @doc = doc
@@ -44,6 +44,8 @@ module SimpleXml
       else
         raise "unknown precondition type: #{@entry.name}"
       end
+
+      @comments = comments_on(@entry) unless comments_on(@entry).empty?
     end
 
     def handle_functional
@@ -103,8 +105,6 @@ module SimpleXml
         end
       end
 
-      push_down_comments(self, comments_on(@entry))
-
       @preconditions.select! {|p| !p.preconditions.empty? || p.reference }
 
       if attr_val('@type') == SATISFIES_ALL
@@ -135,8 +135,6 @@ module SimpleXml
           @preconditions << Precondition.new(precondition, @doc)
         end
       end
-
-      push_down_comments(self, comments_on(@entry))
       
       @preconditions.select! {|p| !p.preconditions.empty? || p.reference }
     end
@@ -190,7 +188,11 @@ module SimpleXml
     def push_down_comments(precondition, comments)
       return if comments.empty?
       if precondition.preconditions.empty?
-        @doc.data_criteria(precondition.reference.id).comments = comments
+        if @doc.data_criteria(precondition.reference.id).comments
+          comments.each {|c| @doc.data_criteria(precondition.reference.id).comments << c unless @doc.data_criteria(precondition.reference.id).comments.include? c}
+        else
+          @doc.data_criteria(precondition.reference.id).comments = comments
+        end
       else
         precondition.preconditions.each {|p| push_down_comments(p, comments)}
       end
@@ -231,7 +233,7 @@ module SimpleXml
     def to_model
       pcs = preconditions.collect {|p| p.to_model}
       mr = reference ? reference.to_model : nil
-      HQMF::Precondition.new(id, pcs, mr, conjunction_code, negation)
+      HQMF::Precondition.new(id, pcs, mr, conjunction_code, negation, @comments)
     end
 
     def handle_negations(parent)

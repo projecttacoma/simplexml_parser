@@ -1,7 +1,7 @@
 source "http://rubygems.org"
 gemspec
 
-gem 'health-data-standards', :git => 'https://github.com/projectcypress/health-data-standards.git', :branch => 'master'
+gem 'health-data-standards', :git => 'https://github.com/projectcypress/health-data-standards.git', :branch => 'bonnie_master'
 #gem 'health-data-standards', :path => '../health-data-standards'
 
 gem 'rake'

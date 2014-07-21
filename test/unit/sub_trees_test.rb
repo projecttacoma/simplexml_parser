@@ -19,7 +19,7 @@ class SubTreesTest < Test::Unit::TestCase
 
     simple_xml_model.all_data_criteria.count.must_equal 11
     simple_xml_model.population_criteria('IPP').preconditions.first.preconditions.count.must_equal 3
-    simple_xml_model.data_criteria('GROUP__CHILDREN_11').comments.must_equal ['a real comment']
+    simple_xml_model.population_criteria('IPP').preconditions.first.comments.must_equal ['a real comment']
 
   end
 
