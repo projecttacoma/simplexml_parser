@@ -53,6 +53,7 @@ class HQMFVsSimpleTest < Test::Unit::TestCase
     # fix the descriptions on hqmf data criteria to align with better simpleXML descripions
     # also remove empty units in hqmf and AnyValue entries on TIMEDIFF
     (hqmf_model.all_data_criteria + hqmf_model.source_data_criteria).each do |dc|
+      fix_hqmf_clinical_trial(dc)
       fix_hqmf_description(dc)
       fix_subset_operators(dc)
     end
@@ -211,6 +212,13 @@ class HQMFVsSimpleTest < Test::Unit::TestCase
       if (precondition.respond_to?(:reference) && precondition.reference && precondition.conjunction_code)
         precondition.instance_variable_set(:@conjunction_code,nil)
       end
+    end
+  end
+
+  def fix_hqmf_clinical_trial(dc)
+    if dc.definition == 'patient_characteristic_clinical_trial_participant'
+      dc.definition = 'patient_characteristic'
+      dc.status = 'clinical_trial_participant'
     end
   end
 
