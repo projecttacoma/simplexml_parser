@@ -15,7 +15,7 @@ module SimpleXml
     AGE_AT = 'AGE AT'
 
     attr_reader :id, :conjunction_code, :negation
-    attr_accessor :preconditions, :reference, :comments
+    attr_accessor :preconditions, :reference, :comments, :negated_logical
 
     def initialize(entry, doc, negated=false)
       @doc = doc
@@ -24,6 +24,7 @@ module SimpleXml
       @id = HQMF::Counter.instance.next
       @preconditions = []
       @negation = negated
+      @negated_logical = false
       @subset = nil
 
       if @entry.name == FUNCTIONAL_OP
@@ -124,6 +125,10 @@ module SimpleXml
 
     def handle_logical
       @conjunction_code = translate_type(attr_val('@type'))
+      if is_negated_logical(attr_val('@type'))
+        @negation = true
+        @negated_logical = true
+      end
       @preconditions = []
       children_of(@entry).collect do |precondition|
         # if we have a negated child with multiple logical children, then we want to make sure we don't infer an extra AND
@@ -206,15 +211,30 @@ module SimpleXml
       false
     end
 
+    def is_negated_logical(type)
+      case type
+      when 'andNot'
+        true
+      when 'orNot'
+        true
+      else
+        false
+      end
+    end
+
     def translate_type(type)
       case type
       when 'and'
         HQMF::Precondition::ALL_TRUE
       when 'intersection'
         HQMF::Precondition::ALL_TRUE
+      when 'andNot'
+        HQMF::Precondition::ALL_TRUE
       when 'or'
         HQMF::Precondition::AT_LEAST_ONE_TRUE
       when 'union'
+        HQMF::Precondition::AT_LEAST_ONE_TRUE
+      when 'orNot'
         HQMF::Precondition::AT_LEAST_ONE_TRUE
       else
         raise "Unknown population criteria type #{type}"
@@ -238,19 +258,26 @@ module SimpleXml
 
     def handle_negations(parent)
       negations = []
-      @preconditions.delete_if {|p| negations << p if p.negation}
-      unless (negations.empty?)
-        negations.each {|p| p.instance_variable_set(:@negation, false) }
-        inverted_conjunction_code = HQMF::Precondition::INVERSIONS[conjunction_code]
-        
-        # if we only have negations, then do not create an extra element
-        if @preconditions.empty?
-          @negation = true
-          @conjunction_code = inverted_conjunction_code
-          @preconditions.concat negations
-        else
-          # create a new inverted element for the subset of the children that are negated
-          @preconditions << ParsedPrecondition.new(HQMF::Counter.instance.next, negations, nil, inverted_conjunction_code, true)
+      if @negated_logical
+        # wrap the negation with an extra level so that it aligns with the display for non-logical negations
+        @negation = false
+        @preconditions = [ParsedPrecondition.new(HQMF::Counter.instance.next, @preconditions, nil, conjunction_code, true)]
+        # we do not need to do a translation if it's a negated logical (it is already in the correct form)
+      else
+        @preconditions.delete_if {|p| negations << p if p.negation && !p.negated_logical}
+        unless (negations.empty?)
+          negations.each {|p| p.instance_variable_set(:@negation, false) }
+          inverted_conjunction_code = HQMF::Precondition::INVERSIONS[conjunction_code]
+          
+          # if we only have negations, then do not create an extra element
+          if @preconditions.empty?
+            @negation = true
+            @conjunction_code = inverted_conjunction_code
+            @preconditions.concat negations
+          else
+            # create a new inverted element for the subset of the children that are negated
+            @preconditions << ParsedPrecondition.new(HQMF::Counter.instance.next, negations, nil, inverted_conjunction_code, true)
+          end
         end
       end
       @preconditions.each do |p|
@@ -277,8 +304,6 @@ module SimpleXml
           # SCW of MPE => SCWE
           temporal.type = references_start[temporal.type]
         end
-
-
       end
     end
 
