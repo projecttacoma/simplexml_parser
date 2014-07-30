@@ -12,6 +12,8 @@ module SimpleXml
     SUB_TREE = 'subTreeRef'
     SATISFIES_ALL = 'SATISFIES ALL'
     SATISFIES_ANY = 'SATISFIES ANY'
+    INTERSECTION = 'intersection'
+    UNION = 'union'
     AGE_AT = 'AGE AT'
 
     attr_reader :id, :conjunction_code, :negation
@@ -227,13 +229,13 @@ module SimpleXml
       when 'and'
         HQMF::Precondition::ALL_TRUE
       when 'intersection'
-        HQMF::Precondition::ALL_TRUE
+        SimpleXml::Precondition::INTERSECTION
       when 'andNot'
         HQMF::Precondition::ALL_TRUE
       when 'or'
         HQMF::Precondition::AT_LEAST_ONE_TRUE
       when 'union'
-        HQMF::Precondition::AT_LEAST_ONE_TRUE
+        SimpleXml::Precondition::UNION
       when 'orNot'
         HQMF::Precondition::AT_LEAST_ONE_TRUE
       else
