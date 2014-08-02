@@ -12,8 +12,8 @@ module SimpleXml
     SUB_TREE = 'subTreeRef'
     SATISFIES_ALL = 'SATISFIES ALL'
     SATISFIES_ANY = 'SATISFIES ANY'
-    INTERSECTION = 'intersection'
-    UNION = 'union'
+    INTERSECTION = 'INTERSECT'
+    UNION = 'UNION'
     AGE_AT = 'AGE AT'
 
     attr_reader :id, :conjunction_code, :negation
@@ -34,8 +34,10 @@ module SimpleXml
       end
 
       # if we have a subset then we want this to be a grouping data criteria
-      if (@entry.name == LOGICAL_OP || @entry.name == SET_OP) && @subset.nil?
+      if @entry.name == LOGICAL_OP && @subset.nil?
         handle_logical
+      elsif @entry.name == SET_OP && @subset.nil?
+        handle_set_op
       elsif @entry.name == TEMPORAL_OP && @subset.nil?
         handle_temporal
       elsif attr_val('@type') == SATISFIES_ALL || attr_val('@type') == SATISFIES_ANY
@@ -144,6 +146,13 @@ module SimpleXml
       end
       
       @preconditions.select! {|p| !p.preconditions.empty? || p.reference }
+    end
+
+    def handle_set_op
+      handle_logical
+      criteria = DataCriteria.convert_precondition_to_criteria(self, @doc, @conjunction_code)
+      @reference = Reference.new(criteria.id)
+      @preconditions = []
     end
 
     def handle_temporal
