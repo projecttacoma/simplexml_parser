@@ -177,27 +177,11 @@ module SimpleXml
     def filter_bad_oids
       # define the bad oid codes
       bad_oid_codes = {
-        '21112-8' => nil,
-        '419099009'=> nil
+        '21112-8' => '2.16.840.1.113883.3.117.1.7.1.70',
+        '419099009'=> '2.16.840.1.113883.3.117.1.7.1.309'
       }
 
-      # if the measure contains a valid code, use that instead
-      @doc.xpath('measure/elementLookUp/qdm').each do |entry|
-        oid = entry.at_xpath('@oid').value
-        data_type = entry.at_xpath('@datatype').value
-        if data_type == 'Patient Characteristic Birthdate' && !bad_oid_codes.has_key?(oid)
-          bad_oid_codes['21112-8'] = oid
-        end
-        if data_type == 'Patient Characteristic Expired' && !bad_oid_codes.has_key?(oid)
-          bad_oid_codes['419099009'] = oid
-        end
-      end
-
-      # otherwise supply this hardcoded one
-      bad_oid_codes['21112-8'] ||= '2.16.840.1.113883.3.560.100.4'
-      bad_oid_codes['419099009'] ||= '2.16.840.1.113883.3.666.5.730'
-
-      # next filter out any actual bad oids
+      # filter out any bad oids
       @doc.xpath('measure/elementLookUp/qdm').each do |entry|
         oid = entry.at_xpath('@oid').value
         unless bad_oid_codes[oid].nil?
