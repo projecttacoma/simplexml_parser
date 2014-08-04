@@ -141,7 +141,11 @@ module SimpleXml
     def self.convert_to_grouping(precondition, doc, operator)
       grouping = DataCriteria.new nil, "GROUP_#{operator}_CHILDREN_#{HQMF::Counter.instance.next}"
       grouping.children_criteria = precondition.preconditions.map {|p| convert_precondition_to_criteria(p, doc, operator).id}
-      grouping.derivation_operator = (precondition.conjunction_code == HQMF::Precondition::ALL_TRUE) ? HQMF::DataCriteria::XPRODUCT : HQMF::DataCriteria::UNION
+      grouping.derivation_operator = case precondition.conjunction_code
+                                     when HQMF::Precondition::ALL_TRUE then HQMF::DataCriteria::XPRODUCT
+                                     when SimpleXml::Precondition::INTERSECTION then HQMF::DataCriteria::INTERSECT
+                                     else HQMF::DataCriteria::UNION
+                                     end
       grouping
     end
     

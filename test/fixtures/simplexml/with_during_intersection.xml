@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<measure>
+  <measureDetails>
+    <uuid>40280581-46cf-ce63-0146-f84a024a0255</uuid>
+    <title>TEMPORAL INTERSECTION</title>
+    <shortTitle>TEMP INT</shortTitle>
+    <guid>aec9d808-9c12-4878-b960-eafdd917bf73</guid>
+    <version>0.0.001</version>
+    <status>In Progress</status>
+    <nqfid root="2.16.840.1.113883.3.560.1"/>
+    <period uuid="32ff6212-6192-4ea0-b4d1-8287645745c9">
+      <startDate uuid="d49cad10-e0ba-4a61-afba-23283069e732">00000101</startDate>
+      <stopDate uuid="58b27887-3edc-4adc-acda-867d61000388">00001231</stopDate>
+    </period>
+    <scoring id="PROPOR">Proportion</scoring>
+    <componentMeasures/>
+    <itemCount/>
+    <initialPopDescription/>
+    <measurePopulationExclusionsDescription/>
+  </measureDetails>
+  <supplementalDataElements>
+    <elementRef id="9846cb3b-4554-4fe6-a104-a58b32bf857e" name="ONC Administrative Sex"/>
+    <elementRef id="127e460a-647c-4ff4-a9af-76f4773b1392" name="Race"/>
+    <elementRef id="552389c9-f5ee-4802-8ab1-65960c04e22c" name="Ethnicity"/>
+    <elementRef id="7c5c41f1-2d35-4ae2-8792-58587fa5771f" name="Payer"/>
+  </supplementalDataElements>
+  <measureGrouping>
+    <group sequence="1">
+      <clause displayName="Initial Population 1" type="initialPopulation" uuid="E6F3A9F0-E441-498B-BAF0-4C528668232D">
+        <logicalOp displayName="AND" type="and">
+          <subTreeRef displayName="During Intersection" id="AAEF1879-87EB-4FFA-BF70-139F10B19F72" type="subTree"/>
+        </logicalOp>
+      </clause>
+      <clause displayName="Denominator 1" type="denominator" uuid="AEF13932-338F-4607-A2C8-E570958CDB64">
+        <logicalOp displayName="AND" type="and"/>
+      </clause>
+      <clause displayName="Numerator 1" type="numerator" uuid="B90D5FD1-87DA-442A-BC85-EC9EE21CA6A2">
+        <logicalOp displayName="AND" type="and"/>
+      </clause>
+    </group>
+  </measureGrouping>
+  <subTreeLookUp>
+    <subTree displayName="Num 2" qdmVariable="false" uuid="AAEF1879-87EB-4FFA-BF70-139F10B19F72">
+      <relationalOp displayName="During" type="DURING">
+        <setOp displayName="INTERSECTION" type="intersection">
+          <subTreeRef displayName="Dx Study results Severity" id="14FFF4A2-4ABE-4792-A5B6-57F71A866C6A" type="subTree"/>
+          <subTreeRef displayName="Dx Study result Edema" id="0BC12CE7-C0CF-4255-AEDF-1622401DCBB7" type="subTree"/>
+        </setOp>
+        <subTreeRef displayName="Encounters 2" id="EABC2AED-8EA9-4896-BCA7-2CCD829A074D" type="subTree"/>
+      </relationalOp>
+    </subTree>
+    <subTree displayName="Dx Study results Severity" qdmVariable="false" uuid="14FFF4A2-4ABE-4792-A5B6-57F71A866C6A">
+      <elementRef displayName="Macular Exam : Diagnostic Study, Performed" id="40280381-3d61-56a7-013e-57fe7eec37f2" type="qdm">
+        <attribute mode="Value Set" name="result" qdmUUID="40280381-3d61-56a7-013e-57fe7eeb37ed"/>
+      </elementRef>
+    </subTree>
+    <subTree displayName="Dx Study result Edema" qdmVariable="false" uuid="0BC12CE7-C0CF-4255-AEDF-1622401DCBB7">
+      <setOp displayName="UNION" type="union">
+        <elementRef displayName="Macular Exam : Diagnostic Study, Performed" id="40280381-3d61-56a7-013e-57fe7eec37f2" type="qdm">
+          <attribute mode="Value Set" name="result" qdmUUID="40280381-3d61-56a7-013e-57fe7eeb37ee"/>
+        </elementRef>
+        <elementRef displayName="Macular Exam : Diagnostic Study, Performed" id="40280381-3d61-56a7-013e-57fe7eec37f2" type="qdm">
+          <attribute mode="Value Set" name="result" qdmUUID="40280381-3d61-56a7-013e-57fe7eeb37ef"/>
+        </elementRef>
+      </setOp>
+    </subTree>
+    <subTree displayName="Encounters 2" qdmVariable="false" uuid="EABC2AED-8EA9-4896-BCA7-2CCD829A074D">
+      <setOp displayName="UNION" type="union">
+        <elementRef displayName="Occurrence A of Ophthalmological Services : Encounter, Performed" id="40280381-3d61-56a7-013e-57fe7eeb37e0" type="qdm"/>
+        <elementRef displayName="Occurrence A of Care Services in Long-Term Residential Facility : Encounter, Performed" id="40280381-3d61-56a7-013e-57fe7eeb37e2" type="qdm"/>
+      </setOp>
+    </subTree>
+  </subTreeLookUp>
+  <elementLookUp>
+    <qdm datatype="Timing Element" id="32ff6212-6192-4ea0-b4d1-8287645745c9" name="Measurement Period" oid="2.16.840.1.113883.3.67.1.101.1.53" suppDataElement="false" taxonomy="NQF" uuid="32ff6212-6192-4ea0-b4d1-8287645745c9" version="1.0"/>
+    <qdm datatype="Patient Characteristic Sex" id="9846cb3b-4554-4fe6-a104-a58b32bf857e" name="ONC Administrative Sex" oid="2.16.840.1.113762.1.4.1" suppDataElement="true" taxonomy="Administrative Sex" uuid="9846cb3b-4554-4fe6-a104-a58b32bf857e" version="1.0"/>
+    <qdm datatype="Patient Characteristic Race" id="127e460a-647c-4ff4-a9af-76f4773b1392" name="Race" oid="2.16.840.1.114222.4.11.836" suppDataElement="true" taxonomy="CDC" uuid="127e460a-647c-4ff4-a9af-76f4773b1392" version="1.0"/>
+    <qdm datatype="Patient Characteristic Ethnicity" id="552389c9-f5ee-4802-8ab1-65960c04e22c" name="Ethnicity" oid="2.16.840.1.114222.4.11.837" suppDataElement="true" taxonomy="CDC" uuid="552389c9-f5ee-4802-8ab1-65960c04e22c" version="1.0"/>
+    <qdm datatype="Patient Characteristic Payer" id="7c5c41f1-2d35-4ae2-8792-58587fa5771f" name="Payer" oid="2.16.840.1.114222.4.11.3591" suppDataElement="true" taxonomy="Source of Payment Typology" uuid="7c5c41f1-2d35-4ae2-8792-58587fa5771f" version="1.0"/>
+    <qdm codeSystemName="American Medical Association-convened Physician Consortium for Performance Improvement(R) (AMA-PCPI)" datatype="Encounter, Performed" id="40280381-3d61-56a7-013e-57fe7eeb37e0" instance="Occurrence A" name="Ophthalmological Services" oid="2.16.840.1.113883.3.526.3.1285" suppDataElement="false" taxonomy="Grouping" uuid="40280381-3d61-56a7-013e-57fe7eeb37e0" version="1"/>
+    <qdm codeSystemName="National Committee for Quality Assurance" datatype="Encounter, Performed" id="40280381-3d61-56a7-013e-57fe7eeb37e2" instance="Occurrence A" name="Care Services in Long-Term Residential Facility" oid="2.16.840.1.113883.3.464.1003.101.12.1014" suppDataElement="false" taxonomy="Grouping" uuid="40280381-3d61-56a7-013e-57fe7eeb37e2" version="1"/>
+    <qdm codeSystemName="American Medical Association-convened Physician Consortium for Performance Improvement(R) (AMA-PCPI)" datatype="attribute" id="40280381-3d61-56a7-013e-57fe7eeb37ed" name="Level of Severity of Retinopathy Findings" oid="2.16.840.1.113883.3.526.3.1283" suppDataElement="false" taxonomy="Grouping" uuid="40280381-3d61-56a7-013e-57fe7eeb37ed" version="1"/>
+    <qdm codeSystemName="American Medical Association-convened Physician Consortium for Performance Improvement(R) (AMA-PCPI)" datatype="attribute" id="40280381-3d61-56a7-013e-57fe7eeb37ee" name="Macular Edema Findings Absent" oid="2.16.840.1.113883.3.526.3.1284" suppDataElement="false" taxonomy="Grouping" uuid="40280381-3d61-56a7-013e-57fe7eeb37ee" version="1"/>
+    <qdm codeSystemName="American Medical Association-convened Physician Consortium for Performance Improvement(R) (AMA-PCPI)" datatype="attribute" id="40280381-3d61-56a7-013e-57fe7eeb37ef" name="Macular Edema Findings Present" oid="2.16.840.1.113883.3.526.3.1320" suppDataElement="false" taxonomy="Grouping" uuid="40280381-3d61-56a7-013e-57fe7eeb37ef" version="1"/>
+    <qdm codeSystemName="American Medical Association-convened Physician Consortium for Performance Improvement(R) (AMA-PCPI)" datatype="attribute" id="40280381-3d61-56a7-013e-57fe7eeb37f0" name="Medical Reason" oid="2.16.840.1.113883.3.526.3.1007" suppDataElement="false" taxonomy="Grouping" uuid="40280381-3d61-56a7-013e-57fe7eeb37f0" version="1"/>
+    <qdm codeSystemName="American Medical Association-convened Physician Consortium for Performance Improvement(R) (AMA-PCPI)" datatype="attribute" id="40280381-3d61-56a7-013e-57fe7eec37f1" name="Patient Reason" oid="2.16.840.1.113883.3.526.3.1008" suppDataElement="false" taxonomy="Grouping" uuid="40280381-3d61-56a7-013e-57fe7eec37f1" version="1"/>
+    <qdm codeSystemName="American Medical Association-convened Physician Consortium for Performance Improvement(R) (AMA-PCPI)" datatype="Diagnostic Study, Performed" id="40280381-3d61-56a7-013e-57fe7eec37f2" name="Macular Exam" oid="2.16.840.1.113883.3.526.3.1251" suppDataElement="false" taxonomy="Grouping" uuid="40280381-3d61-56a7-013e-57fe7eec37f2" version="1"/>
+    <qdm datatype="Diagnosis, Active" id="3047ffba-0db6-4992-bcd7-722edb5674ce" instance="Occurrence A" name="Diabetic Retinopathy" oid="2.16.840.1.113883.3.526.3.327" suppDataElement="false" taxonomy="Grouping" uuid="3047ffba-0db6-4992-bcd7-722edb5674ce" version="1.0"/>
+    <qdm codeSystemName="American Medical Association-convened Physician Consortium for Performance Improvement(R) (AMA-PCPI)" datatype="Encounter, Performed" id="9d9f7a5a-75f7-4d2e-9e01-77842ad9e156" name="Ophthalmological Services" oid="2.16.840.1.113883.3.526.3.1285" suppDataElement="false" taxonomy="Grouping" uuid="9d9f7a5a-75f7-4d2e-9e01-77842ad9e156" version="1"/>
+    <qdm codeSystemName="National Committee for Quality Assurance" datatype="Encounter, Performed" id="caeb6298-c9dd-4f39-92a1-2353dffc3eda" name="Care Services in Long-Term Residential Facility" oid="2.16.840.1.113883.3.464.1003.101.12.1014" suppDataElement="false" taxonomy="Grouping" uuid="caeb6298-c9dd-4f39-92a1-2353dffc3eda" version="1"/>
+    <qdm codeSystemName="American Medical Association-convened Physician Consortium for Performance Improvement(R) (AMA-PCPI)" datatype="Diagnosis, Active" id="40280381-3d61-56a7-013e-57fe7eeb37eb" name="Diabetic Retinopathy" oid="2.16.840.1.113883.3.526.3.327" suppDataElement="false" taxonomy="Grouping" uuid="40280381-3d61-56a7-013e-57fe7eeb37eb" version="1"/>
+  </elementLookUp>
+</measure>

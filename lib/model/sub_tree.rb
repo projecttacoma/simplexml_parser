@@ -20,9 +20,7 @@ module SimpleXml
 
     def process
       return if @processed
-      preconditions = []
-      preconditions << Precondition.new(@child, @doc)
-      @precondition = preconditions.first
+      @precondition = Precondition.new(@child, @doc)
       @processed = true
       convert_to_variable if attr_val('@qdmVariable') == 'true'
     end
@@ -34,13 +32,12 @@ module SimpleXml
 
     def convert_to_variable
       # wrap a reference precondition with a parent
-      @precondition = ParsedPrecondition.new(HQMF::Counter.instance.next, [@precondition], nil, HQMF::Precondition::ALL_TRUE, false) if @precondition.reference
+      @precondition = ParsedPrecondition.new(HQMF::Counter.instance.next, [@precondition], nil, SimpleXml::Precondition::UNION, false) if @precondition.reference
 
       # create the grouping data criteria for the variable
       criteria = convert_to_data_criteria('variable')
       criteria.instance_variable_set('@variable', true)
       criteria.instance_variable_set('@description', @entry.attributes['displayName'].value || attr_val('@displayName'))
-      criteria.derivation_operator = (@precondition.conjunction_code == HQMF::Precondition::ALL_TRUE) ? HQMF::DataCriteria::INTERSECT : HQMF::DataCriteria::UNION if criteria.children_criteria
 
       # put variable in source data criteria
       @doc.register_source_data_criteria(criteria)
