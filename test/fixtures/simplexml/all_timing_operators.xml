@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<measure>
+  <measureDetails>
+    <uuid>40280581-4736-6f35-0147-92382ca80bb4</uuid>
+    <title>TemporalReference_Test_v0</title>
+    <shortTitle>TR_Test_v0</shortTitle>
+    <guid>3b2c141b-cb73-4397-8df8-d6ed6a50dc9a</guid>
+    <version>0.0.001</version>
+    <status>In Progress</status>
+    <nqfid root="2.16.840.1.113883.3.560.1"/>
+    <period uuid="8a4d92b2-37bf-6f1b-0137-cdadba412b8c">
+      <startDate uuid="b0edadd0-2f49-42a6-a0a1-132436fb9dfa">00000101</startDate>
+      <stopDate uuid="6ab5e2d4-6e5c-41c1-8c36-504519a3f54c">00001231</stopDate>
+    </period>
+    <scoring id="PROPOR">Proportion</scoring>
+    <componentMeasures/>
+    <itemCount/>
+    <initialPopDescription/>
+    <measurePopulationExclusionsDescription/>
+  </measureDetails>
+  <supplementalDataElements>
+    <elementRef id="8a4d92b2-37bf-6f1b-0137-cdadba412b86" name="ONC Administrative Sex"/>
+    <elementRef id="8a4d92b2-37bf-6f1b-0137-cdadba412b87" name="Race"/>
+    <elementRef id="8a4d92b2-37bf-6f1b-0137-cdadba412b88" name="Ethnicity"/>
+    <elementRef id="8a4d92b2-37bf-6f1b-0137-cdadba412b89" name="Payer"/>
+  </supplementalDataElements>
+  <subTreeLookUp>
+    <subTree displayName="HadIschemicStroke" qdmVariable="false" uuid="96E79782-BB33-42DD-BBD5-58F388EE12B2">
+      <relationalOp displayName="Starts During" type="SDU">
+        <elementRef displayName="Ischemic Stroke : Diagnosis, Active" id="8a4d92b2-37bf-6f1b-0137-cdadba412b9a" type="qdm"/>
+        <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm"/>
+      </relationalOp>
+    </subTree>
+    <subTree displayName="DischargedOnAntithrombotic" qdmVariable="false" uuid="BF83A7DF-E19B-4154-BC4E-D35502BEF32D">
+      <relationalOp displayName="During" type="DURING">
+        <elementRef displayName="Antithrombotic Therapy : Medication, Discharge" id="8a4d92b2-3a58-b777-013a-65ae440c2116" type="qdm"/>
+        <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm"/>
+      </relationalOp>
+    </subTree>
+    <subTree displayName="OlderThan30" qdmVariable="false" uuid="41D98150-2288-4135-966F-7B42AAE40B53">
+      <functionalOp displayName="Age &gt;= 30 years at" operatorType="Greater Than or Equal To" quantity="30" type="AGE AT" unit="years">
+        <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm"/>
+      </functionalOp>
+    </subTree>
+    <subTree displayName="StrokeDuringEncounter" qdmVariable="true" uuid="DAA7DA58-90EE-44F1-A5F6-37B48A0DC5BE">
+      <relationalOp displayName="Starts During" type="SDU">
+        <subTreeRef displayName="AllStrokes" id="5D3039B2-EE03-4B75-A66A-62A7F25B1632" type="subTree"/>
+        <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm"/>
+      </relationalOp>
+    </subTree>
+    <subTree displayName="EncounterAfterEDVisit" qdmVariable="false" uuid="62FD43E9-265D-4D3C-9BD2-621E4ECBAD24">
+      <relationalOp displayName="&lt;= 1 hours Starts After End Of" operatorType="Less Than or Equal To" quantity="1" type="SAE" unit="hours">
+        <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm">
+          <attribute mode="Check if Present" name="admission datetime"/>
+        </elementRef>
+        <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4c78101d7d65" type="qdm">
+          <attribute mode="Check if Present" name="facility location departure datetime"/>
+        </elementRef>
+      </relationalOp>
+    </subTree>
+    <subTree displayName="EncounterWithDischarges" qdmVariable="false" uuid="0D1C58E6-BE3A-4589-9A5D-75F259C758B5">
+      <functionalOp displayName="SATISFIES ANY" type="SATISFIES ANY">
+        <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm"/>
+        <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm">
+          <attribute mode="Value Set" name="reason" qdmUUID="8a4d92b2-37bf-6f1b-0137-cdadba422ba0"/>
+        </elementRef>
+        <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm">
+          <attribute mode="Value Set" name="discharge status" qdmUUID="8a4d92b2-37bf-6f1b-0137-cdadba422ba4"/>
+        </elementRef>
+        <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm">
+          <attribute mode="Value Set" name="discharge status" qdmUUID="8a4d92b2-37bf-6f1b-0137-cdadba412b9b"/>
+        </elementRef>
+        <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm">
+          <attribute mode="Value Set" name="discharge status" qdmUUID="8a4d92b2-37bf-6f1b-0137-cdadba422b9d"/>
+        </elementRef>
+        <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm">
+          <attribute mode="Value Set" name="discharge status" qdmUUID="8a4d92b2-37bf-6f1b-0137-cdadba422ba2"/>
+        </elementRef>
+        <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm">
+          <attribute mode="Value Set" name="discharge status" qdmUUID="8a4d92b2-37bf-6f1b-0137-cdadba422b9e"/>
+        </elementRef>
+      </functionalOp>
+    </subTree>
+    <subTree displayName="ClinicalTrialParticipant" qdmVariable="false" uuid="A78C7786-0200-4104-8A55-A44580963D38">
+      <elementRef displayName="Clinical Trial Participant : Patient Characteristic Clinical Trial Participant" id="8a4d92b2-37bf-6f1b-0137-cdadba422ba1" type="qdm"/>
+    </subTree>
+    <subTree displayName="PalliativeCare" qdmVariable="true" uuid="9E1AB49E-B2AA-4E5C-8A22-FA263F16C253">
+      <setOp displayName="UNION" type="union">
+        <elementRef displayName="Palliative Care : Intervention, Performed" id="8a4d92b2-37bf-6f1b-0137-cdadba412b98" type="qdm"/>
+        <elementRef displayName="Palliative Care : Intervention, Order" id="8a4d92b2-37bf-6f1b-0137-cdadba412b97" type="qdm"/>
+      </setOp>
+    </subTree>
+    <subTree displayName="PalliativeDuringEncounter" qdmVariable="false" uuid="FC4ABD6B-D539-4E53-9F61-27DD80E8E4D0">
+      <relationalOp displayName="Starts During" type="SDU">
+        <subTreeRef displayName="PalliativeCare" id="9E1AB49E-B2AA-4E5C-8A22-FA263F16C253" type="subTree"/>
+        <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm"/>
+      </relationalOp>
+    </subTree>
+    <subTree displayName="PalliativeBetweenEDandEncounter" qdmVariable="false" uuid="9C937C7A-764E-4A78-91BC-8F6568A60992">
+      <setOp displayName="INTERSECTION" type="intersection">
+        <relationalOp displayName="Starts After Start Of" type="SAS">
+          <subTreeRef displayName="PalliativeCare" id="9E1AB49E-B2AA-4E5C-8A22-FA263F16C253" type="subTree"/>
+          <elementRef displayName="Occurrence A of Emergency Department Visit : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4c78101d7d65" type="qdm">
+            <attribute mode="Check if Present" name="facility location arrival datetime"/>
+          </elementRef>
+        </relationalOp>
+        <relationalOp displayName="Starts Before End Of" type="SBE">
+          <subTreeRef displayName="PalliativeCare" id="9E1AB49E-B2AA-4E5C-8A22-FA263F16C253" type="subTree"/>
+          <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm"/>
+        </relationalOp>
+      </setOp>
+    </subTree>
+    <subTree displayName="varWithinVar" qdmVariable="true" uuid="65C379DE-9008-4642-8C87-F440787ABC1D">
+      <setOp displayName="UNION" type="union">
+        <subTreeRef displayName="PalliativeCare" id="9E1AB49E-B2AA-4E5C-8A22-FA263F16C253" type="subTree"/>
+        <subTreeRef displayName="StrokeDuringEncounter" id="DAA7DA58-90EE-44F1-A5F6-37B48A0DC5BE" type="subTree"/>
+        <subTreeRef displayName="AllStrokes" id="5D3039B2-EE03-4B75-A66A-62A7F25B1632" type="subTree"/>
+      </setOp>
+    </subTree>
+    <subTree displayName="AllStrokesv2" qdmVariable="false" uuid="687DC070-CF99-45CF-9FB5-1A25818B429B">
+      <setOp displayName="UNION" type="union">
+        <elementRef displayName="Hemorrhagic Stroke : Diagnosis, Active" id="8a4d92b2-37bf-6f1b-0137-cdadba412b8e" type="qdm"/>
+        <elementRef displayName="Ischemic Stroke : Diagnosis, Active" id="8a4d92b2-37bf-6f1b-0137-cdadba412b9a" type="qdm"/>
+      </setOp>
+    </subTree>
+    <subTree displayName="varWithMultipleTiming2" qdmVariable="false" uuid="4CAE4F98-8D19-477B-A2DA-87DA6EF94520">
+      <setOp displayName="UNION" type="union">
+        <relationalOp displayName="During" type="DURING">
+          <subTreeRef displayName="AllStrokesv2" id="687DC070-CF99-45CF-9FB5-1A25818B429B" type="subTree"/>
+          <elementRef displayName="Measurement Period : Timing Element" id="8a4d92b2-37bf-6f1b-0137-cdadba412b8c" type="qdm"/>
+        </relationalOp>
+        <relationalOp displayName="Starts After Start Of" type="SAS">
+          <subTreeRef displayName="AllStrokesv2" id="687DC070-CF99-45CF-9FB5-1A25818B429B" type="subTree"/>
+          <elementRef displayName="Measurement Period : Timing Element" id="8a4d92b2-37bf-6f1b-0137-cdadba412b8c" type="qdm"/>
+        </relationalOp>
+        <relationalOp displayName="Ends Before End Of" type="EBE">
+          <subTreeRef displayName="AllStrokesv2" id="687DC070-CF99-45CF-9FB5-1A25818B429B" type="subTree"/>
+          <elementRef displayName="Measurement Period : Timing Element" id="8a4d92b2-37bf-6f1b-0137-cdadba412b8c" type="qdm"/>
+        </relationalOp>
+      </setOp>
+    </subTree>
+    <subTree displayName="varWithMultipleTiming3" qdmVariable="true" uuid="E7C84374-BF75-4B26-974B-30DD7899EC89">
+      <setOp displayName="UNION" type="union">
+        <subTreeRef displayName="varWithMultipleTiming2" id="4CAE4F98-8D19-477B-A2DA-87DA6EF94520" type="subTree"/>
+      </setOp>
+    </subTree>
+    <subTree displayName="importantEncounter" qdmVariable="true" uuid="24E0D090-7DA1-45A6-9134-E71150F44FF2">
+      <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm"/>
+    </subTree>
+    <subTree displayName="OlderThan18_v2" qdmVariable="false" uuid="7E421EA7-C813-4565-B77E-1820F4E878DC">
+      <functionalOp displayName="Age &gt;= 18 years at" operatorType="Greater Than or Equal To" quantity="18" type="AGE AT" unit="years">
+        <subTreeRef displayName="importantEncounter" id="24E0D090-7DA1-45A6-9134-E71150F44FF2" type="subTree"/>
+      </functionalOp>
+    </subTree>
+    <subTree displayName="QualifiyingEncounterIPP_v2" qdmVariable="false" uuid="FAE8D769-5228-4156-9108-99B94721C49B">
+      <functionalOp displayName="SATISFIES ALL" type="SATISFIES ALL">
+        <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm"/>
+        <relationalOp displayName="During" type="DURING">
+          <subTreeRef displayName="importantEncounter" id="24E0D090-7DA1-45A6-9134-E71150F44FF2" type="subTree"/>
+          <elementRef displayName="Measurement Period : Timing Element" id="8a4d92b2-37bf-6f1b-0137-cdadba412b8c" type="qdm"/>
+        </relationalOp>
+        <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm">
+          <attribute comparisonValue="120" mode="Less Than Or Equal To" name="length of stay" unit="days"/>
+        </elementRef>
+      </functionalOp>
+    </subTree>
+    <subTree displayName="badStroke" qdmVariable="true" uuid="744C529A-0EA0-47FE-9AC8-8E72E7710507">
+      <elementRef displayName="Hemorrhagic Stroke : Diagnosis, Active" id="8a4d92b2-37bf-6f1b-0137-cdadba412b8e" type="qdm"/>
+    </subTree>
+    <subTree displayName="goodStroke" qdmVariable="true" uuid="8A6194C4-8421-4132-A401-F0385FFE6113">
+      <elementRef displayName="Ischemic Stroke : Diagnosis, Active" id="8a4d92b2-37bf-6f1b-0137-cdadba412b9a" type="qdm"/>
+    </subTree>
+    <subTree displayName="AllStrokes" qdmVariable="true" uuid="5D3039B2-EE03-4B75-A66A-62A7F25B1632">
+      <setOp displayName="UNION" type="union">
+        <subTreeRef displayName="badStroke" id="744C529A-0EA0-47FE-9AC8-8E72E7710507" type="subTree"/>
+        <subTreeRef displayName="goodStroke" id="8A6194C4-8421-4132-A401-F0385FFE6113" type="subTree"/>
+      </setOp>
+    </subTree>
+    <subTree displayName="OlderThan18_v3" qdmVariable="false" uuid="7B0A831A-1018-4BA6-8D67-9A69A59D1015">
+      <functionalOp displayName="Age &gt;= 18 years at" operatorType="Greater Than or Equal To" quantity="18" type="AGE AT" unit="years">
+        <subTreeRef displayName="varWithinVar" id="65C379DE-9008-4642-8C87-F440787ABC1D" type="subTree"/>
+      </functionalOp>
+    </subTree>
+    <subTree displayName="randomTiming" qdmVariable="false" uuid="717E0556-A9FC-4AC2-ABE7-AC4502F40716">
+      <relationalOp displayName="During" type="DURING">
+        <elementRef displayName="Antithrombotic Therapy : Medication, Discharge" id="8a4d92b2-3a58-b777-013a-65ae440c2116" type="qdm"/>
+        <elementRef displayName="Measurement Period : Timing Element" id="8a4d92b2-37bf-6f1b-0137-cdadba412b8c" type="qdm"/>
+      </relationalOp>
+    </subTree>
+    <subTree displayName="Negation" qdmVariable="false" uuid="08160C69-D48A-4826-B3EC-7A1E962ABA75">
+      <relationalOp displayName="Starts Before Start Of" type="SBS">
+        <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm"/>
+        <elementRef displayName="Measurement Period : Timing Element" id="8a4d92b2-37bf-6f1b-0137-cdadba412b8c" type="qdm"/>
+      </relationalOp>
+    </subTree>
+    <subTree displayName="TemporalReferencesTest" qdmVariable="false" uuid="01FC99AB-7E63-4B98-974F-06DFEC0285BF">
+      <functionalOp displayName="SATISFIES ANY" type="SATISFIES ANY">
+        <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm"/>
+        <relationalOp displayName="Concurrent With" type="CONCURRENT">
+          <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm"/>
+          <elementRef displayName="Measurement Period : Timing Element" id="8a4d92b2-37bf-6f1b-0137-cdadba412b8c" type="qdm"/>
+        </relationalOp>
+        <relationalOp displayName="During" type="DURING">
+          <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm"/>
+          <elementRef displayName="Measurement Period : Timing Element" id="8a4d92b2-37bf-6f1b-0137-cdadba412b8c" type="qdm"/>
+        </relationalOp>
+        <relationalOp displayName="Ends After End Of" type="EAE">
+          <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm"/>
+          <elementRef displayName="Antithrombotic Therapy : Medication, Order" id="8a4d92b2-37bf-6f1b-0137-cdadba422ba9" type="qdm"/>
+        </relationalOp>
+        <relationalOp displayName="Ends After Or Concurrent With End Of" type="EAOCW">
+          <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm"/>
+          <elementRef displayName="Antithrombotic Therapy : Medication, Order" id="8a4d92b2-37bf-6f1b-0137-cdadba422ba9" type="qdm"/>
+        </relationalOp>
+        <relationalOp displayName="Ends After Or Concurrent With Start Of" type="EAOCWSO">
+          <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm"/>
+          <elementRef displayName="Antithrombotic Therapy : Medication, Order" id="8a4d92b2-37bf-6f1b-0137-cdadba422ba9" type="qdm"/>
+        </relationalOp>
+        <relationalOp displayName="Ends After Start Of" type="EAS">
+          <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm"/>
+          <elementRef displayName="Measurement Period : Timing Element" id="8a4d92b2-37bf-6f1b-0137-cdadba412b8c" type="qdm"/>
+        </relationalOp>
+        <relationalOp displayName="Ends Before End Of" type="EBE">
+          <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm"/>
+          <elementRef displayName="Measurement Period : Timing Element" id="8a4d92b2-37bf-6f1b-0137-cdadba412b8c" type="qdm"/>
+        </relationalOp>
+        <relationalOp displayName="Ends Before Or Concurrent With End Of" type="EBOCW">
+          <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm"/>
+          <elementRef displayName="Measurement Period : Timing Element" id="8a4d92b2-37bf-6f1b-0137-cdadba412b8c" type="qdm"/>
+        </relationalOp>
+        <relationalOp displayName="Ends Before Or Concurrent With Start Of" type="EBOCWSO">
+          <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm"/>
+          <elementRef displayName="Measurement Period : Timing Element" id="8a4d92b2-37bf-6f1b-0137-cdadba412b8c" type="qdm"/>
+        </relationalOp>
+        <relationalOp displayName="Ends Before Start Of" type="EBS">
+          <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm"/>
+          <elementRef displayName="Hemorrhagic Stroke : Diagnosis, Active" id="8a4d92b2-37bf-6f1b-0137-cdadba412b8e" type="qdm"/>
+        </relationalOp>
+        <relationalOp displayName="Ends Concurrent With" type="ECW">
+          <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm"/>
+          <elementRef displayName="Antithrombotic Therapy : Medication, Order" id="8a4d92b2-37bf-6f1b-0137-cdadba422ba9" type="qdm"/>
+        </relationalOp>
+        <relationalOp displayName="Ends Concurrent With Start Of" type="ECWSO">
+          <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm"/>
+          <elementRef displayName="Ischemic Stroke : Diagnosis, Active" id="8a4d92b2-37bf-6f1b-0137-cdadba412b9a" type="qdm"/>
+        </relationalOp>
+        <relationalOp displayName="Ends During" type="EDU">
+          <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm"/>
+          <elementRef displayName="Measurement Period : Timing Element" id="8a4d92b2-37bf-6f1b-0137-cdadba412b8c" type="qdm"/>
+        </relationalOp>
+        <relationalOp displayName="Overlaps" type="Overlaps">
+          <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm"/>
+          <elementRef displayName="Hemorrhagic Stroke : Diagnosis, Active" id="8a4d92b2-37bf-6f1b-0137-cdadba412b8e" type="qdm"/>
+        </relationalOp>
+        <relationalOp displayName="Starts After End Of" type="SAE">
+          <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm"/>
+          <elementRef displayName="Ischemic Stroke : Diagnosis, Active" id="8a4d92b2-37bf-6f1b-0137-cdadba412b9a" type="qdm"/>
+        </relationalOp>
+        <relationalOp displayName="Starts After Or Concurrent With End Of" type="SAOCWEO">
+          <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm"/>
+          <elementRef displayName="Ischemic Stroke : Diagnosis, Active" id="8a4d92b2-37bf-6f1b-0137-cdadba412b9a" type="qdm"/>
+        </relationalOp>
+        <relationalOp displayName="Starts After Or Concurrent With Start Of" type="SAOCW">
+          <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm"/>
+          <elementRef displayName="Ischemic Stroke : Diagnosis, Active" id="8a4d92b2-37bf-6f1b-0137-cdadba412b9a" type="qdm"/>
+        </relationalOp>
+        <relationalOp displayName="Starts After Start Of" type="SAS">
+          <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm"/>
+          <elementRef displayName="Measurement Period : Timing Element" id="8a4d92b2-37bf-6f1b-0137-cdadba412b8c" type="qdm"/>
+        </relationalOp>
+        <relationalOp displayName="Starts Before End Of" type="SBE">
+          <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm"/>
+          <elementRef displayName="Measurement Period : Timing Element" id="8a4d92b2-37bf-6f1b-0137-cdadba412b8c" type="qdm"/>
+        </relationalOp>
+        <relationalOp displayName="Starts Before Or Concurrent With End Of" type="SBOCWEO">
+          <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm"/>
+          <elementRef displayName="Measurement Period : Timing Element" id="8a4d92b2-37bf-6f1b-0137-cdadba412b8c" type="qdm"/>
+        </relationalOp>
+        <relationalOp displayName="Starts Before Or Concurrent With Start Of" type="SBOCW">
+          <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm"/>
+          <elementRef displayName="Measurement Period : Timing Element" id="8a4d92b2-37bf-6f1b-0137-cdadba412b8c" type="qdm"/>
+        </relationalOp>
+        <relationalOp displayName="Starts Before Start Of" type="SBS">
+          <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm"/>
+          <elementRef displayName="Hemorrhagic Stroke : Diagnosis, Active" id="8a4d92b2-37bf-6f1b-0137-cdadba412b8e" type="qdm"/>
+        </relationalOp>
+        <relationalOp displayName="Starts Concurrent With" type="SCW">
+          <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm"/>
+          <elementRef displayName="Antithrombotic Therapy : Medication, Order" id="8a4d92b2-37bf-6f1b-0137-cdadba422ba9" type="qdm"/>
+        </relationalOp>
+        <relationalOp displayName="Starts Concurrent With End Of" type="SCWEO">
+          <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm"/>
+          <elementRef displayName="Ischemic Stroke : Diagnosis, Active" id="8a4d92b2-37bf-6f1b-0137-cdadba412b9a" type="qdm"/>
+        </relationalOp>
+        <relationalOp displayName="Starts During" type="SDU">
+          <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" type="qdm"/>
+          <elementRef displayName="Measurement Period : Timing Element" id="8a4d92b2-37bf-6f1b-0137-cdadba412b8c" type="qdm"/>
+        </relationalOp>
+      </functionalOp>
+    </subTree>
+  </subTreeLookUp>
+  <measureGrouping>
+    <group sequence="1">
+      <clause displayName="Initial Population 1" type="initialPopulation" uuid="623C5706-C024-47DA-8651-CF8C598734ED">
+        <logicalOp displayName="AND" type="and">
+          <comment displayName="comment" type="comment">IPP1 AND1 Test Comment</comment>
+          <subTreeRef displayName="OlderThan18_v2" id="7E421EA7-C813-4565-B77E-1820F4E878DC" type="subTree">
+            <comment displayName="comment" type="comment">IPP1 OlderThan18_v2 Test Comment</comment>
+          </subTreeRef>
+          <subTreeRef displayName="QualifiyingEncounterIPP_v2" id="FAE8D769-5228-4156-9108-99B94721C49B" type="subTree">
+            <comment displayName="comment" type="comment">IPP1 QualifyingEncounterIPP_v2 Test Comment</comment>
+          </subTreeRef>
+          <subTreeRef displayName="StrokeDuringEncounter" id="DAA7DA58-90EE-44F1-A5F6-37B48A0DC5BE" type="subTree">
+            <comment displayName="comment" type="comment">comment</comment>
+          </subTreeRef>
+          <subTreeRef displayName="varWithinVar" id="65C379DE-9008-4642-8C87-F440787ABC1D" type="subTree">
+            <comment displayName="comment" type="comment">comment1</comment>
+          </subTreeRef>
+          <subTreeRef displayName="varWithMultipleTiming2" id="4CAE4F98-8D19-477B-A2DA-87DA6EF94520" type="subTree">
+            <comment displayName="comment" type="comment">IPP1 varWithMultipleTiming2 Test Comment</comment>
+          </subTreeRef>
+          <subTreeRef displayName="varWithMultipleTiming3" id="E7C84374-BF75-4B26-974B-30DD7899EC89" type="subTree">
+            <comment displayName="comment" type="comment">IPP1 varWithMultipleTiming3 Test comment</comment>
+          </subTreeRef>
+          <subTreeRef displayName="OlderThan18_v3" id="7B0A831A-1018-4BA6-8D67-9A69A59D1015" type="subTree">
+            <comment displayName="comment" type="comment">testing age_at with a variable</comment>
+          </subTreeRef>
+          <logicalOp displayName="AND" type="and">
+            <comment displayName="comment" type="comment">IPP1 AND2 subset and with repeat first clause??</comment>
+            <subTreeRef displayName="OlderThan18_v2" id="7E421EA7-C813-4565-B77E-1820F4E878DC" type="subTree">
+              <comment displayName="comment" type="comment">IPP1 AND2 OlderThan18_v2 clause!</comment>
+            </subTreeRef>
+          </logicalOp>
+          <logicalOp displayName="OR" type="or">
+            <comment displayName="comment" type="comment">a nested OR1 within AND1 of IPP1</comment>
+            <subTreeRef displayName="randomTiming" id="717E0556-A9FC-4AC2-ABE7-AC4502F40716" type="subTree">
+              <comment displayName="comment" type="comment">some random timing check or other thing</comment>
+            </subTreeRef>
+          </logicalOp>
+          <logicalOp displayName="AND NOT" type="andNot">
+            <subTreeRef displayName="Negation" id="08160C69-D48A-4826-B3EC-7A1E962ABA75" type="subTree"/>
+          </logicalOp>
+          <logicalOp displayName="OR NOT" type="orNot">
+            <subTreeRef displayName="Negation" id="08160C69-D48A-4826-B3EC-7A1E962ABA75" type="subTree"/>
+          </logicalOp>
+          <logicalOp displayName="AND" type="and">
+            <comment displayName="comment" type="comment">Super Mega timing operator satisfies clause</comment>
+            <subTreeRef displayName="TemporalReferencesTest" id="01FC99AB-7E63-4B98-974F-06DFEC0285BF" type="subTree">
+              <comment displayName="comment" type="comment">this is it, the big one!</comment>
+            </subTreeRef>
+          </logicalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Denominator 1" type="denominator" uuid="2066060A-F4FE-42BF-9A46-C74BD5439DB4">
+        <logicalOp displayName="AND" type="and">
+          <subTreeRef displayName="HadIschemicStroke" id="96E79782-BB33-42DD-BBD5-58F388EE12B2" type="subTree">
+            <comment displayName="comment" type="comment">oops</comment>
+          </subTreeRef>
+        </logicalOp>
+      </clause>
+      <clause displayName="Denominator Exclusions 1" type="denominatorExclusions" uuid="0943199D-511E-465F-922D-244DF000AF88">
+        <logicalOp displayName="OR" type="or">
+          <comment displayName="comment" type="comment"/>
+          <logicalOp displayName="AND" type="and">
+            <comment displayName="comment" type="comment"/>
+            <subTreeRef displayName="EncounterAfterEDVisit" id="62FD43E9-265D-4D3C-9BD2-621E4ECBAD24" type="subTree"/>
+            <subTreeRef displayName="PalliativeBetweenEDandEncounter" id="9C937C7A-764E-4A78-91BC-8F6568A60992" type="subTree">
+              <comment displayName="comment" type="comment"/>
+            </subTreeRef>
+          </logicalOp>
+          <subTreeRef displayName="EncounterWithDischarges" id="0D1C58E6-BE3A-4589-9A5D-75F259C758B5" type="subTree"/>
+          <subTreeRef displayName="ClinicalTrialParticipant" id="A78C7786-0200-4104-8A55-A44580963D38" type="subTree"/>
+          <subTreeRef displayName="PalliativeDuringEncounter" id="FC4ABD6B-D539-4E53-9F61-27DD80E8E4D0" type="subTree"/>
+        </logicalOp>
+      </clause>
+      <clause displayName="Numerator 1" type="numerator" uuid="52A8EBA4-BDBD-48E5-8211-1C911C3B3CA6">
+        <logicalOp displayName="AND" type="and">
+          <comment displayName="comment" type="comment"/>
+          <subTreeRef displayName="DischargedOnAntithrombotic" id="BF83A7DF-E19B-4154-BC4E-D35502BEF32D" type="subTree">
+            <comment displayName="comment" type="comment">discharge me!!!</comment>
+          </subTreeRef>
+        </logicalOp>
+      </clause>
+      <clause displayName="numeratorExclusions" type="numeratorExclusions" uuid="2ea4d5b9-4de8-49c2-9861-6425cc61d139">
+        <logicalOp displayName="AND" type="and"/>
+      </clause>
+      <clause displayName="denominatorExceptions" type="denominatorExceptions" uuid="2a7e3a8d-3f90-474b-bc24-203c3ff2e6e6">
+        <logicalOp displayName="AND" type="and"/>
+      </clause>
+      <clause displayName="stratum" type="stratum" uuid="2e6ec0e2-b7e1-4db3-a10f-554c575c6b89">
+        <logicalOp displayName="AND" type="and"/>
+      </clause>
+    </group>
+    <group sequence="2">
+      <clause displayName="Initial Population 1" type="initialPopulation" uuid="BF6A893A-E966-4A77-9B50-BCC672871A56">
+        <logicalOp displayName="AND" type="and">
+          <comment displayName="comment" type="comment">IPP1 AND1 Test Comment</comment>
+          <subTreeRef displayName="OlderThan18_v2" id="7E421EA7-C813-4565-B77E-1820F4E878DC" type="subTree">
+            <comment displayName="comment" type="comment">IPP1 OlderThan18_v2 Test Comment</comment>
+          </subTreeRef>
+          <subTreeRef displayName="QualifiyingEncounterIPP_v2" id="FAE8D769-5228-4156-9108-99B94721C49B" type="subTree">
+            <comment displayName="comment" type="comment">IPP1 QualifyingEncounterIPP_v2 Test Comment</comment>
+          </subTreeRef>
+          <subTreeRef displayName="StrokeDuringEncounter" id="DAA7DA58-90EE-44F1-A5F6-37B48A0DC5BE" type="subTree">
+            <comment displayName="comment" type="comment">comment</comment>
+          </subTreeRef>
+          <subTreeRef displayName="varWithinVar" id="65C379DE-9008-4642-8C87-F440787ABC1D" type="subTree">
+            <comment displayName="comment" type="comment">comment1</comment>
+          </subTreeRef>
+          <subTreeRef displayName="varWithMultipleTiming2" id="4CAE4F98-8D19-477B-A2DA-87DA6EF94520" type="subTree">
+            <comment displayName="comment" type="comment">IPP1 varWithMultipleTiming2 Test Comment</comment>
+          </subTreeRef>
+          <subTreeRef displayName="varWithMultipleTiming3" id="E7C84374-BF75-4B26-974B-30DD7899EC89" type="subTree">
+            <comment displayName="comment" type="comment">IPP1 varWithMultipleTiming3 Test comment</comment>
+          </subTreeRef>
+          <subTreeRef displayName="OlderThan18_v3" id="7B0A831A-1018-4BA6-8D67-9A69A59D1015" type="subTree">
+            <comment displayName="comment" type="comment">testing age_at with a variable</comment>
+          </subTreeRef>
+          <logicalOp displayName="AND" type="and">
+            <comment displayName="comment" type="comment">IPP1 AND2 subset and with repeat first clause??</comment>
+            <subTreeRef displayName="OlderThan18_v2" id="7E421EA7-C813-4565-B77E-1820F4E878DC" type="subTree">
+              <comment displayName="comment" type="comment">IPP1 AND2 OlderThan18_v2 clause!</comment>
+            </subTreeRef>
+          </logicalOp>
+          <logicalOp displayName="OR" type="or">
+            <comment displayName="comment" type="comment">a nested OR1 within AND1 of IPP1</comment>
+            <subTreeRef displayName="randomTiming" id="717E0556-A9FC-4AC2-ABE7-AC4502F40716" type="subTree">
+              <comment displayName="comment" type="comment">some random timing check or other thing</comment>
+            </subTreeRef>
+          </logicalOp>
+          <logicalOp displayName="AND NOT" type="andNot">
+            <subTreeRef displayName="Negation" id="08160C69-D48A-4826-B3EC-7A1E962ABA75" type="subTree"/>
+          </logicalOp>
+          <logicalOp displayName="OR NOT" type="orNot">
+            <subTreeRef displayName="Negation" id="08160C69-D48A-4826-B3EC-7A1E962ABA75" type="subTree"/>
+          </logicalOp>
+          <logicalOp displayName="AND" type="and">
+            <comment displayName="comment" type="comment">Super Mega timing operator satisfies clause</comment>
+            <subTreeRef displayName="TemporalReferencesTest" id="01FC99AB-7E63-4B98-974F-06DFEC0285BF" type="subTree">
+              <comment displayName="comment" type="comment">this is it, the big one!</comment>
+            </subTreeRef>
+          </logicalOp>
+        </logicalOp>
+      </clause>
+      <clause displayName="Denominator 1" type="denominator" uuid="C3F1D8F3-F39F-40B6-90EF-EFE23F794567">
+        <logicalOp displayName="AND" type="and">
+          <subTreeRef displayName="HadIschemicStroke" id="96E79782-BB33-42DD-BBD5-58F388EE12B2" type="subTree">
+            <comment displayName="comment" type="comment">oops</comment>
+          </subTreeRef>
+        </logicalOp>
+      </clause>
+      <clause displayName="Denominator Exclusions 1" type="denominatorExclusions" uuid="9359BC7D-7220-4A9F-961D-B6AC1D0950B7">
+        <logicalOp displayName="OR" type="or">
+          <comment displayName="comment" type="comment"/>
+          <logicalOp displayName="AND" type="and">
+            <comment displayName="comment" type="comment"/>
+            <subTreeRef displayName="EncounterAfterEDVisit" id="62FD43E9-265D-4D3C-9BD2-621E4ECBAD24" type="subTree"/>
+            <subTreeRef displayName="PalliativeBetweenEDandEncounter" id="9C937C7A-764E-4A78-91BC-8F6568A60992" type="subTree">
+              <comment displayName="comment" type="comment"/>
+            </subTreeRef>
+          </logicalOp>
+          <subTreeRef displayName="EncounterWithDischarges" id="0D1C58E6-BE3A-4589-9A5D-75F259C758B5" type="subTree"/>
+          <subTreeRef displayName="ClinicalTrialParticipant" id="A78C7786-0200-4104-8A55-A44580963D38" type="subTree"/>
+          <subTreeRef displayName="PalliativeDuringEncounter" id="FC4ABD6B-D539-4E53-9F61-27DD80E8E4D0" type="subTree"/>
+        </logicalOp>
+      </clause>
+      <clause displayName="Numerator 1" type="numerator" uuid="C4EF60C9-9631-4C5A-B9E4-319906679CDE">
+        <logicalOp displayName="AND" type="and">
+          <comment displayName="comment" type="comment"/>
+          <subTreeRef displayName="DischargedOnAntithrombotic" id="BF83A7DF-E19B-4154-BC4E-D35502BEF32D" type="subTree">
+            <comment displayName="comment" type="comment">discharge me!!!</comment>
+          </subTreeRef>
+        </logicalOp>
+      </clause>
+      <clause displayName="Stratum 1" type="stratum" uuid="689FA47D-1E21-4CDC-9D36-1BCFB173733D">
+        <logicalOp displayName="AND" type="and">
+          <comment displayName="comment" type="comment"/>
+          <subTreeRef displayName="OlderThan30" id="41D98150-2288-4135-966F-7B42AAE40B53" type="subTree"/>
+        </logicalOp>
+      </clause>
+      <clause displayName="numeratorExclusions" type="numeratorExclusions" uuid="0e2b3451-3e27-45d0-bd17-1023d9256b97">
+        <logicalOp displayName="AND" type="and"/>
+      </clause>
+      <clause displayName="denominatorExceptions" type="denominatorExceptions" uuid="11b01590-4a1d-4fe8-8e9d-0200bd46f3bd">
+        <logicalOp displayName="AND" type="and"/>
+      </clause>
+    </group>
+  </measureGrouping>
+  <elementLookUp>
+    <qdm codeSystemName="National Library of Medicine" datatype="Patient Characteristic Sex" id="8a4d92b2-37bf-6f1b-0137-cdadba412b86" name="ONC Administrative Sex" oid="2.16.840.1.113762.1.4.1" suppDataElement="true" taxonomy="AdministrativeSex" uuid="8a4d92b2-37bf-6f1b-0137-cdadba412b86" version="1"/>
+    <qdm codeSystemName="CDC NCHS" datatype="Patient Characteristic Race" id="8a4d92b2-37bf-6f1b-0137-cdadba412b87" name="Race" oid="2.16.840.1.114222.4.11.836" suppDataElement="true" taxonomy="CDCREC" uuid="8a4d92b2-37bf-6f1b-0137-cdadba412b87" version="1"/>
+    <qdm codeSystemName="CDC NCHS" datatype="Patient Characteristic Ethnicity" id="8a4d92b2-37bf-6f1b-0137-cdadba412b88" name="Ethnicity" oid="2.16.840.1.114222.4.11.837" suppDataElement="true" taxonomy="CDCREC" uuid="8a4d92b2-37bf-6f1b-0137-cdadba412b88" version="1"/>
+    <qdm codeSystemName="PHDSC" datatype="Patient Characteristic Payer" id="8a4d92b2-37bf-6f1b-0137-cdadba412b89" name="Payer" oid="2.16.840.1.114222.4.11.3591" suppDataElement="true" taxonomy="SOP" uuid="8a4d92b2-37bf-6f1b-0137-cdadba412b89" version="1"/>
+    <qdm codeSystemName="National Quality Forum" datatype="Timing Element" id="8a4d92b2-37bf-6f1b-0137-cdadba412b8c" name="Measurement Period" oid="2.16.840.1.113883.3.67.1.101.1.53" suppDataElement="false" taxonomy="NQF" uuid="8a4d92b2-37bf-6f1b-0137-cdadba412b8c" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="Diagnosis, Active" id="8a4d92b2-37bf-6f1b-0137-cdadba412b8e" name="Hemorrhagic Stroke" oid="2.16.840.1.113883.3.117.1.7.1.212" suppDataElement="false" taxonomy="Grouping" uuid="8a4d92b2-37bf-6f1b-0137-cdadba412b8e" version="1"/>
+    <qdm codeSystemName="American Medical Association-convened Physician Consortium for Performance Improvement(R) (AMA-PCPI)" datatype="Intervention, Order" id="8a4d92b2-37bf-6f1b-0137-cdadba412b97" name="Palliative Care" oid="2.16.840.1.113883.3.526.2.1076" suppDataElement="false" taxonomy="SNOMEDCT" uuid="8a4d92b2-37bf-6f1b-0137-cdadba412b97" version="1"/>
+    <qdm codeSystemName="American Medical Association-convened Physician Consortium for Performance Improvement(R) (AMA-PCPI)" datatype="Intervention, Performed" id="8a4d92b2-37bf-6f1b-0137-cdadba412b98" name="Palliative Care" oid="2.16.840.1.113883.3.526.2.1076" suppDataElement="false" taxonomy="SNOMEDCT" uuid="8a4d92b2-37bf-6f1b-0137-cdadba412b98" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="Diagnosis, Active" id="8a4d92b2-37bf-6f1b-0137-cdadba412b9a" name="Ischemic Stroke" oid="2.16.840.1.113883.3.117.1.7.1.247" suppDataElement="false" taxonomy="Grouping" uuid="8a4d92b2-37bf-6f1b-0137-cdadba412b9a" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="attribute" id="8a4d92b2-37bf-6f1b-0137-cdadba412b9b" name="Left Against Medical Advice" oid="2.16.840.1.113883.3.117.1.7.1.308" suppDataElement="false" taxonomy="SNOMEDCT" uuid="8a4d92b2-37bf-6f1b-0137-cdadba412b9b" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="attribute" id="8a4d92b2-37bf-6f1b-0137-cdadba422b9d" name="Discharged to Home for Hospice Care" oid="2.16.840.1.113883.3.117.1.7.1.209" suppDataElement="false" taxonomy="SNOMEDCT" uuid="8a4d92b2-37bf-6f1b-0137-cdadba422b9d" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="attribute" id="8a4d92b2-37bf-6f1b-0137-cdadba422b9e" name="Discharged to Health Care Facility for Hospice Care" oid="2.16.840.1.113883.3.117.1.7.1.207" suppDataElement="false" taxonomy="SNOMEDCT" uuid="8a4d92b2-37bf-6f1b-0137-cdadba422b9e" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="attribute" id="8a4d92b2-37bf-6f1b-0137-cdadba422ba0" name="Carotid Intervention" oid="2.16.840.1.113883.3.117.1.7.1.204" suppDataElement="false" taxonomy="Grouping" uuid="8a4d92b2-37bf-6f1b-0137-cdadba422ba0" version="1"/>
+    <qdm codeSystemName="Oklahoma Foundation for Medical Quality" datatype="Patient Characteristic Clinical Trial Participant" id="8a4d92b2-37bf-6f1b-0137-cdadba422ba1" name="Clinical Trial Participant" oid="2.16.840.1.113883.3.526.2.643" suppDataElement="false" taxonomy="SNOMEDCT" uuid="8a4d92b2-37bf-6f1b-0137-cdadba422ba1" version="1.0"/>
+    <qdm codeSystemName="Joint Commission" datatype="attribute" id="8a4d92b2-37bf-6f1b-0137-cdadba422ba2" name="Patient Expired" oid="2.16.840.1.113883.3.117.1.7.1.309" suppDataElement="false" taxonomy="SNOMEDCT" uuid="8a4d92b2-37bf-6f1b-0137-cdadba422ba2" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="attribute" id="8a4d92b2-37bf-6f1b-0137-cdadba422ba4" name="Discharge To Another Hospital" oid="2.16.840.1.113883.3.117.1.7.1.87" suppDataElement="false" taxonomy="SNOMEDCT" uuid="8a4d92b2-37bf-6f1b-0137-cdadba422ba4" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="Medication, Order" id="8a4d92b2-37bf-6f1b-0137-cdadba422ba9" name="Antithrombotic Therapy" oid="2.16.840.1.113883.3.117.1.7.1.201" suppDataElement="false" taxonomy="RXNORM" uuid="8a4d92b2-37bf-6f1b-0137-cdadba422ba9" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4bcc0df67919" instance="Occurrence A" name="Inpatient Encounter" oid="2.16.840.1.113883.3.117.1.7.1.23" suppDataElement="false" taxonomy="SNOMEDCT" uuid="8a4d92b2-3a00-2a25-013a-4bcc0df67919" version="1"/>
+    <qdm codeSystemName="Lantana" datatype="Encounter, Performed" id="8a4d92b2-3a00-2a25-013a-4c78101d7d65" instance="Occurrence A" name="Emergency Department Visit" oid="2.16.840.1.113883.3.117.1.7.1.292" suppDataElement="false" taxonomy="SNOMEDCT" uuid="8a4d92b2-3a00-2a25-013a-4c78101d7d65" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="Medication, Discharge" id="8a4d92b2-3a58-b777-013a-65ae440c2116" name="Antithrombotic Therapy" oid="2.16.840.1.113883.3.117.1.7.1.201" suppDataElement="false" taxonomy="RXNORM" uuid="8a4d92b2-3a58-b777-013a-65ae440c2116" version="1"/>
+    <qdm codeSystemName="Joint Commission" datatype="Encounter, Performed" id="bac9ac29-dd64-405f-8afb-5280559149b9" name="Inpatient Encounter" oid="2.16.840.1.113883.3.117.1.7.1.23" suppDataElement="false" taxonomy="SNOMEDCT" uuid="bac9ac29-dd64-405f-8afb-5280559149b9" version="1"/>
+    <qdm codeSystemName="Lantana" datatype="Encounter, Performed" id="d73a0710-b87e-41f7-9c2c-7be43c523910" name="Emergency Department Visit" oid="2.16.840.1.113883.3.117.1.7.1.292" suppDataElement="false" taxonomy="SNOMEDCT" uuid="d73a0710-b87e-41f7-9c2c-7be43c523910" version="1"/>
+  </elementLookUp>
+</measure>
