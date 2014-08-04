@@ -174,6 +174,7 @@ module SimpleXml
       raise "All QDM elements require VSAC value sets to load into Bonnie. This measure contains #{invalid_oid_entries.length} QDM elements without VSAC value sets: \n[ #{invalid_oid_entries.join(', ')} ]." unless invalid_oid_entries.empty?
     end
 
+    # MAT v4.0.0 specifies VS codes instead of OIDs for Patient Birthdate and Expired
     def filter_bad_oids
       # define the bad oid codes
       bad_oid_codes = {
