@@ -140,6 +140,7 @@ module SimpleXml
       @derived_data_criteria = []
       @attribute_map = {}
       detect_missing_oids
+      filter_bad_oids
       @doc.xpath('measure/elementLookUp/qdm').each do |entry|
         data_type = entry.at_xpath('@datatype').value
         if !['Timing Element', 'attribute'].include? data_type
@@ -166,12 +167,28 @@ module SimpleXml
         oid = entry.at_xpath('@oid').value
         data_type = entry.at_xpath('@datatype').value
         name = entry.at_xpath('@name').value
-        id = entry.at_xpath('@id').value
         if oid == UNDEFINED_OID
           invalid_oid_entries << "#{data_type}: #{name}"
         end
       end
       raise "All QDM elements require VSAC value sets to load into Bonnie. This measure contains #{invalid_oid_entries.length} QDM elements without VSAC value sets: \n[ #{invalid_oid_entries.join(', ')} ]." unless invalid_oid_entries.empty?
+    end
+
+    # MAT v4.0.0 specifies VS codes instead of OIDs for Patient Birthdate and Expired
+    def filter_bad_oids
+      # define the bad oid codes
+      bad_oid_codes = {
+        '21112-8' => '2.16.840.1.113883.3.117.1.7.1.70', # Patient Characteristic Birthdate
+        '419099009'=> '2.16.840.1.113883.3.117.1.7.1.309' # Patient Characteristic Expired
+      }
+
+      # filter out any bad oids
+      @doc.xpath('measure/elementLookUp/qdm').each do |entry|
+        oid = entry.at_xpath('@oid').value
+        unless bad_oid_codes[oid].nil?
+          entry.at_xpath('@oid').value = bad_oid_codes[oid]
+        end
+      end
     end
 
     def extract_supplemental_data
