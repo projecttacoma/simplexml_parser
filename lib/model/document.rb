@@ -177,8 +177,8 @@ module SimpleXml
     def filter_bad_oids
       # define the bad oid codes
       bad_oid_codes = {
-        '21112-8' => '2.16.840.1.113883.3.117.1.7.1.70',
-        '419099009'=> '2.16.840.1.113883.3.117.1.7.1.309'
+        '21112-8' => '2.16.840.1.113883.3.117.1.7.1.70', # Patient Characteristic Birthdate
+        '419099009'=> '2.16.840.1.113883.3.117.1.7.1.309' # Patient Characteristic Expired
       }
 
       # filter out any bad oids
