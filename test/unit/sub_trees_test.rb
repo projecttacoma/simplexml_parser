@@ -48,12 +48,12 @@ class SubTreesTest < Test::Unit::TestCase
     simple_xml_model = SimpleXml::Parser::V1Parser.new.parse(File.read(simple_xml))
 
     simple_xml_model.all_data_criteria.count.must_equal 9
-    simple_xml_model.data_criteria('GROUP_variable_CHILDREN_7').derivation_operator.to_s.must_equal 'XPRODUCT'
+    simple_xml_model.data_criteria('GROUP_variable_CHILDREN_7').derivation_operator.to_s.must_equal 'UNION'
     simple_xml_model.data_criteria('GROUP_variable_CHILDREN_7').type.to_s.must_equal "derived"
     simple_xml_model.data_criteria('GROUP_variable_CHILDREN_7').definition.to_s.must_equal 'derived'
     simple_xml_model.data_criteria('GROUP_variable_CHILDREN_7').variable.must_equal true
 
-    simple_xml_model.source_data_criteria[6].derivation_operator.to_s.must_equal 'XPRODUCT'
+    simple_xml_model.source_data_criteria[6].derivation_operator.to_s.must_equal 'UNION'
     simple_xml_model.source_data_criteria[6].type.to_s.must_equal "derived"
     simple_xml_model.source_data_criteria[6].definition.to_s.must_equal 'derived'
     simple_xml_model.source_data_criteria[6].variable.must_equal true
