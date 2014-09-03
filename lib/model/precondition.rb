@@ -173,7 +173,7 @@ module SimpleXml
         subsets << @subset
       end
       criteria = DataCriteria.convert_precondition_to_criteria(self, @doc, @subset.type)
-      criteria.derivation_operator = HQMF::DataCriteria::UNION
+      criteria.derivation_operator = HQMF::DataCriteria::XPRODUCT
 
       criteria.subset_operators ||= []
       criteria.subset_operators.concat subsets
