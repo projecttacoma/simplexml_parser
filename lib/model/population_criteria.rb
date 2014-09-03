@@ -14,6 +14,7 @@ module SimpleXml
     OBSERV = 'measureObservation'
     STRAT = "stratum"
     NUMEX = "numeratorExclusions"
+    MSRPOPLEX='measurePopulationExclusions'
 
 
     TITLES = {
@@ -42,7 +43,7 @@ module SimpleXml
       @id = @type
       @id += "_#{index}" if (index > 0)
 
-      @preconditions = @entry.xpath('logicalOp').collect do |precondition_def|
+      @preconditions = @entry.xpath("#{Precondition::LOGICAL_OP}|#{Precondition::SUB_TREE}").collect do |precondition_def|
         Precondition.new(precondition_def, @doc)
       end
       @preconditions.select! {|p| !p.preconditions.empty? || p.reference}
@@ -71,6 +72,8 @@ module SimpleXml
         HQMF::PopulationCriteria::STRAT
       when NUMEX
         NUMEX
+      when MSRPOPLEX
+        MSRPOPLEX
       else
         raise "Unknown population criteria type #{type}"
       end

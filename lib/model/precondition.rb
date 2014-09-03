@@ -15,6 +15,7 @@ module SimpleXml
     INTERSECTION = 'INTERSECT'
     UNION = 'UNION'
     AGE_AT = 'AGE AT'
+    DATETIMEDIFF = 'DATETIMEDIFF'
 
     attr_reader :id, :conjunction_code, :negation
     attr_accessor :preconditions, :reference, :comments, :negated_logical
@@ -40,6 +41,8 @@ module SimpleXml
         handle_set_op
       elsif @entry.name == TEMPORAL_OP && @subset.nil?
         handle_temporal
+      elsif attr_val('@type') == DATETIMEDIFF
+        handle_grouping_functional
       elsif attr_val('@type') == SATISFIES_ALL || attr_val('@type') == SATISFIES_ANY
         handle_satisfies
       elsif @entry.name == DATA_CRITERIA_OP || @subset
@@ -153,6 +156,30 @@ module SimpleXml
       criteria = DataCriteria.convert_precondition_to_criteria(self, @doc, @conjunction_code)
       @reference = Reference.new(criteria.id)
       @preconditions = []
+    end
+
+    def handle_grouping_functional
+      children = children_of(@entry)
+      @preconditions = []
+      children.collect do |precondition|
+        @preconditions << Precondition.new(precondition, @doc)
+      end
+      @preconditions.select! {|p| !p.preconditions.empty? || p.reference }
+
+      subsets = [@subset]
+      # check if we have a functional wrapped by another
+      if @subset.type != attr_val('@type')
+        handle_functional
+        subsets << @subset
+      end
+      criteria = DataCriteria.convert_precondition_to_criteria(self, @doc, @subset.type)
+      criteria.derivation_operator = HQMF::DataCriteria::XPRODUCT
+
+      criteria.subset_operators ||= []
+      criteria.subset_operators.concat subsets
+
+      @preconditions = []
+      @reference = Reference.new(criteria.id)
     end
 
     def handle_temporal

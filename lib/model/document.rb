@@ -31,10 +31,13 @@ module SimpleXml
       end
 
       @criteria_map = {}
+      mps = details.at_xpath('period/startDate/@uuid').value rescue nil
+      mpe = details.at_xpath('period/stopDate/@uuid').value rescue nil
+
       @measure_period_map = {
         details.at_xpath('period/@uuid').value => :measure_period,
-        details.at_xpath('period/startDate/@uuid').value => :measure_period_start,
-        details.at_xpath('period/stopDate/@uuid').value => :measure_period_end
+        mps => :measure_period_start,
+        mpe => :measure_period_end
       }
       @measure_period_map.keys.each do |key|
         @criteria_map[key] = OpenStruct.new(id: HQMF::Document::MEASURE_PERIOD_ID, hqmf_id: key)
