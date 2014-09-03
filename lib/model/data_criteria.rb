@@ -175,7 +175,7 @@ module SimpleXml
     def handle_specific_occurrence(instance)
       fix_description_for_hqmf_match()
       specifics_counter = HQMF::Counter.instance.next
-      @specific_occurrence = instance.split[1]
+      @specific_occurrence = instance
       @specific_occurrence_const = DataCriteria.format_so_const(@description)
       @id = id || format_id("#{instance} #{@title}#{specifics_counter}")
     end
