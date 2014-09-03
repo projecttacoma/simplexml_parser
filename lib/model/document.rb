@@ -124,7 +124,9 @@ module SimpleXml
     def register_source_data_criteria(criteria)
       sdc = criteria.dup
       sdc.subset_operators = nil if sdc.subset_operators
-      sdc.remove_instance_variable('@temporal_references') if sdc.temporal_references
+      sdc.temporal_references = nil if sdc.temporal_references
+      sdc.specific_occurrence = nil if sdc.specific_occurrence
+      sdc.specific_occurrence_const = nil if sdc.specific_occurrence_const
       @source_data_criteria << sdc
       @criteria_map[criteria.hqmf_id] = criteria
     end

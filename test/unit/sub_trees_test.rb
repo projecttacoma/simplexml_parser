@@ -59,6 +59,26 @@ class SubTreesTest < Test::Unit::TestCase
     simple_xml_model.source_data_criteria[6].variable.must_equal true
   end
 
+  def test_with_specific_variable
+    simple_xml = File.join(SIMPLE_XML_ROOT, "with_specific_variable.xml")
+    simple_xml_model = SimpleXml::Parser::V1Parser.new.parse(File.read(simple_xml))
+
+    simple_xml_model.all_data_criteria.count.must_equal 9
+    simple_xml_model.data_criteria('GROUP_variable_CHILDREN_7').derivation_operator.to_s.must_equal 'UNION'
+    simple_xml_model.data_criteria('GROUP_variable_CHILDREN_7').type.to_s.must_equal "derived"
+    simple_xml_model.data_criteria('GROUP_variable_CHILDREN_7').definition.to_s.must_equal 'derived'
+    simple_xml_model.data_criteria('GROUP_variable_CHILDREN_7').variable.must_equal true
+    simple_xml_model.data_criteria('GROUP_variable_CHILDREN_7').specific_occurrence.to_s.must_equal 'A'
+    simple_xml_model.data_criteria('GROUP_variable_CHILDREN_7').specific_occurrence_const.to_s.must_equal 'VARIABLE'
+
+    simple_xml_model.source_data_criteria[6].derivation_operator.to_s.must_equal 'UNION'
+    simple_xml_model.source_data_criteria[6].type.to_s.must_equal "derived"
+    simple_xml_model.source_data_criteria[6].definition.to_s.must_equal 'derived'
+    simple_xml_model.source_data_criteria[6].variable.must_equal true
+    simple_xml_model.source_data_criteria[6].specific_occurrence.must_equal nil
+    simple_xml_model.source_data_criteria[6].specific_occurrence_const.must_equal nil
+  end
+
   def test_with_during_intersection
     simple_xml = File.join(SIMPLE_XML_ROOT, "with_during_intersection.xml")
     simple_xml_model = SimpleXml::Parser::V1Parser.new.parse(File.read(simple_xml))

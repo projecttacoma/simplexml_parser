@@ -2,11 +2,11 @@ module SimpleXml
   # Represents a data criteria specification
   class DataCriteria
 
-    attr_accessor :id, :field_values, :value, :negation, :negation_code_list_id, :derivation_operator, :children_criteria, :subset_operators, :comments
+    attr_accessor :id, :field_values, :value, :negation, :negation_code_list_id,
+        :derivation_operator, :children_criteria, :subset_operators, :comments,
+        :temporal_references, :specific_occurrence, :specific_occurrence_const
     attr_reader :hqmf_id, :title, :display_name, :description, :code_list_id, 
-        :definition, :status, :effective_time, :inline_code_list, 
-        :temporal_references, :specific_occurrence, 
-        :specific_occurrence_const, :source_data_criteria
+        :definition, :status, :effective_time, :inline_code_list, :source_data_criteria
   
     include SimpleXml::Utilities
     
@@ -170,6 +170,14 @@ module SimpleXml
         # if this is not a grouping, just add the temporal reference
         add_temporal(temporal)
       end
+    end
+
+    def handle_specific_occurrence(instance)
+      fix_description_for_hqmf_match()
+      specifics_counter = HQMF::Counter.instance.next
+      @specific_occurrence = instance
+      @specific_occurrence_const = DataCriteria.format_so_const(@description)
+      @id = id || format_id("#{instance} #{@title}#{specifics_counter}")
     end
     
     def self.translate_field(name)

@@ -38,6 +38,7 @@ module SimpleXml
       criteria = convert_to_data_criteria('variable')
       criteria.instance_variable_set('@variable', true)
       criteria.instance_variable_set('@description', @entry.attributes['displayName'].value || attr_val('@displayName'))
+      criteria.handle_specific_occurrence(attr_val('@instance')) if attr_val('@instance')
 
       # put variable in source data criteria
       @doc.register_source_data_criteria(criteria)
