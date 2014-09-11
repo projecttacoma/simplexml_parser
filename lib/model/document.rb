@@ -238,9 +238,12 @@ module SimpleXml
         group_criteria = []
         population_def.xpath('clause').each do |criteria_def|
           criteria = PopulationCriteria.new(criteria_def, self, population_index+duplicate_offset)
+          # pull the aggregator out if we have an observation
+          criteria = rewrite_observ(criteria) if criteria.type == HQMF::PopulationCriteria::OBSERV
           group_criteria << criteria if (criteria.type != HQMF::PopulationCriteria::STRAT && criteria.type != SimpleXml::PopulationCriteria::NUMEX) || !criteria.preconditions.empty?
         end
 
+        # observations used to come from the measureObservations section... in the latest simpleXml they are listed with the rest of the population criteria
         children_of(@doc.xpath('measure/measureObservations')).each_with_index do |observ_def, observ_index|
           criteria = rewrite_observ(PopulationCriteria.new(observ_def, self, observ_index))
           group_criteria << criteria if !criteria.preconditions.empty?
