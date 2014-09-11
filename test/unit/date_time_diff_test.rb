@@ -2,7 +2,7 @@ require 'fileutils'
 require 'digest'
 require_relative '../test_helper'
 
-class SubTreesTest < Test::Unit::TestCase
+class DateTimeDiffTest < Test::Unit::TestCase
   RESULTS_DIR = File.join('tmp','datetimediff')
   SIMPLE_XML_ROOT = File.join('test','fixtures','simplexml')
 
@@ -18,25 +18,28 @@ class SubTreesTest < Test::Unit::TestCase
     simple_xml_model.populations.count.must_equal 4
 
     observ = simple_xml_model.population_criteria('OBSERV')
+    observ.aggregator.must_equal "MEDIAN"
     dcId = observ.preconditions.first.reference.id
     dc = simple_xml_model.data_criteria(dcId)
-    dc.subset_operators.count.must_equal 2
-    dc.subset_operators[0].type.must_equal "MEDIAN"
-    dc.subset_operators[1].type.must_equal "DATETIMEDIFF"
+    dc.subset_operators.count.must_equal 1
+    dc.subset_operators[0].type.must_equal "DATETIMEDIFF"
 
     observ = simple_xml_model.population_criteria('OBSERV_1')
+    observ.aggregator.must_equal "MEDIAN"
     dcId = observ.preconditions.first.reference.id
     dc = simple_xml_model.data_criteria(dcId)
     dc.subset_operators.count.must_equal 1
     dc.subset_operators[0].type.must_equal "DATETIMEDIFF"
 
     observ = simple_xml_model.population_criteria('OBSERV_2')
+    observ.aggregator.must_equal "MEDIAN"
     dcId = observ.preconditions.first.reference.id
     dc = simple_xml_model.data_criteria(dcId)
     dc.subset_operators.count.must_equal 1
     dc.subset_operators[0].type.must_equal "DATETIMEDIFF"
 
     observ = simple_xml_model.population_criteria('OBSERV_3')
+    observ.aggregator.must_equal "MEDIAN"
     dcId = observ.preconditions.first.reference.id
     dc = simple_xml_model.data_criteria(dcId)
     dc.subset_operators.count.must_equal 1

@@ -170,7 +170,7 @@ module SimpleXml
       # check if we have a functional wrapped by another
       if @subset.type != attr_val('@type')
         handle_functional
-        subsets << @subset
+        subsets.unshift @subset
       end
       criteria = DataCriteria.convert_precondition_to_criteria(self, @doc, @subset.type)
       criteria.derivation_operator = HQMF::DataCriteria::XPRODUCT
