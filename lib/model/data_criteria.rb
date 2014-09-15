@@ -99,6 +99,8 @@ module SimpleXml
         # handle attributes
         if (attributes)
           attributes.each do |attribute|
+
+            next if attribute.at_xpath('@attrDate')
             
             orig_key = attribute.at_xpath('@name').value
             key = DataCriteria.translate_field(orig_key)
