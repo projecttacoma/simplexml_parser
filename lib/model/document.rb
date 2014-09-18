@@ -128,8 +128,6 @@ module SimpleXml
       sdc = criteria.dup
       sdc.subset_operators = nil if sdc.subset_operators
       sdc.temporal_references = nil if sdc.temporal_references
-      sdc.specific_occurrence = nil if sdc.specific_occurrence
-      sdc.specific_occurrence_const = nil if sdc.specific_occurrence_const
       @source_data_criteria << sdc
       @criteria_map[criteria.hqmf_id] = criteria
     end

@@ -75,8 +75,8 @@ class SubTreesTest < Test::Unit::TestCase
     simple_xml_model.source_data_criteria[6].type.to_s.must_equal "derived"
     simple_xml_model.source_data_criteria[6].definition.to_s.must_equal 'derived'
     simple_xml_model.source_data_criteria[6].variable.must_equal true
-    simple_xml_model.source_data_criteria[6].specific_occurrence.must_equal nil
-    simple_xml_model.source_data_criteria[6].specific_occurrence_const.must_equal nil
+    simple_xml_model.source_data_criteria[6].specific_occurrence.must_equal 'A'
+    simple_xml_model.source_data_criteria[6].specific_occurrence_const.must_equal 'VARIABLE'
   end
 
   def test_with_during_intersection
