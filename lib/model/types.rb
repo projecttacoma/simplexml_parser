@@ -224,9 +224,15 @@ module SimpleXml
       when 'Check if Present'
         AnyValue.new
       else
-        quantity = attribute.at_xpath('@comparisonValue').value
-        unit = attribute.at_xpath('@unit').try(:value)
-        Utilities.build_value(mode, quantity, unit)
+        if attribute.at_xpath('@attrDate')
+          date = attribute.at_xpath('@attrDate').value
+          unit = attribute.at_xpath('@unit').try(:value) # should this be the comparison granularity?
+          Utilities.build_value(mode, date, unit, 'IVL_TS')
+        else
+          quantity = attribute.at_xpath('@comparisonValue').value
+          unit = attribute.at_xpath('@unit').try(:value)
+          Utilities.build_value(mode, quantity, unit)
+        end
       end
     end
   end
