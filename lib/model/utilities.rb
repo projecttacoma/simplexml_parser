@@ -31,13 +31,13 @@ module SimpleXml
       node.xpath('comment').reject {|c| c.children.empty?}.map {|c| c.children[0].to_s}
     end
 
-    def self.build_value(comparison, quantity, unit)
+    def self.build_value(comparison, quantity, unit, type=nil)
       return nil if !comparison || !quantity
       unit = nil if unit && unit.strip.empty?
-      if comparison.downcase == 'equal to'
+      if comparison.downcase == 'equal to' && type != 'IVL_TS'
         Value.new(quantity, unit, true)
       else
-        Range.new(comparison, quantity, unit)
+        Range.new(comparison, quantity, unit, type)
       end
     end
 
