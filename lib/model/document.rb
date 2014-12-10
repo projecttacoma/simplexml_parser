@@ -218,6 +218,8 @@ module SimpleXml
         handle_stratifications
       end
 
+      detect_unstratified
+
       if @populations.length > 1
         @populations.each_with_index do |population, index|
           population['id'] = "Population#{index+1}"
@@ -293,7 +295,6 @@ module SimpleXml
     end
 
     def handle_stratifications
-  
       stratified_populations = []
       @populations.each do |population|
         @stratifications.each do |stratification|
@@ -304,6 +305,28 @@ module SimpleXml
         end
       end
       @populations.concat stratified_populations
+    end
+
+    # Detects missing unstratified populations from the generated @populations array
+    def detect_unstratified
+      missing_populations = []
+      # populations are keyed off of values rather than the codes
+      existing_populations = @populations.map{|p| p.values.join('-')}.uniq
+      @populations.each do |population|
+        keys = population.keys - ['STRAT','stratification']
+        missing_populations |= [population.values_at(*keys).compact.join('-')]
+      end
+
+      missing_populations -= existing_populations
+
+      # reverse the order and prepend them to @populations
+      missing_populations.reverse.each do |population|
+        p = {}
+        population.split('-').each do |code|
+          p[code.split('_').first] = code
+        end
+        @populations.unshift p
+      end
     end
 
     def handle_duplicate_pop_criteria(duplicate_pop_criteria, population, population_index, duplicate_offset)
