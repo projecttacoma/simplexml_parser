@@ -52,6 +52,11 @@ module SimpleXml
 
     end
 
+    def set_index(index)
+      @id = @type
+      @id += "_#{index}" if (index > 0)
+    end
+
     def translate_type(type)
       case type
       when IPP, 'initialPopulation'

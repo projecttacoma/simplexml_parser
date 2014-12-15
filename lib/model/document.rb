@@ -233,11 +233,15 @@ module SimpleXml
       @population_criteria = []
       
       duplicate_offset = 0
+      population_criteria_keys = []
       population_defs = @doc.xpath('measure/measureGrouping/group').to_a.sort! {|l,r| l.at_xpath('@sequence').value <=> r.at_xpath('@sequence').value}
       population_defs.each_with_index do |population_def, population_index|
         group_criteria = []
         population_def.xpath('clause').each do |criteria_def|
-          criteria = PopulationCriteria.new(criteria_def, self, population_index+duplicate_offset)
+          criteria = PopulationCriteria.new(criteria_def, self, population_index + duplicate_offset)
+          codes = (population_criteria_keys | group_criteria.map{|gc| gc.id}).select{|pc| pc.split('_')[0] == criteria.type}
+          criteria.set_index(duplicate_offset + codes.length)
+
           # pull the aggregator out if we have an observation
           criteria = rewrite_observ(criteria) if criteria.type == HQMF::PopulationCriteria::OBSERV
           group_criteria << criteria if (criteria.type != HQMF::PopulationCriteria::STRAT && criteria.type != SimpleXml::PopulationCriteria::NUMEX) || !criteria.preconditions.empty?
@@ -267,7 +271,7 @@ module SimpleXml
         end
 
         @population_criteria.concat group_criteria
-
+        population_criteria_keys = @population_criteria.map{|pc| pc.id}
       end
     end
 
@@ -333,7 +337,8 @@ module SimpleXml
       duplicate_pop_criteria.each do |criteria|
         duplicate_offset += 1
         population = population.dup
-        criteria.id = "#{criteria.type}_#{population_index+duplicate_offset}"
+        # TODO: Verify that we no longer need to set the criteria.id for duplicate population criteria
+        # criteria.id = "#{criteria.type}_#{population_index+duplicate_offset}"
         population[criteria.type] = criteria.id
         @populations << population
       end
