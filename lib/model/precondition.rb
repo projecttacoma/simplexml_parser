@@ -267,13 +267,13 @@ module SimpleXml
       when 'intersection'
         SimpleXml::Precondition::INTERSECTION
       when 'andNot'
-        HQMF::Precondition::ALL_TRUE
+        HQMF::Precondition::AT_LEAST_ONE_TRUE
       when 'or'
         HQMF::Precondition::AT_LEAST_ONE_TRUE
       when 'union'
         SimpleXml::Precondition::UNION
       when 'orNot'
-        HQMF::Precondition::AT_LEAST_ONE_TRUE
+        HQMF::Precondition::ALL_TRUE
       else
         raise "Unknown population criteria type #{type}"
       end
