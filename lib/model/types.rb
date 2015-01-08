@@ -206,6 +206,23 @@ module SimpleXml
     end
   end
 
+ # Represents a HQMF reference from a precondition to a data criteria
+  class TypedReference
+    include SimpleXml::Utilities
+    
+    attr_accessor :id,:type,:mood
+
+    def initialize(id,type,mood)
+      @id = id
+      @type = type
+      @mood = mood
+    end
+    
+    def to_model
+      HQMF::TypedReference.new(@id,@type,@mood)
+    end
+  end
+
   class Attribute
     attr_reader :id, :code_list_id, :title
     
