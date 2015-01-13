@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/projectcypress/health-data-standards.git
-  revision: e81fe10da6a6e48c472a2895faa24ae824056caf
-  branch: fulfills
+  revision: f02d2f7ec783f70f76e61fb06848ad706dcb702d
+  branch: bonnie_master
   specs:
     health-data-standards (3.4.6)
       activesupport (~> 4.0.0)
@@ -60,7 +60,7 @@ GEM
     erubis (2.7.0)
     hike (1.2.3)
     i18n (0.7.0)
-    json (1.8.1)
+    json (1.8.2)
     log4r (1.1.10)
     macaddr (1.7.1)
       systemu (~> 2.6.2)

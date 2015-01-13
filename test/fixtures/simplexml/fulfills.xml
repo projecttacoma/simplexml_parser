@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<measure>
+  <measureDetails>
+    <uuid>40280581-4a98-5904-014a-c0f4f81c015f</uuid>
+    <title>Fulfills_Test</title>
+    <shortTitle>FLFS_Test</shortTitle>
+    <emeasureid>1546</emeasureid>
+    <guid>fe4a5adc-3a3c-42ea-86d2-b2d26badc9b4</guid>
+    <version>0.0.001</version>
+    <nqfid root="2.16.840.1.113883.3.560.1"/>
+    <period calenderYear="true" uuid="76011233-a8e5-4c74-ad71-8c3cdba90bd3">
+      <startDate>00000101</startDate>
+      <stopDate>00001231</stopDate>
+    </period>
+    <scoring id="PROPOR">Proportion</scoring>
+    <componentMeasures/>
+    <itemCount/>
+    <initialPopDescription/>
+    <measurePopulationExclusionsDescription/>
+  </measureDetails>
+  <supplementalDataElements>
+    <elementRef id="4184e9d4-2c3b-4046-ab93-4d0fe92e1ecd" name="ONC Administrative Sex"/>
+    <elementRef id="825ff2d9-9d31-428e-9189-2593b2a0e920" name="Race"/>
+    <elementRef id="77466aee-6657-4ba9-9b31-f6ecba6e66e7" name="Ethnicity"/>
+    <elementRef id="f0ccc38e-42f8-45c0-8398-549fea048886" name="Payer"/>
+  </supplementalDataElements>
+  <riskAdjustmentVariables/>
+  <measureGrouping>
+    <group sequence="1">
+      <clause displayName="Initial Population 1" type="initialPopulation" uuid="05CB5EF9-FB0E-498F-98FD-805F14AA2B66">
+        <logicalOp displayName="AND" type="and">
+          <subTreeRef displayName="ipp1" id="95838E24-3A73-4029-BE9D-0B76AAE35550" type="subTree"/>
+          <subTreeRef displayName="ipp2" id="7BC3ECE5-567E-48C3-AEEE-A0E093683C0D" type="subTree"/>
+          <subTreeRef displayName="StrokeDuringEncounter" id="FA2FED6D-28BE-4FAA-8D1C-21EAABC18C1F" type="subTree">
+            <comment displayName="comment" type="comment"/>
+          </subTreeRef>
+        </logicalOp>
+      </clause>
+      <clause displayName="Denominator 1" type="denominator" uuid="F400FC34-5B5E-483B-BE22-5F20DBFEB8F0">
+        <logicalOp displayName="AND" type="and">
+          <subTreeRef displayName="denom1" id="4654B668-10A3-4561-8957-778B5B25DFB6" type="subTree"/>
+        </logicalOp>
+      </clause>
+      <clause displayName="Numerator 2" type="numerator" uuid="FA1E954D-4ED0-4E61-A9A6-6AD450E32372">
+        <logicalOp displayName="AND" type="and">
+          <subTreeRef displayName="fulfillsClause" id="00449B57-436E-48BA-ADC9-AB1283F6613B" type="subTree"/>
+        </logicalOp>
+      </clause>
+      <clause displayName="denominatorExclusions" type="denominatorExclusions" uuid="ed050249-e5c2-41a0-9f89-b50e236a666e">
+        <logicalOp displayName="AND" type="and"/>
+      </clause>
+      <clause displayName="numeratorExclusions" type="numeratorExclusions" uuid="074188fc-c04c-4503-93f8-6b26c2a1d892">
+        <logicalOp displayName="AND" type="and"/>
+      </clause>
+      <clause displayName="denominatorExceptions" type="denominatorExceptions" uuid="eba414e9-4b84-4ec2-894f-d520fa43d9fe">
+        <logicalOp displayName="AND" type="and"/>
+      </clause>
+      <clause displayName="stratum" type="stratum" uuid="c646332b-b294-4a11-9f88-648dbced42bf"/>
+    </group>
+  </measureGrouping>
+  <subTreeLookUp>
+    <subTree displayName="AllStrokes" qdmVariable="true" uuid="E081AA15-E05C-4F9E-B0AB-FD56FA007CDC">
+      <setOp displayName="UNION" type="union">
+        <elementRef displayName="Hemorrhagic Stroke : Diagnosis, Active" id="31c56e95-dbb8-4b60-9f9c-7f0a63a7a62e" type="qdm"/>
+        <elementRef displayName="Ischemic Stroke : Diagnosis, Active" id="87b3a8a7-b7bf-4222-a0f0-ee099e678e6e" type="qdm"/>
+      </setOp>
+    </subTree>
+    <subTree displayName="StrokeDuringEncounter" qdmVariable="true" uuid="FA2FED6D-28BE-4FAA-8D1C-21EAABC18C1F">
+      <relationalOp displayName="Starts During" type="SDU">
+        <subTreeRef displayName="AllStrokes" id="E081AA15-E05C-4F9E-B0AB-FD56FA007CDC" type="subTree"/>
+        <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="53cc1115-09fb-45c9-a50d-3fe254afe36e" type="qdm"/>
+      </relationalOp>
+    </subTree>
+    <subTree displayName="ipp1" qdmVariable="false" uuid="95838E24-3A73-4029-BE9D-0B76AAE35550">
+      <functionalOp displayName="Age &gt;= 18 years at" operatorType="Greater Than or Equal To" quantity="18" type="AGE AT" unit="years">
+        <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="53cc1115-09fb-45c9-a50d-3fe254afe36e" type="qdm"/>
+      </functionalOp>
+    </subTree>
+    <subTree displayName="ipp2" qdmVariable="false" uuid="7BC3ECE5-567E-48C3-AEEE-A0E093683C0D">
+      <functionalOp displayName="SATISFIES ALL" type="SATISFIES ALL">
+        <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="53cc1115-09fb-45c9-a50d-3fe254afe36e" type="qdm"/>
+        <relationalOp displayName="During" type="DURING">
+          <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="53cc1115-09fb-45c9-a50d-3fe254afe36e" type="qdm"/>
+          <elementRef displayName="Measurement Period : Timing Element" id="76011233-a8e5-4c74-ad71-8c3cdba90bd3" type="qdm"/>
+        </relationalOp>
+        <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="53cc1115-09fb-45c9-a50d-3fe254afe36e" type="qdm">
+          <attribute attrUUID="ab876ae7-ab47-477c-9c6c-3d42ab917f0d" comparisonValue="120" mode="Less Than Or Equal To" name="length of stay" unit="days"/>
+        </elementRef>
+      </functionalOp>
+    </subTree>
+    <subTree displayName="denom1" qdmVariable="false" uuid="4654B668-10A3-4561-8957-778B5B25DFB6">
+      <relationalOp displayName="Starts During" type="SDU">
+        <elementRef displayName="Ischemic Stroke : Diagnosis, Active" id="87b3a8a7-b7bf-4222-a0f0-ee099e678e6e" type="qdm"/>
+        <elementRef displayName="Occurrence A of Inpatient Encounter : Encounter, Performed" id="53cc1115-09fb-45c9-a50d-3fe254afe36e" type="qdm"/>
+      </relationalOp>
+    </subTree>
+    <subTree displayName="fulfillsClause" qdmVariable="false" uuid="00449B57-436E-48BA-ADC9-AB1283F6613B">
+      <relationalOp displayName="Fulfills" type="FULFILLS">
+        <elementRef displayName="Ischemic Stroke : Diagnosis, Active" id="87b3a8a7-b7bf-4222-a0f0-ee099e678e6e" type="qdm"/>
+        <elementRef displayName="Antithrombotic Therapy : Medication, Order" id="c536bb40-3686-4029-b20d-344b8bfbba90" type="qdm"/>
+      </relationalOp>
+    </subTree>
+  </subTreeLookUp>
+  <elementLookUp>
+    <qdm datatype="Timing Element" id="76011233-a8e5-4c74-ad71-8c3cdba90bd3" name="Measurement Period" oid="2.16.840.1.113883.3.67.1.101.1.53" suppDataElement="false" taxonomy="NQF" uuid="76011233-a8e5-4c74-ad71-8c3cdba90bd3" version="1.0"/>
+    <qdm datatype="Patient Characteristic Expired" id="05b3575b-e3be-4aa9-8b27-30ece540d537" name="Expired" oid="419099009" suppDataElement="false" taxonomy="SNOMED-CT" uuid="05b3575b-e3be-4aa9-8b27-30ece540d537" version="1.0"/>
+    <qdm datatype="Patient Characteristic Birthdate" id="2d6d5a5b-0692-4c72-a53e-926bf49f7ce6" name="Birthdate" oid="21112-8" suppDataElement="false" taxonomy="SNOMED-CT" uuid="2d6d5a5b-0692-4c72-a53e-926bf49f7ce6" version="1.0"/>
+    <qdm datatype="Patient Characteristic Sex" id="4184e9d4-2c3b-4046-ab93-4d0fe92e1ecd" name="ONC Administrative Sex" oid="2.16.840.1.113762.1.4.1" suppDataElement="true" taxonomy="AdministrativeSex" uuid="4184e9d4-2c3b-4046-ab93-4d0fe92e1ecd" version="1.0"/>
+    <qdm datatype="Patient Characteristic Race" id="825ff2d9-9d31-428e-9189-2593b2a0e920" name="Race" oid="2.16.840.1.114222.4.11.836" suppDataElement="true" taxonomy="CDCREC" uuid="825ff2d9-9d31-428e-9189-2593b2a0e920" version="1.0"/>
+    <qdm datatype="Patient Characteristic Ethnicity" id="77466aee-6657-4ba9-9b31-f6ecba6e66e7" name="Ethnicity" oid="2.16.840.1.114222.4.11.837" suppDataElement="true" taxonomy="CDCREC" uuid="77466aee-6657-4ba9-9b31-f6ecba6e66e7" version="1.0"/>
+    <qdm datatype="Patient Characteristic Payer" id="f0ccc38e-42f8-45c0-8398-549fea048886" name="Payer" oid="2.16.840.1.114222.4.11.3591" suppDataElement="true" taxonomy="SOP" uuid="f0ccc38e-42f8-45c0-8398-549fea048886" version="1.0"/>
+    <qdm datatype="Diagnosis, Active" id="31c56e95-dbb8-4b60-9f9c-7f0a63a7a62e" name="Hemorrhagic Stroke" oid="2.16.840.1.113883.3.117.1.7.1.212" suppDataElement="false" taxonomy="Grouping" uuid="31c56e95-dbb8-4b60-9f9c-7f0a63a7a62e" version="1.0"/>
+    <qdm datatype="Diagnosis, Active" id="87b3a8a7-b7bf-4222-a0f0-ee099e678e6e" name="Ischemic Stroke" oid="2.16.840.1.113883.3.117.1.7.1.247" suppDataElement="false" taxonomy="Grouping" uuid="87b3a8a7-b7bf-4222-a0f0-ee099e678e6e" version="1.0"/>
+    <qdm datatype="Medication, Order" id="c536bb40-3686-4029-b20d-344b8bfbba90" name="Antithrombotic Therapy" oid="2.16.840.1.113883.3.117.1.7.1.201" suppDataElement="false" taxonomy="RXNORM" uuid="c536bb40-3686-4029-b20d-344b8bfbba90" version="1.0"/>
+    <qdm datatype="Encounter, Performed" id="53cc1115-09fb-45c9-a50d-3fe254afe36e" instance="Occurrence A" name="Inpatient Encounter" oid="2.16.840.1.113883.3.117.1.7.1.23" suppDataElement="false" taxonomy="SNOMEDCT" uuid="53cc1115-09fb-45c9-a50d-3fe254afe36e" version="1.0"/>
+    <qdm datatype="Encounter, Performed" id="e1fa10a0-63d8-402c-b11b-58a5ee1a2f50" name="Inpatient Encounter" oid="2.16.840.1.113883.3.117.1.7.1.23" suppDataElement="false" taxonomy="SNOMEDCT" uuid="e1fa10a0-63d8-402c-b11b-58a5ee1a2f50" version="1.0"/>
+  </elementLookUp>
+</measure>
