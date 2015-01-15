@@ -43,7 +43,7 @@ module SimpleXml
         handle_temporal
       elsif attr_val('@type') == DATETIMEDIFF
         handle_grouping_functional
-      elsif attr_val('@type') == SATISFIES_ALL || attr_val('@type') == SATISFIES_ANY
+      elsif (attr_val('@type') == SATISFIES_ALL || attr_val('@type') == SATISFIES_ANY) && @subset.nil?
         handle_satisfies
       elsif @entry.name == DATA_CRITERIA_OP || @subset
         handle_data_criteria
