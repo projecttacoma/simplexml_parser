@@ -39,6 +39,8 @@ module SimpleXml
         handle_logical
       elsif @entry.name == SET_OP && @subset.nil?
         handle_set_op
+      elsif  @entry.name == TEMPORAL_OP && @entry["type"] == "FULFILLS"
+        handle_fulfills
       elsif @entry.name == TEMPORAL_OP && @subset.nil?
         handle_temporal
       elsif attr_val('@type') == DATETIMEDIFF
@@ -208,6 +210,19 @@ module SimpleXml
         left.add_temporal(temporal)
         @reference = Reference.new(left.id)
       end
+    end
+
+    def handle_fulfills
+      type = attr_val('@type')
+      children = children_of(@entry)
+      left_child = children[0]
+      right_child = children[1]
+
+      right = DataCriteria.get_criteria(right_child, @id, @doc, @subset, type, false)
+      left = DataCriteria.get_criteria(left_child, @id, @doc, @subset, nil, true)
+      left.field_values ||= {}
+      left.field_values["FLFS"] = TypedReference.new(right.id,"FLFS","")
+      @reference = Reference.new(left.id)
     end
 
     def handle_data_criteria
