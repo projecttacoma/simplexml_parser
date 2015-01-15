@@ -169,17 +169,17 @@ module SimpleXml
       type = 'SBE' if type == 'SBOD'
       type = 'EBE' if type == 'EBOD'
       # the above two lines are required for legacy tests
-      type = 'EACW' if type == 'EAOCW'
-      type = 'EACWS' if type == 'EAOCWSO'
-      type = 'EBCW' if type == 'EBOCW'
-      type = 'EBCWS' if type == 'EBOCWSO'
+      type = 'EACW' if type == 'EAOCW' || type == 'EAEORECW'
+      type = 'EACWS' if type == 'EAOCWSO' || type == 'EASORECWS'
+      type = 'EBCW' if type == 'EBOCW' || type == 'EBEORECW'
+      type = 'EBCWS' if type == 'EBOCWSO' || type == 'EBSORECWS'
       type = 'ECWS' if type == 'ECWSO'
-      type = 'SACWE' if type == 'SAOCWEO'
-      type = 'SACW' if type == 'SAOCW'
-      type = 'SBCWE' if type == 'SBOCWEO'
-      type = 'SBCW' if type == 'SBOCW'
+      type = 'SACWE' if type == 'SAOCWEO' || type == 'SAEORSCWE'
+      type = 'SACW' if type == 'SAOCW' || type == 'SASORSCW'
+      type = 'SBCWE' if type == 'SBOCWEO' || type == 'SBEORSCWE'
+      type = 'SBCW' if type == 'SBOCW' || type == 'SBSORSCW'
       type = 'SCWE' if type == 'SCWEO'
-      type = 'OVERLAP' if type == 'Overlaps'
+      type = 'OVERLAP' if type == 'Overlaps' || type == 'Overlap'
 
       raise "unknown temporal reference type #{type}" unless HQMF::TemporalReference::TYPES.include? type
       type
