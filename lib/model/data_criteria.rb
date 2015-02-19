@@ -6,7 +6,8 @@ module SimpleXml
         :derivation_operator, :children_criteria, :subset_operators, :comments,
         :temporal_references, :specific_occurrence, :specific_occurrence_const
     attr_reader :hqmf_id, :title, :display_name, :description, :code_list_id, 
-        :definition, :status, :effective_time, :inline_code_list, :source_data_criteria
+        :definition, :status, :effective_time, :inline_code_list, :source_data_criteria,
+        :variable
   
     include SimpleXml::Utilities
     
@@ -84,7 +85,10 @@ module SimpleXml
         criteria = doc.criteria_map[element.at_xpath('@id').value]
         if !criteria && element.name == Precondition::SUB_TREE
           criteria = doc.sub_tree_map[Utilities.attr_val(element, '@id')].convert_to_data_criteria
-          doc.register_source_data_criteria(criteria)
+          # If this is a specific occurrence of a variable it won't appear in the elementLookUp, so include it in source data criteria here
+          if criteria.specific_occurrence && criteria.variable
+            doc.register_source_data_criteria(criteria)
+          end
         end
         criteria = criteria.dup
         return criteria if criteria.id == HQMF::Document::MEASURE_PERIOD_ID
