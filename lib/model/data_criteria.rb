@@ -5,12 +5,12 @@ module SimpleXml
     attr_accessor :id, :field_values, :value, :negation, :negation_code_list_id,
         :derivation_operator, :children_criteria, :subset_operators, :comments,
         :temporal_references, :specific_occurrence, :specific_occurrence_const
-    attr_reader :hqmf_id, :title, :display_name, :description, :code_list_id, 
+    attr_reader :hqmf_id, :title, :display_name, :description, :code_list_id,
         :definition, :status, :effective_time, :inline_code_list, :source_data_criteria,
         :variable
-  
+
     include SimpleXml::Utilities
-    
+
     # Create a new instance based on the supplied HQMF entry
     # @param [Nokogiri::XML::Element] entry the parsed HQMF entry
     def initialize(entry, id=nil)
@@ -24,7 +24,7 @@ module SimpleXml
 
       @source_data_criteria = @id
       @negation = false
-      
+
       # the following remain nil:
       # @display_name, @children_criteria, @derivation_operator, @value, @field_values,
       # @effective_time , @inline_code_list, @negation_code_list_id, @temporal_references, @subset_operators
@@ -72,7 +72,7 @@ module SimpleXml
     end
 
     def self.get_criteria(element, precondition_id, doc, subset=nil, operator=nil, update_id=false)
-      
+
       if element.name == Precondition::TEMPORAL_OP
         # we have a chain of temporal references
         criteria = convert_precondition_to_criteria(Precondition.new(element, doc), doc, operator)
@@ -103,7 +103,7 @@ module SimpleXml
         # handle attributes
         if (attributes)
           attributes.each do |attribute|
-            
+
             orig_key = attribute.at_xpath('@name').value
             key = DataCriteria.translate_field(orig_key)
             value = Attribute.translate_attribute(attribute, doc)
@@ -152,7 +152,7 @@ module SimpleXml
                                      end
       grouping
     end
-    
+
     def dup
       if @entry
         DataCriteria.new(@entry, @id)
@@ -169,7 +169,7 @@ module SimpleXml
     def push_down_temporal(temporal, doc)
       # push down through a grouping
       if @children_criteria
-        @children_criteria.each {|child_id| doc.data_criteria(child_id).push_down_temporal(temporal, doc)} 
+        @children_criteria.each {|child_id| doc.data_criteria(child_id).push_down_temporal(temporal, doc)}
       else
         # if this is not a grouping, just add the temporal reference
         add_temporal(temporal)
@@ -183,10 +183,9 @@ module SimpleXml
       @specific_occurrence_const = DataCriteria.format_so_const(@description)
       @id = id || format_id("#{instance} #{@title}#{specifics_counter}")
     end
-    
+
     def self.translate_field(name)
       name = name.tr(' ','_').upcase
-      name = 'ORDINAL' if name == 'ORDINALITY'
       raise "Unknown field name: #{name}" unless HQMF::DataCriteria::FIELDS[name] || name == 'RESULT' || name == 'NEGATION_RATIONALE'
       name
     end
@@ -202,9 +201,9 @@ module SimpleXml
       subs = subset_operators.collect {|o| o.to_model} if subset_operators
       @variable ||= false
 
-      HQMF::DataCriteria.new(@id, @title, @display_name, @description, @code_list_id, @children_criteria, 
-        @derivation_operator, @definition, @status, val, fv, @effective_time, @inline_code_list, 
-        @negation, @negation_code_list_id, trs, subs, @specific_occurrence, 
+      HQMF::DataCriteria.new(@id, @title, @display_name, @description, @code_list_id, @children_criteria,
+        @derivation_operator, @definition, @status, val, fv, @effective_time, @inline_code_list,
+        @negation, @negation_code_list_id, trs, subs, @specific_occurrence,
         @specific_occurrence_const, @source_data_criteria, comments, @variable)
     end
 
@@ -244,7 +243,7 @@ module SimpleXml
       if definition == 'medication_discharge'
         definition = 'medication'
         status = 'discharge'
-      end 
+      end
       status = nil if status && status.empty?
 
       {definition: definition, status: status}
@@ -261,7 +260,7 @@ module SimpleXml
     def fix_description_for_hqmf_match
       @description = "#{@definition.titleize}, #{@status.titleize}: #{@title}" if @status == 'ordered'
     end
- 
+
   end
-  
+
 end
