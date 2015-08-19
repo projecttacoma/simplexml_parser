@@ -12,7 +12,7 @@ gem 'rails', '>= 4.0.0'
 group :test do
   gem 'simplecov', :require => false
 
-  gem 'minitest', "~> 4.0"
+  gem 'minitest', "~> 5.3"
   gem 'turn', :require => false
   gem 'awesome_print', :require => 'ap'
 end
