@@ -24,7 +24,8 @@ module SimpleXml
       HQMF::PopulationCriteria::DENEXCEP => 'Denominator Exception',
       HQMF::PopulationCriteria::DENEX => 'Denominator Exclusion',
       HQMF::PopulationCriteria::MSRPOPL => 'Measure Population',
-      HQMF::PopulationCriteria::OBSERV => 'Measure Observation'
+      HQMF::PopulationCriteria::OBSERV => 'Measure Observation',
+      HQMF::PopulationCriteria::MSRPOPLEX => 'Measure Population Exclusion'
     }
 
     attr_accessor :id, :hqmf_id, :aggregator
@@ -78,7 +79,7 @@ module SimpleXml
       when NUMEX
         NUMEX
       when MSRPOPLEX
-        MSRPOPLEX
+        HQMF::PopulationCriteria::MSRPOPLEX
       else
         raise "Unknown population criteria type #{type}"
       end
