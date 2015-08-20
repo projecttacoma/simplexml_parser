@@ -2,7 +2,7 @@ require 'fileutils'
 require 'digest'
 require_relative '../test_helper'
 
-class MissingOidsTest < Test::Unit::TestCase
+class MissingOidsTest < Minitest::Test
   RESULTS_DIR = File.join('tmp','with_missing_oids')
   SIMPLE_XML_ROOT = File.join('test','fixtures','simplexml')
 

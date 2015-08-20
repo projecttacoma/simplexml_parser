@@ -4,8 +4,6 @@ require_relative '../lib/simplexml_parser'
 require 'pry'
 require 'minitest/autorun'
 require 'bundler/setup'
-require 'test/unit'
-require 'turn'
 
 class Hash
   def diff_hash(other, ignore_id=false, clean_reference=true)

@@ -2,7 +2,7 @@ require 'fileutils'
 require 'digest'
 require_relative '../test_helper'
 
-class HQMFVsSimpleTest < Test::Unit::TestCase
+class HQMFVsSimpleTest < Minitest::Test
   RESULTS_DIR = File.join('tmp','hqmf_simple_diffs')
 
 #  HQMF_ROOT = File.join('test', 'fixtures', 'hqmf', '2_4_0_bundle')
