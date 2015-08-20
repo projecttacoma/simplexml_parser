@@ -106,9 +106,7 @@ module SimpleXml
     
     def to_model
       mps = preconditions.collect {|p| p.to_model}
-      HQMF::PopulationCriteria.new(id, hqmf_id, type, mps, title, aggregator)
-      p "BANANA"
-      p HQMF::PopulationCriteria.new(id, hqmf_id, type, mps, title, aggregator)
+      HQMF::PopulationCriteria.new(id, hqmf_id, type, mps, title, aggregator):
     end
 
   end
