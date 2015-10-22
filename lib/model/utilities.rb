@@ -80,6 +80,7 @@ module SimpleXml
       numeratorExclusionsDescription: {"id"=>"NUMERATOR_EXCLUSIONS", "code"=>"OTH", "name"=>"Numerator Exclusions"},
       denominatorExceptionsDescription: {"id"=>"DENOMINATOR_EXCEPTIONS", "code"=>"DENEXCEP", "name"=>"Denominator Exceptions"},
       measurePopulationDescription: {"id"=>"MEASURE_POPULATION", "code"=>"MSRPOPL", "name"=>"Measure Population"},
+      measurePopulationExlusionsDescription: {"id"=>"MEASURE_POPULATION_EXCLUSIONS", "code"=>"MSRPOPLEX", "name"=>"Measure Population Exclusions"},
       measureObservationsDescription: {"id"=>"MEASURE_OBSERVATIONS", "code"=>"OTH", "name"=>"Measure Observations"},
       supplementalData: {"id"=>"SUPPLEMENTAL_DATA_ELEMENTS", "code"=>"OTH", "name"=>"Supplemental Data Elements"}
     }
