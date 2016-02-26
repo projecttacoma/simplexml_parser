@@ -177,19 +177,20 @@ module SimpleXml
       raise "All QDM elements require VSAC value sets to load into Bonnie. This measure contains #{invalid_oid_entries.length} QDM elements without VSAC value sets: \n[ #{invalid_oid_entries.join(', ')} ]." unless invalid_oid_entries.empty?
     end
 
-    # MAT v4.0.0 specifies VS codes instead of OIDs for Patient Birthdate and Expired
     def filter_bad_oids
-      # define the bad oid codes
-      bad_oid_codes = {
-        '21112-8' => '2.16.840.1.113883.3.117.1.7.1.70', # Patient Characteristic Birthdate
-        '419099009'=> '2.16.840.1.113883.3.117.1.7.1.309' # Patient Characteristic Expired
-      }
+      # The internal MAT representation (SimpleXML) contains these oids for
+      # certain data criteria, whereas the HQMF does not.
+      bad_oid_codes = [
+        '21112-8', # Used for Patient Characteristic Birthdate
+        '419099009' # Used for Patient Characteristic Expired
+      ]
 
-      # filter out any bad oids
+      # Filter out bad oids as defined above
       @doc.xpath('measure/elementLookUp/qdm').each do |entry|
         oid = entry.at_xpath('@oid').value
-        unless bad_oid_codes[oid].nil?
-          entry.at_xpath('@oid').value = bad_oid_codes[oid]
+        if bad_oid_codes.include? oid
+          # If this data criteria contains a bad oid, remove its oid entry
+          entry.at_xpath('@oid').remove
         end
       end
     end
