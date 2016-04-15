@@ -2,9 +2,9 @@ module SimpleXml
   # Represents an HQMF population criteria, also supports all the same methods as
   # SimpleXml::Precondition
   class PopulationCriteria
-  
+
     include SimpleXml::Utilities
-    
+
     IPP = 'initialPatientPopulation'
     DENOM = 'denominator'
     DENEX = 'denominatorExclusions'
@@ -21,6 +21,7 @@ module SimpleXml
       HQMF::PopulationCriteria::IPP => 'Initial Patient Population',
       HQMF::PopulationCriteria::DENOM => 'Denominator',
       HQMF::PopulationCriteria::NUMER => 'Numerator',
+      HQMF::PopulationCriteria::NUMEX => 'Numerator Exclusion',
       HQMF::PopulationCriteria::DENEXCEP => 'Denominator Exception',
       HQMF::PopulationCriteria::DENEX => 'Denominator Exclusion',
       HQMF::PopulationCriteria::MSRPOPL => 'Measure Population',
@@ -30,7 +31,7 @@ module SimpleXml
 
     attr_accessor :id, :hqmf_id, :aggregator
     attr_reader :preconditions, :title, :type, :entry
-    
+
     # Create a new population criteria from the supplied HQMF entry
     # @param [Nokogiri::XML::Element] the HQMF entry
     def initialize(entry, doc, index)
@@ -77,7 +78,7 @@ module SimpleXml
       when STRAT
         HQMF::PopulationCriteria::STRAT
       when NUMEX
-        NUMEX
+        HQMF::PopulationCriteria::NUMEX
       when MSRPOPLEX
         HQMF::PopulationCriteria::MSRPOPLEX
       else
@@ -103,12 +104,12 @@ module SimpleXml
       end
       leaves
     end
-    
+
     def to_model
       mps = preconditions.collect {|p| p.to_model}
       HQMF::PopulationCriteria.new(id, hqmf_id, type, mps, title, aggregator)
     end
 
   end
-  
+
 end
