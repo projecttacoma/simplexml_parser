@@ -1,15 +1,15 @@
 module SimpleXml
   module Utilities
-    
+
     include HQMF::Conversion::Utilities
-    
+
     # Utility function to handle optional attributes
     # @param xpath an XPath that identifies an XML attribute
     # @return the value of the attribute or nil if the attribute is missing
     def attr_val(xpath)
       Utilities::attr_val(@entry, xpath)
     end
-    
+
     # Utility function to handle optional attributes
     # @param xpath an XPath that identifies an XML attribute
     # @return the value of the attribute or nil if the attribute is missing
@@ -21,7 +21,7 @@ module SimpleXml
         nil
       end
     end
-    
+
     def children_of(node)
       node.xpath('*[not(self::text|self::comment)]')
     end
@@ -77,7 +77,7 @@ module SimpleXml
       denominatorDescription: {"id"=>"DENOMINATOR", "code"=>"DENOM", "name"=>"Denominator"},
       denominatorExclusionsDescription: {"id"=>"DENOMINATOR_EXCLUSIONS", "code"=>"OTH", "name"=>"Denominator Exclusions"},
       numeratorDescription: {"id"=>"NUMERATOR", "code"=>"NUMER", "name"=>"Numerator"},
-      numeratorExclusionsDescription: {"id"=>"NUMERATOR_EXCLUSIONS", "code"=>"OTH", "name"=>"Numerator Exclusions"},
+      numeratorExclusionsDescription: {"id"=>"NUMERATOR_EXCLUSIONS", "code"=>"NUMEX", "name"=>"Numerator Exclusions"},
       denominatorExceptionsDescription: {"id"=>"DENOMINATOR_EXCEPTIONS", "code"=>"DENEXCEP", "name"=>"Denominator Exceptions"},
       measurePopulationDescription: {"id"=>"MEASURE_POPULATION", "code"=>"MSRPOPL", "name"=>"Measure Population"},
       measurePopulationExlusionsDescription: {"id"=>"MEASURE_POPULATION_EXCLUSIONS", "code"=>"MSRPOPLEX", "name"=>"Measure Population Exclusions"},
@@ -86,4 +86,4 @@ module SimpleXml
     }
 
   end
-end  
+end
