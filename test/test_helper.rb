@@ -1,4 +1,4 @@
-require_relative "./simplecov"
+require_relative "./simplecov_init"
 require_relative '../lib/simplexml_parser'
 
 require 'pry'
