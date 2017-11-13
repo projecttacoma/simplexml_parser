@@ -20,6 +20,7 @@ GEM
     awesome_print (1.6.1)
     bson (4.2.2)
     builder (3.2.3)
+    coderay (1.1.0)
     concurrent-ruby (1.0.5)
     docile (1.1.5)
     domain_name (0.5.20170404)
@@ -50,6 +51,7 @@ GEM
     macaddr (1.7.1)
       systemu (~> 2.6.2)
     memoist (0.9.3)
+    method_source (0.8.2)
     mime-types (2.99.3)
     mini_portile2 (2.3.0)
     minitest (5.8.0)
@@ -68,6 +70,11 @@ GEM
     origin (2.3.1)
     protected_attributes (1.0.9)
       activemodel (>= 4.0.1, < 5.0)
+    pry (0.10.1)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    rake (12.2.1)
     rest-client (1.8.0)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 3.0)
@@ -78,6 +85,7 @@ GEM
       json (~> 1.8)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.0)
+    slop (3.6.0)
     systemu (2.6.5)
     thread_safe (0.3.6)
     tilt (2.0.8)
@@ -99,6 +107,8 @@ PLATFORMS
 DEPENDENCIES
   awesome_print
   minitest (~> 5.3)
+  pry
+  rake
   simplecov
   simplexml_parser!
   turn
