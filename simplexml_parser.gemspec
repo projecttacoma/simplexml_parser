@@ -12,6 +12,6 @@ Gem::Specification.new do |s|
 
   s.files = s.files = `git ls-files`.split("\n")
 
-  s.add_dependency "health-data-standards", "4.0.0"
+  s.add_dependency "health-data-standards", "~> 4.0"
   s.add_dependency "tilt", "~> 1.4"
 end

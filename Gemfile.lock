@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     simplexml_parser (1.0.1)
-      health-data-standards (= 4.0.0)
+      health-data-standards (~> 4.0)
       tilt (~> 1.4)
 
 GEM
