@@ -227,6 +227,29 @@ module SimpleXml
           population['title'] = "Population #{index+1}"
         end
       end
+
+      # Remove exclusion and exception populations that are empty. The simple
+      # contains these empty populations, while the HQMF does not.
+      #
+      # Note: @populations in this context is an array of hashes, each describing
+      # the mappings for each measure population criteria (e.g. a measure might
+      # have two population criteria that have different IPPs, so we would have
+      # a 'IPP' => 'IPP' and a 'IPP' => 'IPP2' mapping). @population_criteria
+      # is an array of the actual population criteria objects (so, in the
+      # previous example, @population_criteria would contain a IPP and a IPP2
+      # SimpleXml::PopulationCriteria object instance).
+      @populations.collect! { |population|
+        population.reject { |key, value|
+          if ['DENEX', 'DENEXCEP', 'NUMEX', 'MSRPOPLEX'].include?(key)
+            criteria = @population_criteria.find { |pop_crit| pop_crit.id == value }
+            if criteria.nil? || criteria.preconditions.empty?
+              @population_criteria -= [criteria]
+              next true
+            end
+          end
+        }
+      }
+
     end
 
     def extract_population_criteria
