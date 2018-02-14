@@ -1,7 +1,9 @@
 language: ruby
 rvm:
   - "2.3.5"
-script: bundle exec rake test
+script:
+  - bundle exec bundle-audit check --update
+  - bundle exec rake test
 notifications:
   email:
     recipients:
