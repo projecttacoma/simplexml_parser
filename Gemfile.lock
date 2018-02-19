@@ -6,7 +6,7 @@ PATH
       tilt (~> 1.4)
 
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     activemodel (4.2.10)
       activesupport (= 4.2.10)
@@ -20,13 +20,16 @@ GEM
     awesome_print (1.6.1)
     bson (4.2.2)
     builder (3.2.3)
+    bundler-audit (0.6.0)
+      bundler (~> 1.2)
+      thor (~> 0.18)
     coderay (1.1.0)
     concurrent-ruby (1.0.5)
     docile (1.1.5)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
-    health-data-standards (4.0.0)
+    health-data-standards (4.0.2)
       activesupport (~> 4.2.0)
       builder (~> 3.1)
       erubis (~> 2.7.0)
@@ -35,7 +38,7 @@ GEM
       memoist (~> 0.9.1)
       mongoid (~> 5.0.0)
       mongoid-tree (~> 2.0.0)
-      nokogiri (~> 1.8.1)
+      nokogiri (~> 1.8.2)
       protected_attributes (~> 1.0.5)
       rest-client (~> 1.8.0)
       rubyzip (~> 1.2.1)
@@ -65,7 +68,7 @@ GEM
     mongoid-tree (2.0.1)
       mongoid (>= 4.0, < 6.0)
     netrc (0.11.0)
-    nokogiri (1.8.1)
+    nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
     origin (2.3.1)
     protected_attributes (1.0.9)
@@ -87,6 +90,7 @@ GEM
     simplecov-html (0.10.0)
     slop (3.6.0)
     systemu (2.6.5)
+    thor (0.20.0)
     thread_safe (0.3.6)
     tilt (1.4.1)
     turn (0.9.6)
@@ -106,6 +110,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
+  bundler-audit
   minitest (~> 5.3)
   pry
   rake
@@ -114,4 +119,4 @@ DEPENDENCIES
   turn
 
 BUNDLED WITH
-   1.15.4
+   1.16.0
