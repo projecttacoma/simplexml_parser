@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/projectcypress/health-data-standards.git
-  revision: 3bbe3e4317ed6f2578c96995e6880e7d0bfdbbcb
-  branch: bonnie-prior_1302_nokogiri_fix
+  revision: f3d437762d6ba9736b11c26ce1e467ff75c49190
+  branch: mongoid5
   specs:
     health-data-standards (3.7.0)
       activesupport (~> 4.2.0)
